@@ -1,0 +1,29 @@
+extends ../../layout/layout
+
+block vars
+	- var pageTitle = 'Корзина'
+	- var pageBodyClass = ''
+	- var dir = './'
+
+
+block premain
+
+	include ../../components/registration-device/registration-device
+
+block main
+	.no-critical.no-critical--preloader
+
+block pageModal
+	include ../../components/modal/modal-registration-success/modal-registration-success
+
+block componentsCriticalStyles
+	+componentsCriticalStyles-includer()
+block vendorScripts
+	+vendorScripts-includer()
+block componentsStyles
+	+style-includer()
+
+block componentsScripts
+	+componentsScripts-includer()
+
+block scripts

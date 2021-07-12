@@ -1,6 +1,5 @@
 import "../components/404/style.scss";
 import "../components/adult-attention/style.scss";
-import "../components/animation/style.scss";
 import "../components/authorization/style.scss";
 import "../components/basket-empty/style.scss";
 import "../components/basket-step-2/style.scss";

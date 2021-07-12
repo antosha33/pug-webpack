@@ -1,15 +1,17 @@
 //определяем страницу для dev сборки
 const { pages: devPage } = require('../options');
-const WebpackWatchedGlobEntries = require('webpack-watched-glob-entries-plugin');
+// const WebpackWatchedGlobEntries = require('webpack-watched-glob-entries-plugin');
 
 const pug = require('pug');
 const path = require('path');
 const fs = require('fs');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const globImporter = require('node-sass-glob-importer');
 
 const HtmlsWebpackPlugin = require('htmls-webpack-plugin');
 
-// const workerFarm = require('worker-farm');
-// const workers  = workerFarm(null, require.resolve('./child.js'))
+const workerFarm = require('worker-farm');
+const workers = workerFarm(require.resolve('./child.js'), ['renderHTML'])
 
 
 // записываем названия папок с страницами в массив pages
@@ -23,7 +25,7 @@ const asyncConfig = async () => {
 
 
 	return {
-		mode: 'development',
+		mode: 'production',
 		devServer: {
 			historyApiFallback: true,
 			contentBase: path.join(__dirname, '../'),
@@ -43,13 +45,13 @@ const asyncConfig = async () => {
 				return true;
 			},
 		},
-		entry: WebpackWatchedGlobEntries.getEntries(
-			[
-				// path.resolve(__dirname, '../src/components/**/style.scss'),
-				// // path.resolve(__dirname, '../src/webpack_lists/critical_css.js'),
-				// path.resolve(__dirname, '../src/webpack_lists/critical_css.scss'),
-			],
-		),
+		// entry: WebpackWatchedGlobEntries.getEntries(
+		// 	[
+		// 		// path.resolve(__dirname, '../src/components/**/style.scss'),
+		// 		// // path.resolve(__dirname, '../src/webpack_lists/critical_css.js'),
+		// 		// path.resolve(__dirname, '../src/webpack_lists/critical_css.scss'),
+		// 	],
+		// ),
 		output: {
 			publicPath: '/',
 			path: path.resolve(__dirname, '../local/templates/html/'),
@@ -92,10 +94,24 @@ const asyncConfig = async () => {
 					return {
 						src: `./src/pages/${page}/${page}.pug`,
 						filename: `${page}.html`,
-						render:(file, params) => pug.renderFile(file, params)
+						render: (file, params) => pug.renderFile(file, params)
 					}
 				})]
 			})
+
+
+			// здесь не получается распараллеливание организовать
+
+			// new HtmlsWebpackPlugin({
+			// 	htmls: [...pages.map(page => {
+			// 		return new Promise(resolve => {
+			// 			workers.renderHTML(page, (err, result) => {
+			// 				if (err) return reject(err);
+			// 				resolve(result);
+			// 			});
+			// 		});
+			// 	})]
+			// })
 
 
 		]
