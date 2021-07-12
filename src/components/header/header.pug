@@ -1,0 +1,52 @@
++include-script('header')
+
+header.header
+	.container
+		.header-top
+			.header-top__inner
+				.header-top__right
+					a(href="/local/templates/html/index.html")
+						img.header-top__right-img(src='/local/templates/html/images/glo-logo.png')
+					.header-top__location
+						.header-top__location-icon
+							+icon('i-location')(style="width:19px; height: 24px")
+						.header-top__location-title Минск
+				.header-top__left
+					.header-top__menu
+						+nav({
+							modClass: 'nav--header',
+							list: [
+									{   name: 'Каталог',
+											link: '/local/templates/html/catalog.html',
+									},
+									{   name: 'Региcтрация',
+										link: '/local/templates/html/registration.html',
+									},
+									{   name: 'Найти магазин',
+											link: '/local/templates/html/shops.html',
+									},
+									{   name: 'Контакты',
+											link: '/local/templates/html/contacts.html',
+									},
+								]
+						})
+						.mobile-location
+							.header-top__location
+								.header-top__location-icon
+									+icon('i-location')(style="width:19px; height: 24px")
+								.header-top__location-title Минск
+					a(href="#" aria-label='tg' title='tg').header-contact.mob-hidden
+						+icon('i-tg')(style='width:40px; height:40px;')
+					a(href="#" aria-label='viber' title='viber').header-contact.mob-hidden
+						+icon('i-viber')(style='width:40px; height:40px;')
+					.header-contact.header-profile
+						a(href="#").header-log-in.active
+							+icon('i-profile')(style='width:40px; height:40px;')
+						a(href="#").header-log-out Выйти
+					a(href="#" aria-label='корзина' title='корзина').header-contact.header-cart
+						+icon('i-cart')(style='width:40px; height:40px;').icon--cart
+						.header-cart__total 1
+					a(href="#" aria-label='menu' title='menu').header-contact.mob-show.js-mob-menu
+						include ../burger/burger
+						//- +icon('i-burger')(style='width:40px; height:40px;')
+		include ../mob-menu/mob-menu

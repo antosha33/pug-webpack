@@ -1,0 +1,139 @@
+@import 'src/assets/css/vars_mixins/vars_mixins';
+
+.select {
+  position: relative;
+  min-width: 140px;
+  text-align: left;
+  .select-head {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    cursor: pointer;
+
+    &.active {
+      .select-head__title {
+        color: $c-text;
+      }
+    }
+    @media (max-width: 575px) {
+      width: 100%;
+      margin: 0;
+      .select-head__title {
+        text-align: left;
+      }
+      .select-head {
+        &__title {
+          font-size: 15px;
+        }
+      }
+    }
+    &__title {
+      display: inline-flex;
+      color: $c-text;
+      font-size: 15px;
+      line-height: 1.2;
+    }
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 7px;
+      transition: fill .3s;
+      fill: $c-primary-hover;
+    }
+  }
+  .select-body {
+    position: absolute;
+    z-index: 2;
+    top: calc(100% + 10px);
+    right: 0;
+    left: 0;
+    overflow: auto;
+    width: calc(100% + 20px);
+    height: auto;
+    margin: 0 -10px;
+    padding: 0;
+    transition: transform .2s .15s;
+    transform: scaleY(0);
+    transform-origin: top right;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, .08);
+    font-size: 15px;
+    font-weight: normal;
+
+    will-change: transform;
+  }
+  .select-list {
+    overflow-y: auto;
+    max-height: 350px;
+    text-align: left;
+  }
+  &.active {
+    .select-head {
+      .icon {
+        transform: rotate(180deg);
+        fill: $c-text;
+      }
+    }
+    .select-body {
+      transition: transform .2s 0s;
+      transform: none;
+    }
+  }
+}
+.filter-select {
+  width: 160px;
+  margin: 0 20px;
+  .select-head {
+    &__title {
+      color: $c-primary-hover;
+    }
+  }
+  &.active {
+    .select-head__title {
+      color: $c-text;
+    }
+  }
+  @media (max-width: 768px) {
+    margin: 0;
+  }
+  @media (max-width: 575px) {
+    width: 100%;
+    margin: 0;
+    .select-head__title {
+      text-align: left;
+    }
+  }
+}
+.radio-option {
+  input[type='radio'] {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+        -ms-appearance: none;
+            appearance: none;
+  }
+  &__input {
+    position: absolute;
+  }
+  &__caption {
+    padding: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 15px;
+    &:checked {
+      color: $c-primary-hover;
+    }
+    &:hover {
+      background: #FAFAFA;
+    }
+  }
+  &.selected {
+    .radio-option__caption {
+      color: $c-primary-hover;
+    }
+  }
+}
+

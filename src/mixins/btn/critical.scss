@@ -1,0 +1,54 @@
+@import 'src/assets/css/vars_mixins/vars_mixins';
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background .3s, color .3s, border .3s;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  letter-spacing: 0;
+  color: $white;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 800;
+  svg {
+    transition: fill .3s;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+  @media (max-width: 575px) {
+    font-size: 14px;
+  }
+}
+
+
+@import '--primary';
+@import '--grey';
+@import '--black';
+@import '--loading';
+@import '--light';
+@import '--disabled';
+
+
+.btn.btn--green{
+	background-color: #50AF6F;
+	color: #fff;
+	&:hover{
+	@media (min-width: 1024px){
+		background-color:#131313;
+	}
+	}
+}
+
+.btn.btn--full-w{
+	@media (max-width: $xs - 1){
+		width: 100%;
+	}
+}
+

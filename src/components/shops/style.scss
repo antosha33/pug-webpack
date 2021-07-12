@@ -1,0 +1,252 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.shops {
+	&__descr {
+		margin-top : 53px;
+		font-style : normal;
+		font-size  : 16px;
+		font-weight: 500;
+		max-width  : 450px;
+		@include lineheight(26, 33);
+
+		@media (max-width: $xs - 1) {
+			font-size    : 12px;
+			margin-top   : 26px;
+			margin-bottom: 36px;
+		}
+	}
+
+	&__map-wrap {
+		position     : relative;
+		margin-top   : 78px;
+		margin-bottom: 66px;
+		max-width    : 1920px;
+		@media (max-width: $md - 1) {
+			margin-top: 40px;
+		}
+		@media (max-width: $sm - 1){
+			margin-bottom: 10px;
+		}
+
+	}
+
+	&__tooltip {
+		max-width       : 235px;
+		padding         : 12px 17px;
+		font-size       : 13px;
+		color           : #6A6A6A;
+		background-color: #F6F6F6;
+		position        : absolute;
+		top             : 115px;
+		right           : 80px;
+		border          : 2px solid transparent;
+		transition      : all .3s ease;
+		z-index: 9999;
+		@media (max-width: $sm - 1){
+			padding: 10px 14px;
+			font-size: 12px;
+		}
+		&:hover {
+			@media (min-width: 1024px) {
+				opacity: 0.8;
+				cursor : pointer;
+				border : 2px solid $green;
+				border: 2px solid $c-primary;
+			}
+		}
+
+		&.active {
+			border: 2px solid $c-primary;
+
+			&:hover {
+				@media (min-width: 1024px) {
+					opacity: 0.8;
+					cursor : pointer;
+					border : 2px solid transparent;
+				}
+			}
+		}
+
+		@media (max-width: $sm - 1){
+			right: 30px;
+			bottom: 30px;
+			top: auto;
+			left: auto;
+		}
+	}
+
+	&__map {
+
+		margin: auto;
+		height: 571px;
+		&.active{
+			@media (max-width: $sm - 1){
+				height: 571px;
+			}
+		}
+		@media (max-width: $sm - 1){
+			margin-bottom: 10px;
+			height: 282px;
+		}
+
+
+		.test-img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__map-open{
+		display: none;
+		@media (max-width: $sm - 1){
+			display: block;
+		}
+		margin-top: 20px;
+		font-size: 14px;
+		color: $c-primary;
+		margin-bottom: 40px;
+	}
+
+	&__list {
+		margin-top   : 53px;
+		margin-bottom: 20px;
+	}
+}
+
+.find-shop {
+	margin-top: 58px;
+
+	&__search {
+		position   : relative;
+		display    : flex;
+		align-items: flex-end;
+
+		@media (max-width: $sm - 1) {
+			flex-direction: column;
+			align-items   : center;
+		}
+	}
+
+	&__submit {
+		position       : absolute;
+		right          : 35px;
+		z-index        : 10;
+		top            : calc(50% + 1px);
+		display        : flex;
+		justify-content: center;
+		align-items    : center;
+
+		@media (max-width: $sm - 1) {
+			right: 18px;
+		}
+
+		.icon {
+			fill: #6a6a6a;
+		}
+	}
+
+	&__location {
+		.btn.btn--primary {
+			height        : 58px;
+			font-weight   : 400;
+			font-size     : 16px;
+			text-transform: none;
+			min-width     : 366px;
+			margin-left   : 22px;
+
+			@media (max-width: $sm - 1) {
+				justify-content: flex-start;
+				height         : 43px;
+				margin-left    : 0px;
+				min-width      : auto;
+				font-size      : 11px;
+				padding-left   : 21px;
+			}
+		}
+
+		.icon {
+			fill: #fff;
+
+			@media (max-width: $sm - 1) {
+				max-width: 15px;
+				position : absolute;
+				right    : 20px;
+				top      : 50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		@media (max-width: $sm - 1) {
+			width      : 100%;
+			margin-left: 0px;
+			margin-top : 14px;
+		}
+	}
+}
+
+.shop-type {
+	margin-top      : 19px;
+	height          : 58px;
+	max-width       : 283px;
+	background-color: #f6f6f6;
+	position        : relative;
+	padding-left    : 27px;
+	display         : flex;
+	align-items     : center;
+	color           : #6a6a6a;
+
+	@media (max-width: $sm - 1) {
+		max-width   : none;
+		height      : 43px;
+		margin-top  : 35px;
+		font-size   : 11px;
+		padding-left: 21px;
+	}
+
+	&:after {
+		position           : absolute;
+		content            : "";
+		width              : 10px;
+		height             : 15px;
+		z-index            : 10;
+		background-position: center;
+		background-repeat  : no-repeat;
+		right              : 30px;
+		top                : calc(50% - 5px);
+		background-image   : url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 1L6 6L1 1' stroke='%23E35205' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+
+		@media (max-width: $sm - 1) {
+			right: 23px;
+		}
+	}
+
+	&__select {
+		max-height: 0;
+		overflow  : hidden;
+		transition: max-height 0.3s ease;
+		position  : absolute;
+		top       : 100%;
+		left      : 0;
+		right     : 0;
+		z-index   : 1500;
+
+		@media (max-width: $sm - 1) {
+			font-size: 11px;
+		}
+	}
+
+	&.active {
+		&:after {
+			transform: rotate(180deg);
+		}
+
+		.shop-type__select {
+			max-height: 150px;
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+}

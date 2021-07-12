@@ -1,0 +1,56 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.nav--footer {
+	.nav-list {
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+	}
+	.nav-item {
+		margin: 7px 0;
+		position: relative;
+		&.active {
+			.nav-link {
+				color: #fff;
+			}
+		}
+		&:hover {
+			@media (min-width: 1024px) {
+				.nav-link{
+					color: #fff;
+				}
+
+				&:after{
+					position: absolute;
+					content: '';
+					left: 0;
+					top: 100%;
+					width: 100%;
+					z-index: 10;
+					border-bottom: 1px solid #fff;
+				}
+			}
+		}
+		@media (max-width: $xs - 1) {
+			margin: 3px 0;
+		}
+	}
+	.nav-link {
+		transition: color 0.2s;
+		color: #757575;
+		font-size: 16px;
+		line-height: 1.1;
+		&:hover {
+			color: $c-primary;
+		}
+		@media (max-width: $xs - 1) {
+			font-size: 12px;
+		}
+	}
+}
+
+@media (max-width: $xs - 1) {
+	.active .nav--footer {
+		display: block;
+	}
+}

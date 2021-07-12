@@ -1,0 +1,16 @@
+@import 'src/assets/css/vars_mixins/vars_mixins';
+
+.btn.btn--error {
+  transition: color .3s, border .3s;
+  color: $c-error;
+  border: 1px solid $c-error;
+  @media (min-width: $lg) {
+    &:hover, &.active {
+      color: rgba($c-error, .8);
+      border: 1px solid rgba($c-error, .8);
+    }
+    &:active {
+      border: 1px solid rgba($c-error, .8);
+    }
+  }
+}

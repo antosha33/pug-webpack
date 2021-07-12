@@ -1,0 +1,7 @@
+mixin presection-title(args={})
+	+include-style('mixin__presection-title')
+	.presection
+		h2.presection__title= args.title 
+		+divider({
+			mod: 'divider--black'
+		})

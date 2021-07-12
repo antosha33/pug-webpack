@@ -1,0 +1,89 @@
+//- подключение общих критических стилей
+mixin style-includer()
+	if (PROJECT_MODE !== 'dev')
+		.js-style-components
+			//- Последним файлом добавляем отображение не критических блоков для компонентного подхода
+			+include-style('no-critical', true)
+
+			noscript
+				link(rel="stylesheet" href=PROJECT_NAME+"/local/templates/html/styles.css")
+				link(rel="stylesheet" href=PROJECT_NAME+"/local/templates/html/css/styles.min.css")
+				link(rel="stylesheet" href=PROJECT_NAME+"/local/templates/html/css/components.min.css")
+
+				.
+					#{''}
+
+				.
+
+					<!--<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/styles.css">-->
+					<!--<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/styles.min.css">-->
+					<!--<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/components.min.css">-->
+			if (PROJECT_NAME !== '')
+				link(rel='preload' href= dir + 'concat/'+pageName+'_html.css' as='style' onload="this.onload=null;this.rel='stylesheet'")
+			else
+				//- Подключение стилей покомпонентно
+				.
+					#{''}
+
+				.
+					<!--<?=$APPLICATION->ShowHead();?>-->
+					<!--Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/styles.min.css");-->
+
+				each item in componentsList
+					if (item !== 'pages-viget')
+						.
+							<!--Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/components-template/#{item}/style.css");-->
+
+				//- link(rel='preload' href= dir + 'styles.css' as='style' onload="this.onload=null;this.rel='stylesheet'")
+				//- link(rel='preload' href= dir + 'css/styles.min.css' as='style' onload="this.onload=null;this.rel='stylesheet'")
+
+				each item in componentsList
+						link(rel='preload' href= dir + 'components-template/' + item + '/style.css' as='style' onload="this.onload=null;this.rel='stylesheet'")
+
+				each item in componentsModList
+					link(rel='preload' href= dir + 'components-template/' + item[0] + '/' + item[1] + '.css' as='style' onload="this.onload=null;this.rel='stylesheet'")
+
+//- Подключение критический стилей отдельных компонентов
+mixin componentsCriticalStyles-includer()
+
+	each item in componentsCriticalList
+		link(rel="stylesheet" href= '../../local/templates/html/css/' + item + '/style.css' inline)
+
+
+//- Подключение скриптов отдельных компонентов
+mixin componentsScripts-includer()
+	if (PROJECT_NAME !== '')
+		script(src= dir + '/concat/' + pageName + '_html.js' defer)
+	else if (PROJECT_MODE !== 'dev')
+		each item in componentsScriptsList
+			script(src= dir + '/components-template/' + item + '/script.min.js' defer)
+
+		.
+			#{''}
+
+
+		.
+
+			<!--Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery/jquery-3.3.1.min.js");-->
+			<!--Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/vendor/svg4everybody.js");-->
+			<!--Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/vendor/noframework.waypoints.min.js");-->
+			<!--Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/vendor/lazyload.min.js");-->
+
+		each item in vendorScriptsList
+			.
+				<!--Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/vendor/#{item}");-->
+
+		.
+			<!--Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/app.min.js");-->
+
+		each item in componentsScriptsList
+
+			if (item !== 'pages-viget' && item !== 'validation')
+				.
+					<!--Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/components-template/#{item}/script.min.js");-->
+
+//- Подключение скриптов отдельных вендоров
+mixin vendorScripts-includer()
+
+	each item in vendorScriptsList
+		script(src=`./js/vendor/${item}` defer)

@@ -1,0 +1,15 @@
+mixin info-card(args={})
+	+include-style('info-card')
+	+b.info-card(class=args.mod_class)
+		+e('a').__link(href="#")
+			+#{args.slider ? 'lazy-img-slider' : 'lazy-img'}({
+				img: args.src,
+				placeholder: pixel,
+				img_mod: 'info-card__img',
+				wrap_mod: 'info-card__img-wrap',
+				link: false,
+				aria_label: false,
+			})
+			+e.__descr
+				+e.__descr-date=args.date
+				+e.__descr-title=args.title

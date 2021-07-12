@@ -1,0 +1,20 @@
+mixin switch(args = {})
+	+include-style('form-mixin/switch')
+	+include-script('form-mixin/switch')
+	.switch-cover(class= args.class_mod)
+		if args.answer === true
+			.switch
+				.switch__item
+					input(id='id-dis-' + args.name, type='radio', value='disagree', name=args.name)
+					label(for='id-dis-' + args.name) Нет
+				.switch__item
+					input(id='id-' + args.name, type='radio', value='agree', name=args.name, checked)
+					label(for='id-' + args.name) Да
+		if args.answer === false
+			.switch
+				.switch__item
+					input(id='id-dis-' + args.name, type='radio', value='disagree', name=args.name, checked)
+					label(for='id-dis-' + args.name) Нет
+				.switch__item
+					input(id='id-' + args.name, type='radio', value='agree', name=args.name)
+					label(for='id-' + args.name) Да

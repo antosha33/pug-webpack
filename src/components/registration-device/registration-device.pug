@@ -1,0 +1,199 @@
++include-style('registration')
+.page-wrap
+	.container
+		.container-custom-mobile
+			+presection-title({
+				title: 'Регистрация устройства'
+			})
+			.row
+				.col-sm-24.col-md-10
+					.registration__descr.h26 Регистрируй свой glo  и будь вкурсе интересных новинок, а так же получай информацию первым
+					form.bv-form.profile-form
+						+input({
+							type: 'text',
+							fg_mod: 'form-control--margin form-group--common',
+							mod: 'form-control--common',
+							name: false,
+							label: 'Номер устройства',
+							small: true,
+							placeholder: '№123456789',
+							required: true,
+							pattern: false,
+							validation: {
+								message: 'Заполните поле',
+								regexp: 'Неверный формат',
+								emailaddress: '',
+								identical: false
+							}
+						})(disabled= "true")
+						+input({
+							type: 'text',
+							fg_mod: 'form-control--margin form-group--common',
+							mod: 'form-control--common',
+							name: false,
+							label: 'Имя',
+							small: true,
+							placeholder: 'Имя',
+							required: true,
+							pattern: true,
+							validation: {
+								message: 'Заполните поле',
+								regexp: 'Неверный формат',
+								emailaddress: '',
+								identical: false
+							}
+						})
+						+input({
+							type: 'text',
+							fg_mod: 'form-control--margin form-group--common',
+							mod: 'form-control--common',
+							name: false,
+							label: 'Фамилия',
+							small: true,
+							placeholder: 'Фамилия',
+							required: true,
+							pattern: true,
+							validation: {
+								message: 'Заполните поле',
+								regexp: 'Неверный формат',
+								emailaddress: '',
+								identical: false
+							}
+						})
+						+datapicker({
+							mod: 'form-control--margin',
+							label: 'Дата рождения',
+						})
+						//- .profile-form__birthday
+						//- 	+custom-select({
+						//- 		label: "Дата рождения",
+						//- 		mod: 'form-control--common',
+						//- 		items: [
+						//- 		{value: ''},
+						//- 		{value: '1'},
+						//- 		{value: '2'},
+						//- 		{value: '3'},
+						//- 		{value: '4'},
+						//- 		{value: '5'},
+						//- 		{value: '6'},
+						//- 		{value: '7'},
+						//- 		{value: '8'},
+						//- 		{value: '9'},
+						//- 		{value: '10'},
+						//- 		{value: '11'},
+						//- 		{value: '12'},
+						//- 		{value: '13'},
+						//- 		{value: '14'},
+						//- 		{value: '15'},
+						//- 		{value: '16'},
+						//- 		{value: '17'},
+						//- 		{value: '18'},
+						//- 		{value: '19'},
+						//- 		{value: '20'},
+						//- 		{value: '21'},
+						//- 		{value: '22'},
+						//- 		{value: '23'},
+						//- 		{value: '24'},
+						//- 		{value: '25'},
+						//- 		{value: '26'},
+						//- 		{value: '27'},
+						//- 		{value: '28'},
+						//- 		{value: '29'},
+						//- 		{value: '30'},
+						//- 		]
+						//- 	})(data-placeholder='День')
+						//- 	+custom-select({
+						//- 		mod: 'form-control--common',
+						//- 		items: [
+						//- 		{value: ''},
+						//- 		{value: 'Январь'},
+						//- 		{value: 'Февраль'},
+						//- 		{value: 'Март'},
+						//- 		{value: 'Апрель'},
+						//- 		{value: 'Май'},
+						//- 		{value: 'Июнь'},
+						//- 		{value: 'Июль'},
+						//- 		{value: 'Август'},
+						//- 		{value: 'Сентябрь'},
+						//- 		{value: 'Октябрь'},
+						//- 		{value: 'Ноябрь'},
+						//- 		{value: 'Декабрь'},
+						//- 		]
+						//- 	})(data-placeholder='Месяц')
+						//- 	+custom-select({
+						//- 		fg_mod: '',
+						//- 		mod: 'form-control--common',
+						//- 		items: [
+						//- 		{value: ''},
+						//- 		{value: '2020'},
+						//- 		{value: '2019'},
+						//- 		{value: '2018'},
+						//- 		{value: '2017'},
+						//- 		{value: '2016'},
+						//- 		{value: '2015'},
+						//- 		{value: '2014'},
+						//- 		{value: '2013'},
+						//- 		{value: '2012'},
+						//- 		{value: '2011'},
+						//- 		{value: '2010'},
+						//- 		{value: '2009'},
+						//- 		]
+						//- 	})(data-placeholder='Год')
+						+input({
+							type: 'email',
+							fg_mod: '',
+							mod: 'form-control--common',
+							fg_mod: 'form-control--margin form-group--common',
+							label: 'Электронная почта',
+							name: false,
+							small: true,
+							placeholder: 'E-mail',
+							required: true,
+							pattern: true,
+							validation: {
+								message: 'Заполните поле',
+								regexp: 'Неверный формат',
+								emailaddress: '',
+								identical: false
+							}
+						})
+						+input({
+							type: 'tel',
+							fg_mod: '',
+							mod: 'form-control--common ',
+							fg_mod: 'form-control--margin form-group--common',
+							label: 'Телефон',
+							name: false,
+							small: true,
+							placeholder: 'Введите адрес электронной почты',
+							required: true,
+							pattern: true,
+							validation: {
+								message: 'Заполните поле',
+								regexp: 'Неверный формат',
+								emailaddress: '',
+								identical: false
+							}
+						})
+						+datapicker({
+							mod: 'form-control--margin',
+							label: 'Дата покупки устройства',
+						})
+						+custom-select({
+							fg_mod: '',
+							mod: 'form-control--common',
+							label: "Модель устройства",
+							items: [
+							{value: ''},
+							{value: 'glo™ hyper+ белый'},
+							{value: 'glo™ hyper+ черный'},
+							]
+						})(data-placeholder='Модель устройства')
+						+checkbox({
+							require: true,
+							fg_mod: 'subscribe-form-footer__checkbox',
+							input_mod: '',
+							sub2: true
+							})(data-bv-message=" ")
+						button.profile-form__submit.btn.btn--primary.btn--wide(data-submit="true" type="submit") Сохранить
+include ../modal/modal-login/modal-login

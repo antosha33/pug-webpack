@@ -1,0 +1,54 @@
++include-style('catalog')
++include-script('3dView')
+.page-wrap
+	.container
+		+presection-title({
+			title: 'Выберите устройство'
+		})
+		.container-custom-cart
+			.cart
+				.cart__list
+					.cart__item
+						+product-card({
+							img: 'images/white-glo/white_device__enamel_white_heater_panel_06.png',
+							mod: 'cart',
+							title: 'glo<sup>tm</sup>   hyper+',
+							descr: 'Белый',
+							price: '990 руб.',
+							cartIcon: true,
+							sku: true
+						}).product-cart--cart(data-initial-frame = '6' data-device-type = 'white')
+					.cart__item
+						+product-card({
+							img: 'images/black-glo/black_device__ebony_black_heater_panel_06.png',
+							mod: 'cart',
+							title: 'glo<sup>tm</sup>   hyper+',
+							descr: 'Черный',
+							price: '990 руб.',
+							sku: true
+						}).product-cart--cart(data-initial-frame = '6'  data-device-type = 'black')
+	.cart-content
+		+lazy-bg({
+			img: 'images/cart-bg-2.jpg',
+			wrap_mod: 'cart-content__wrap',
+			img_mod: 'cart-content__img',
+		})
+			+lazy-img({
+				img: 'images/cart-bg-2.png',
+				placeholder: pixel,
+				wrap_mod: 'cart-content__device'
+			})
+			.container
+				.cart-content-wrapper
+					.cart-content__descr-wrap
+						.cart-content__descr-top
+							p glo ™ - это инновационная альтернатива традиционному табаку. Способность нагревать табак, а не сжигать его - вот что отличает glo ™ от обычных сигарет.
+							p Новое устройство glo ™ hyper + сочетает в себе технологии, вкус и новые ощущения. Уникальный стиль. Компактный и интуитивно понятный дизайн. Табачный опыт, которого вы никогда раньше не видели.
+						.cart-content__descr-footer
+							p Благодаря инновационной технологии термоиндукционного нагрева (Induction Heating Technology ™) glo ™ hyper + позволяет наслаждаться вкусом табака без золы и с меньшим запахом.
+							p Самое современное устройство в линейке glo ™, которое дает вам возможность настраивать свои впечатления без каких-либо сложностей - все в одном устройстве с помощью одной кнопки.
+					+lazy-img({
+							img: 'images/cart-bg-3.png',
+							placeholder: pixel,
+							wrap_mod: 'cart-content__device-white'
+					})

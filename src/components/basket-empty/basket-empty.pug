@@ -1,0 +1,14 @@
++include-style('basket-empty')
+.page-wrap
+	.container
+		.container-custom-mobile
+			+presection-title({
+				title: 'Корзина'
+			})
+			.basket-empty
+				.basket-empty__title.h36 Коризна пуста
+				.basket-empty__descr Для добавления товаров в корзину выберите подходящую катергорию:
+				a(href="/local/templates/html/catalog.html").basket-empty__devices
+					span.basket-empty__logo
+						img(src="local/templates/html/images/device.png")
+					span.basket-empty__link.h26 Устройства

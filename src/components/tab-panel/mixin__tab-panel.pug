@@ -1,0 +1,32 @@
+mixin tab-panel(args ={})
+	+include-style('tab-panel')
+	+include-script('tab-panel')
+	.tab-panel.js-tab-wrap
+		block
+
+mixin tab-item-head(args ={})
+	.tab-panel__head-item.js-tab-trigger(class=args.class)
+		span=args.head
+
+//- .tab-panel__body.js-tab-body.js-tab-body
+mixin tab-item-body(args ={})
+	.tab-panel__body-item.js-tab-body-item(class=args.class)&attributes(attributes)
+		block
+
+//- ***	ПРИМЕР	***
+			+tab-panel
+				.tab-panel__head
+					+tab-item-head({
+						class: "active",
+						head: "Доставка",
+					})
+					+tab-item-head({
+						head: "Самовывоз",
+					})
+				.tab-panel__body.js-tab-body
+					+tab-item-body({
+						class: "active"
+					})
+						p Мы хотим сделать ваш клиентский опыт максимально комфортным и безопасным. Для этого мы ввели бесконтактную доставку. Чтобы помочь уменьшить распространение Covid-19 через контакт людей, мы можем оставить ваш заказ рядом с дверью. После доставки наш курьер отойдет от вашей двери, а затем позвонит вам, чтобы вы забрали заказ. Пожалуйста, обратите внимание, что при бесконтактной доставке принимается только онлайн-оплата
+					+tab-item-body
+						p Мы хотим сделать ваш клиентский опыт максимально комфортным и безопасным. Для этого мы ввели бесконтактную доставку. Чтобы помочь уменьшить распространение Covid-19 через контакт людей, мы можем оставить ваш заказ рядом с дверью. После доставки наш курьер отойдет от вашей двери, а затем позвонит вам, чтобы вы забрали заказ. Пожалуйста, обратите внимание, что при бесконтактной доставке принимается только онлайн-оплата

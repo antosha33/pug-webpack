@@ -1,0 +1,97 @@
+//- Grid
+//точки смены устройств
+//1366 - точка планшетов
+$xxl: 1461px;
+$xl: 1461px;
+$lg: 1200px;
+$md: 1024px;
+$sm: 768px;
+$xs: 576px;
+
+//ширины контейнеров
+$xxl-container: 1461px;
+$xl-container: 1461px;
+$lg-container: 1200px;
+$md-container: 1024px;
+$sm-container: 768px;
+$xs-container: 100%;
+
+$container-max-widths: (
+	xs: 100%,
+	sm: $sm,
+	md: $md,
+	lg: $lg,
+	xl: $xl,
+);
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: $sm,
+    md: $md,
+    lg: $lg,
+    xl: $xl,
+    xxl: $xxl
+);
+
+// 1/2 отступа между колонками
+$grid-gutter-width: 21px;
+
+//количество колонок сетки Добавить!
+$grid-columns: 24;
+
+
+// Fonts
+//$f-size: 16px;//base -> 1rem
+$f-size: 1rem;
+$f-main: 'Mont', Arial, Verdana, sans-serif;
+$f-sec: 'Mont', Arial, Verdana, sans-serif;
+
+// Rem font-sizes
+// font-size: rem(20);
+@function rem($num) {
+  @return strip-unit($num) / 16 * 1rem;
+}
+
+
+// Z-index master list
+$zindex-dropdown: 100 !default;
+$zindex-sticky: 120 !default;
+$zindex-fixed: 130 !default;
+$zindex-modal-backdrop: 140 !default;
+$zindex-modal: 150 !default;
+$zindex-popover: 160 !default;
+$zindex-tooltip: 170 !default;
+$zindex-preloader: 180 !default;
+
+// Colors
+$bg-main: #fff;
+$bg-hover: #f8f8f8;
+$c-hr: #ccc;
+$bg-inc-mark: #ff9;
+$c-sec: #d15645;
+
+//цвета текста
+$c-text: #131313;
+$c-text2: #828282;
+
+$c-link: #fff;
+
+$c-gray: #BDBDBD;//цвет с вески
+
+//основные цвета макета
+$c-primary-black: #2A2C2C;
+$c-primary-white: #F6F6F6;
+$c-primary: #E35205;
+$c-primary-hover: lighten(#E35205, 50%);
+
+
+$c-error: #c74a2c;
+$c-trp: transparent;
+$blue: #234399;
+$red: #f45057;
+$green: #379f2f;
+$yellow: #e8a12b;
+$white: #fff;
+$black: #000;
+
+

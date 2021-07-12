@@ -1,0 +1,42 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.technology {
+	margin-top: 316px;
+	@media (max-width: $md - 1){
+		margin-top: 100px;
+	}
+	@media (max-width: $sm - 1) {
+		margin-top: 37px;
+	}
+	&__descr {
+		max-width: 758px;
+		font-family: Mont;
+		font-style: normal;
+		font-weight: 500;
+		// font-size: 26px;
+		@include lineheight(26, 33);
+		letter-spacing: 0.25px;
+		margin-top: 35px;
+		@media (max-width: $xs - 1) {
+			display: none;
+		}
+	}
+	&__advantages {
+		display: flex;
+		margin-top: 65px;
+		align-items: center;
+		flex-wrap: wrap;
+		@media (max-width: $xs - 1) {
+			display: block;
+			margin-top: 35px;
+		}
+	}
+	&__advantages-mob {
+		&.advantage__title {
+			display: none;
+			@media (max-width: $xs - 1) {
+				display: block;
+				margin-bottom: 35px;
+			}
+		}
+	}
+}

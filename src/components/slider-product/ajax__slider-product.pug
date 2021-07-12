@@ -1,0 +1,68 @@
+include ../../utility/bemto-setting
+include ../../utility/_globalVars
+include ../../utility/_mixins
+include ../../utility/_functions
++include-style-ajax('slider-product')
+.swiper-slide
+	+product-card({
+		src: './images/prod-07.jpg',
+		status: true,
+		code: 'Код: 4744481010818',
+		title: 'Амарант, зеленая гречка, киноа и другие крупы, миндальная мука, оливки и маслины, соусы и тапенады, кофе и чай, специи, натуральные масла и уксус, чипсы из водорослей и «живые» сладости без сахара, мясные изделия, овощная колбаса и бургеры, свежая выпечка, шампуни и кремы без парабенов и сульфатов, натуральная косметика – все это и многое другое представлено в «Vёska».',
+		price: '199,99 руб. <span>за 0,35 кг</span>',
+		sale: '-5 000 руб.',
+		price_per_kg: '20,15 руб. за 1 кг',
+		qty_backet: '5',
+		label_sale: 'Акция 50%',
+		label_tooltip: 'Наведи на меня',
+		label_mod: 'label-hit'
+	})
+.swiper-slide
+	+product-card({
+		src: './images/prod-02.jpg',
+		status: true,
+		code: 'Код: 4744481010818',
+		title: 'Консервы пастеризованные. Бульон куриный жидкий., 350мл Консервы пастеризованные. Бульон',
+		price: '9,99 руб. <span>за 0,35 кг</span>',
+		price_per_kg: '20,15 руб. за 1 кг',
+		label_new: 'Новинка',
+	})
+.swiper-slide
+	+product-card({
+		src: './images/prod-01.jpg',
+		status: true,
+		code: 'Код: 4744481010818',
+		title: 'Овсяная мука',
+		price: '50,20 р. <span>за 0,35 кг</span>',
+		price_per_kg: '20,15 руб. за 1 кг',
+		favourite: true,
+	})
+.swiper-slide
+	+product-card({
+		src: './images/prod-03.jpg',
+		status: true,
+		code: 'Код: 4744481010818',
+		title: 'Овсяная мука',
+		price: '2,00 р.',
+		qty_backet: '',
+	})
+.swiper-slide
+	+product-card({
+		slider: true,
+		src: './images/prod-01.jpg',
+		status: true,
+		code: 'Код: 4744481010820',
+		title: 'Овсяная мука',
+		price: '500,20 р.',
+		qty_backet: '3',
+	})
+.swiper-slide
+	+product-card({
+		slider: true,
+		src: './images/prod-01.jpg',
+		status: true,
+		code: 'Код: 4744481010818',
+		title: 'Овсяная мука',
+		price: '500,21 р.',
+		qty_backet: '3',
+	})

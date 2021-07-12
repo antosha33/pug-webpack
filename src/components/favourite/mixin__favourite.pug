@@ -1,0 +1,10 @@
+mixin favourite(args={})
+	+include-style('favourite')
+	if args.active
+		.favourite.active
+			+icon('i-like')(style='width:26px; height:26px;')
+			span В избранное
+	else
+		.favourite
+			+icon('i-like')(style='width:26px; height:26px;')
+			span В избранном

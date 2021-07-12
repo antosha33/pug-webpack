@@ -1,0 +1,17 @@
+mixin radio(args = {})
+	+include-style('form-mixin')
+	- var id = args.id || Math.floor(Math.random() * 9999999999)
+	.form-group(class= args.wrap_mod)
+		.radio(class= args.class_mod)
+			input(
+			type='radio'
+			id= 'ID' + id,
+			name= 'NAME' + args.name,
+			value='VALUE' + id,
+			checked= args.checked || false,
+			required= args.required ? true : false,
+			)&attributes(attributes)
+			label(for= 'ID' + id)= args.label
+				block
+				if(args.sublabel)
+					span.sublable= args.sublabel

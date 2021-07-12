@@ -1,0 +1,37 @@
++include-style('subscribe')
++lazy-bg({
+	img: 'images/subscribe-bg.jpg',
+	wrap_mod: 'subscribe-wrap',
+	img_mod: 'subscribe-wrap__img',
+})
+	.subscribe
+		.subscribe__title Регистрация 
+			span glo™
+		form.bv-form.subscribe__form
+			+input({
+				type: 'text',
+				name: false,
+				small: true,
+				placeholder: 'Введите код вашего устройства glo™',
+				fg_mod: '',
+				mod: '',
+				required: true,
+				pattern: false,
+				validation: {
+					message: 'Заполните поле',
+					regexp: 'Неверный формат',
+					emailaddress: ' ',
+					identical: false
+				}
+			})
+				.subscribe__info ?
+					.subscribe-tooltip
+						.subscribe-tooltip__round-wrap
+							.subscribe-tooltip__round
+								.subscribe-tooltip__title Номер моего glo™
+						.subscribe-tooltip__number-wrap
+							.subscribe-tooltip__number •••••••••
+						.subscribe-tooltip__descr Номер вашего устройства вы найдёте на обратной стороне коробки.
+			button(data-submit="true").subscribe__submit.btn.btn--primary.btn--wide Отправить
+
+		.subscribe__descr Здесь можно зарегистрировать твой glo™ <br> для продления гарантии и проверить срок <br> гарантии зарегистрированного устройства

@@ -1,0 +1,70 @@
+@import 'src/assets/css/vars_mixins/vars_mixins';
+
+.slider-product {
+  position: relative;
+  z-index: 2;
+  padding: 80px 0 25px;
+  &__title {
+    justify-content: center;
+  }
+  .tab {
+    margin-bottom: 20px;
+  }
+  @media (max-width: 1024px) {
+    padding: 60px 0;
+  }
+  @media (max-width: 575px) {
+    padding: 40px 0;
+    .tab {
+      height: 51px;
+    }
+  }
+}
+.swiper-product {
+  height: 440px;
+  .swiper-container {
+    overflow: hidden;
+    margin: -15px;
+    padding: 15px 15px 120px 15px;
+    &:not(.swiper-container-initialized) {
+      .swiper-slide {
+        max-width: 310px;
+        margin: 0 30px 0 0;
+      }
+      .custom-swiper-btn, .swiper-pagination {
+        display: none;
+      }
+    }
+  }
+  .swiper-slide {
+    padding: 20px 0;
+  }
+  @media (max-width: 1024px) {
+    height: auto;
+    .swiper-container {
+      padding: 0 15px;
+    }
+  }
+  @media (max-width: 575px) {
+    .swiper-container {
+      overflow: hidden;
+    }
+  }
+}
+.product-card-ajax {
+  .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100% !important;
+    opacity: 0;
+    font-size: 0;
+  }
+  .product-card__container {
+    height: 100%;
+    background-image: url('data:image/svg+xml,%3Csvg width=\'309\' height=\'456\' viewBox=\'0 0 309 456\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect x=\'20\' y=\'22\' width=\'269\' height=\'210\' fill=\'%23EEEEEE\'/%3E%3Crect x=\'20\' y=\'244\' width=\'92\' height=\'20\' fill=\'%23EEEEEE\'/%3E%3Crect x=\'154\' y=\'245\' width=\'135\' height=\'20\' fill=\'%23EEEEEE\'/%3E%3Crect x=\'20\' y=\'276\' width=\'269\' height=\'19\' fill=\'%23EEEEEE\'/%3E%3Crect x=\'20\' y=\'299\' width=\'269\' height=\'19\' fill=\'%23EEEEEE\'/%3E%3Crect x=\'20\' y=\'322\' width=\'241\' height=\'19\' fill=\'%23EEEEEE\'/%3E%3C/svg%3E%0A');
+    background-position: top center;
+    background-size: 100% auto;
+  }
+}

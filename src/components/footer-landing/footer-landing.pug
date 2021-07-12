@@ -1,0 +1,49 @@
++include-style('footer')
+
+footer.footer
+	.container
+		.container-custom
+			.footer__logo
+				img.footer__logo(src='/local/templates/html/images/glo-logo.png')
+			.footer-bottom
+				.footer-bottom__descr Hyper – хайпер 
+				.footer-bottom__descr BOOST – БУСТ
+				.footer-bottom__info Внешний вид устройства может отличаться. <br> Все права защищены.
+				//- .footer-bottom__descr *По сравнению с курением обычных сигарет. Это необязательно означает, что данная продукция менее вредная, чем другая продукция из табака.
+				//- .footer-bottom__descr **Стик – некурительное табачное изделие, предназначенное для использования в системах для потребления табака.
+				//- .footer-bottom__descr ***При использовании режима BOOST и при условии полной зарядки устройства. Количество сессий может варьироваться в зависимости от потребления.
+				//- .footer-bottom__descr ****При условии полной зарядки устройства. Количество сессий может варьироваться в зависимости от потребления.
+				.footer-bottom__title <span>glo<sup>tm</sup></span>
+				.footer-bottom__social
+					//- a(href="https://t.me/myglo_by_bot").footer-bottom__social-item
+					//- 	+icon('i-tg')(style="width: 30px; height: 30px")
+					a(href="tel:88011000841").footer-bottom__social-item
+						+icon('i-viber')(style="width: 30px; height: 30px")
+					a(href="#").footer-bottom__social-item
+						+icon('i-fb')(style="width: 30px; height: 30px")
+					a(href="https://instagram.com/glo.belarus").footer-bottom__social-item
+						+icon('i-inst')(style="width: 30px; height: 30px")
+					a(href="https://vk.com/glo_Belarus").footer-bottom__social-item
+						+icon('i-vk')(style="width: 30px; height: 30px")
+				.footer-bottom__owner Иностранное унитарное предприятие <br> "БРИТИШ-АМЕРИКАН ТОБАККО ТРЕЙДИНГ КОМПАНИ" <br> УНП 101169738, <br> 2021
+			a(href="http://www.slam.by").footer-bottom__dev Разработка SLAM
+
+
+			//- 	.footer-main__col
+			//- 		.footer-main__title Контакты
+			//- 		+contact-nav
+			//- 		//include ../social/social
+			//- 	.footer-main__col
+			//- 		p Общество с ограниченной ответственностью «БиоМельница» (ООО «БиоМельница»).
+			//- 		p Юридический адрес: 220062 г. Минск, пр. Победителей, д. 129, офис 329, УНП 193076712, ОКПО 501848735000
+			//- 		+icon('i-visa')(style='width: 63px; height: 21px; fill: #fff; opacity: 0.4')
+			//- 		+icon('i-visa-verif')(style='width: 40px; height: 20px; fill: #fff; opacity: 0.4')
+			//- 		+icon('i-mastercard')(style='width: 31px; height: 24px; fill: #fff; opacity: 0.4')
+			//- 		+icon('i-mastercard-sec')(style='width: 66px; height: 20px; fill: #fff; opacity: 0.4')
+
+			//- .footer-bottom
+			//- 	.footer-bottom__col
+			//- 		.footer-bottom__text 2020 © veska.shop
+			//- 	.footer-bottom__col
+			//- 		+slam()
+

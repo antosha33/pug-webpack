@@ -1,0 +1,31 @@
++include-script('first-screen')
+.first-screen-wrap
+	.first-screen
+		include ../social/social
+		.container
+			.first-screen__bg-top
+				picture
+					source(media="(min-width: 1200px)" srcset="/local/templates/html/images/header-bg-2.jpg")
+					source(media="(min-width: 0px)" srcset= pixel)
+					img(src="/local/templates/html/images/header-bg-2.jpg" alt="bg")
+				//- img(src="/local/templates/html/images/header-bg-2.jpg")
+			.first-screen__bg-bottom
+			.first-screen__inner
+				.first-screen-product
+					.first-screen-product__title glo™  hyper+
+					.first-screen-product__descr Взрывные ощущения
+					+divider({
+						mod: 'divider--orange'
+					})
+					.btn.btn--primary.first-screen-product__catalog.js-show-devices Посмотреть устройства
+						//- +icon('i-arrow')(style="width:40px ; height:10px")
+				.first-screen-devices.animation
+					.first-screen-devices__title Индукционная технология нагревания
+					+divider({
+						mod: 'divider--orange divider--device'
+					})
+					.first-screen-devices__list
+						img.first-screen-devices__white.first-screen-devices__mobile(src="/local/templates/html/images/white_device__mob.png")
+						canvas.first-screen-devices__white
+						img.first-screen-devices__black.first-screen-devices__mobile(src="/local/templates/html/images/black_device__mob.png")
+						canvas.first-screen-devices__black

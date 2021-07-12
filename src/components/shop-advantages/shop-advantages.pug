@@ -1,0 +1,50 @@
++include-style('shop-advantages')
+.shop-advantages-wrap
+	.container
+		.container-custom
+			+presection-title-main({
+				title: 'Преимущества интернет-магазина'
+			})
+		.shop-advantages
+			.shop-advantages__item
+				+lazy-img({
+					img: '/images/shop-advantage-1.jpg',
+					wrap_mod: 'shop-advantages__bg',
+					img_mod: 'shop-advantages__bg-image',
+					placeholder: pixel
+				})
+				.shop-advantages__title Полный ассортимент
+				+lazy-img({
+					img: '/images/shop-advantage-img-1.png',
+					wrap_mod: 'shop-advantages__img',
+					placeholder: pixel
+				})
+				a(href='#').shop-advantages__descr Каталог
+			.shop-advantages__item
+				+lazy-img({
+					img: '/images/shop-advantage-2.jpg',
+					wrap_mod: 'shop-advantages__bg',
+					img_mod: 'shop-advantages__bg-image',
+					placeholder: pixel
+				})
+				.shop-advantages__title Бесплатная доставка
+				+lazy-img({
+					img: '/images/shop-advantage-img-2.png',
+					wrap_mod: 'shop-advantages__img',
+					placeholder: pixel
+				})
+				a(href='#').shop-advantages__descr Условия доставки
+			.shop-advantages__item
+				+lazy-img({
+					img: '/images/shop-advantage-3.jpg',
+					wrap_mod: 'shop-advantages__bg',
+					img_mod: 'shop-advantages__bg-image',
+					placeholder: pixel
+				})
+				.shop-advantages__title Подарочная упаковка
+				+lazy-img({
+					img: '/images/shop-advantage-img-3.png',
+					wrap_mod: 'shop-advantages__img',
+					placeholder: pixel
+				})
+				a(href='#').shop-advantages__descr Что в комплекте

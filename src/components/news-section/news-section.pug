@@ -1,0 +1,32 @@
++include-style('news-section')
+
++b('section').news-section
+	.container
+		+e.__title-line
+			+e('h2').__title Новости
+			+link-arrow({
+				class_mod: '',
+				title: 'Все новости'
+			})
+		+e.__body.row
+			+e.__item.col-md-4
+				+info-card({
+					mod_class: '',
+					src: 'images/blog-01.jpg',
+					date: '12.06.2020',
+					title: 'Приобретение сети Белмаркет'
+				})
+			+e.__item.col-md-4
+				+info-card({
+					mod_class: '',
+					src: 'images/blog-07.jpg',
+					date: '12.10.2020',
+					title: 'Скоро праздники. Не пропустите наши розыгрыши подарков и скидки. На улицах появляются украшенные ёлки, магазины рисуют скидочные ценники, дети судорожно доучивают очередной стишок для Деда Мороза (ясно, что опять обманут, но вдруг на этот раз повезёт и придёт настоящий?!). '
+				})
+			+e.__item.col-md-4
+				+info-card({
+					mod_class: '',
+					src: 'images/fake-img.jpg',
+					date: '12.10.2020',
+					title: 'Молочные продукты от белорусских фермеров'
+				})

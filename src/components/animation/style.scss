@@ -1,0 +1,6 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+@import "../../../node_modules/animatewithsass/properties";
+@import "../../../node_modules/animatewithsass/_fading-entrances/fading-entrances.scss";
+.fadeInUpAnimate {
+	@include fadeInUp($duration: 1.5s, $function: ease, $fill: both);
+}

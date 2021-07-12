@@ -1,0 +1,158 @@
++include-style('basket-step-2')
++include-script('basket-step-2')
+.page-wrap
+	.container
+		.container-custom-mobile
+			+presection-title({
+				title: 'Доставка и оплата'
+			})
+			form.bv-form.delivery-form(action="")
+				.delivery-form__title.h18 Выберите тип доставки
+				.delivery-form__radio
+					+radio({
+						wrap_mod: 'form-group--delivery-form',
+						name: 'delivery',
+						label: 'Курьер',
+						checked: true
+					})(class="js-delivery-curier")
+					+radio({
+						wrap_mod: 'form-group--delivery-form',
+						name: 'delivery',
+						label: 'Самовывоз',
+					})(class="js-delivery-pickup")
+				.delivery-form__curier
+					+custom-select({
+						label: "Город",
+						fg_mod: 'form-group--common',
+						mod: 'form-control--common',
+						items: [
+							{value: ''},
+							{value: 'Минск'},
+							{value: 'Гомель'},
+							{value: 'Витебск'},
+						]
+					})(data-placeholder='Город')
+					+custom-select({
+						label: "Улица",
+						mod: 'form-control--common',
+						fg_mod:'form-group--240 form-group--common',
+						items: [
+						{value: ''},
+						{value: 'ул. Бельского'},
+						]
+					})(data-placeholder='Улица')
+					+custom-select({
+						label: "Дом/корпус",
+						mod: 'form-control--common',
+						fg_mod:'form-group--240 form-group--common',
+						items: [
+							{value: ''},
+						{value: '25'},
+						]
+					})(data-placeholder='Дом/корпус')
+					+custom-select({
+						label: "Квартира/офис",
+						mod: 'form-control--common',
+						fg_mod:'form-group--240 form-group--common',
+						items: [
+						{value: ''},
+						{value: '33'},
+						]
+					})(data-placeholder='Квартира/офис')
+					+datapicker({
+						mod:'',
+						label: 'Дата доставки'
+					})
+				.delivery-form__self.hidden
+					+custom-select({
+						label: "Город",
+						fg_mod: 'form-group--common',
+						mod: 'form-control--common',
+						items: [
+							{value: ''},
+							{value: 'Минск'},
+							{value: 'Гомель'},
+							{value: 'Витебск'},
+						]
+					})(data-placeholder='Город')
+					+custom-select({
+						label: "Пункт самовывоза",
+						mod: 'form-control--common',
+						fg_mod:'form-group--240',
+						items: [
+						{value: ''},
+						{value: 'ул. Кирова 22'},
+						]
+					})(data-placeholder='Пункт самовывоза')
+					+datapicker({
+						mod:'',
+						label: 'Дата доставки'
+					})
+				.pickup-map.hidden
+					.pickup-map__search
+						+input({
+							label: 'Адрес',
+							type: 'text',
+							mod: 'form-control--common form-control--pickup',
+							fg_mod: 'form-group--pickup',
+							name: false,
+							small: false,
+							placeholder: 'Введите aдрес',
+							required: false,
+							validation: {
+								message: 'Заполните поле',
+								regexp: 'Неверный формат',
+								emailaddress: ' ',
+								identical: false
+							} 
+						})
+						.pickup-map__results
+							a(href="#").pickup-map__results-item
+								span.pickup-map__result-title.h16 г. Минск, ул. Кирова, 22
+								span.pickup-map__result-descr.h16 Режим работы: 10:00 - 19:00 <br> Выходной - понедельник
+							a(href="#").pickup-map__results-item
+								span.pickup-map__result-title.h16 г. Минск, ул. Кирова, 22
+								span.pickup-map__result-descr.h16 Режим работы: 10:00 - 19:00 <br> Выходной - понедельник
+							a(href="#").pickup-map__results-item
+								span.pickup-map__result-title.h16 г. Минск, ул. Кирова, 22
+								span.pickup-map__result-descr.h16 Режим работы: 10:00 - 19:00 <br> Выходной - понедельник
+							a(href="#").pickup-map__results-item
+								span.pickup-map__result-title.h16 г. Минск, ул. Кирова, 22
+								span.pickup-map__result-descr.h16 Режим работы: 10:00 - 19:00 <br> Выходной - понедельник
+							a(href="#").pickup-map__results-item
+								span.pickup-map__result-title.h16 г. Минск, ул. Кирова, 22
+								span.pickup-map__result-descr.h16 Режим работы: 10:00 - 19:00 <br> Выходной - понедельник
+					.pickup-map__map
+						img(src="/local/templates/html/images/pickup-map.jpg")
+				.delivery-form__title.h18 Выберите тип оплаты
+				.delivery-form__radio
+					+radio({
+						wrap_mod: 'form-group--delivery-form',
+						name: 'payment',
+						label: 'Наличными',
+						checked: true
+					})
+					+radio({
+						wrap_mod: 'form-group--delivery-form',
+						name: 'payment',
+						label: 'Банковской картой',
+					})
+					+radio({
+						wrap_mod: 'form-group--delivery-form',
+						name: 'payment',
+						label: 'Банковской картой онлайн'
+					})
+					+radio({
+						wrap_mod: 'form-group--delivery-form',
+						name: 'payment',
+						label: 'ЕРИП'
+					})
+				.row
+					.col-24.col-md-12
+						+textarea({
+							label: 'Комментарий к заказу',
+							placeholder: 'Оставьте комментарий',
+							qty_rows: 6
+						})
+				.delivery-form__submit
+					button.btn.btn--black.btn--wide.btn--green.btn--full-w Оформить заказ

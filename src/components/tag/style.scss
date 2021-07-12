@@ -1,0 +1,89 @@
+@import 'src/assets/css/vars_mixins/vars_mixins';
+
+.tag {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  min-height: 25px;
+  margin: 4px 4px 4px 0;
+  padding: 3px 30px 3px 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: box-shadow .3s;
+  border: 1px solid #f2f2f2;
+  border-radius: 50px;
+  background-color: #fff;
+  &:hover {
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, .08);
+  }
+  &.active:hover .tag-name {
+    text-decoration: line-through;
+  }
+  &.tag--hidden {
+    display: none;
+  }
+  &--active {
+    background-color: #3450f2;
+    .tag-name {
+      color: #fff;
+    }
+    &:hover {
+      background-color: rgba(#3450f2, .8);
+    }
+  }
+}
+.tag-toggle {
+  width: 100%;
+  color: #3450f2;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.tag-toggle--inline {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  min-height: 30px;
+  margin: 0 12px 12px 0;
+}
+.tag-title {
+  margin-right: 5px;
+  white-space: nowrap;
+  letter-spacing: .02em;
+  color: $c-gray;
+  font-size: 15px;
+  line-height: 1;
+}
+.tag-name {
+  margin-right: 3px;
+  white-space: nowrap;
+  letter-spacing: .02em;
+  color: $c-text;
+  font-size: 15px;
+  line-height: 1;
+}
+.tag-count {
+  margin: 0 0 0 5px;
+  color: #d8d8d8;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.tag-close {
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 9px;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  background-image: url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath fill-rule=\'evenodd\' clip-rule=\'evenodd\' d=\'M15.302 16.28a.5.5 0 00.707-.708l-5.3-5.3 5.3-5.3a.5.5 0 00-.707-.707l-5.3 5.3-5.301-5.3a.5.5 0 10-.707.706l5.3 5.3-5.3 5.301a.5.5 0 00.707.707l5.3-5.3 5.301 5.3z\' fill=\'%238DC63F\'/%3E%3Cpath fill-rule=\'evenodd\' clip-rule=\'evenodd\' d=\'M4.562 4.4a.307.307 0 00-.435.435l5.437 5.437-5.437 5.437a.307.307 0 00.435.434l5.436-5.436 5.437 5.436a.308.308 0 00.435-.434l-5.437-5.437 5.437-5.437a.308.308 0 00-.435-.434L9.998 9.837 4.562 4.401zm-.707-.271c.27-.27.709-.27.979 0l5.164 5.164 5.165-5.164a.692.692 0 11.979.978l-5.165 5.165 5.165 5.165a.692.692 0 11-.979.978l-5.165-5.164-5.164 5.164a.692.692 0 11-.979-.978l5.165-5.165-5.165-5.165a.692.692 0 010-.978z\' fill=\'%238DC63F\'/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.tag-close__icon {
+  fill: #d9d9de;
+}

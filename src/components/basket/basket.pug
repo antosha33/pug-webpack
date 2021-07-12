@@ -1,0 +1,119 @@
++include-style('basket')
+.page-wrap
+	.container
+		.container-custom-mobile
+			+presection-title({
+				title: 'Корзина'
+			})
+		.basket
+			.basket__top
+				.basket__empty
+				.basket__property
+					.basket__property-item Количество 
+					.basket__property-item Цена
+					.basket__property-item.basket__property-item--total Итого
+			.basket__main
+				.basket__product
+					.container-custom
+						.basket__item
+							.basket__image-wrap
+								img.basket__image(src="images/white-glo/white_device__enamel_white_heater_panel_36.png")
+							.basket__content
+								.basket__product-title glo<sup>tm</sup> hyper+
+								.basket__product-descr Белый
+								.basket__product-important Важно!
+								.basket__product-info glo hyper Используется только со стиками neo
+				.basket__value
+					.basket__value-item
+						.basket__value-name Количество
+						.basket__counter
+							+counter({
+								max_value: 10,
+								min_value: 1,
+								baseStep: 1,
+								step: 1,
+								value: 1,
+							})
+					.basket__value-item
+						.basket__value-name Цена
+						.basket__value-content 990 руб
+					.basket__value-item
+						.basket__value-name Итого
+						.basket__value-content.basket__value-item--total 990 руб
+					.basket__value-delete
+						+icon('i-delete')(style="width: 25px; height: 25px")
+			.basket__main
+				.basket__product
+					.container-custom
+						.basket__item
+							.basket__image-wrap
+								img.basket__image(src="images/white-glo/white_device__enamel_white_heater_panel_36.png")
+							.basket__content
+								.basket__product-title glo<sup>tm</sup> hyper+
+								.basket__product-descr Белый
+								.basket__product-important Важно!
+								.basket__product-info glo hyper Используется только со стиками neo
+				.basket__value
+					.basket__value-item
+						.basket__value-name Количество
+						.basket__counter
+							+counter({
+								max_value: 10,
+								min_value: 1,
+								baseStep: 1,
+								step: 1,
+								value: 1,
+							})
+					.basket__value-item
+						.basket__value-name Цена
+						.basket__value-content 990 руб
+					.basket__value-item
+						.basket__value-name Итого
+						.basket__value-content.basket__value-item--total 990 руб
+					.basket__value-delete
+						+icon('i-delete')(style="width: 25px; height: 25px")
+			.basket-confirm
+				.basket-confirm__promo.failed.success
+					.basket-confirm__update-text.basket-confirm__prop Промокод
+					.basket-confirm__code
+						+input({
+							type: 'text',
+							fg_mod: '',
+							mod: 'form-control--common',
+							fg_mod: 'form-group--common form-group--promo',
+							label: '',
+							name: false,
+							small: true,
+							placeholder: 'Введите промокод',
+							required: false,
+							pattern: false,
+							validation: {
+								message: 'Заполните поле',
+								regexp: 'Неверный формат',
+								emailaddress: '',
+								identical: false
+							}
+						})
+						.basket-confirm__promo-success
+						.basket-confirm__promo-failed Ошибка
+						button.basket-confirm__update
+				table.basket-confirm__info
+					tr
+
+					tr
+						td.basket-confirm__prop Предварительный итог
+						td.basket-confirm__val 990 руб.
+					tr
+						td.basket-confirm__prop Доставка и обработка
+						td.basket-confirm__val 0 руб.
+					tr
+						td.basket-confirm__prop.basket-confirm__wight Итого, без НДС
+						td.basket-confirm__val.basket-confirm__wight 825 руб.
+					tr
+						td.basket-confirm__prop Налог
+						td.basket-confirm__val 165 руб.
+					tr
+						td.basket-confirm__prop.basket-confirm__wight Итого, с НДС
+						td.basket-confirm__val.basket-confirm__wight 990 руб.
+				.basket-confirm__order
+					button.btn.btn--black.btn--wide Оформить заказ

@@ -1,0 +1,40 @@
++include-style('slider-fs')
++include-script('slider-fs')
+
++swiper({
+	container_mod: 'slider-fs__container',
+	wrapper_mod: 'slider-fs__wrapper',
+	navigation: true,
+	pagination: true,
+	button_icon: 'i-link-arrow',
+	button_icon_size: '30px',
+}).slider-fs.js-slider-fs
+	+fs-slide({
+		mod_class: 'swiper-slide',
+		count: 0,
+		noLazy: true,
+	})
+	+fs-slide({
+		mod_class: 'swiper-slide',
+		count: 1,
+	})
+	+fs-slide({
+		mod_class: 'swiper-slide',
+		count: 2,
+	})
+	+fs-slide({
+		mod_class: 'swiper-slide',
+		count: 3,
+	})
+	+fs-slide({
+		mod_class: 'swiper-slide',
+		count: 4,
+	})
+	+fs-slide({
+		mod_class: 'swiper-slide',
+		count: 5,
+	})
+	+fs-slide({
+		mod_class: 'swiper-slide',
+		count: 6,
+	})

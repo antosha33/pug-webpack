@@ -1,0 +1,103 @@
++include-style('shops')
++include-script('shops')
+.page-wrap
+	.container
+		.container-custom-mobile
+			+presection-title({
+				title: 'Найти магазин'
+			})
+			.row
+				.col-sm-24.col-md-15
+					.shops__descr Ориентировочные сведения о наличии продукта. Реализация продукта в указанных магазинах осуществляется иными субъектами торговли.
+					form.bv-form.find-shop-form.find-shop
+						.find-shop__search
+							+input({
+								type: 'text',
+								fg_mod: 'form-group--common',
+								mod: 'form-control--common',
+								name: false,
+								label: 'Адрес',
+								small: true,
+								placeholder: 'Введите адрес',
+								required: true,
+								pattern: true,
+								validation: {
+									message: 'Заполните поле',
+									regexp: 'Неверный формат',
+									emailaddress: '',
+									identical: false
+								}
+							})
+								button(type="submit").find-shop__submit
+									+icon('i-search')(style="width: 21px; height: 21px")
+							.find-shop__location
+								.btn.btn--primary Использовать геолокацию
+									+icon('i-location')(style="width: 21px; height: 28px")
+						.shop-type.js-shop-type-select 
+							.shop-type__title Категория продукта
+							.shop-type__select
+								+checkbox({
+									label: 'Продажа устройств',
+									wrap_mod: 'find-shop--checkbox'
+								})
+								+checkbox({
+									label: 'Продажа стиков',
+									wrap_mod: 'find-shop--checkbox'
+								})
+	.shops__map-wrap
+		.shops__map
+			img.test-img(src="/local/templates/html/images/map.jpg")
+		.shops__tooltip.active Кликните, чтобы увидеть только фирменные острова
+	.container
+		.container-custom-mobile
+			.shops__map-open.js-map-open Раскрыть карту
+	.container
+		.container-custom-mobile
+			h2.presection__title <span class="c-primary">9</span> магазинов рядом с вами
+		.shops__list
+			.row
+				.col-sm-12.col-lg-8
+					+shop({
+						title: 'Универсам "Центральный"',
+						adress: 'пр. Независимости, д. 23'
+					})
+				.col-sm-12.col-lg-8
+					+shop({
+						title: 'Универсам "Центральный"',
+						adress: 'пр. Независимости, д. 23'
+					})
+				.col-sm-12.col-lg-8
+					+shop({
+						title: 'Универсам "Центральный"',
+						adress: 'пр. Независимости, д. 23'
+					})
+				.col-sm-12.col-lg-8
+					+shop({
+						title: 'Универсам "Центральный"',
+						adress: 'пр. Независимости, д. 23'
+					})
+				.col-sm-12.col-lg-8
+					+shop({
+						title: 'Универсам "Центральный"',
+						adress: 'пр. Независимости, д. 23'
+					})
+				.col-sm-12.col-lg-8
+					+shop({
+						title: 'Универсам "Центральный"',
+						adress: 'пр. Независимости, д. 23'
+					})
+				.col-sm-12.col-lg-8
+					+shop({
+						title: 'Универсам "Центральный"',
+						adress: 'пр. Независимости, д. 23'
+					})
+				.col-sm-12.col-lg-8
+					+shop({
+						title: 'Универсам "Центральный"',
+						adress: 'пр. Независимости, д. 23'
+					})
+				.col-sm-12.col-lg-8
+					+shop({
+						title: 'Универсам "Центральный"',
+						adress: 'пр. Независимости, д. 23'
+					})

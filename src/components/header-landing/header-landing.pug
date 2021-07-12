@@ -1,0 +1,27 @@
++include-script('header')
+
+header.header
+	.container
+		.header-top
+			.header-top__inner
+				.header-top__right
+					a(href="/local/templates/html/index.html")
+						img.header-top__right-img(src='/local/templates/html/images/glo-logo.png')
+				.header-top__left
+					.header-top__menu
+						+nav({
+							modClass: 'nav--header',
+							list: [
+									{   name: 'Контакты',
+											link: '/local/templates/html/contacts.html',
+									},
+								]
+						})
+					a(href="https://t.me/myglo_by_bot"  aria-label='tg' title='tg').header-contact.mob-hidden
+						+icon('i-tg')(style='width:40px; height:40px;')
+					a(href="tel:88011000841" aria-label='viber' title='viber').header-contact.mob-hidden
+						+icon('i-viber')(style='width:40px; height:40px;')
+					a(href="#" aria-label='menu' title='menu').header-contact.mob-show.js-mob-menu
+						include ../burger/burger
+						//- +icon('i-burger')(style='width:40px; height:40px;')
+		include ../mob-menu/mob-menu

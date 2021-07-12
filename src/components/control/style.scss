@@ -1,0 +1,11 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.control{
+	margin-top: 93px;
+	@media (max-width: $sm - 1){
+		margin-top: 40px;
+	}
+	&__list{
+		display: flex;
+	}
+}

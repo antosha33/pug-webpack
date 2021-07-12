@@ -1,0 +1,80 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.advantage {
+	display: flex;
+	flex: 0 0 auto;
+	max-width: 50%;
+	align-items: center;
+	margin-right: 75px;
+	@media (max-width: $xl - 1) {
+		margin-right: 0px;
+		max-width: 100%;
+		width: 100%;
+	}
+	&:not(:last-child) {
+		@media (max-width: $xl - 1) {
+			margin-bottom: 40px;
+		}
+	}
+
+	@media (max-width: $xs - 1) {
+		margin-bottom: 20px;
+		align-items: center;
+	}
+	&__logo {
+		width: 111px;
+		height: 111px;
+		display: flex;
+		justify-content: center;
+		background-color: #6a6a6a;
+		border-radius: 50%;
+		align-items: center;
+		margin-right: 32px;
+		flex: 0 0 auto;
+		@media (max-width: $xs - 1) {
+			width: 50px;
+			height: 50px;
+			margin-right: 24px;
+		}
+	}
+	&__logo-img {
+		@media (max-width: $xs - 1) {
+			max-width: 25px;
+		}
+	}
+	&__title {
+		font-family: Mont;
+		font-style: normal;
+		font-weight: 700;
+		@include lineheight(26, 28);
+		letter-spacing: 0px;
+		// max-width: 330px;
+		@media (max-width: $xs - 1) {
+			// display: none;
+			font-size: 12px;
+			max-width: 210px;
+			margin-bottom: 5px;
+		}
+	}
+	&__descr {
+		font-family: Mont;
+		font-style: normal;
+		font-weight: 400;
+		margin-top: 15px;
+		@include lineheight(20, 25);
+		color: #6a6a6a;
+		// max-width: 250px;
+		@media (max-width: $xs - 1) {
+			font-size: 12px;
+			// max-width: 150px;
+		}
+	}
+	&__content {
+		position: relative;
+	}
+	&__sub{
+		position: absolute;
+		top: calc( 100% + 25px);
+		left: 0;
+		right: 0;
+	}
+}

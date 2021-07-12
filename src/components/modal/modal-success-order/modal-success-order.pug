@@ -1,0 +1,38 @@
++modal({
+	id: 'modal-success-order',
+	mod: 'modal-success-order',
+	title: 'Корзина',
+	header: true,
+	dialog_mod: '',
+})
+	.success-title
+		+icon('i-success')(style='width:28px; height:28px; fill:#6BA533')
+		| Заказ успешно оформлен
+	
+	.order-box__descr
+		.order-box__descr-item.type-2
+			.descr-name Номер заказа
+			.descr-body 789456123
+		.order-box__descr-item
+			.descr-name Дата
+			.descr-body 27.06.2020
+		.order-box__descr-item
+			.descr-name Товаров — 
+				span 9
+			.descr-body 1 920.60 р.
+		.order-box__descr-item
+			.descr-name Скидка
+			.descr-body 25%
+		.order-box__descr-item
+			.descr-name Оплата
+			.descr-body Наличными при получении
+		.order-box__descr-item
+			.descr-name Срочная доставка
+			.descr-body 8 р.
+		.order-box__descr-item.type-2
+			.descr-name К оплате
+			.descr-body 1 544.48 р.
+	.success-container
+		p Вы можете следить за выполнением своего заказа в Личном кабинете
+		p Для входа в этот раздел вам необходимо будет ввести логин и пароль пользователя сайта.
+		.btn.btn--primary Перейти на главную

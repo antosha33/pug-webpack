@@ -1,0 +1,15 @@
+include ../../node_modules/bemto.pug/bemto
+
+-
+
+	var new_bemto_settings = {
+		'prefix': '',
+		'element': '__',
+		'modifier': '--', //- исправил этот параметр - разделитель модификатора
+		'default_tag': 'div',
+		'nosrc_substitute': true,
+		'flat_elements': true,
+		'class_delimiter': ''
+	}
+
+	var bemto_settings = new_bemto_settings;

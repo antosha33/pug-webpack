@@ -1,0 +1,45 @@
++include-style('contacts-landing')
+.page-wrap
+	.container
+		.container-custom-mobile
+			+presection-title({
+				title: 'Мы на связи 24/7'
+			})
+			.contacts
+				.contacts__descr Ты можешь связаться с нами любым удобным способом круглосуточно и без выходных 
+	.contacts__content
+		.container
+			.container-custom-mobile
+				.row
+					.col-24.col-lg-14.offset-lg-5
+						.contacts__title-wrap
+							+icon('i-phone')(style="width: 24px; height: 24px")
+							.contacts__title Бесплатно на территории Республики Беларусь
+						//- .contacts__phone
+						//- 	a(href="tel:+37529606060").btn.btn--primary.btn--wide +375 (29) 606-60-60
+						//- 		+icon('i-phone')(style="width: 23px; height: 23px")
+						.contacts__phone-wrap
+							a(href="tel:88011000841").contacts__phone 8-801-100-0-841
+							.contacts__phone-descr со стационарных телефонов
+						.contacts__phone-wrap
+							a(href="tel:88011000841").contacts__phone *7070
+							.contacts__phone-descr с мобильных телефонов
+						//- .contacts__free Бесплатно по всей Беларуси
+						.contacts__info Ты можешь связаться с нами по электронной почте, в соцсетях или через форму 
+						.contacts-links
+							a(href="mailto:info@myglo.by").contacts-links__item
+								.contacts-links__item-image
+									img(src="images/contacts-mail.png")
+								.contacts-links__item-link info@myglo.by					
+							a(href="https://instagram.com/glo.belarus").contacts-links__item
+								.contacts-links__item-image
+									img(src="images/contacts-inst.png")
+								.contacts-links__item-link glo.belarus					
+							a(href="https://vk.com/glo_Belarus").contacts-links__item
+								.contacts-links__item-image
+									img(src="images/contacts-vk.png")
+								.contacts-links__item-link glo_Belarus
+							a(href="https://t.me/myglo_by_bot").contacts-links__item
+								.contacts-links__item-image
+									img(src="images/contacts-tg.png")
+								.contacts-links__item-link myglo_by_bot

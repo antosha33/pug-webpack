@@ -1,0 +1,39 @@
+@import 'src/assets/css/vars_mixins/vars_mixins';
+
+.target-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px;
+  transition: box-shadow .3s;
+  letter-spacing: .02em;
+  color: $c-text;
+  border: 1px solid transparent;
+  border-radius: 22px 0px;
+  background: #fff;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, .08);
+  font-size: 15px;
+  &:hover {
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, .08);
+  }
+  &__img-wrap {
+    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
+    padding: 10px;
+  }
+  &__img {
+    max-width: 100%;
+  }
+  &__descr {
+    padding: 6px 15px;
+  }
+  &.active {
+    border: 1px solid #bdbdbd;
+    box-shadow: none;
+  }
+  @media (max-width: 768px) {
+    margin: 4px;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, .08);
+  }
+}

@@ -1,0 +1,10 @@
+mixin tag(args)
+	+include-style('tag')
+	.tag(class= args.close && 'active')&attributes(attributes)
+		.tag-title= args.title
+		.tag-name= args.name
+		if (args.count)
+			span.tag-count= args.count
+		if (args.close)
+			.tag-close
+

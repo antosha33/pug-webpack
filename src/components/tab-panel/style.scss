@@ -1,0 +1,31 @@
+@import 'src/assets/css/vars_mixins/vars_mixins';
+.tab-panel {
+  &__head {
+    display: flex;
+  }
+  &__head-item {
+    padding: 4px 0;
+    cursor: pointer;
+    color: #aaa;
+    border-bottom: 1px solid transparent;
+    font-family: arial;
+    font-size: 24px;
+    &.active {
+      pointer-events: none;
+      color: #000;
+    }
+    &:not(:first-child) {
+      margin-left: 60px;
+    }
+  }
+  &__body {
+    margin: 20px 0;
+  }
+}
+.no-js .js-tab-wrap {
+  .js-tab-body-item {
+    &:not(.active) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.switch-cover {
+	box-sizing: border-box;
+	width: 90px;
+	border: 1px solid #f2f2f2;
+	border-radius: 8px;
+	background: #fbfbfb;
+}
+.switch {
+	display: flex;
+	&__item {
+		position: relative;
+		width: 44px;
+		height: 24px;
+		&:first-child {
+			input:checked ~ label {
+				display: block;
+				background: #ff7f24;
+			}
+		}
+		input {
+			opacity: 0;
+			width: 44px;
+			height: 100%;
+			cursor: pointer;
+		}
+		label {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+			width: 44px;
+			height: 100%;
+			padding: 4px 0;
+			text-align: center;
+			color: #fff;
+			border-radius: 8px;
+			font-family: $f-sec;
+			line-height: 1;
+		}
+		input:checked {
+			cursor: default;
+		}
+		input:checked ~ label {
+			display: block;
+			background: #b5bd00;
+		}
+	}
+}

@@ -1,0 +1,105 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.shop-advantages-wrap{
+	margin-top: 100px;
+	@media (max-width: $md - 1){
+		margin-top: 0px;
+	}
+}
+.shop-advantages {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 60px;
+	@media (max-width: $md - 1){
+		flex-direction: column;
+		margin-left: 32px;
+		margin-right: 32px;
+	}
+	&__item {
+		width: calc(33.33% - 10.5px);
+		padding: 36px 20px 43px 20px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		@media (max-width: $md - 1){
+			width: auto;
+			display: grid;
+			grid-template-areas: "img title" "img descr";
+			grid-template-columns: 1fr 1fr;
+			margin-left: -10.5px;
+			margin-right: -10.5px;
+			padding: 0px;
+			margin-bottom: 50px;
+			@media (max-width: $xs - 1){
+				margin-left: -10.5px;
+				margin-right: -10.5px;
+			}
+		}
+	}
+	&__img{
+		grid-area: img;
+		@media (max-width: $md - 1){
+			// margin-right: 36px;
+		}
+		@media (max-width: $xs - 1){
+			max-width: 70PX;
+		}
+	}
+	&__bg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		z-index: -1;
+		bottom: 0;
+		@media (max-width: $md - 1){
+			display: none;
+		}
+	}
+	&__title {
+		grid-area: title;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 26px;
+		@include lineheight(26, 33);
+		text-align: center;
+		margin-bottom: 38px;
+		position: relative;
+		@media (max-width: $md - 1){
+			margin-bottom: 0px;
+
+		}
+		@media (max-width: $xs - 1){
+				font-size: 16px;
+		}
+	}
+	&__descr {
+		grid-area: descr;
+		display: inline;
+		margin: auto;
+		align-self: flex-start;
+		text-transform: uppercase;
+		color: #000;
+		font-style: normal;
+		font-weight: 800;
+		font-size: 18px;
+		@include lineheight(18, 19);
+		border-bottom: 1px solid #000;
+		text-align: center;
+		margin-top: 48px;
+		white-space: nowrap;
+		&:hover{
+			border-color: transparent;
+		}
+		@media (max-width: $md - 1){
+			margin-top: 11px;
+		}
+		@media (max-width: $xs - 1){
+				font-size: 12px;
+		}
+	}
+	&__bg-image{
+		object-fit: cover;
+		height: 100%;
+	}
+}

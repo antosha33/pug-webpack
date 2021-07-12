@@ -1,0 +1,25 @@
+mixin checkbox(args={})
+	+include-style('form-mixin')
+	- var id = Math.floor(Math.random() * 9999999999)
+	.form-group(class= args.fg_mod)
+		.checkbox(class= args.wrap_mod)
+			if (args.require)
+				if (args.checked)
+					input(type='checkbox', id= 'ID' + id, name= 'NAME' + id, value='active', required, checked class= args.input_mod)&attributes(attributes)
+				else
+					input(type='checkbox', id= 'ID' + id, name= 'NAME' + id, value='active', required class= args.input_mod)&attributes(attributes)
+
+			else
+				if (args.checked)
+					input(type='checkbox', id= 'ID' + id, name= 'NAME' + id, value='active', checked class= args.input_mod)&attributes(attributes)
+				else
+					input(type='checkbox', id= 'ID' + id, name= 'NAME' + id, value='active' class= args.input_mod)&attributes(attributes)
+			label(for= 'ID' + id class= args.label_mod)= args.label
+				block
+			if (args.sub)
+				span.checkbox__descr я согласен на обработку 
+					a(href='#') моих персональных данных
+			if (args.policy)
+				span.checkbox__descr “Я согласен на обработку моих персональных данных в соответствии с <a href='#'> Условиями Пользования Сайтом, </a> <a href='#'> Согласием на обработку персональных данных </a>  и <a href='#'>  Политикой в отношении обработки персональных данных,</a> полностью и безоговорочно принимаю их. Я также соглашаюсь на обработку моих персональных данных для подтверждения моего возвраста
+			if (args.sub2)
+				span.checkbox__descr.checkbox__descr--mw  Заполняя данную форму, Вы даёте согласие (бессрочно) на сбор, обработку,  хранение, использование, передачу третьим лицам предоставленных  персональных данных для целей продления гарантии, проведения маркетинговых исследований о табачных изделиях и системах для потребления табака, а также для получения рекламы о системах для потребления табака glo™ 

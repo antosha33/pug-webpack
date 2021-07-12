@@ -1,0 +1,55 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.nav--header {
+	margin-top: 20px;
+	@media (max-width: $md - 1){
+		margin-top: 10px;
+	}
+
+	.nav-list {
+		display: flex;
+		@media (max-width: $sm - 1){
+			flex-direction: column;
+		}
+	}
+	.nav-item {
+		text-transform: uppercase;
+		color: #fff;
+		font-weight: 300;
+		font-size: 18px;
+		@media (max-width: $lg - 1) {
+			font-size: 16px;
+		}
+		@media (max-width: $md - 1){
+			font-size: 14px;
+		}
+		@media (max-width: $sm - 1){
+			margin-bottom: 30px;
+		}
+		@include lineheight(18, 23);
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+		position: relative;
+		&:after {
+			position: absolute;
+			content: "";
+			left: 0;
+			transition: all 0.3s ease;
+			top: 100%;
+			right: 101%;
+			height: 5.4px;
+			background-color: $c-primary;
+			border-radius: 2.5px;
+			left: 0;
+		}
+		&.active,
+		&:hover {
+			@media (min-width: $md){
+				&:after {
+					right: 0;
+				}
+			}
+		}
+	}
+}

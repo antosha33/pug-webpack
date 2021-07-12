@@ -1,0 +1,16 @@
+@import '../../assets/css/vars_mixins/vars_mixins';
+
+.content {
+  table {
+    margin: 20px 0;
+    @media (min-width: $xs) {
+      margin: 40px 0;
+    }
+  }
+  tr {}
+  th,
+  td {
+    padding: 5px 10px;
+    border: 1px solid $c-primary;
+  }
+}

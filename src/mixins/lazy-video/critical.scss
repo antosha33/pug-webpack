@@ -1,0 +1,8 @@
+@import 'src/assets/css/vars_mixins/vars_mixins';
+
+.lazy-video__wrap {
+  position: relative;
+  .lazy-video.loaded ~ .preloader {
+    display: none;
+  }
+}

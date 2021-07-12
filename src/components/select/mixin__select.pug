@@ -1,0 +1,25 @@
+mixin select(data)
+	+include-style('select')
+	+include-script('select')
+	-data = data || {}
+	.select.form-control(class=data.class)&attributes(attributes)
+		.select-head.js-select-trigger
+			.select-head__title=data.select_head
+			+icon('i-arrow-bottom-md')(style='width: 10px; height: 10px;')
+		.select-body
+			.select-body__content
+				.select-list
+					block
+
+mixin radio-option(data)
+	-data = data || {}
+	.radio-option(class=data.radio_class)
+		label.radio-option__label(for=data.for)
+			input(
+				class=data.input_class,
+				id=data.for,
+				name=data.name,
+				data-val=data.title,
+				data-deliveryCenter=data.center,
+				type='radio').radio-option__input.js-radio-input
+			.radio-option__caption=data.title

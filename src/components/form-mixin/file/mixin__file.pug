@@ -1,0 +1,15 @@
+mixin file-download(args= {})
+	+include-style('form-mixin/file')
+	a.file(href='#' download aria-label='Скачать файл')
+		img.file-img.lazy-img(src= pixel data-src= args.img)
+		span= args.name
+			block
+
+mixin file-upload(args= {})
+	+include-style('form-mixin/file')
+	.file
+		+icon('i-upload')(style='width:18px; height:18px;')
+		label(for=args.id) Загрузить файл
+		input(type='file' aria-label='Загрузить файл' id=args.id accept=".jpg, .jpeg, .png" )
+		//- span= args.name
+		//- 	block

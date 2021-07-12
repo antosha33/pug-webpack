@@ -1,0 +1,43 @@
+extends ../../layout/layout
+
+block vars
+	- var pageTitle = 'Главная'
+	- var pageBodyClass = 'index'
+	- var dir = './'
+
+
+block premain
+	+include-style('animation')
+	+include-script('animation')
+	include ../../components/first-screen/first-screen
+	include ../../components/technology/technology
+	include ../../components/system/system
+	include ../../components/control/control
+	include ../../components/catalog-main/catalog-main
+	.section-bg-wrap
+		+lazy-img({
+			wrap_mod:'section-bg-wrap__bg',
+			img_mod: 'section-bg-wrap__bg-img', 
+			img: 'images/section-bg-wrap.jpg',
+			placeholder: pixel
+		})
+		include ../../components/where-to-buy/where-to-buy
+		include ../../components/shop-advantages/shop-advantages
+	include ../../components/subscribe/subscribe
+	include ../../components/glo-social/glo-social
+block main
+	.no-critical.no-critical--preloader
+
+
+block componentsCriticalStyles
+	+componentsCriticalStyles-includer()
+block vendorScripts
+	+vendorScripts-includer()
+block componentsStyles
+	+style-includer()
+
+block componentsScripts
+	+componentsScripts-includer()
+
+block scripts
+	script(src="./js/vendor/noframework.waypoints.min.js" defer)

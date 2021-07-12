@@ -1,0 +1,38 @@
++modal({
+	id: 'modal-feedback',
+	mod: 'modal-feedback',
+	title: 'Обратная связь',
+	header: true
+})
+	form#formContacts.bv-form(enctype='multipart/form-data', method='POST', action='#', autocomplete='on', novalidate='novalidate')
+		.feedback-form
+			.alert.alert-success.hidden(role='alert')
+				| Ваше сообщение отправлено. Мы свяжемся с вами в течение 2х часов
+			.alert.alert-danger.hidden(role='alert')
+				| Произошла ошибка. Сообщение не отправлено.
+			input(type='hidden', name='FORM_ID', value='formContacts')
+			input.hidden(type='text', name='ANTIBOT[NAME]', value='')
+			.form-group
+				label.form-control-label(for='formContacts_FIELD_TITLE')
+					| Ваше имя
+					span.asterisk *
+					| :
+				input#formContacts_FIELD_TITLE.form-control(type='text', name='FIELDS[TITLE]', value='', required='', data-bv-message='Обязательное поле')
+			.form-group
+				label.form-control-label(for='formContacts_FIELD_EMAIL')
+					| Ваш E-mail
+					span.asterisk *
+					| :
+				input#formContacts_FIELD_EMAIL.form-control(type='email', name='FIELDS[EMAIL]', value='', required='', data-bv-message='Обязательное поле', data-bv-emailaddress-message='E-mail введен некорректно')
+			.form-group
+				label.form-control-label(for='formContacts_FIELD_PHONE') Ваш телефон:
+				input#formContacts_FIELD_PHONE.form-control(type='tel', name='FIELDS[PHONE]', value='', data-inputmask-mask='+375 (99) 999-99-99', data-mask='+375 (99) 999-99-99')
+			.form-group
+				label.form-control-label(for='formContacts_FIELD_MESSAGE') Сообщение:
+				div
+					textarea#formContacts_FIELD_MESSAGE.form-control--textarea.form-control(name='FIELDS[MESSAGE]')
+			.form-btn
+				button.btn.btn--primary.w-sm-100p.feedback-form-submit(type='submit', data-default='Отправить') Отправить
+
+
+

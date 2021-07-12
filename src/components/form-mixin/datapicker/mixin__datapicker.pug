@@ -1,0 +1,9 @@
+mixin datapicker(args)
+	+include-script('form-mixin/datapicker')
+	+include-style('form-mixin/datapicker')
+	.form-group.form-group--common(class= args.mod)
+		-
+			args.mod = 'form-control--datepicker js-form-control--datepicker'
+		.form-control-label= args.label
+		.datepicker-input-wrap
+			<input class="form-control form-control--datepicker js-form-control--datepicker form-control--common" date-min="18.06.2021" type="text" id="ID2703773373" name="NAME2703773373" placeholder=" " data-bv-notempty-message="Заполните поле" data-bv-regexp-message="Неверный формат" data-bv-emailaddress-message=" " required="required">

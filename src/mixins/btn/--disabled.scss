@@ -1,0 +1,16 @@
+@import 'src/assets/css/vars_mixins/vars_mixins';
+
+.btn[disabled], .btn.disabled {
+  cursor: no-drop !important;
+  color: #fff !important;
+  border-color: #d8d8d8 !important;
+  background: #d8d8d8 !important;
+  box-shadow: none !important;
+  &:hover, &:active {
+    cursor: no-drop !important;
+    color: #fff !important;
+    border-color: #d8d8d8 !important;
+    background: #d8d8d8 !important;
+    box-shadow: none !important;
+  }
+}

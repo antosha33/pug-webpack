@@ -1,0 +1,781 @@
++include-style('catalog-list')
++include-script('catalog-list')
+//+include-style('range')
+//+include-script-vendor('ion.rangeSlider.min.js')
+.catalog
+	.container
+		.row
+			.col-xl-3.col-lg-3.col-md-12.col-xl-3
+				.catalog-targets__large.js-target-list
+					+target-link({
+						title: 'Бульоны и супы'
+					})
+					+target-link({
+						title: 'Мука'
+					})
+					+target-link({
+						title: 'Крупа и бобы'
+					})
+					+target-link({
+						title: 'Растительные протеины '
+					})
+					+target-link({
+						title: 'Сахар и подсластители'
+					})
+					+target-link({
+						title: 'Бульоны и супы'
+					})
+					+target-link({
+						title: 'Мука'
+					})
+					+target-link({
+						title: 'Крупа и бобы'
+					})
+					+target-link({
+						title: 'Растительные протеины '
+					})
+					+target-link({
+						title: 'Сахар и подсластители'
+					})
+					+target-link({
+						title: 'Бульоны и супы'
+					})
+					+target-link({
+						title: 'Мука'
+					})
+					+target-link({
+						title: 'Крупа и бобы'
+					})
+					+target-link({
+						title: 'Растительные протеины '
+					})
+					+target-link({
+						title: 'Сахар и подсластители'
+					})
+				#ajaxfilter-filter.sidebar-filter.no-critical
+					.sidebar-filter__block
+
+						.sidebar-filter__header
+							.sidebar-filter__close.js-btn-toggle(data-target='.sidebar-filter__block')
+								+icon('i-close')(style='width:26px; height:26px; fill:#8DC63F;')
+								span Фильтр
+
+						form#filter.form(name='_form', action='#', method='get', data-sef='yes')
+
+							.sidebar-filter__item.form-group.d-xl-none
+									.js-wrap-mob-tag
+										//+tag({
+										//	title: 'Не содержит (аллергены):',
+										//	name: 'Мёд и его производные',
+										//	close: true
+										//})
+										//+tag({
+										//	title: 'Не содержит (аллергены):',
+										//	name: 'Продукты из молока и заменителей',
+										//	close: true
+										//})
+										//+tag({
+										//	title: 'Не содержит (аллергены):',
+										//	name: 'Davert',
+										//	close: true
+										//})
+										//+tag({
+										//	title: 'Бренд:',
+										//	name: 'Biosecure',
+										//	close: true
+										//})
+										//+tag({
+										//	title: 'Бренд:',
+										//	name: 'Alvo',
+										//	close: true
+										//})
+
+							.sidebar-filter__item.form-group.lvl1
+								.sidebar-filter__head Фильтр
+								.sidebar-filter__content.sidebar-filter__checkbox-custom.ajaxfilter-combo.ajaxfilter-filter-property-body(data-name='all_category')
+									.checkbox-custom(data-name='all_category')
+										input#arFilter_2279_01(type='checkbox', checked value='bez_gliutena', name='all_category')
+										label.checkbox-custom__label(for='arFilter_2279_01')
+											+icon('i-tag-01')(style='width:26px; height:26px; fill:#fff')
+											.checkbox-custom__caption Без глютена
+									.checkbox-custom(data-name='all_category')
+										input#arFilter_2279_02(type='checkbox', value='dlia_detei', name='all_category')
+										label.checkbox-custom__label(for='arFilter_2279_02')
+											+icon('i-tag-02')(style='width:26px; height:26px; fill:#fff')
+											.checkbox-custom__caption Для детей
+									.checkbox-custom(data-name='all_category')
+										input#arFilter_2279_03(type='checkbox', value='dlia_veganov', name='all_category')
+										label.checkbox-custom__label(for='arFilter_2279_03')
+											+icon('i-tag-03')(style='width:26px; height:26px; fill:#fff')
+											.checkbox-custom__caption Для веганов
+									.checkbox-custom(data-name='all_category')
+										input#arFilter_2279_04(type='checkbox', value='fermerskii_produkt', name='all_category')
+										label.checkbox-custom__label(for='arFilter_2279_04')
+											+icon('i-tag-04')(style='width:26px; height:26px; fill:#fff')
+											.checkbox-custom__caption Продукты с фермы
+									.checkbox-custom(data-name='all_category')
+										input#arFilter_2279_05(type='checkbox', value='bez_laktozy', name='all_category')
+										label.checkbox-custom__label(for='arFilter_2279_05')
+											+icon('i-tag-05')(style='width:26px; height:26px; fill:#fff')
+											.checkbox-custom__caption Без лактозы
+									.checkbox-custom(data-name='all_category')
+										input#arFilter_2279_06(type='checkbox', value='bez_laktozy', name='all_category')
+										label.checkbox-custom__label(for='arFilter_2279_06')
+											+icon('i-tag-06')(style='width:26px; height:26px; fill:#fff')
+											.checkbox-custom__caption Без сахара
+								.sidebar-filter__content.sidebar-filter__checkbox-recomends.ajaxfilter-combo.ajaxfilter-filter-property-body(data-name='all_recomends')
+									.checkbox-recomends(data-name='all_recomends').khit
+										input#arFilter_2279_11(type='checkbox', checked value='khit', name='all_recomends')
+										label.checkbox-recomends__label(for='arFilter_2279_11')
+											.checkbox-recomends__caption Хит
+									.checkbox-recomends(data-name='all_recomends').rekomenduem
+										input#arFilter_2279_12(type='checkbox', value='rekomenduem', name='all_recomends')
+										label.checkbox-recomends__label(for='arFilter_2279_12')
+											.checkbox-recomends__caption Рекомендуем
+									.checkbox-recomends(data-name='all_recomends').novinka
+										input#arFilter_2279_13(type='checkbox', value='novinka', name='all_recomends')
+										label.checkbox-recomends__label(for='arFilter_2279_13')
+											.checkbox-recomends__caption Новинка
+									.checkbox-recomends(data-name='all_recomends').aktsiya
+										input#arFilter_2279_14(type='checkbox', value='aktsiya', name='all_recomends')
+										label.checkbox-recomends__label(for='arFilter_2279_14')
+											.checkbox-recomends__caption Акция
+
+
+
+							.sidebar-filter__item.form-group.lvl1
+								.sidebar-filter__head Цена
+								.sidebar-filter__content
+									.ajaxfilter-num.ajaxfilter-filter-property-body(data-name='price')
+										.ajaxfilter-inputs(style='display: none;')
+											input#arFilter_P1_MIN.ajaxfilter-input.ajaxfilter-num-from.form-group__input(type='text', name='price_from', value='30.000', size='6', placeholder='30.000')
+											input#arFilter_P1_MAX.ajaxfilter-input.ajaxfilter-num-to.form-group__input(type='text', name='price_to', value='4000.00', size='7', placeholder='4000.00')
+											span.ajaxfilter-inputs__pref от
+											span.ajaxfilter-inputs__pref до
+										.ajaxfilter-range
+											input(name='price-range', data-from='30.000', data-to='4000.00', data-min='30.000', data-max='4000.00', data-grid='false', data-prefix='', data-postfix='<span class="ajaxfilter-range__postfix">р.</span>', data-force-edges='true', data-step='1')
+
+
+							.sidebar-filter__item.form-group.lvl1
+								.sidebar-filter__head Бренд
+								.sidebar-filter__content.ajaxfilter-combo.ajaxfilter-filter-property-body.js-filter-list(data-name='all_proizvoditel')
+									.form-group(data-name='all_proizvoditel')
+										.checkbox.lvl2
+											input#arFilter_2279_3954135446(type='checkbox', checked value='Riedenburger Brauhaus', name='Riedenburger Brauhaus')
+											label(for='arFilter_2279_3954135446')
+												| Riedenburger Brauhaus
+												//- span.ajaxfilter-cnt.checkbox-counter 11
+									.form-group(data-name='all_proizvoditel')
+										.checkbox.lvl2
+											input#arFilter_2279_439608949(type='checkbox', disabled value='Davert', name='Davert')
+											label(for='arFilter_2279_439608949')
+												| Davert
+												//- span.ajaxfilter-cnt.checkbox-counter 14
+									.form-group(data-name='all_proizvoditel')
+										.checkbox.lvl2
+											input#arFilter_2279_3696893030(type='checkbox', disabled  checked value='Hollinger', name='Hollinger')
+											label(for='arFilter_2279_3696893030')
+												| Hollinger
+												//- span.ajaxfilter-cnt.checkbox-counter 11
+									.form-group(data-name='all_proizvoditel')
+										.checkbox.lvl2
+											input#arFilter_2279_3349002670(type='checkbox', value='Valverbe', name='Valverbe')
+											label(for='arFilter_2279_3349002670')
+												| Valverbe
+												//- span.ajaxfilter-cnt.checkbox-counter 10
+									.form-group(data-name='all_proizvoditel')
+										.checkbox.lvl2
+											input#arFilter_2279_1050964817(type='checkbox', value='Lifefood', name='Lifefood')
+											label(for='arFilter_2279_1050964817')
+												| Lifefood
+												//- span.ajaxfilter-cnt.checkbox-counter 17
+									.form-group(data-name='all_proizvoditel')
+										.checkbox.lvl2
+											input#arFilter_2279_3434875822(type='checkbox', value='haier', name='all_proizvoditel')
+											label(for='arFilter_2279_3434875822')
+												| Almawin
+												//- span.ajaxfilter-cnt.checkbox-counter 2
+									.form-group(data-name='all_proizvoditel')
+										.checkbox.lvl2
+											input#arFilter_2279_1372973346(type='checkbox', value='hansa', name='all_proizvoditel')
+											label(for='arFilter_2279_1372973346')
+												| Alvo
+												//- span.ajaxfilter-cnt.checkbox-counter 1
+									.form-group(data-name='all_proizvoditel')
+										.checkbox.lvl2
+											input#arFilter_2279_3451084271(type='checkbox', value='hotpoint_ariston', name='all_proizvoditel')
+											label(for='arFilter_2279_3451084271')
+												| Beutelsbacher
+												//- span.ajaxfilter-cnt.checkbox-counter 2
+									.form-group(data-name='all_proizvoditel')
+										.checkbox.lvl2
+											input#arFilter_2279_2880169088(type='checkbox', value='indesit', name='all_proizvoditel')
+											label(for='arFilter_2279_2880169088')
+												| Biosecure
+												//- span.ajaxfilter-cnt.checkbox-counter 13
+									.form-group(data-name='all_proizvoditel')
+										.checkbox.lvl2
+											input#arFilter_2279_4121806533(type='checkbox', value='lg', name='all_proizvoditel')
+											label(for='arFilter_2279_4121806533')
+												| Bioturm
+												//- span.ajaxfilter-cnt.checkbox-counter 26
+									.form-group(data-name='all_proizvoditel')
+										.checkbox.lvl2
+											input#arFilter_2279_1796588734(type='checkbox', value='Davert', name='all_proizvoditel')
+											label(for='arFilter_2279_1796588734')
+												| Davert
+												//- span.ajaxfilter-cnt.checkbox-counter 1
+							.sidebar-filter__item.form-group.lvl1
+								.sidebar-filter__head Страна происхождения
+								.sidebar-filter__content.ajaxfilter-combo.ajaxfilter-filter-property-body.js-filter-list(data-name='all_country-of-origin')
+									.form-group(data-name='all_country-of-origin')
+										.checkbox.lvl2
+											input#arFilter_2273_2914967296(type='checkbox', value='Belarus`', name='all_country-of-origin')
+											label(for='arFilter_2273_2914967296')
+												| Беларусь
+									.form-group(data-name='all_country-of-origin')
+										.checkbox.lvl2
+											input#arFilter_2273_2802065548(type='checkbox', value='Rossiia', name='all_country-of-origin')
+											label(for='arFilter_2273_2802065548')
+												| Россия
+									.form-group(data-name='all_country-of-origin')
+										.checkbox.lvl2
+											input#arFilter_2273_3186977367(type='checkbox', value='Indiia', name='all_country-of-origin')
+											label(for='arFilter_2273_3186977367')
+												| Индия
+							.sidebar-filter__item.form-group.lvl1
+								.sidebar-filter__head Аллергены
+								.sidebar-filter__content.ajaxfilter-combo.ajaxfilter-filter-property-body.js-filter-list(data-name='all_allergens')
+									//- +input({
+									//- 	label: 'Поиск по названию',
+									//- 	placeholder: 'Поиск по названию',
+									//- 	required: false,
+									//- }).sidebar-filter__input
+
+									.form-group(data-name='all_allergens')
+										.checkbox.lvl2
+											input#arFilter_2280_2733696122(type='checkbox', value='zernovyi', name='all_allergens')
+											label(for='arFilter_2280_2733696122')
+												| Зерновые, содержащие глютен и продукты, полученные из него
+												//- span.ajaxfilter-cnt.checkbox-counter 129
+									.form-group(data-name='all_allergens')
+										.checkbox.lvl2
+											input#arFilter_2280_1035622396(type='checkbox', value='rakoobraznyi', name='all_allergens')
+											label(for='arFilter_2280_1035622396')
+												| Ракообразные и продукты, полученные из них
+												//- span.ajaxfilter-cnt.checkbox-counter 1
+									.form-group(data-name='all_allergens')
+										.checkbox.lvl2
+											input#arFilter_2280_4201049918(type='checkbox', value='yitca', name='all_allergens')
+											label(for='arFilter_2280_4201049918')
+												| Яйца и продукты из них
+												//- span.ajaxfilter-cnt.checkbox-counter 2
+									.form-group(data-name='all_allergens')
+										.checkbox.lvl2
+											input#arFilter_2280_3379501146(type='checkbox', value='ryba', name='all_allergens')
+											label(for='arFilter_2280_3379501146')
+												| Рыба и продукты из нее
+												//- span.ajaxfilter-cnt.checkbox-counter 1
+									.form-group(data-name='all_allergens')
+										.checkbox.lvl2
+											input#arFilter_2280_2642008686(type='checkbox', value='arahis', name='all_allergens')
+											label(for='arFilter_2280_2642008686')
+												| Арахис и продукты из него
+												//- span.ajaxfilter-cnt.checkbox-counter 2
+									.form-group(data-name='all_allergens')
+										.checkbox.lvl2
+											input#arFilter_2280_613431997(type='checkbox', value='soevyi', name='all_allergens')
+											label(for='arFilter_2280_613431997')
+												| Соевые бобы и продукты, полученные из них
+												//- span.ajaxfilter-cnt.checkbox-counter 1
+									.form-group(data-name='all_allergens')
+										.checkbox.lvl2
+											input#arFilter_2280_788596282(type='checkbox', value='moloko', name='all_allergens')
+											label(for='arFilter_2280_788596282')
+												| Молоко и продукты из него (включая лактозу)
+												//- span.ajaxfilter-cnt.checkbox-counter 9
+									.form-group(data-name='all_allergens')
+										.checkbox.lvl2
+											input#arFilter_2280_2125338020(type='checkbox', value='orehi', name='all_allergens')
+											label(for='arFilter_2280_2125338020')
+												| Орехи и продукты, полученные из них
+												//- span.ajaxfilter-cnt.checkbox-counter 1
+									.form-group(data-name='all_allergens')
+										.checkbox.lvl2
+											input#arFilter_2280_2125338020(type='checkbox', value='selderei', name='all_allergens')
+											label(for='arFilter_2280_2125338020')
+												| Сельдерей и изделия из него
+												//- span.ajaxfilter-cnt.checkbox-counter 1
+									.form-group(data-name='all_allergens')
+										.checkbox.lvl2
+											input#arFilter_2280_2125338020(type='checkbox', value='gorchitca', name='all_allergens')
+											label(for='arFilter_2280_2125338020')
+												| Горчица и продукты из нее
+												//- span.ajaxfilter-cnt.checkbox-counter 1
+									.form-group(data-name='all_allergens')
+										.checkbox.lvl2
+											input#arFilter_2280_2125338020(type='checkbox', value='kunzhut', name='all_allergens')
+											label(for='arFilter_2280_2125338020')
+												| Семена кунжута и изделия из них
+												//- span.ajaxfilter-cnt.checkbox-counter 1
+									.form-group(data-name='all_allergens')
+										.checkbox.lvl2
+											input#arFilter_2280_2125338020(type='checkbox', value='dioksid sery, sulfity', name='all_allergens')
+											label(for='arFilter_2280_2125338020')
+												| Диоксид серы и сульфиты в концентрациях более 10 мг / кг или 10 мг / л
+												//- span.ajaxfilter-cnt.checkbox-counter 1
+									.form-group(data-name='all_allergens')
+										.checkbox.lvl2
+											input#arFilter_2280_2125338020(type='checkbox', value='molliuski', name='all_allergens')
+											label(for='arFilter_2280_2125338020')
+												| Моллюски и продукты, полученные из них
+									.form-group(data-name='all_allergens')
+										.checkbox.lvl2
+											input#arFilter_2280_2125338020(type='checkbox', value='liupiny', name='all_allergens')
+											label(for='arFilter_2280_2125338020')
+												| Люпины и изделия из них
+												//- span.ajaxfilter-cnt.checkbox-counter 1
+							.sidebar-filter__item.form-group.lvl1
+								.sidebar-filter__head Объем
+								.sidebar-filter__content.ajaxfilter-combo.ajaxfilter-filter-property-body.js-filter-list(data-name='all_bulk')
+									.form-group(data-name='all_bulk')
+										.checkbox.lvl2
+											input#arFilter_2280_233696122(type='checkbox', value='belyy', name='all_bulk')
+											label(for='arFilter_2280_233696122')
+												| до 100 мл
+												//- span.ajaxfilter-cnt.checkbox-counter 129
+									.form-group(data-name='all_bulk')
+										.checkbox.lvl2
+											input#arFilter_2280_103622396(type='checkbox', value='goluboy', name='all_bulk')
+											label(for='arFilter_2280_103622396')
+												| 100 - 300 мл
+												//- span.ajaxfilter-cnt.checkbox-counter 1
+									.form-group(data-name='all_bulk')
+										.checkbox.lvl2
+											input#arFilter_2280_420049918(type='checkbox', value='grafit', name='all_bulk')
+											label(for='arFilter_2280_420049918')
+												| 300 мл и больше
+												//- span.ajaxfilter-cnt.checkbox-counter 2
+									.form-group(data-name='all_bulk')
+										.checkbox.lvl2
+											input#arFilter_2280_337950116(type='checkbox', value='kremovyy', name='all_bulk')
+											label(for='arFilter_2280_337950116')
+												| 300 мл и больше
+												//- span.ajaxfilter-cnt.checkbox-counter 1
+									.form-group(data-name='all_bulk')
+										.checkbox.lvl2
+											input#arFilter_2280_2642008682(type='checkbox', value='nerzhaveyushchaya_stal', name='all_bulk')
+											label(for='arFilter_2280_2642008682')
+												| 300 мл и больше
+												//- span.ajaxfilter-cnt.checkbox-counter 2
+									.form-group(data-name='all_bulk')
+										.checkbox.lvl2
+											input#arFilter_2280_613431991(type='checkbox', value='rozovyy', name='all_bulk')
+											label(for='arFilter_2280_613431991')
+												| 300 мл и больше
+												//- span.ajaxfilter-cnt.checkbox-counter 1
+									.form-group(data-name='all_bulk')
+										.checkbox.lvl2
+											input#arFilter_2280_788596281(type='checkbox', value='serebristyy', name='all_bulk')
+											label(for='arFilter_2280_788596281')
+												| 300 мл и больше
+												//- span.ajaxfilter-cnt.checkbox-counter 9
+									.form-group(data-name='all_bulk')
+										.checkbox.lvl2
+											input#arFilter_2280_2125338021(type='checkbox', value='seryy', name='all_bulk')
+											label(for='arFilter_2280_2125338021')
+												| 300 мл и больше
+												//- span.ajaxfilter-cnt.checkbox-counter 1
+							.js-modef.submit-filter
+								button.btn.btn--primary.btn-filter-submit.js-scroll-to-top.js-btn-toggle(data-target='.sidebar-filter__block', type='button')
+									span.full Показать
+									span.js-modef_num.result 75
+									span.num-title
+										| товаров
+								a(href='/catalog/').filter-reset-wrap
+									span.filter-reset Очистить все
+			.col-xl-9.col-lg-9.col-md-12.col-xl-9.ajax-result
+				.preloader.filter-preloader-block.preloader--catalog.hidden
+				.catalog-product-list.no-critical
+					.row
+						.col-12.col-md-12.col-lg-12
+							.catalog-product-list__header
+
+								.catalog-product-list__control-list
+									.control-list-title Сортировать:
+									.control-list__select
+										+select({
+											class: 'filter-select',
+											select_head: 'Сначала дешевые'
+										})
+											+radio-option({
+												radio_class: 'selected',
+												name: 'sorting',
+												for: 'cheap',
+												title: 'Сначала дешевые'
+											})
+											+radio-option({
+												name: 'sorting',
+												for: 'expensive',
+												title: 'Сначала дорогие'
+											})
+											+radio-option({
+												name: 'sorting',
+												for: 'new',
+												title: 'Сначала новые'
+											})
+											+radio-option({
+												name: 'sorting',
+												for: 'brand',
+												title: 'По бренду'
+											})
+									.control-list__select.select-qty-show
+										+select({
+											class: 'filter-select',
+											select_head: 'Показывать 16'
+										})
+											+radio-option({
+												radio_class: 'selected',
+												name: 'show-qty',
+												for: 'show-16',
+												title: 'Показывать 16'
+											})
+											+radio-option({
+												name: 'show-qty',
+												for: 'show-50',
+												title: 'Показывать 50'
+											})
+											+radio-option({
+												name: 'show-qty',
+												for: 'show-100',
+												title: 'Показывать 100'
+											})
+									.form-group.control-list__checkbox
+										.checkbox.lvl2
+											input#arFilter_2201(type='checkbox', value='V nalichii', name='v_nalichii')
+											label(for='arFilter_2201') В наличии
+									.catalog-view
+										.catalog-view__item.js-make-list-view.active
+											.catalog-ajax-reload
+												+icon('v-list')(style='width:26px;height:26px')
+										.catalog-view__item.js-make-card-view
+											.catalog-ajax-reload
+												+icon('v-card')(style='width:26px;height:26px')
+
+									.js-modef.show-mob-filter
+										.btn.btn-catalog-filter-toggle.js-btn-toggle(
+											data-target='.sidebar-filter__block',
+											data-overflow-click='true',
+											data-overflow-fade='true')
+											+icon('i-filter')(style='width:24px; height:24px; fill:#fff;')
+											span Фильтр
+										a(href='/catalog/').reset-mob-filter
+											span Очистить фильтр
+								.catalog-tag-list.js-block-mob-tag
+									//+tag({
+									//	title: 'Бренд:',
+									//	name: 'Riedenburger Brauhaus',
+									//	close: true
+									//})
+									//+tag({
+									//	title: 'Бренд:',
+									//	name: 'Biosecure',
+									//	close: true
+									//})
+									//+tag({
+									//	title: 'Бренд:',
+									//	name: 'Davert',
+									//	close: true
+									//})
+									//+tag({
+									//	title: 'Бренд:',
+									//	name: 'Biosecure',
+									//	close: true
+									//})
+									//+tag({
+									//	title: 'Бренд:',
+									//	name: 'Alvo',
+									//	close: true
+									//})
+
+					.ajax-nav-item-row.catalog-panel.js-catalog-panel.catalog-panel--list
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-09.jpg',
+								status: false,
+								posted: true,
+								code: 'Код: 4744481010818',
+								title: 'Консервы пастеризованные. Бульон куриный жидкий, 350 мл',
+								price: '999,99 руб. <span>за 0,4 кг</span>',
+								sale: '1000 руб.',
+								price_per_kg: '20,15 руб. за 1 кг',
+								label_sale: 'Акция -1%',
+								label_new: 'Новинка',
+								label_recomend: 'Рекомендуем',
+							})
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-09.jpg',
+								status: true,
+								posted: true,
+								code: 'Код: 4744481010818',
+								title: 'Амарант, зеленая гречка, киноа и другие крупы, миндальная мука, оливки и маслины, соусы и тапенады, кофе и чай, специи, натуральные масла и уксус, чипсы из водорослей и «живые» сладости без сахара, мясные изделия, овощная колбаса и бургеры, свежая выпечка, шампуни и кремы без парабенов и сульфатов, натуральная косметика – все это и многое другое представлено в «Vёska». Амарант, зеленая гречка, киноа и другие крупы, миндальная мука, оливки и маслины, соусы и тапенады, кофе и чай, специи, натуральные масла и уксус, чипсы из водорослей и «живые» сладости без сахара, мясные изделия, овощная колбаса и бургеры, свежая выпечка, шампуни и кремы без парабенов и сульфатов, натуральная косметика – все это и многое другое представлено в «Vёska».',
+								price: '9,99 руб. <span>за 0,35 кг</span>',
+								price_per_kg: '20,15 руб. за 1 кг',
+								favourite: true,
+								label_recomend: 'Рекомендуем',
+								qty_backet: '10',
+							})
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-08.jpg',
+								status: false,
+								code: 'Код: 4744481010818',
+								title: 'Консервы пастеризованные. Бульон куриный жидкий Консервы пастеризованные, 350 мл',
+								price: '',
+								sale: '',
+								qty_backet: '',
+
+							})
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-07.jpg',
+								status: true,
+								posted: true,
+								code: 'Код: 4744481010818',
+								title: 'Амарант, зеленая гречка, киноа и другие крупы, миндальная мука, оливки и маслины, соусы и тапенады, кофе и чай, специи, натуральные масла и уксус, чипсы из водорослей и «живые» сладости без сахара, мясные изделия, овощная колбаса и бургеры, свежая выпечка, шампуни и кремы без парабенов и сульфатов, натуральная косметика – все это и многое другое представлено в «Vёska».',
+								price: '199,99 руб. <span>за 0,35 кг</span>',
+								sale: '-5 000 руб.',
+								price_per_kg: '20,15 руб. за 1 кг',
+								qty_backet: '3',
+								label_sale: 'Акция 50%',
+							})
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-06.jpg',
+								status: true,
+								code: 'Код: 4744481010818',
+								title: 'Овсяная мука',
+								price: '99,99 руб. <span>за 0,35 кг</span>',
+								sale: '100 руб.',
+								price_per_kg: '120,15 руб. за 1 кг',
+								qty_backet: '3',
+							})
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-05.jpg',
+								status: true,
+								posted: true,
+								code: 'Код: 4744481010818',
+								title: 'Овсяная мука',
+								price: '999,99 руб.',
+								sale: '1000 руб.',
+								qty_backet: '3',
+							})
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-04.jpg',
+								status: true,
+								code: 'Код: 4744481010818',
+								title: 'Овсяная мука',
+								price: '999,99 руб.',
+								sale: '1000 руб.',
+								qty_backet: '3',
+							})
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-03.jpg',
+								status: true,
+								code: 'Код: 4744481010818',
+								title: 'Овсяная мука',
+								price: '999,99 р.',
+								sale: '1000 р.',
+								qty_backet: '3',
+							})
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-02.jpg',
+								status: true,
+								code: 'Код: 4744481010818',
+								title: 'Овсяная мука',
+								price: '999,99 р.',
+								sale: '1000 р.',
+								qty_backet: '3',
+							})
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-01.jpg',
+								status: true,
+								code: 'Код: 4744481010818',
+								title: 'Овсяная мука',
+								price: '999,99 р.',
+								sale: '1000 р.',
+								qty_backet: '3',
+							})
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-01.jpg',
+								status: true,
+								code: 'Код: 4744481010818',
+								title: 'Овсяная мука',
+								price: '999,99 р.',
+								sale: '1000 р.',
+								qty_backet: '3',
+							})
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-01.jpg',
+								status: true,
+								code: 'Код: 4744481010818',
+								title: 'Овсяная мука',
+								price: '999,99 р.',
+								sale: '1000 р.',
+								qty_backet: '3',
+							})
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-01.jpg',
+								status: true,
+								code: 'Код: 4744481010818',
+								title: 'Овсяная мука',
+								price: '999,99 р.',
+								sale: '1000 р.',
+								qty_backet: '3',
+							})
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-01.jpg',
+								status: true,
+								code: 'Код: 4744481010818',
+								title: 'Овсяная мука',
+								price: '999,99 р.',
+								sale: '1000 р.',
+								qty_backet: '3',
+							})
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-01.jpg',
+								status: true,
+								code: 'Код: 4744481010818',
+								title: 'Овсяная мука',
+								price: '999,99 р.',
+								sale: '1000 р.',
+								qty_backet: '3',
+							})
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-01.jpg',
+								status: true,
+								code: 'Код: 4744481010818',
+								title: 'Овсяная мука',
+								price: '999,99 р.',
+								sale: '1000 р.',
+								qty_backet: '3',
+							})
+						.catalog-panel__item.ajax-nav-item
+							+product-card({
+								src: 'images/prod-01.jpg',
+								status: true,
+								code: 'Код: 4744481010818',
+								title: 'Овсяная мука',
+								price: '999,99 р.',
+								sale: '1000 р.',
+								qty_backet: '3',
+							})
+
+
+					.btn.btn--outline Показать еще 16
+
+			.catalog-descr
+				.col-12.col-xl-8.offset-xl-2.col-lg-12.col-md-12
+					.catalog__title О товарах в каталоге
+					.catalog__subtitle Амарант, зеленая гречка, киноа и другие крупы, миндальная мука, оливки и маслины, соусы и тапенады, кофе и чай, специи, натуральные масла и уксус, чипсы из водорослей и «живые» сладости без сахара, мясные изделия, овощная колбаса и бургеры, свежая выпечка, шампуни и кремы без парабенов и сульфатов, натуральная косметика – все это и многое другое представлено в «Vёska».
+
+	+slider-product({
+		title: 'Просмотренные товары'
+	})
+
+
+script.
+	window.addEventListener( 'load', function( event ) {
+		function filter_init() {
+			slamFilterJsInit();
+			// $('#ajaxfilter-filter').slamAjaxSmartFilter({
+			// 	ajaxURL: '/catalog/stiralnye-mashiny/',
+			// 	urlDelete: '/catalog/stiralnye-mashiny/',
+			// 	align: 'LEFT',
+			// 	modeftimeout: 0
+			// });
+		}
+
+		var filter_init_timeout;
+
+
+		// Отлаживаем инит на 3с на вью со скрытым фильтром
+		if ($(window).width() < 1200) {
+			filter_init_timeout = setTimeout(function () {
+				filter_init()
+			}, 3000)
+		} else {
+			clearTimeout(filter_init_timeout)
+			filter_init()
+		}
+
+		let catalogViewBtn = $('.catalog-view__item')
+			catalogViewBtn.click(function() {
+				let _this = $(this);
+				_this.addClass('active')
+				_this.siblings().removeClass('active')
+				if(_this.hasClass('js-make-list-view')){
+					$('.js-catalog-panel').removeClass('catalog-panel--card').addClass('catalog-panel--list')
+				}
+				if(_this.hasClass('js-make-card-view')){
+					$('.js-catalog-panel').removeClass('catalog-panel--list').addClass('catalog-panel--card')
+				}
+			})
+
+
+		let filterList = $('.js-filter-list')
+		if (filterList.length) {
+			filterList.each(function() {
+				let _this = $(this);
+				let catalogItemCount = _this.children('.form-group').length
+				if (catalogItemCount > 6) {
+					_this.append('<div class="form-group__link js-link-trigger"><span class="link-show">Показать ещё</span><span class="link-hide">Скрыть</span></div>')
+				}
+			})
+		}
+
+		const showMenu = $('.js-link-trigger')
+		showMenu.each(function() {
+			let _this = $(this);
+			_this.click(function() {
+				let list = _this.parent('.js-filter-list')
+				_this.toggleClass('active')
+				list.toggleClass('opened')
+			})
+		})
+
+		let targetList = $('.js-target-list')
+		if (targetList.length) {
+			targetList.each(function() {
+				let _this = $(this);
+				let targetItemCount = _this.children('.target-link').length
+				if (targetItemCount > 4) {
+					_this.append('<div class="filter-list-trigger-wrap"><div class="filter-list-trigger js-link-trigger"><span class="link-show">Показать ещё</span><span class="link-hide">Скрыть</span></div></div>')
+				}
+			})
+		}
+
+		const showMenuTarget = $('.js-link-trigger')
+		showMenuTarget.each(function() {
+			let _this = $(this);
+			_this.click(function() {
+				let list = _this.parents('.js-target-list')
+				_this.toggleClass('active')
+				list.toggleClass('opened')
+			})
+		})
+
+
+	});

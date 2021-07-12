@@ -1,0 +1,145 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.system-wrap {
+	margin-top: 104px;
+	background-color: $c-text;
+	padding-top: 108px;
+	padding-bottom: 63px;
+	position: relative;
+	&__wrap {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	&__img {
+		height: 100%;
+		background-position: left top;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100%;
+	}
+	@media (max-width: $sm - 1) {
+		background-position-x: -180px;
+		margin-top: 60px;
+	}
+	&__bg {
+		max-width: 1920px;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+	}
+	@media (max-width: $xs - 1) {
+		padding-top: 33px;
+	}
+}
+.system {
+
+	&__top{
+		display: flex;
+		@media (max-width: $md - 1) {
+			flex-direction: column;
+		}
+	}
+	&__bottom{
+		margin-top: 40px;
+		@media (max-width: $sm - 1){
+			margin-top: 20px;
+		}
+		color: #fff;
+		font-weight: 300;
+	}
+	&__about {
+	}
+	&__title {
+		font-family: Mont;
+		font-weight: 600;
+		color: #fff;
+		line-height: 1.1;
+		margin-bottom: 34px;
+		@media (max-width: $xs - 1) {
+			font-size: 20px;
+			margin-bottom: 15px;
+		}
+	}
+	&__title-linear {
+		font-weight: 800;
+		background: linear-gradient(90deg, rgba(255, 159, 89, 1) 25%, rgba(227, 82, 5, 1) 50%);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-box-decoration-break: clone;
+		display: inline !important;
+		color: transparent;
+	}
+	&__descr {
+		margin-top: 30px;
+		font-family: Mont;
+		font-style: normal;
+		font-weight: 300;
+		color: #ffffff;
+		max-width: 505px;
+		line-height: 1.7;
+		@media (max-width: $md - 1) {
+			max-width: 100%;
+		}
+		@media (max-width: $xs - 1) {
+			font-size: 12px;
+			margin-top: 25px;
+		}
+	}
+	&__tempretures {
+		display: flex;
+		flex-direction: column;
+		margin-top: 30px;
+		margin-left: 200px;
+		max-height: 380px;
+		@media (max-width: $md - 1) {
+			margin-left: 0px;
+			margin: auto;
+		}
+	}
+}
+
+.system-tempterature {
+	display: flex;
+	justify-content: center;
+	@media (max-width: $xs - 1) {
+		margin-top: 10px;
+	}
+	// flex-direction: column;
+	&__view {
+		display: flex;
+		position: relative;
+		justify-content: center;
+		align-items: center;
+		@media (max-width: $xs - 1){
+				max-width: 122px;
+		}
+	}
+	&__view--orange {
+		// margin-top: 50px;
+	}
+	&__descr {
+		margin-top: auto;
+		font-family: Mont;
+		font-style: normal;
+		font-weight: 800;
+		font-size: 18px;
+		text-align: center;
+		@media (max-width: $xs - 1) {
+			font-size: 10px;
+		}
+	}
+	&__descr--green {
+		color: #50af6f;
+	}
+	&__descr--orange {
+		color: #e35205;
+	}
+	&__descr-list {
+		display: flex;
+		justify-content: space-around;
+	}
+}

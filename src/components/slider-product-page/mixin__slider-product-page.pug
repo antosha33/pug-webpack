@@ -1,0 +1,83 @@
+mixin slider-product-page(args= {})
+	+include-style('slider-product-page')
+	+include-script('slider-product-page')
+	+fancy-box()
+	.slider-product-page
+		+swiper-with-nav({
+			main: {
+				wrapper_mod: '',
+				container_mod: '',
+				pagination_mod: '',
+				arrow_prev_mod: '',
+				arrow_next_mod: '',
+				pagination: false,
+				navigation: false,
+			},
+			nav: {
+				wrapper_mod: '',
+				container_mod: '',
+				pagination_mod: '',
+				arrow_prev_mod: 'custom-swiper-btn__prev',
+				arrow_next_mod: 'custom-swiper-btn__next',
+				pagination: false,
+				navigation: true,
+				centeredSlides: true,
+				spaceBetween: 4,
+				list: [
+					{
+						img: 'images/prod-07.jpg',
+						img_placeholder: 'prod-07.jpg',
+					},{
+						img: 'images/prod-08.jpg',
+						img_placeholder: pixel,
+					},{
+						img: 'images/prod-09.jpg',
+						img_placeholder: pixel,
+					},{
+						img: 'images/prod-02.jpg',
+						img_placeholder: pixel,
+					},{
+						img: 'images/prod-03.jpg',
+						img_placeholder: pixel,
+					},
+				],
+				img_mod: 'swiper-thumbnail-img',
+				wrap_mod: 'swiper-thumbnail'
+			},
+		}).swiper-product-page.js-swiper-product-page
+			//- Слайды главного слайда
+			.swiper-slide
+				+lazy-img-slider({
+					img: 'images/prod-07.jpg',
+					placeholder: './prod-07.jpg',
+					img_mod: 'slider-product-page__img',
+					wrap_mod: 'slider-product-page__img-wrap'
+				})(data-fancybox="gallery" href='images/prod-07.jpg',)
+			.swiper-slide
+				+lazy-img-slider({
+					img: 'images/prod-08.jpg',
+					placeholder: pixel,
+					img_mod: 'slider-product-page__img',
+					wrap_mod: 'slider-product-page__img-wrap'
+				})(data-fancybox="gallery" href='images/prod-08.jpg',)
+			.swiper-slide
+				+lazy-img-slider({
+					img: 'images/prod-09.jpg',
+					placeholder: pixel,
+					img_mod: 'slider-product-page__img',
+					wrap_mod: 'slider-product-page__img-wrap'
+				})(data-fancybox="gallery" href='images/prod-09.jpg',)
+			.swiper-slide
+				+lazy-img-slider({
+					img: 'images/prod-02.jpg',
+					placeholder: pixel,
+					img_mod: 'slider-product-page__img',
+					wrap_mod: 'slider-product-page__img-wrap'
+				})(data-fancybox="gallery" href='images/prod-02.jpg',)
+			.swiper-slide
+				+lazy-img-slider({
+					img: 'images/prod-03.jpg',
+					placeholder: pixel,
+					img_mod: 'slider-product-page__img',
+					wrap_mod: 'slider-product-page__img-wrap'
+				})(data-fancybox="gallery" href='images/prod-03.jpg',)

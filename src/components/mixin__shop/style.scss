@@ -1,0 +1,91 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.shop {
+	// margin-bottom: 30px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	&__img{
+		max-width: 21px;
+		margin: auto;
+	}
+	&__header {
+		padding: 15px;
+		background-color: #f6f6f6;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		min-height: 90px;
+	}
+	&__location {
+		width: 100%;
+	}
+	&__title {
+		font-style: normal;
+		font-weight: 700;
+		font-size: 18px;
+		color: #262626;
+		@media (max-width: $sm - 1) {
+			font-size: 12px;
+		}
+	}
+	&__adress {
+		font-size: 14px;
+		color: #757575;
+	}
+	&__value {
+		margin-top: 8px;
+		color: $c-primary;
+		font-size: 14px;
+		text-align: center;
+		white-space: nowrap;
+	}
+	&__footer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		max-width: 140px;
+		margin-top: 12px;
+		margin-bottom: 30px;
+		margin-left: 35%;
+		@media (max-width: $sm - 1) {
+			margin-bottom: 25px;
+		}
+		@media (max-width: $sm - 1) {
+			margin-left: 35px;
+		}
+		sup {
+			vertical-align: super;
+			font-size: 10px;
+			text-transform: uppercase;
+		}
+	}
+	&__distance{
+		margin-right: 20px;
+	}
+	&__type {
+		color: #262626;
+		text-align: left;
+		position: relative;
+		padding-left: 20px;
+		align-self: flex-start;
+		justify-self: flex-start;
+		@media (max-width: $sm - 1) {
+			font-size: 12px;
+		}
+		&:before {
+			position: absolute;
+			content: "";
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background-color: $c-primary;
+			top: calc(50% - 4px);
+			left: 0;
+
+		}
+		&:not(:last-child) {
+			margin-bottom: 8px;
+		}
+	}
+}

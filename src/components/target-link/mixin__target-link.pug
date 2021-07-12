@@ -1,0 +1,16 @@
+mixin target-link(args={})
+	+include-style('target-link')
+	
+	a(href=args.href || '#' class= args.class_mod).target-link
+		if args.src
+			+lazy-img({
+				img: args.src,
+				placeholder: pixel,
+				img_mod: 'target-link__img',
+				wrap_mod: 'target-link__img-wrap',
+				link: false,
+				aria_label: false,
+			})
+
+		.target-link__descr
+			span=args.title
