@@ -1,0 +1,45 @@
+extends ../../layout/layout
+
+block vars
+    - var pageTitle = 'Личные данные'
+    - var pageBodyClass = ''
+    - var dir = './'
+
+
+block premain
+    .breadcrumb-wrap
+        .container
+            +breadcrumb({
+                href_content1: '',
+                content1: 'Личные данные',
+                href_content2: '',
+                content2: '',
+                content3: ''
+            })
+    .container
+        .row
+            .col-lg-8.offset-lg-2
+                h1.h1.page-title Личные данные
+                include ../../components/personal-nav/personal-nav
+                include ../../components/tabs-section/tabs-section--personal-data
+                include ../../components/personal-address/personal-address
+                include ../../components/personal-data-bot/personal-data-bot
+
+
+
+
+block main
+    .no-critical.no-critical--preloader
+
+
+block componentsCriticalStyles
+    +componentsCriticalStyles-includer()
+block vendorScripts
+    +vendorScripts-includer()
+block componentsStyles
+    +style-includer()
+
+block componentsScripts
+    +componentsScripts-includer()
+
+block scripts

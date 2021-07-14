@@ -1,0 +1,56 @@
+@import 'src/assets/css/vars_mixins/vars_mixins';
+
+.gallery-item {
+  display: flex;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 30%, #FFFFFF 30%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  &__info {
+    max-width: 30%;
+    flex: 1 0 30%;
+    padding: 40px 20px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  &__info .icon {
+    height: 24px;
+    width: 24px;
+    min-width: 24px;
+    fill: $c-text;
+  }
+  &__text {
+    padding-left: 10px;
+  }
+  &__text p {
+    margin: 0 0 25px;
+  }
+  &__img-wrap {
+    max-width: 70%;
+    flex: 1 0 780%;
+    text-align: center;
+  }
+  &__img {
+    max-width: 100%;
+  }
+  .btn {
+    position: relative!important;
+    top: auto!important;
+    left: auto!important;
+    bottom: auto!important;
+    right: auto!important;
+  }
+}
+
+@media (max-width: $md - 1) {
+  .gallery-item {
+    display: block;
+    background: #fff;
+    &__info {
+      max-width: 100%;
+      padding: 20px 15px;
+    }
+    &__img-wrap {
+      max-width: 100%;
+    }
+  }
+}

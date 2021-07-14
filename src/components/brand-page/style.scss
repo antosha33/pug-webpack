@@ -1,0 +1,81 @@
+@import '../../assets/css/vars_mixins/vars_mixins';
+
+.brand-page {
+  &__sidebar {
+    padding-top: 117px;
+  }
+  &__info {
+    font-size: 18px;
+    padding-bottom: 50px;
+  }
+  &__main {
+    .sidebar-brand {
+      display: none;
+    }
+  }
+  &__mobile-btn {
+    display: none;
+  }
+}
+
+@media (max-width: $md - 1) {
+  .brand-page {
+    &__sidebar {
+      display: none;
+    }
+    &__main {
+      .sidebar-brand {
+        display: block;
+      }
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+    }
+    &__info {
+      order: 1;
+    }
+    .gallery {
+      order: 2;
+    }
+    .sidebar-brand--info {
+      order: 3;
+      .btn {
+        display: none;
+      }
+    }
+    .brand-preim {
+      order: 4;
+    }
+    .contact-form {
+      order: 5;
+    }
+  }
+}
+
+@media (max-width: $sm - 1) {
+  .brand-page {
+    &__info {
+      font-size: 14px;
+    }
+    &__mobile-btn {
+		 &.active{
+			 display: none;
+		 }
+      display: block;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      z-index: 109;
+      text-align: center;
+      padding: 10px 15px;
+
+      .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  }
+}

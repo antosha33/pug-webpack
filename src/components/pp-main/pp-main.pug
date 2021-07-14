@@ -1,0 +1,173 @@
++include-style('pp-main')
++include-script('pp-main')
+
+.pp-main
+    .container
+        h1.h1.page-title Кабинет руководителя ONIX WOOD DIRECT
+            span id 423456
+        .pp-main__category
+            a(href="#") Мягкая мебель Бизнес
+        .row
+            .pp-main__left
+                .pp-main__top
+                    .pp-main__badges
+                        span.pbadge.pbadge--primary Распродажа
+                        span.pbadge Рандомный
+                        span.pbadge.pbadge--primary Хит
+                    .pp-main__rating
+                        +rating({
+                            data_count: 4,
+                            count: 4.2,
+                            comments: 'Отзывов 33',
+                            scrollTo: true
+                        })
+                include ../product-connected-sliders/product-connected-sliders
+            .pp-main__options-box
+                .ob
+                    .ob__title Обивка
+                    ul.ob__list.js-colors-list
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#E4ADAD',
+                                badge: '-25%',
+                                name: 'Шелк розовый',
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#ECD893',
+                                badge: '-5%',
+                                name: 'Шелк розовый',
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#E8B05B',
+                                badge: false,
+                                name: 'Шелк розовый',
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#E79B55',
+                                badge: false,
+                                name: 'Шелк розовый',
+                                active: true
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#BC691D',
+                                badge: false,
+                                name: 'Шелк розовый',
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#ADDEE4',
+                                badge: false,
+                                name: 'Шелк розовый',
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#8BD8E2',
+                                badge: false,
+                                name: 'Шелк розовый',
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#32C2D6',
+                                badge: false,
+                                name: 'Шелк розовый',
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#32D69B',
+                                badge: false,
+                                name: 'Шелк розовый',
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#23BE86',
+                                badge: false,
+                                name: 'Шелк розовый',
+                            })
+                .ob
+                    .ob__title Цвет каркаса
+                    ul.ob__list.js-colors-list
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#E4E4E4',
+                                badge: false,
+                                name: 'Шелк розовый',
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#B5B5B5',
+                                badge: false,
+                                name: 'Шелк розовый',
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#828282',
+                                badge: false,
+                                name: 'Шелк розовый',
+                                active: true
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#6B6969',
+                                badge: false,
+                                name: 'Шелк розовый',
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#343434',
+                                badge: false,
+                                name: 'Шелк розовый',
+                            })
+                .ob
+                    .ob__title Характеристики
+                    .ob__block
+                        span.dt Страна производитель
+                        span.dd Россия
+                        span.dt Материал обивки кресла
+                        span.dd экокожа
+                        span.dt Срок доставки
+                        span.dd 3-5 дней
+                        span.dt Допустимый вес
+                        span.dd 100 кг
+                        span.dt Гарантия
+                        span.dd 12 месяцев
+                    .ob__link
+                        a.link--down.js-scroll-to(data-to="js-options-block")
+                            span.text Показать все
+                            span.down
+                                +icon('i-arr-down')
+            .pp-main__right
+                .pp-main__status.pstatus.pstatus--wait Ожидается через 20 дней
+                .pp-main__buy-box
+                    .b-box
+                        .b-box__old
+                            span.old 200 000 р.
+                            span.discount -25%
+                        .b-box__current 5 200 000 ₽
+                        .b-box__counter
+                            +counter({
+                                max_value: 50,
+                                min_value: 1,
+                                baseStep: 1,
+                                step: 1,
+                                value: 22,
+                            })
+                        .b-box__buy
+                            a(href="#").btn.btn--primary.btn--icon
+                                span В корзину
+                                +icon('i-cart')
+                            a(
+                                href="#one-click-buy",
+                                data-toggle='modal',
+                                data-target="#one-click-buy"
+                                data-overflow-click='true',
+                                data-overflow-fade='true'
+                                aria-label='Быстрая покупка').btn.btn--outline Быстрая покупка
+                        .b-box__q
+                            img(src="images/contact-form2.jpg" alt="img").b-box__q-img
+                            .b-box__q-title Возникли вопросы?
+                            a(href="tel:+74996488477").b-box__q-link +7(499) 648-84-77
+                            a(href="mailto:info@mavikom.ru").b-box__q-link info@mavikom.ru

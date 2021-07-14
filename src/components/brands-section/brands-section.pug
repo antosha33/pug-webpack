@@ -2,71 +2,79 @@
 +include-script('brands-section')
 
 +b('section').brands-section
-	.container
-		+e('h2').__title Наши бренды
-		+swiper({
-			container_mod: 'brands-section__container',
-			wrapper_mod: 'brands-section__wrapper',
-			pagination_mod: '',
-			arrow_prev_mod: 'custom-swiper-btn__prev',
-			arrow_next_mod: 'custom-swiper-btn__next',
-			pagination: true,
-			navigation: true,
-		}).brands-section__slider.js-swiper-brand
-			//- Слайды
-			.swiper-slide
-				+card-slide({
-					link: true,
-					href: '/local/templates/html/brand-inner-page.html',
-					img_src: 'images/brand-01.jpg',
-					title: 'Riedenburger Brauhaus'
-				})
-					p Riedenburger Brauhaus — пивоварня в Риденбурге, в долине Альтмюль в Нижней Баварии. Пивоварня была куплена семьей Кригер в 1866 году и является пятым поколением, принадлежащим семье. При штатной численности около 30 человек ежегодно производится около 30 000 гектолитров пива. Пиво распространяется по всей Германии и в 17 странах мира. С 1994 года пивоварня производилась исключительно с экологической точки зрения.
-			.swiper-slide
-				+card-slide({
-					link: true,
-					href: '/local/templates/html/brand-inner-page.html',
-					img_src: 'images/brand-02.jpg',
-					title: 'Riedenburger Brauhaus'
-				})
-					p Riedenburger Brauhaus — пивоварня в Риденбурге, в долине Альтмюль в Нижней Баварии.
-			.swiper-slide
-				+card-slide({
-					link: true,
-					href: '/local/templates/html/brand-inner-page.html',
-					img_src: 'images/brand-03.jpg',
-					title: 'Riedenburger Brauhaus'
-				})
-					p Riedenburger Brauhaus — пивоварня в Риденбурге, в долине Альтмюль в Нижней Баварии. Пивоварня была куплена семьей Кригер в 1866 году и является пятым поколением, принадлежащим семье. При штатной численности около 30 человек ежегодно производится около 30 000 гектолитров пива.
-			.swiper-slide
-				+card-slide({
-					link: true,
-					href: '/local/templates/html/brand-inner-page.html',
-					img_src: 'images/brand-04.jpg',
-					title: 'Riedenburger Brauhaus'
-				})
-					p Riedenburger Brauhaus — пивоварня в Риденбурге, в долине Альтмюль в Нижней Баварии. Пивоварня была куплена семьей Кригер в 1866 году и является пятым поколением, принадлежащим семье. При штатной численности около 30 человек ежегодно производится около 30 000 гектолитров пива.
-			.swiper-slide
-				+card-slide({
-					link: true,
-					href: '/local/templates/html/brand-inner-page.html',
-					img_src: 'images/brand-05.jpg',
-					title: 'Riedenburger Brauhaus'
-				})
-					p Riedenburger Brauhaus — пивоварня в Риденбурге, в долине Альтмюль в Нижней Баварии. Пивоварня была куплена семьей Кригер в 1866 году и является пятым поколением, принадлежащим семье. При штатной численности около 30 человек ежегодно производится около 30 000 гектолитров пива. Пиво распространяется по всей Германии и в 17 странах мира. С 1994 года пивоварня производилась исключительно с экологической точки зрения.
-			.swiper-slide
-				+card-slide({
-					link: true,
-					href: '/local/templates/html/brand-inner-page.html',
-					img_src: 'images/brand-06.jpg',
-					title: 'Riedenburger Brauhaus'
-				})
-					p Riedenburger Brauhaus — пивоварня в Риденбурге, в долине Альтмюль в Нижней Баварии. Пивоварня была куплена семьей Кригер в 1866 году и является пятым поколением, принадлежащим семье. При штатной численности около 30 человек ежегодно производится около 30 000 гектолитров пива. Пиво распространяется по всей Германии и в 17 странах мира. С 1994 года пивоварня производилась исключительно с экологической точки зрения.
-			.swiper-slide
-				+card-slide({
-					link: true,
-					href: '/local/templates/html/brand-inner-page.html',
-					img_src: 'images/brand-07.jpg',
-					title: 'Riedenburger Brauhaus'
-				})
-					p Riedenburger Brauhaus — пивоварня в Риденбурге, в долине Альтмюль в Нижней Баварии. Пивоварня была куплена семьей Кригер в 1866 году и является пятым поколением, принадлежащим семье. При штатной численности около 30 человек ежегодно производится около 30 000 гектолитров пива. Пиво распространяется по всей Германии и в 17 странах мира. С 1994 года пивоварня производилась исключительно с экологической точки зрения.
+    .container
+        +e.__header.section-header
+            +e('h2').__title.section-header__title.h1 Наши бренды
+            +e.__link.section-header__link
+                a(href="#").link Все бренды
+        +swiper({
+            navigation: true,
+            pagination: false,
+            container_mod: '',
+            wrapper_mod: '',
+            arrow_prev_mod: '',
+            arrow_next_mod: '',
+            pagination_mod: '',
+        }).brands-section__slider.js-brands-slider
+            .swiper-slide
+                mixin brand-item(args={})
+                    .brand-item
+                        +lazy-img-slider({
+                            img: args.img,
+                            placeholder: pixel,
+                            img_mod: 'brand-item__img',
+                            wrap_mod: 'brand-item__img-wrap',
+                            link: false,
+                            aria_label: false,
+                        })
+                        .brand-item__content
+                            .brand-item__content-inner
+                                .brand-item__title Новая мебель для московского офиса компании Wargaming
+                                .brand-item__text Отмеченный наградами разработчик и издатель онлайн-игр. Являясь одним из лидеров на рынке бесплатных MMO, компания предлагает аутентичные игровые возможности и услуги для ПК, консолей и мобильных платформ.
+                +brand-item({
+                    img: 'images/brand1.svg',
+                })
+            .swiper-slide
+                +brand-item({
+                    img: 'images/brand2.png',
+                })
+            .swiper-slide
+                +brand-item({
+                    img: 'images/brand3.png',
+                })
+            .swiper-slide
+                +brand-item({
+                    img: 'images/brand4.svg',
+                })
+            .swiper-slide
+                +brand-item({
+                    img: 'images/brand5.png',
+                })
+            .swiper-slide
+                +brand-item({
+                    img: 'images/brand6.png',
+                })
+            .swiper-slide
+                +brand-item({
+                    img: 'images/brand1.svg',
+                })
+            .swiper-slide
+                +brand-item({
+                    img: 'images/brand2.png',
+                })
+            .swiper-slide
+                +brand-item({
+                    img: 'images/brand3.png',
+                })
+            .swiper-slide
+                +brand-item({
+                    img: 'images/brand4.svg',
+                })
+            .swiper-slide
+                +brand-item({
+                    img: 'images/brand5.png',
+                })
+            .swiper-slide
+                +brand-item({
+                    img: 'images/brand6.png',
+                })

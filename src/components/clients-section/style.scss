@@ -1,0 +1,68 @@
+@import '../../assets/css/vars_mixins/vars_mixins';
+
+.clients-section {
+  padding: 20px 0 0;
+  &__header {}
+  &__title {}
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  &__img-wrap {
+    max-width: 268px;
+    flex: 1 0 268px;
+    display: block;
+    margin: 0 0 64px;
+    transition: box-shadow ease 0.4s;
+    &:hover {
+      box-shadow: 0 0 15px rgb(0,0,0,0.13);
+    }
+  }
+  &__img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+@media (max-width: $xxl - 1) {
+  .clients-section {
+    &__img-wrap {
+      margin: 0 0 20px;
+    }
+  }
+}
+@media (max-width: $xl - 1) {
+  .clients-section {
+    &__img-wrap {
+      margin: 0 0 30px;
+    }
+  }
+}
+@media (max-width: $lg - 1) {
+  .clients-section {
+    &__row {
+      justify-content: flex-start;
+      margin: 0 -15px;
+    }
+    &__img-wrap {
+      max-width: 25%;
+      flex: 1 0 25%;
+      margin: 0 0 30px;
+      padding: 0 15px;
+    }
+  }
+}
+@media (max-width: $md - 1) {
+  .clients-section {
+    &__row {
+      margin: 0 -8px;
+    }
+    &__img-wrap {
+      max-width: 33.3333%;
+      flex: 1 0 33.3333%;
+      padding: 0 8px;
+      margin: 0 0 16px;
+    }
+  }
+}

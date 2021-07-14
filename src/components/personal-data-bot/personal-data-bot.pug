@@ -1,0 +1,53 @@
++include-style('personal-data-bot')
+
+.personal-data-bot
+    .h2 Пароль
+    .row
+        .col-md-4
+            +input({
+                label: '',
+                type: 'password',
+                name: false,
+                small: false,
+                placeholder: 'Введите пароль',
+                required: false,
+                pattern: false,
+                validation: {
+                    message: 'Обязательное поле',
+                    regexp: 'Неверный формат',
+                    emailaddress: ' ',
+                    identical: false
+                }
+            })
+        .col-md-4
+            +input({
+                label: '',
+                type: 'password',
+                name: false,
+                small: false,
+                placeholder: 'Повторите пароль',
+                required: false,
+                pattern: false,
+                validation: {
+                    message: 'Обязательное поле',
+                    regexp: 'Неверный формат',
+                    emailaddress: ' ',
+                    identical: false
+                }
+            })
+        .col-md-12
+            button.btn.btn--primary
+                span Сохранить пароль
+.personal-data-bot
+    .h2 Подписка
+    +checkbox({
+        wrap_mod: '',
+        require: '',
+        input_mod: '',
+        checked: true,
+        label_mod: '',
+        label: 'Я хочу получать информацию о новинках, акциях и скидках'
+    })
+br
+br
+

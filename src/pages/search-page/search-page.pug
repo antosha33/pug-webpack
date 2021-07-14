@@ -1,0 +1,350 @@
+extends ../../layout/layout
+
+block vars
+    - var pageTitle = 'Результаты поиска'
+    - var pageBodyClass = 'catalog-page'
+    - var dir = './'
+
+
+block premain
+    .container
+        .row
+            .catalog-page__sidebar
+                include ../../components/sidebar-nav/sidebar-nav2
+            .catalog-page__main
+                +breadcrumb({
+                    href_content1: '',
+                    content1: 'Поиск',
+                    href_content2: '',
+                    content2: '',
+                    content3: ''
+                })
+                h1.h1.page-title Результаты поиска
+                include ../../components/search-field/search-field
+                .row
+                    .col-xs-6.col-lg-4.col-xl-3
+                        +product-item({
+                            ajax_plug: false,
+                            mod_class: 'product-item--single',
+                            badges_list: [
+                                {class: 'pbadge--primary', name: 'Распродажа',},
+                                {class: '', name: 'Рандомный',},
+                                {class: 'pbadge--primary', name: 'Хит',},
+                            ],
+                            status: {class: 'pstatus--wait', name: 'Ожидается через 20 дней'},
+                            imgs_list: [
+                                {img: 'images/product6.jpg'},
+                                {img: 'images/product7.jpg'},
+                                {img: 'images/product8.jpg'},
+                                {img: 'images/product9.jpg'},
+                                {img: 'images/product10.jpg'},
+                            ],
+                            colors_list: [
+                                {color: '#DEBC72'},
+                                {color: '#E4411D'},
+                                {color: '#56CCF2'},
+                                {color: '#9A683A'},
+                            ],
+                            size: 'Д/Ш/В: 1200х1000х720',
+                            title: 'Коллекция Мебель руководителя  Омега 324-М Коллекция Мебель руководителя  Омега 324-М Коллекция Мебель руководителя  Омега 324-М',
+                            price_old: '200 000 р.',
+                            price_sale: '-25%',
+                            price: '200 000',
+                            in_cart: '1',
+                            collection: true,
+                        })
+                    .col-xs-6.col-lg-4.col-xl-3
+                        +product-item({
+                            ajax_plug: false,
+                            mod_class: 'product-item--single',
+                            badges_list: [
+                                {class: 'pbadge--yellow', name: 'Новинка',},
+                                {class: '', name: 'Новость',},
+                                {class: 'pbadge--yellow', name: 'Акция',},
+                            ],
+                            status: {class: '', name: 'В наличии'},
+                            imgs_list: [
+                                {img: 'images/product10.jpg'},
+                                {img: 'images/product6.jpg'},
+                                {img: 'images/product7.jpg'},
+                                {img: 'images/product8.jpg'},
+                                {img: 'images/product9.jpg'},
+                            ],
+                            colors_list: [
+                                {color: '#DEBC72'},
+                                {color: '#E4411D'},
+                                {color: '#56CCF2'},
+                                {color: '#9A683A'},
+                            ],
+                            size: 'Д/Ш/В: 1200х1000х720',
+                            title: 'Коллекция Мебель руководителя  Омега 324-М',
+                            price_old: '200 000 р.',
+                            price_sale: '-25%',
+                            price: '200 000',
+                            in_cart: '1',
+                            collection: true,
+                        })
+                    .col-xs-6.col-lg-4.col-xl-3
+                        +product-item({
+                            ajax_plug: false,
+                            mod_class: 'product-item--single',
+                            badges_list: [
+                                {class: 'pbadge--primary', name: 'Распродажа',},
+                                {class: '', name: 'Рандомный',},
+                                {class: 'pbadge--primary', name: 'Хит',},
+                            ],
+                            status: {class: 'pstatus--out', name: 'Снят с производства'},
+                            imgs_list: [
+                                {img: 'images/product9.jpg'},
+                                {img: 'images/product10.jpg'},
+                                {img: 'images/product6.jpg'},
+                                {img: 'images/product7.jpg'},
+                                {img: 'images/product8.jpg'},
+                            ],
+                            colors_list: [
+                                {color: '#DEBC72'},
+                                {color: '#E4411D'},
+                                {color: '#56CCF2'},
+                                {color: '#9A683A'},
+                            ],
+                            size: 'Д/Ш/В: 1200х1000х720',
+                            title: 'Коллекция Мебель руководителя  Омега 324-М',
+                            price_old: '200 000 р.',
+                            price_sale: '-25%',
+                            price: '200 000',
+                            in_cart: '1',
+                            collection: true,
+                        })
+                    .col-xs-6.col-lg-4.col-xl-3
+                        +product-item({
+                            ajax_plug: false,
+                            mod_class: 'product-item--single',
+                            badges_list: [
+                                {class: 'pbadge--primary', name: 'Распродажа',},
+                                {class: '', name: 'Рандомный',},
+                                {class: 'pbadge--primary', name: 'Хит',},
+                            ],
+                            status: {class: 'pstatus--order', name: 'Под заказ'},
+                            imgs_list: [
+                                {img: 'images/product8.jpg'},
+                                {img: 'images/product9.jpg'},
+                                {img: 'images/product10.jpg'},
+                                {img: 'images/product6.jpg'},
+                                {img: 'images/product7.jpg'},
+                            ],
+                            colors_list: [
+                                {color: '#DEBC72'},
+                                {color: '#E4411D'},
+                                {color: '#56CCF2'},
+                                {color: '#9A683A'},
+                            ],
+                            size: 'Д/Ш/В: 1200х1000х720',
+                            title: 'Коллекция Мебель руководителя  Омега 324-М',
+                            price_old: '',
+                            price_sale: '',
+                            price: '200 000',
+                            in_cart: '',
+                            collection: true,
+                        })
+                    .col-xs-6.col-lg-4.col-xl-3
+                        +product-item({
+                            mod_class: 'product-item--single',
+                            badges_list: [
+                                {class: 'pbadge--primary', name: 'Распродажа',},
+                                {class: '', name: 'Рандомный',},
+                                {class: 'pbadge--primary', name: 'Хит',},
+                            ],
+                            status: {class: 'pstatus--order', name: 'Под заказ'},
+                            imgs_list: [
+                                {img: 'images/product7.jpg'},
+                                {img: 'images/product8.jpg'},
+                                {img: 'images/product9.jpg'},
+                                {img: 'images/product10.jpg'},
+                                {img: 'images/product6.jpg'},
+                            ],
+                            colors_list: [
+                                {color: '#DEBC72'},
+                                {color: '#E4411D'},
+                                {color: '#56CCF2'},
+                                {color: '#9A683A'},
+                            ],
+                            size: 'Д/Ш/В: 1200х1000х720',
+                            title: 'Коллекция Мебель руководителя  Омега 324-М',
+                            price_old: '',
+                            price_sale: '',
+                            price: '200 000',
+                            in_cart: '',
+                            collection: true,
+                        })
+                    .col-xs-6.col-lg-4.col-xl-3
+                        +product-item({
+                            mod_class: 'product-item--single',
+                            badges_list: [
+                                {class: 'pbadge--primary', name: 'Распродажа',},
+                                {class: '', name: 'Рандомный',},
+                                {class: 'pbadge--primary', name: 'Хит',},
+                            ],
+                            status: {class: 'pstatus--wait', name: 'Ожидается через 20 дней'},
+                            imgs_list: [
+                                {img: 'images/product6.jpg'},
+                                {img: 'images/product7.jpg'},
+                                {img: 'images/product8.jpg'},
+                                {img: 'images/product9.jpg'},
+                                {img: 'images/product10.jpg'},
+                            ],
+                            colors_list: [
+                                {color: '#DEBC72'},
+                                {color: '#E4411D'},
+                                {color: '#56CCF2'},
+                                {color: '#9A683A'},
+                            ],
+                            size: 'Д/Ш/В: 1200х1000х720',
+                            title: 'Коллекция Мебель руководителя  Омега 324-М',
+                            price_old: '200 000 р.',
+                            price_sale: '-25%',
+                            price: '200 000',
+                            in_cart: '1',
+                            collection: true,
+                        })
+                    .col-xs-6.col-lg-4.col-xl-3
+                        +product-item({
+                            mod_class: 'product-item--single',
+                            badges_list: [
+                                {class: 'pbadge--yellow', name: 'Новинка',},
+                                {class: '', name: 'Новость',},
+                                {class: 'pbadge--yellow', name: 'Акция',},
+                            ],
+                            status: {class: '', name: 'В наличии'},
+                            imgs_list: [
+                                {img: 'images/product10.jpg'},
+                                {img: 'images/product6.jpg'},
+                                {img: 'images/product7.jpg'},
+                                {img: 'images/product8.jpg'},
+                                {img: 'images/product9.jpg'},
+                            ],
+                            colors_list: [
+                                {color: '#DEBC72'},
+                                {color: '#E4411D'},
+                                {color: '#56CCF2'},
+                                {color: '#9A683A'},
+                            ],
+                            size: 'Д/Ш/В: 1200х1000х720',
+                            title: 'Коллекция Мебель руководителя  Омега 324-М',
+                            price_old: '200 000 р.',
+                            price_sale: '-25%',
+                            price: '200 000',
+                            in_cart: '1',
+                            collection: true,
+                        })
+                    .col-xs-6.col-lg-4.col-xl-3
+                        +product-item({
+                            mod_class: 'product-item--single',
+                            badges_list: [
+                                {class: 'pbadge--primary', name: 'Распродажа',},
+                                {class: '', name: 'Рандомный',},
+                                {class: 'pbadge--primary', name: 'Хит',},
+                            ],
+                            status: {class: 'pstatus--out', name: 'Снят с производства'},
+                            imgs_list: [
+                                {img: 'images/product9.jpg'},
+                                {img: 'images/product10.jpg'},
+                                {img: 'images/product6.jpg'},
+                                {img: 'images/product7.jpg'},
+                                {img: 'images/product8.jpg'},
+                            ],
+                            colors_list: [
+                                {color: '#DEBC72'},
+                                {color: '#E4411D'},
+                                {color: '#56CCF2'},
+                                {color: '#9A683A'},
+                            ],
+                            size: 'Д/Ш/В: 1200х1000х720',
+                            title: 'Коллекция Мебель руководителя  Омега 324-М',
+                            price_old: '200 000 р.',
+                            price_sale: '-25%',
+                            price: '200 000',
+                            in_cart: '1',
+                            collection: true,
+                        })
+                    .col-xs-6.col-lg-4.col-xl-3
+                        +product-item({
+                            mod_class: 'product-item--single',
+                            badges_list: [
+                                {class: 'pbadge--primary', name: 'Распродажа',},
+                                {class: '', name: 'Рандомный',},
+                                {class: 'pbadge--primary', name: 'Хит',},
+                            ],
+                            status: {class: 'pstatus--order', name: 'Под заказ'},
+                            imgs_list: [
+                                {img: 'images/product8.jpg'},
+                                {img: 'images/product9.jpg'},
+                                {img: 'images/product10.jpg'},
+                                {img: 'images/product6.jpg'},
+                                {img: 'images/product7.jpg'},
+                            ],
+                            colors_list: [
+                                {color: '#DEBC72'},
+                                {color: '#E4411D'},
+                                {color: '#56CCF2'},
+                                {color: '#9A683A'},
+                            ],
+                            size: 'Д/Ш/В: 1200х1000х720',
+                            title: 'Коллекция Мебель руководителя  Омега 324-М',
+                            price_old: '',
+                            price_sale: '',
+                            price: '200 000',
+                            in_cart: '',
+                            collection: true,
+                        })
+                    .col-xs-6.col-lg-4.col-xl-3
+                        +product-item({
+                            mod_class: 'product-item--single',
+                            badges_list: [
+                                {class: 'pbadge--primary', name: 'Распродажа',},
+                                {class: '', name: 'Рандомный',},
+                                {class: 'pbadge--primary', name: 'Хит',},
+                            ],
+                            status: {class: 'pstatus--order', name: 'Под заказ'},
+                            imgs_list: [
+                                {img: 'images/product7.jpg'},
+                                {img: 'images/product8.jpg'},
+                                {img: 'images/product9.jpg'},
+                                {img: 'images/product10.jpg'},
+                                {img: 'images/product6.jpg'},
+                            ],
+                            colors_list: [
+                                {color: '#DEBC72'},
+                                {color: '#E4411D'},
+                                {color: '#56CCF2'},
+                                {color: '#9A683A'},
+                            ],
+                            size: 'Д/Ш/В: 1200х1000х720',
+                            title: 'Коллекция Мебель руководителя  Омега 324-М',
+                            price_old: '',
+                            price_sale: '',
+                            price: '200 000',
+                            in_cart: '',
+                            collection: true,
+                        })
+                include ../../components/pagination/pagination
+
+
+
+block main
+    .no-critical.no-critical--preloader
+
+
+
+block componentsCriticalStyles
+    +componentsCriticalStyles-includer()
+block vendorScripts
+    +vendorScripts-includer()
+block componentsStyles
+    +style-includer()
+
+block componentsScripts
+    +componentsScripts-includer()
+
+block scripts
+
+

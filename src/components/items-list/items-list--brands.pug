@@ -1,0 +1,85 @@
++include-style('items-list')
+
+.content.container.items-list__main
+    h1.h1.page-title Бренды
+    ul.items-list__countries
+        li.active
+            a(href="#").link Все
+        li
+            a(href="#").link Россия
+        li
+            a(href="#").link Италия
+        li
+            a(href="#").link Испания
+        li
+            a(href="#").link Польша
+        li
+            a(href="#").link Литва
+        li
+            a(href="#").link Германия
+        li
+            a(href="#").link Европа
+        li
+            a(href="#").link Китай
+
+    .row.items-list__row
+        mixin item(args={})
+            .col-12.col-sm-6.col-lg-3
+                .item.item--brand
+                    +lazy-img({
+                        img: args.img,
+                        placeholder: pixel,
+                        img_mod: 'item__img',
+                        wrap_mod: 'item__img-wrap',
+                        link: true,
+                        aria_label: true,
+                    })
+                    a(href="#").item__title=args.title
+                    .item__text=args.text
+        +item({
+            img: 'images/brand2.png',
+            title:'Лукойл',
+            text:'Всемирно известная компания наконец-то обзавелась нормальными стульями',
+        })
+        +item({
+            img: 'images/brand3.png',
+            title: 'Газпром',
+            text: 'Всемирно известная компания наконец-то обзавелась нормальными стульями, столами',
+        })
+        +item({
+            img: 'images/brand1.svg',
+            title: 'Wargaming.net',
+            text: 'Всемирно известная компания наконец-то обзавелась нормальными стульями, столами',
+        })
+        +item({
+            img: 'images/brand5.png',
+            title: 'Masterdata',
+            text: 'Всемирно известная компания наконец-то обзавелась нормальными стульями, столами',
+        })
+        +item({
+            img: 'images/brand6.png',
+            title: 'Лукойл',
+            text: 'Всемирно известная компания наконец-то обзавелась нормальными стульями',
+        })
+        +item({
+            img: 'images/brand2.png',
+            title: 'Лукойл',
+            text: 'Всемирно известная компания наконец-то обзавелась нормальными стульями',
+        })
+        +item({
+            img: 'images/brand3.png',
+            title: 'Газпром',
+            text: 'Всемирно известная компания наконец-то обзавелась нормальными стульями, столами',
+        })
+        +item({
+            img: 'images/brand1.svg',
+            title: 'Wargaming.net',
+            text: 'Всемирно известная компания наконец-то обзавелась нормальными стульями, столами',
+        })
+        +item({
+            img: 'images/brand5.png',
+            title: 'Masterdata',
+            text: 'Всемирно известная компания наконец-то обзавелась нормальными стульями, столами',
+        })
+
+    include ../../components/pagination/pagination

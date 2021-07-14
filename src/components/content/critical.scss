@@ -2,18 +2,19 @@
 
 .content .h1, .content h1,
 .h1, h1 {
-  font-size: rem(36);
-  line-height: 1.4;
-  font-weight: 700;
+  font-size: rem(40);
+  line-height: lineheight(40,48);
+  font-weight: 300;
   font-style: normal;
   margin: 0 0 rem(20);
+  color: #000;
 }
 
 .content .h2,.content h2,
 .h2,h2 {
-  font-size: rem(30);
-  line-height: 1.4;
-  font-weight: 700;
+  font-size: rem(28);
+  line-height: lineheight(28,34);
+  font-weight: 300;
   font-style: normal;
   margin: 0 0 rem(20);
 }
@@ -21,26 +22,26 @@
 .content .h3,.content h3,
 .h3,h3 {
   font-size: rem(24);
-  line-height: 1.4;
-  font-weight: 700;
+  line-height: lineheight(24,29);
+  font-weight: 300;
   font-style: normal;
   margin: 0 0 rem(20);
 }
 
 .content .h4,.content h4,
 .h4,h4 {
-  font-size: rem(18);
-  line-height: 1.4;
-  font-weight: 700;
+  font-size: rem(20);
+  line-height: lineheight(20,24);
+  font-weight: 600;
   font-style: normal;
   margin: 0 0 rem(20);
 }
 
 .content .h5,.content h5,
 .h5,h5 {
-  font-size: rem(15);
+  font-size: rem(16);
   line-height: 1.4;
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal;
   margin: 0 0 rem(20);
 }
@@ -53,3 +54,27 @@
   margin: rem(40) 0 rem(20);
 }
 
+@media (max-width: $md - 1) {
+  .content .h1, .content h1,
+  .h1, h1 {
+    font-size: rem(32);
+  }
+
+}
+@media (max-width: $sm - 1) {
+  .content .h1, .content h1,
+  .h1, h1 {
+    font-size: rem(25);
+  }
+  .content .h2, .content h2,
+  .h2, h2 {
+    font-size: rem(20);
+  }
+  .content .h4, .content h4,
+  .h4, h4 {
+    font-size: rem(14);
+  }
+}
+
+
+@import "--typography";

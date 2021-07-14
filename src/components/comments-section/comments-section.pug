@@ -1,0 +1,78 @@
++include-style('comments-section')
++include-script('comments-section')
+
++fancy-box()
+
++b('section').comments-section
+    .container
+        +e.__header.section-header
+            +e('h2').__title.section-header__title.h1 Мы гордимся<br> качеством нашей работы
+            +e.__link.section-header__link
+                a(href="#").link Все отзывы
+        +swiper({
+            navigation: true,
+            pagination: false,
+            container_mod: '',
+            wrapper_mod: '',
+            arrow_prev_mod: '',
+            arrow_next_mod: '',
+            pagination_mod: '',
+        }).comments-section__slider.js-comments-slider
+            .swiper-slide
+                mixin comment-item(args={})
+                    a.comment-item(data-fancybox href=args.img)
+                        +lazy-img-slider({
+                            img: args.img,
+                            placeholder: pixel,
+                            img_mod: 'comment-item__img',
+                            wrap_mod: 'comment-item__img-wrap',
+                            link: false,
+                            aria_label: false,
+                        })
+                +comment-item({
+                    img: 'images/comment1.jpg',
+                })
+            .swiper-slide
+                +comment-item({
+                    img: 'images/comment2.jpg',
+                })
+            .swiper-slide
+                +comment-item({
+                    img: 'images/comment3.jpg',
+                })
+            .swiper-slide
+                +comment-item({
+                    img: 'images/comment4.jpg',
+                })
+            .swiper-slide
+                +comment-item({
+                    img: 'images/comment5.jpg',
+                })
+            .swiper-slide
+                +comment-item({
+                    img: 'images/comment6.jpg',
+                })
+            .swiper-slide
+                +comment-item({
+                    img: 'images/comment1.jpg',
+                })
+            .swiper-slide
+                +comment-item({
+                    img: 'images/comment2.jpg',
+                })
+            .swiper-slide
+                +comment-item({
+                    img: 'images/comment3.jpg',
+                })
+            .swiper-slide
+                +comment-item({
+                    img: 'images/comment4.jpg',
+                })
+            .swiper-slide
+                +comment-item({
+                    img: 'images/comment5.jpg',
+                })
+            .swiper-slide
+                +comment-item({
+                    img: 'images/comment6.jpg',
+                })

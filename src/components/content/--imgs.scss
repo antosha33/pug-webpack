@@ -1,39 +1,47 @@
 @import '../../assets/css/vars_mixins/vars_mixins';
 
 .content {
-
+	figure {
+		margin: 20px -30px 30px;
+	}
+	figure img {}
+	figcaption {
+		padding: 0 30px;
+		margin-top: 10px;
+		font-weight: 300;
+		font-size: 13px;
+	}
 	img {
 		max-width: 100%;
 		display: block;
 		border-radius: 0;
 		line-height: 1.4;
-    clear:both;
-    &[align='left'],
-    &[align='center'],
-    &[align='right'] {
-      max-width: 100%;
-      float: none;
-      margin: 0 auto 20px;
-    }
-    @media (min-width: $lg) {
-      &[align='left'] {
-        float: left;
-        max-width: 40%;
-        margin: 0 40px 20px 0;
-      }
-      &[align='right'] {
-        float: right;
-        max-width: 40%;
-        margin: 0 0 20px 20px;
-      }
-      &[align='center'] {
-        margin: 0 auto 20px;
-      }
-    }
+    	clear:both;
+		&[align='left'],
+		&[align='center'],
+		&[align='right'] {
+		  max-width: 100%;
+		  float: none;
+		  margin: 0 auto 20px;
+		}
+		@media (min-width: $lg) {
+		  &[align='left'] {
+			float: left;
+			max-width: 40%;
+			margin: 0 40px 20px 0;
+		  }
+		  &[align='right'] {
+			float: right;
+			max-width: 40%;
+			margin: 0 0 20px 20px;
+		  }
+		  &[align='center'] {
+			margin: 0 auto 20px;
+		  }
+		}
 	}
-
 	.content-img {
-    clear:both;
+    	clear:both;
 		.img-descr {
 			display: block;
 			margin-top: 15px;
@@ -80,8 +88,7 @@
 			}
 		}
 	}
-
-  .video {
+	.video {
     width: 100%;
     max-width: 800px;
     height: 300px;//?
@@ -91,7 +98,15 @@
       height: 500px;
     }
   }
+}
 
-
-
+@media (max-width: $sm - 1) {
+	.content {
+		figure {
+			margin: 20px 0 30px;
+		}
+		figcaption {
+			padding: 0;
+		}
+	}
 }

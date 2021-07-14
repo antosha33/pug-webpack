@@ -1,26 +1,50 @@
 -
 	var pages = [
 		{name: 'Главная', link: 'index'},
-		{name: 'Каталог', link: 'catalog'},
-		{name: 'Корзина', link: 'basket'},
-		{name: 'Корзина оплата', link: 'basket-step-2'},
-		{name: 'Корзина пустая', link: 'basket-empty'},
-		{name: 'Карточка товара', link: 'product-page'},
-		{name: 'Регистрация', link: 'registration'},
-		{name: 'Авторизация', link: 'authorization'},
-		{name: 'Магазины', link: 'shops'},
-		{name: 'Доставка и оплата', link: 'content'},
+		{name: 'Главная(тест gps)', link: 'index_gps'},
+		{name: 'Категории', link: 'category'},
+		{name: 'Каталог - коллекции', link: 'catalog-collections'},
+		{name: 'Каталог - товары', link: 'catalog-products'},
+		{name: 'Каталог - избранное', link: 'catalog-favourite'},
+		{name: 'Текстовая', link: 'etalon'},
+		{name: 'О компании', link: 'about'},
 		{name: 'Контакты', link: 'contacts'},
-		{name: 'Регистрация устройства', link: 'registration-device'},
-		{name: 'Часто задаваемые вопросы', link: 'faq'},
+		{name: 'Новости', link: 'news-list'},
+		{name: 'Новость', link: 'news-page'},
+		{name: 'Проекты', link: 'projects-list'},
+		{name: 'Проект', link: 'project-page'},
+		{name: 'Шоу-рум', link: 'showroom'},
+		{name: '404', link: '404'},
+		{name: '404 2', link: '404_2'},
+		{name: '404 3', link: '404_3'},
+		{name: '404 4', link: '404_4'},
+		{name: 'Отзывы', link: 'comments'},
+		{name: 'Дизайн-проект', link: 'design-project'},
+		{name: 'Доставка', link: 'delivery'},
+		{name: 'Поиск', link: 'search-page'},
+		{name: 'Кабинет - история', link: 'personal-history'},
+		{name: 'Кабинет - личные данные', link: 'personal-data'},
+		{name: 'Корзина', link: 'basket'},
+		{name: 'Корзина - пустая', link: 'basket-empty'},
+		{name: 'Спасибо страница', link: 'thank_you'},
+		{name: 'Бренды - все', link: 'brands-list'},
+		{name: 'Бренды - страна', link: 'brands-list-single'},
+		{name: 'Бренд - с товарами', link: 'brand-page'},
+		{name: 'Бренд - с формой заказа', link: 'brand-page-v2'},
 
-	]
+		{name: 'Карта товара - не диван', link: 'product-page-v1'},
+		{name: 'Карта товара - диван', link: 'product-page-v2'},
 
-	const colors =  [
-		'$c-primary-black: #2A2C2C',
-		'$c-primary-white: #F6F6F6',
-		'$c-primary: #E35205',
-		'$c-primary-hover: #8dc63f'
+		{name: 'Карта коллекции - премиум', link: 'collection-page-premium'},
+		{name: 'Карта коллекции - диван', link: 'collection-page-v2'},
+		{name: 'Карта коллекции - не диван', link: 'collection-page-v1'},
+
+
+		// {name: 'UI KIT', link: 'ui-kit'},
+
+		// {name: '404', link: '404'},
+		// {name: '500', link: '500'},
+		// {name: 'Карта сайта', link: 'sitemap'}
 	]
 
 	// pages.sort(function(a, b){
@@ -44,8 +68,15 @@
 +b.pages-viget
 	+e.__menu
 		+e('ul').__menu-list
+
 			each item in pages
 				+e('li').__menu-item
 					+e('a').__menu-link(href= './' + item.link + '.html')= item.name
+			//+e('li').__menu-item
+			//	+e('a').__menu-link(href= '') Задача
+			//+e('li').__menu-item
+			//	+e('a').__menu-link(href= '') Декомпозиция
+			//+e('li').__menu-item
+			//	+e('a').__menu-link(href= '') Дизайн
 	+e.__btn
 		.media-pointer

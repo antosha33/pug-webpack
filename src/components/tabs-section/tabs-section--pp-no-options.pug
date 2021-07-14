@@ -1,0 +1,11 @@
++include-style('tabs-section')
++include-script('tabs-section')
+
++b('section').tabs-section
+    .container
+        +e.__header.section-header
+            +e('h2').__title.section-header__title.h1 Другие коллекции для руководителей
+        +e.__body
+            +products-slider({
+                collections: true
+            })

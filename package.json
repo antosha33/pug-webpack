@@ -4,7 +4,7 @@
 	"description": "webpack-box desc",
 	"main": "index.js",
 	"scripts": {
-		"dev": "webpack --config ./config/webpack.dev2.conf.js"
+		"dev": "node ./config/watcher.js"
 	},
 	"author": "",
 	"license": "ISC",
@@ -15,5 +15,8 @@
 		"webpack": "^4.41.2",
 		"webpack-cli": "^4.7.2",
 		"worker-farm": "1.7.0"
+	},
+	"devDependencies": {
+		"speed-measure-webpack-plugin": "^1.5.0"
 	}
 }

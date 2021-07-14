@@ -1,0 +1,29 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.header-drop {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity ease 0.4s, visibility ease 0.4s;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 103;
+  background: #fff;
+  &__inner {
+    display: none;
+    .row {
+      border-top: 1px solid #E9E9E9;
+      padding: 27px 0 27px;
+    }
+    &.active {
+      display: block;
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

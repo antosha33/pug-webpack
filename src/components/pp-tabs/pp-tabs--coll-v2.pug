@@ -1,0 +1,27 @@
++include-style('pp-tabs')
++include-script('pp-tabs')
+
++tabs({
+    titles_list: ['Товары из коллекции','Характеристики','Цвета','Доставка и оплата','Отзывы'],
+    container: true,
+}).pp-tabs.js-pp-tabs.pp-tabs--collection
+    //Товары из коллекции
+    .tabs__block.active
+        include ../tabs-section/tabs-section--pp-tab
+    //Характеристики
+    .tabs__block(id="js-options-block")
+        .row
+            .pp-tabs__left
+                include pp-tab-options--collection
+            .pp-tabs__right
+                include pp-tab-why
+                include pp-sm-slider
+    //Цвета
+    .tabs__block(id="js-colors-block")
+        include pp-tab-colors
+    //Доставка и оплата
+    .tabs__block
+        include pp-delivery
+    //Отзывы
+    .tabs__block(id="js-comments-block")
+        include pp-tab-comments

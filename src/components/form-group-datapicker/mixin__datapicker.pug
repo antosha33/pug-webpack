@@ -1,0 +1,19 @@
+mixin datapicker(args = {})
+	+include-script('form-group-datapicker')
+	+include-style('form-group-datapicker')
+
+	- var id = args.id || Math.floor(Math.random() * 9999999999);
+
+	.form-group(class= args.fg_mod)
+		if(args.label)
+			label.form-control-label(for= 'ID' + id class= args.label_mod)= args.label
+				if (args.required)
+					span.label-required *
+		input.form-control.form-control--datepicker.js-form-control--datepicker(
+			type= args.type || 'text',
+			id= 'ID' + id,
+			name= args.name || 'NAME' + id,
+			placeholder= args.placeholder || ' ',
+			readonly=args.readonly
+		)
+		+icon('i-calendar')

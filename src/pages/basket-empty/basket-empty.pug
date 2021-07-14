@@ -1,27 +1,40 @@
 extends ../../layout/layout
 
 block vars
-	- var pageTitle = 'Корзина'
-	- var pageBodyClass = ''
-	- var dir = './'
+    - var pageTitle = 'Корзина - пустая'
+    - var pageBodyClass = 'basket-page'
+    - var dir = './'
 
 
 block premain
+    .breadcrumb-wrap
+        .container
+            +breadcrumb({
+                href_content1: '',
+                content1: 'Корзина',
+                href_content2: '',
+                content2: '',
+                content3: ''
+            })
+    .container
+        include ../../components/basket-page/basket-page-empty
 
-	include ../../components/basket-empty/basket-empty
+
+
+
 
 block main
-	.no-critical.no-critical--preloader
+    .no-critical.no-critical--preloader
 
 
 block componentsCriticalStyles
-	+componentsCriticalStyles-includer()
+    +componentsCriticalStyles-includer()
 block vendorScripts
-	+vendorScripts-includer()
+    +vendorScripts-includer()
 block componentsStyles
-	+style-includer()
+    +style-includer()
 
 block componentsScripts
-	+componentsScripts-includer()
+    +componentsScripts-includer()
 
 block scripts

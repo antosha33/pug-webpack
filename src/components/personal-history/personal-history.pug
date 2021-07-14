@@ -1,0 +1,83 @@
++include-style('personal-history')
++include-script('personal-history')
+
+.personal-history
+    mixin ph-item(args={})
+        .ph-item.js-ph-item
+            .ph-item__header
+                .ph-item__num
+                    span=args.num
+                .ph-item__date=args.date
+                .ph-item__weight=args.weight
+                .ph-item__value=args.value
+                .ph-item__total!=args.total
+                .ph-item__status
+                    .pbadge(class=args.status.class)=args.status.name
+                .ph-item__action
+                    if(args.status.class=="pbadge--secondary")
+                        span.js-undo.undo.anim-rotate
+                            +icon('i-close')
+                    else
+                        span.js-repeat.repeat.anim-rotate
+                            +icon('i-repeat')
+            .ph-item__body
+                .ph-item__info
+                    .ph-item__info-item
+                        span Доставка
+                        p Курьером <br>Смоленск, ул. Смоленская, 123-14
+                    .ph-item__info-item
+                        span Оплата
+                        p Картой при доставке
+                .ph-item__list
+                    .ph-product
+                        a(href="#").ph-product__img-wrap
+                            img(src="images/product1.jpg" alt="pr").ph-product__img
+                        a(href="#").ph-product__title Диван офисный Изумрудное Облачко 2
+                        .ph-product__sku Артикул: <span>34234512</span>
+                        .ph-product__price 1 шт х 188 000 ₽
+                        .ph-product__total Итого: <b>188 000 ₽</b>
+                    .ph-product
+                        a(href="#").ph-product__img-wrap
+                            img(src="images/product1.jpg" alt="pr").ph-product__img
+                        a(href="#").ph-product__title Диван офисный Изумрудное Облачко 2
+                        .ph-product__sku Артикул: <span>34234512</span>
+                        .ph-product__price 1 шт х 18 000 ₽
+                        .ph-product__total Итого: <b>18 000 ₽</b>
+
+    +ph-item({
+        num: 'Заказ №1',
+        date: 'От 22.02.2021',
+        weight: 'Вес 200 кг',
+        value: 'Объем  1,2 м3',
+        total: 'на сумму <b>212 000 руб</b>',
+        status: {class: '',name:'Закрыт'},
+        action: '',
+    })
+    +ph-item({
+        num: 'Заказ №2',
+        date: 'От 22.02.2021',
+        weight: 'Вес 30 кг',
+        value: 'Объем  1,2 м3',
+        total: 'на сумму <b>14 000 руб</b>',
+        status: {class: 'pbadge--primary', name: 'Отменен'},
+        action: '',
+    })
+    +ph-item({
+        num: 'Заказ №3',
+        date: 'От 22.02.2021',
+        weight: 'Вес 30 кг',
+        value: 'Объем  1,2 м3',
+        total: 'на сумму <b>2 000 руб</b>',
+        status: {class: 'pbadge--primary', name: 'Отменен'},
+        action: '',
+    })
+    +ph-item({
+        num: 'Заказ №4',
+        date: 'От 22.02.2021',
+        weight: 'Вес 30 кг',
+        value: 'Объем  1,2 м3',
+        total: 'на сумму <b>32 000 руб</b>',
+        status: {class: 'pbadge--secondary', name: 'Заказ принят'},
+        action: '',
+    })
+

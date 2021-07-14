@@ -1,0 +1,42 @@
++include-style('tabs-section')
++include-script('tabs-section')
+
++b('section').tabs-section
+    .container
+        +e.__header.section-header
+            +e('h2').__title.section-header__title.h1 Аксессуары к товару
+        +e.__options.lvl1.js-options-group
+            span.option.active Мебель для персонала
+            span.option Кабинеты руководителя
+            span.option Мебель для переговорных
+            span.option Мягкая мебель для офиса
+        +e.__body
+            +products-slider({
+                collections: false
+            })
++b('section').tabs-section
+    .container
+        +e.__header.section-header
+            +e('h2').__title.section-header__title.h1 Сопутствующие товары
+        +e.__options.lvl1.js-options-group
+            span.option.active Мебель для персонала
+            span.option Кабинеты руководителя
+            span.option Мебель для переговорных
+            span.option Мягкая мебель для офиса
+        +e.__body
+            +products-slider({
+                collections: false
+            })
++b('section').tabs-section
+    .container
+        +e.__header.section-header
+            +e('h2').__title.section-header__title.h1 Товары-аналоги
+        +e.__options.lvl1.js-options-group
+            span.option.active Мебель для персонала
+            span.option Кабинеты руководителя
+            span.option Мебель для переговорных
+            span.option Мягкая мебель для офиса
+        +e.__body
+            +products-slider({
+                collections: false
+            })

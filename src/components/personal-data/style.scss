@@ -1,0 +1,10 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.personal-data {
+  &__actions {
+    .edit {}
+    .save {
+      display: none;
+    }
+  }
+}

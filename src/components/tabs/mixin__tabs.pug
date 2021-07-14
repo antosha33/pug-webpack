@@ -1,0 +1,29 @@
+mixin tabs(args={})
+    +include-style('tabs')
+    +include-script('tabs')
+    .tabs&attributes(attributes)
+        if(args.container)
+            .container
+                .tabs__titles
+                    - var n = 0
+                    each title in args.titles_list
+                        if n > 0
+                            .tabs__title=title
+                        else
+                            .tabs__title.active=title
+                        - n++
+                .tabs__blocks
+                    //-.tabs__block
+                    block
+        else
+            .tabs__titles
+                - var n = 0
+                each title in args.titles_list
+                    if n > 0
+                        .tabs__title=title
+                    else
+                        .tabs__title.active=title
+                    - n++
+            .tabs__blocks
+                //-.tabs__block
+                block

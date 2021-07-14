@@ -1,0 +1,19 @@
++include-style('tabs-section')
++include-script('tabs-section')
+
++b('section').tabs-section
+    .container
+        +e.__header.section-header
+            +e('h2').__title.section-header__title.h1 Лучшие предложения для вас
+        +e.__options.lvl1.js-options-group
+            span.option.active Стулья
+            span.option Столы
+            span.option Диваны
+            span.option Шкафы
+        +e.__options.lvl2.js-options-group
+            span.option.option--light.active Самые долговечные
+            span.option.option--light Самые удобные спинки
+            span.option.option--light С регулировкой спинки
+            span.option.option--light Уникальный дизайн
+        +e.__body
+            +products-slider()

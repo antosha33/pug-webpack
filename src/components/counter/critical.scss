@@ -1,0 +1,107 @@
+@import 'src/assets/css/vars_mixins/vars_mixins';
+
+.counter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0;
+  box-sizing: border-box;
+  .disabled-text {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    display: none;
+    width: 100%;
+    text-align: center;
+    color: $c-error;
+    font-size: 12px;
+    line-height: 1;
+  }
+}
+
+.counter-input {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  width: auto;
+  max-width: 43px;
+  height: 40px;
+  padding: 5px;
+  color: #828282;
+  text-align: center;
+  font-weight: 300;
+  font-size: 16px;
+  outline: none;
+  background-color: rgba(0,0,0,0.0);
+  border: 1px solid #E7F0EB;
+  border-radius: 4px;
+  line-height: 1;
+  transition: box-shadow ease 0.4s;
+  &:focus {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.13);
+    border: 1px solid $c-primary-hover;
+  }
+}
+.counter-btn {
+  box-sizing: border-box;
+  position: relative;
+  flex-shrink: 0;
+  width: 35px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  color: transparent;
+  background: transparent;
+  font-size: 0;
+  border-radius: 4px;
+  transition: box-shadow ease 0.4s;
+  &:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.13);
+  }
+  &:before, &:after {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: calc(50% - 5px);
+    display: block;
+    width: 13px;
+    height: 2px;
+    content: '';
+    background: $c-primary;
+  }
+  &:before {
+    transform: rotate(-90deg);
+  }
+  &[disabled], &.disabled {
+    cursor: default;
+    &:before, &:after {
+      background: $c-gray;
+    }
+  }
+}
+.counter-minus {
+  order: -1;
+  &:before {
+    display: none;
+  }
+}
+.counter-plus {
+  &[disabled], &.disabled {
+    & ~ .disabled-text {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: $xl) {
+  .counter-btn {
+    &:hover {
+      &:before, &:after {
+        background: $c-primary;
+      }
+    }
+  }
+}
+
+

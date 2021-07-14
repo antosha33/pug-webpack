@@ -35,26 +35,38 @@ mixin nav(args= {})
 					#{item.span ? 'span' : 'a'}.nav-link(
 						href= !item.span && (item.link || '#')
 						aria-label= item.name
-						data-ajax= item.ajax && 'true'
+						data-slam-ajax= item.ajax && 'true'
 						data-ajax-src= item.ajax && item.ajax.src
 						data-ajax-event= item.ajax && item.ajax.event
 						data-ajax-target= item.ajax && item.ajax.target
 						data-ajax-reinit= item.ajax && item.ajax.reinit
 					)
 						if (item.img)
-							+lazy-img({
-								img: item.img,
-								placeholder: pixel,
-								img_mod: 'nav-item-img',
-								wrap_mod: 'nav-item-img-wrap',
-								link: false,
-								aria_label: false,
-							})
+							//+lazy-img({
+							//	img: item.img,
+							//	placeholder: pixel,
+							//	img_mod: 'nav-item-img',
+							//	wrap_mod: 'nav-item-img-wrap',
+							//	link: false,
+							//	aria_label: false,
+							//})
+							if (args.img === false)
+							
+							else
+								span.nav-item-img-wrap
+									img.nav-item-img(src=item.img)
 						if (item.icon)
 							+icon(item.icon.name)(width= item.icon.width height= item.icon.height)
-						span.nav-item-name!= item.name
-						if(item.list || item.big_nav || item.list_hidden)
-							span.nav-toggle.js-nav-toggle
+						if (item.noflex_nav)
+							span.nav-item-name
+								if(item.list || item.big_nav || item.list_hidden)
+									span.name.name--arr!= item.name
+								else
+									span.name!= item.name
+						if (!item.noflex_nav)
+							span.nav-item-name!= item.name
+							if(item.list || item.big_nav || item.list_hidden)
+								span.nav-toggle.js-nav-toggle
 
 					if(item.list || item.big_nav)
 						div.js-nav.nav-lvl2(id= item.ajax && item.ajax.target && item.ajax.target.replace('#', ''))

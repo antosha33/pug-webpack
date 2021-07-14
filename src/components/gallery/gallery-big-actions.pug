@@ -1,0 +1,71 @@
++include-style('gallery')
++include-script('gallery')
++fancy-box()
+
+.gallery
+    +swiper-with-nav({
+        main: {
+            wrapper_mod: '',
+            container_mod: '',
+            pagination_mod: '',
+            arrow_prev_mod: '',
+            arrow_next_mod: '',
+            pagination: false,
+            navigation: true,
+        },
+        nav: {
+            wrapper_mod: '',
+            container_mod: '',
+            pagination_mod: '',
+            arrow_prev_mod: '',
+            arrow_next_mod: '',
+            pagination: false,
+            navigation: true,
+            centeredSlides: true,
+            spaceBetween: 5,
+            list: [
+                {
+                    img: 'images/news-page-pr1.jpg',
+                    img_placeholder: 'images/news-page-pr1.jpg',
+                }, {
+                    img: 'images/news-page-pr2.jpg',
+                    img_placeholder: pixel,
+                }, {
+                    img: 'images/news-page-pr3.jpg',
+                    img_placeholder: pixel,
+                }, {
+                    img: 'images/news-page-pr4.jpg',
+                    img_placeholder: pixel,
+                }, {
+                    img: 'images/news-page-pr5.jpg',
+                    img_placeholder: pixel,
+                }, {
+                    img: 'images/news-page-pr6.jpg',
+                    img_placeholder: pixel,
+                },
+                {
+                    img: 'images/news-page-pr1.jpg',
+                    img_placeholder: pixel,
+                },
+            ],
+            img_mod: 'swiper-thumbnail-img',
+            wrap_mod: 'swiper-thumbnail'
+        },
+    }).js-connected-sliders-big
+        //- Слайды главного слайда
+        .swiper-slide
+            +gallery-item()
+        .swiper-slide
+            +gallery-item()
+        .swiper-slide
+            +gallery-item()
+        .swiper-slide
+            +gallery-item()
+        .swiper-slide
+            +gallery-item()
+        .swiper-slide
+            +gallery-item()
+        .swiper-slide
+            +gallery-item()
+
+

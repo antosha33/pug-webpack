@@ -1,0 +1,17 @@
+mixin file-download(args= {})
+	+include-style('form-group-file')
+	a.file-download(href='#' download aria-label='Скачать файл' class=args.mod_class)
+		span.icon
+			span=args.icon
+		span.name=args.name
+			block
+
+mixin file-upload(args= {})
+	+include-style('form-group-file')
+	.form-group
+		.file
+			+icon('i-upload')(style='width:18px; height:18px;')
+			label(for=args.id)=args.label
+			input(type='file' aria-label='Загрузить файл' id=args.id accept=".jpg, .jpeg, .png" )
+			//- span= args.name
+			//- 	block

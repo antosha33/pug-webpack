@@ -1,0 +1,16 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.header-mob-drop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 109;
+  background: #fff;
+  max-width: 375px;
+  transform: translate(-100%,0);
+  transition: transform ease 0.4s;
+  &.active {
+    transform: translate(0,0);
+  }
+}

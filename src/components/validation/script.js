@@ -1,52 +1,5 @@
-window.addEventListener('load', function (event) {
-
-
-
-	$('.js-show-pass').each(function(){
-		let isShown = false 
-		$(this).click(function(){
-			$(this).closest('.form-group').find('input').attr('type', !isShown ? 'text' : 'password');
-			isShown = !isShown;
-		})
-	})
-
-	const checkPattern = (value) => {
-
-		const bvPart1 = 'Пароль должен быть не менее 10 символов длиной.';
-		const bvPart2 = 'Пароль должен содержать латинские символы верхнего регистра (A-Z).';
-		const bvPart3 = `Пароль должен содержать знаки пунктуации (,.<>/?;:'"[]{}|~!@#$%^&*()_+=-).`;
-		const bvPart4 = 'Пароль должен содержать латинские символы нижнего регистра (a-z).';
-		const bvMessage = [];
-
-		if (value.length < 10){
-			bvMessage.push(bvPart1)
-		}
-
-		const regex = new RegExp('(?=.*[A-Z])', 'g');
-
-		if (!value.match(regex)) {
-			bvMessage.push(bvPart2);
-		}
-
-		const regex2 = new RegExp('(?=.*(,|\\.|<|>|\\/|\\?|;|:|"|\\[|\\]|\\{|\}|\\|\\||~|\\!|@|#|\\$|%|\\^|&|\\*|\\(|\\)|_|\\+|=|-))', 'g');
-
-		if (!value.match(regex2)) {
-			bvMessage.push(bvPart3);
-		}
-
-		const regex3 = new RegExp('(?=.*[a-z])', 'g');
-
-		if (!value.match(regex3)) {
-			bvMessage.push(bvPart4);
-		}
-
-		$('input[data-password="password"]').closest('.form-group').find('.help-block[data-bv-validator="callback"]').text(bvMessage.join(''));
-
-		return bvMessage;
-	}
-
-
-	var validation = function () {
+window.addEventListener( 'load', function( event ) {
+	var validation= function () {
 
 		let loadedFlag = {
 			BV: true,
@@ -59,33 +12,6 @@ window.addEventListener('load', function (event) {
 					let $this = $(this);
 					$this.addClass('bv-form-initialized');
 					loadedFlag.BV = true;
-
-
-					if ($this.find('input[data-password="password"]').length) {
-						$this.find('input[data-password="password"]').on('input', function () {
-
-							if (!checkPattern($(this).val()).length) {
-								$this.data('bootstrapValidator').updateStatus($this.find('input[data-password="password"]'), 'VALID', null);
-							} else {
-								setTimeout(() => {
-									$this.data('bootstrapValidator').updateStatus($this.find('input[data-password="password"]'), 'INVALID', null);
-								}, 10)
-							}
-						})
-					}
-					
-					if ($this.find('input[data-password="password-identical"]').length) {
-						$this.find('input[data-password="password-identical"]').on('input', function () {
-							if ($this.find('input[data-password="password"]').val() == $this.find('input[data-password="password-identical"]').val()) {
-								$this.data('bootstrapValidator').updateStatus($this.find('input[data-password="password-identical"]'), 'VALID', null);
-							} else {
-								setTimeout(() => {
-									$this.data('bootstrapValidator').updateStatus($this.find('input[data-password="password-identical"]'), 'INVALID', null);
-								}, 10)
-							}
-						})
-					}
-
 				})
 				.bootstrapValidator({
 					feedbackIcons: {
@@ -94,7 +20,6 @@ window.addEventListener('load', function (event) {
 						validating: 'bv-icon-refresh'
 					},
 				});
-
 		}
 
 		function inputmaskInit() {
@@ -114,7 +39,7 @@ window.addEventListener('load', function (event) {
 				BVInit()
 			} else {
 				loadedFlag.BV = false;
-				$.getScript('/local/templates/html/js/vendor/bootstrapValidator.min.js', BVInit);
+				$.getScript('./js/vendor/bootstrapValidator.min.js', BVInit);
 			}
 		}
 
@@ -125,7 +50,7 @@ window.addEventListener('load', function (event) {
 				inputmaskInit()
 			} else {
 				loadedFlag.inputmask = false;
-				$.getScript('/local/templates/html/js/vendor/jquery.inputmask.min.js', inputmaskInit);
+				$.getScript('./js/vendor/jquery.inputmask.min.js', inputmaskInit);
 			}
 		}
 
@@ -134,13 +59,8 @@ window.addEventListener('load', function (event) {
 			if (loadedFlag.BV && loadedFlag.inputmask) {
 				loaderBV();
 				loaderInputmask();
-
 			}
 		})
 	};
-	validation();
-
-
+	validation()
 });
-
-

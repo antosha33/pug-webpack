@@ -1,7 +1,7 @@
 // import LazyLoad  from '../../assets/js/vendor/lazyload.min.js'
 
 (function () {
-	var callback_loaded = function (el) {
+	let callback_loaded = function (el) {
 		const $img = $(el)
 		const $img_wrap = $img.closest('.lazy-img-wrap');
 

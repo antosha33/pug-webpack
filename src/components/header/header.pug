@@ -1,52 +1,199 @@
 +include-script('header')
++ajax()
 
-header.header
-	.container
-		.header-top
-			.header-top__inner
-				.header-top__right
-					a(href="/local/templates/html/index.html")
-						img.header-top__right-img(src='/local/templates/html/images/glo-logo.png')
-					.header-top__location
-						.header-top__location-icon
-							+icon('i-location')(style="width:19px; height: 24px")
-						.header-top__location-title Минск
-				.header-top__left
-					.header-top__menu
-						+nav({
-							modClass: 'nav--header',
-							list: [
-									{   name: 'Каталог',
-											link: '/local/templates/html/catalog.html',
-									},
-									{   name: 'Региcтрация',
-										link: '/local/templates/html/registration.html',
-									},
-									{   name: 'Найти магазин',
-											link: '/local/templates/html/shops.html',
-									},
-									{   name: 'Контакты',
-											link: '/local/templates/html/contacts.html',
-									},
-								]
-						})
-						.mobile-location
-							.header-top__location
-								.header-top__location-icon
-									+icon('i-location')(style="width:19px; height: 24px")
-								.header-top__location-title Минск
-					a(href="#" aria-label='tg' title='tg').header-contact.mob-hidden
-						+icon('i-tg')(style='width:40px; height:40px;')
-					a(href="#" aria-label='viber' title='viber').header-contact.mob-hidden
-						+icon('i-viber')(style='width:40px; height:40px;')
-					.header-contact.header-profile
-						a(href="#").header-log-in.active
-							+icon('i-profile')(style='width:40px; height:40px;')
-						a(href="#").header-log-out Выйти
-					a(href="#" aria-label='корзина' title='корзина').header-contact.header-cart
-						+icon('i-cart')(style='width:40px; height:40px;').icon--cart
-						.header-cart__total 1
-					a(href="#" aria-label='menu' title='menu').header-contact.mob-show.js-mob-menu
-						include ../burger/burger
-						//- +icon('i-burger')(style='width:40px; height:40px;')
-		include ../mob-menu/mob-menu
+
+.alert-banner.js-top-alert
+    .container
+        p Баннер, который сообщает что-то очень важное!
+        a(href="javascript:;").close.js-close-alert.anim-rotate
+            +icon('i-close')
++b('header').header-top
+    .container
+        +e.__inner
+            +e.__item
+                +e('a').__item-link.anim-ding(href="tel:+74996488477")
+                    +icon("i-tel2")
+                    span.text.text--tel +7(499) 648-84-77
+                //-span.time Пн.-пт. - с 9.00 до 18.00
+            +e.__item.anim-map
+                +icon("i-map")
+                span.text Москва, Бизнес-центр "Сириус Парк"
+            +e.__item.anim-ding
+                +icon("i-time")
+                span.text Пн.-пт. - с 9.00 до 18.00
+            +e.__item
+                +e('a').__item-link.anim-mail(href="mailto:info@mavikom.ru")
+                    +icon("anim-i-mail-top").anim-mail-top
+                    +icon("anim-i-mail-bottom")
+                    span.text info@mavikom.ru
+
+            +nav({
+                modClass: 'header-top__nav',
+                list: [
+                    {name: 'О компании',link: './about.html'},
+                    {
+                        name: 'Покупателям', link: '',
+                        list: [
+                            {name: 'Дизайн-проект', link: ''},
+                            {name: 'Доставка и сборка', active: true, span: true},
+                            {name: 'Доставка'},
+                            {name: 'Оплата'},
+                        ]
+                    },
+                    {name: 'Дизайнерам'},
+                    {name: 'Шоу-рум', active: true},
+                    {name: 'Проекты', link: ''},
+                    {name: 'Контакты', link: ''},
+                ]
+            })
++b('header').header-middle
+    .container
+        +e.__inner
+            a.mob-nav-btn.js-open-mob-nav(
+                href="javascript:;"
+                data-slam-ajax="true"
+                data-ajax-event="click mouseenter"
+                data-ajax-target=".header-mob-drop"
+                data-ajax-reinit=""
+                data-ajax-src="components-template/header-mob-drop/ajax__header-mob-drop.html"
+            )
+                span.burger
+                    span
+                    span
+                    span
+                    span
+            a(href="./index.html").logo
+                img(src="/local/templates/html/images/logo.svg" alt="Мавиком" width="214" height="49").logo__img
+            +e.__actions
+                +b.header-action.header-action--search
+                    +e('a').__title.js-toggle-search
+                        +icon('i-search').open
+                        +icon('i-close').close
+                    +e.__body.js-search-field-box
+                        +e('a').__catalog-btn.btn.btn--primary(
+                            href="javascript:;"
+                            data-slam-ajax="true"
+                            data-ajax-event="click mouseenter"
+                            data-ajax-target=".header-catalog-drop"
+                            data-ajax-reinit=""
+                            data-ajax-src="components-template/header-catalog-drop/ajax__header-catalog-drop.html"
+                        )
+                            span.text Каталог
+                            span.burger
+                                span
+                                span
+                                span
+                                span
+                        +e('form').__search-wrap.header-search
+                            input(type="text" placeholder="Введите название товара").header-search__input
+                            .header-search__clear.anim-rotate.js-search-clear
+                                +icon('i-close')
+                            .header-search__close.js-search-close
+                                +icon('i-close')
+                            button.header-search__btn.anim-search
+                                span
+                                    +icon('i-search')
+                            .title-search-result.header-search__result
+                                //выпадающий поиск готов, закоменчен для тестов на page speed
+                                //-include ../search-result/search-result
+
+                .header-top__item.header-top__item--middle
+                    a.header-top__item-link.anim-ding(href="tel:+74996488477")
+                        +icon("i-tel")
+                        span.text.text--tel +7(499) 648-84-77
+                +b.header-action.header-action--tel
+                    +e('a').__title.js-btn-toggle(
+                        href="#modal-contacts",
+                        data-toggle='modal',
+                        data-target="#modal-contacts"
+                        data-overflow-click='true',
+                        data-overflow-fade='true'
+                        aria-label='Связаться с нами')
+                        +icon('i-tel')
+                +b.header-action.header-action--profile
+                    //неавторизованный
+                    +e('a').__title(
+                        href="#modal-login",
+                        data-toggle='modal',
+                        data-target="#modal-login"
+                        data-overflow-click='true',
+                        data-overflow-fade='true'
+                        aria-label='Войти в личный кабинет')
+                        +icon('i-user')
+                    //авторизованный
+                    +e('a').__title(
+                        style="display:none;"
+                        href="javascript:;"
+                        )
+                        +icon('i-user')
+                    +e.__body
+                        ul
+                            li
+                                a(href="#") Мой профиль
+                            li
+                                a(href="#") Заказы
+                            li
+                                a(href="#") Корзина
+                            li
+                                a(href="#") Избранное
+                            li
+                                a(href="#") Выход
+                +b.header-action
+                    +e('a').__title(href="#")
+                        +icon('i-like')
+                +b.header-action.header-action--cart
+                    +e('a').__title(
+                        href="#"
+                        data-slam-ajax="true"
+                        data-ajax-event="click mouseenter"
+                        data-ajax-target=".header-basket-drop"
+                        data-ajax-reinit=""
+                        data-ajax-src="components-template/header-basket-drop/ajax__header-basket-drop.html"
+                    )
+                        +icon('i-cart')
+                        span.count 3
+                        span.price 20 450.40 р.
+                    +e.__body
+                        include ../header-basket-drop/header-basket-drop
+        include ../header-catalog-drop/header-catalog-drop
++b('header').header-bottom
+    .container
+        +e.__inner
+            +nav({
+                modClass: 'header-bottom__nav',
+                list: [
+                    {
+                        name: 'Мебель для персонала',
+                        link: '',
+                        ajax: {
+                            src: 'components-template/header-drop/ajax__header-drop.html',
+                            event: 'click mouseenter',
+                            target: '.data-drop-0',
+                            reinit: '',
+                        }
+                        },
+                    {
+                        name: 'Кабинеты руководителя',
+                        link: '',
+                        ajax: {
+                            src: 'components-template/header-drop/ajax__header-drop1.html',
+                            event: 'click mouseenter',
+                            target: '.data-drop-1',
+                            reinit: '',
+                        }
+                    },
+                    {name: 'Стойки ресепшн', link: '',},
+                    {name: 'Переговорные',link: ''},
+                    {name: 'Офисные кресла', active: true, span: true, link: ''},
+                    {name: 'Офисные стулья', link: ''},
+                    {name: 'Офисные диваны', link: ''},
+                ]
+            })
+            a(href="#").sale-link.anim-clone-rotate
+                +icon('i-star-fill').main
+                +icon('i-star-fill').clone
+                span.text Распродажа
+    include ../header-drop/header-drop
+include ../header-mob-drop/header-mob-drop
+
+

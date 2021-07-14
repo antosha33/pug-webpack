@@ -1,13 +1,9 @@
 @import 'src/assets/css/vars_mixins/vars_mixins';
 
 .btn.btn--outline {
-  padding: 12px 10px;
-  color: $c-primary;
-  border: 1px solid $c-primary;
-  border-radius: 33px;
+  color: $c-add;
+  border: 1px solid $c-add;
   background-color: transparent;
-  font-size: 14px;
-  font-weight: bold;
   &[disabled], &.disabled {
     color: #e0e0e0 !important;
     border: solid 1px #e0e0e0 !important;
@@ -20,11 +16,12 @@
   }
   @media (min-width: $lg) {
     &:hover, &.active {
-      color: $c-primary-hover;
-      border: 1px solid $c-primary-hover;
+      color: #fff;
+      background: $c-add;
+      border: 1px solid $c-add;
     }
     &:active {
-      border: 1px solid $c-primary;
+      border: 1px solid $c-add;
     }
   }
 }

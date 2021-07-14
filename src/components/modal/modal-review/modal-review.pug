@@ -1,0 +1,99 @@
++modal({
+	id: 'modal-review',
+	mod: 'modal-review',
+	title: 'Оставить отзыв',
+	header: true
+})
+	form.bv-form.js_lazy-load-validation(
+		enctype='multipart/form-data',
+		method='POST',
+		action='#',
+		autocomplete='on',
+		novalidate='novalidate'
+	)
+		+input({
+			label: 'Ваше имя',
+			type: 'text',
+			name: false,
+			small: false,
+			placeholder: 'Ваше имя',
+			required: true,
+			pattern: false,
+			validation: {
+				message: 'Обязательное поле',
+				regexp: 'Неверный формат',
+				emailaddress: ' ',
+				identical: false
+			}
+		})
+		+input({
+			label: 'Ваш телефон',
+			type: 'tel',
+			name: false,
+			small: false,
+			placeholder: '+7(___)___-__-__',
+			required: true,
+			pattern: phone,
+			validation: {
+				message: 'Обязательное поле',
+				regexp: 'Неверный формат',
+				emailaddress: ' ',
+				identical: false
+			}
+		})
+		+input({
+			label: 'Ваш e-mail',
+			type: 'email',
+			name: false,
+			small: false,
+			placeholder: 'Ваш e-mail',
+			required: true,
+			pattern: email,
+			validation: {
+				message: 'Обязательное поле',
+				regexp: 'Неверный формат',
+				emailaddress: ' ',
+				identical: false
+			}
+		})
+		+textarea({
+			label: 'Отзыв',
+			required: true,
+			small: false,
+			placeholder: false,
+		})
+		+textarea({
+			label: 'Плюсы',
+			required: false,
+			small: false,
+			placeholder: false,
+		})
+		+textarea({
+			label: 'Минусы',
+			required: false,
+			small: false,
+			placeholder: false,
+		})
+		.form-group.mr-rating
+			.form-control-label Оценка
+			.mr-rating__inputs
+				label.mr-rating__label
+					input(type="radio" name="rating" value="5")
+					+icon('i-star')
+				label.mr-rating__label
+					input(type="radio" name="rating" value="4")
+					+icon('i-star')
+				label.mr-rating__label
+					input(type="radio" name="rating" value="3")
+					+icon('i-star')
+				label.mr-rating__label
+					input(type="radio" name="rating" value="2")
+					+icon('i-star')
+				label.mr-rating__label
+					input(type="radio" name="rating" value="1")
+					+icon('i-star')
+		button.btn.btn--primary
+			span Отправить
+
+
+

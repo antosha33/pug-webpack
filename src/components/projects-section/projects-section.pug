@@ -1,0 +1,79 @@
++include-style('projects-section')
++include-script('projects-section')
+
++b('section').projects-section
+    .container
+        +e.__header.section-header
+            +e('h2').__title.section-header__title.h1 Более 100<br> готовых проектов по всей России
+            +e.__link.section-header__link
+                a(href="#").link Показать все <sup>32</sup>
+        +swiper({
+            navigation: true,
+            pagination: false,
+            container_mod: '',
+            wrapper_mod: '',
+            arrow_prev_mod: '',
+            arrow_next_mod: '',
+            pagination_mod: '',
+        }).projects-section__slider.js-projects-slider
+            .swiper-slide
+                a(href="#").project-item
+                    +lazy-img-slider({
+                        img: 'images/project1.jpg',
+                        placeholder: pixel,
+                        img_mod: 'project-item__img',
+                        wrap_mod: 'project-item__img-wrap',
+                        link: false,
+                        aria_label: false,
+                    })
+                    .project-item__content
+                        .project-item__title
+                            span Век живи
+                            +icon('i-arr-long-r')
+                        .project-item__text Комплексное оснащение офиса компании
+            .swiper-slide
+                a(href="#").project-item
+                    +lazy-img-slider({
+                        img: 'images/project2.jpg',
+                        placeholder: pixel,
+                        img_mod: 'project-item__img',
+                        wrap_mod: 'project-item__img-wrap',
+                        link: false,
+                        aria_label: false,
+                    })
+                    .project-item__content
+                        .project-item__title
+                            span Век живи 2
+                            +icon('i-arr-long-r')
+                        .project-item__text Комплексное оснащение офиса компании 2
+            .swiper-slide
+                a(href="#").project-item
+                    +lazy-img-slider({
+                        img: 'images/project1.jpg',
+                        placeholder: pixel,
+                        img_mod: 'project-item__img',
+                        wrap_mod: 'project-item__img-wrap',
+                        link: false,
+                        aria_label: false,
+                    })
+                    .project-item__content
+                        .project-item__title
+                            span Век живи
+                            +icon('i-arr-long-r')
+                        .project-item__text Комплексное оснащение офиса компании
+            .swiper-slide
+                a(href="#").project-item
+                    +lazy-img-slider({
+                        img: 'images/project2.jpg',
+                        placeholder: pixel,
+                        img_mod: 'project-item__img',
+                        wrap_mod: 'project-item__img-wrap',
+                        link: false,
+                        aria_label: false,
+                    })
+                    .project-item__content
+                        .project-item__title
+                            span Век живи 2
+                            +icon('i-arr-long-r')
+                        .project-item__text Комплексное оснащение офиса компании 2
+

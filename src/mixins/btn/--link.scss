@@ -1,0 +1,28 @@
+@import 'src/assets/css/vars_mixins/vars_mixins';
+
+.btn.btn--link {
+  color: $c-primary;
+  border: 1px solid transparent;
+  background-color: transparent;
+  &[disabled], &.disabled {
+    color: rgba(30, 30, 30, .2) !important;
+    border: solid 1px transparent !important;
+    background: transparent !important;
+    &:active, &:hover, &.active {
+      color: rgba(30, 30, 30, .2) !important;
+      border: solid 1px transparent !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+
+  @media (min-width: $xl) {
+    &:hover, &.active {
+      color: $c-primary-hover;
+      border: 1px solid transparent;
+    }
+    &:active {
+      border: 1px solid transparent;
+    }
+  }
+}

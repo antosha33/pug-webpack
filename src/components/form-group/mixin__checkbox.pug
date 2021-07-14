@@ -1,0 +1,18 @@
+mixin checkbox(args={})
+	+include-style('form-group')
+	- var id = Math.floor(Math.random() * 9999999999)
+	.form-group
+		.checkbox(class= args.wrap_mod)
+			if (args.require)
+				if (args.checked)
+					input(type='checkbox', id= 'ID' + id, name= 'NAME' + id, value='active', required, checked class= args.input_mod)&attributes(attributes)
+				else
+					input(type='checkbox', id= 'ID' + id, name= 'NAME' + id, value='active', required class= args.input_mod)&attributes(attributes)
+
+			else
+				if (args.checked)
+					input(type='checkbox', id= 'ID' + id, name= 'NAME' + id, value='active', checked class= args.input_mod)&attributes(attributes)
+				else
+					input(type='checkbox', id= 'ID' + id, name= 'NAME' + id, value='active' class= args.input_mod)&attributes(attributes)
+			label(for= 'ID' + id class= args.label_mod)!=args.label
+				block

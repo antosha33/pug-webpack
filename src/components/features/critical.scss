@@ -1,0 +1,87 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.features {
+  padding: 40px 0;
+  &__inner {
+    display: flex;
+  }
+
+}
+.feature {
+  flex: 1 0 16.6666%;
+  max-width: 16.6666%;
+  min-height: 142px;
+  padding: 2px 30px;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    background: #E9E9E9;
+  }
+  &:last-child {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 1px;
+      background: #E9E9E9;
+    }
+  }
+  &__icon-wrap {
+    margin: 0 0 5px;
+  }
+  &__icon {
+    height: 48px;
+    width: 48px;
+  }
+  &__title {
+    font-weight: 600;
+    color: #000;
+    line-height: 1;
+    margin: 0 0 9px;
+  }
+  &__text {
+    color: $c-text2;
+    font-weight: 300;
+    line-height: 1.3;
+    max-width: 170px;
+  }
+}
+
+@media (max-width: $xl - 1) {
+  .features {
+    &__inner {
+      overflow-y: auto;
+    }
+  }
+  .feature {
+    flex: 1 0 220px;
+    max-width: 220px;
+  }
+}
+@media (max-width: $lg - 1) {
+  .feature {
+    flex: 1 0 250px;
+    max-width: 250px;
+    &:first-child::before {
+      display: none;
+    }
+  }
+}
+@media (max-width: $sm - 1) {
+  .features {
+    padding: 40px 0 20px;
+    &__inner {
+      width: calc(100% + 16px);
+    }
+  }
+  .feature {
+    padding: 2px 15px;
+  }
+}

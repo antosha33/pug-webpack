@@ -1,0 +1,56 @@
++include-style('search-result')
++include-script('search-result')
+
++b.search-result
+    +e.__list
+        +e.__list-inner
+            mixin sitem(args={})
+                +b.sitem
+                    +e.__img-wrap
+                        +e('img').__img(src=args.img alt=args.title)
+                    +e.__content
+                        +e.__title=args.title
+                        +e.__price=args.price
+            +sitem({
+                img: 'images/product1.jpg',
+                title: 'Стол журнальный Космо кожа',
+                price: '23 555 р'
+            })
+            +sitem({
+                img: 'images/product2.jpg',
+                title: 'Стол-тандем Инновация I-42',
+                price: '4 000 р'
+            })
+            +sitem({
+                img: 'images/product3.jpg',
+                title: 'Стол угловой Космо экокожа',
+                price: '21 600 р'
+            })
+            +sitem({
+                img: 'images/product4.jpg',
+                title: 'Стол руководителя 290 Kingston 28101',
+                price: '14 567 р'
+            })
+            +sitem({
+                img: 'images/product5.jpg',
+                title: 'Стол руководителя 230 Zaragoza 23100',
+                price: '2 000 р'
+            })
+            +sitem({
+                img: 'images/product6.jpg',
+                title: 'Стол угловой Космо экокожа',
+                price: '21 600 р'
+            })
+            +sitem({
+                img: 'images/product7.jpg',
+                title: 'Стол руководителя 290 Kingston 28101',
+                price: '2 000 р'
+            })
+            +sitem({
+                img: 'images/product8.jpg',
+                title: 'Стол руководителя 230 Zaragoza 23100',
+                price: '2 000 р'
+            })
+    +e.__bottom
+        +e('a').__bottom-link.btn.btn--primary(href="/")
+            span Показать все результаты (540)

@@ -1,0 +1,53 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.header-drop {
+  &__nav {
+    &.nav {
+      padding: 0 0 24px;
+    }
+    .nav-list {
+      column-count: 4;
+    }
+    .nav-item {
+      margin: 0 0 16px;
+    }
+    .nav-item.has-nav {}
+    .nav-link {
+      font-weight: 600;
+      font-size: 16px;
+      color: $c-dark;
+    }
+    .nav-item-name {}
+    .nav-toggle {}
+
+    .nav-lvl2 {}
+    .nav-lvl2-list {}
+    .nav-lvl2-item {
+      margin: 0 0 17px;
+    }
+    .nav-lvl2-item.active .nav-lvl2-link {
+      color: $c-add;
+    }
+    .nav-lvl2-link {
+      font-weight: 300;
+      font-size: 16px;
+      color: $c-dark;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &__btn {
+    .btn {
+      height: 40px;
+      width: 100%;
+      max-width: 790px;
+    }
+  }
+  &__img-wrap {
+  }
+  &__img {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+}

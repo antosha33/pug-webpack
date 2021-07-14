@@ -1,0 +1,60 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.about-section {
+  padding: 65px 0 80px;
+  .row > div {
+    position: relative;
+  }
+  &__img-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: visible;
+  }
+  &__img {
+    max-width: 100%;
+    transform: translate(90px,5px);
+  }
+  &__main {
+    padding-left: 80px;
+    padding-top: 50px;
+  }
+  &__header {}
+  &__title {}
+  &__toggle {
+    max-width: 718px;
+    overflow: hidden;
+    max-height: 170px;
+    transition: max-height ease 0.4s;
+    &.active {
+      max-height: 5000px;
+    }
+    p {
+      margin: 0 0 25px;
+    }
+  }
+  &__toggle-link {
+    display: inline-block;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: $md - 1) {
+  .about-section {
+    .row > div:nth-child(1) {
+      display: none;
+    }
+    &__main {
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: $sm - 1) {
+  .about-section {
+    padding: 20px 0 30px;
+  }
+  .about-section__toggle {
+    font-size: 14px;
+  }
+}

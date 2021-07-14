@@ -1,0 +1,114 @@
++include-style('pp-main')
++include-script('pp-main')
+
+.pp-main
+    .container
+        h1.h1.page-title Коллекция диванов Премьер
+            span id 423456
+        .row
+            .pp-main__left.pp-main__left--collection
+                .pp-main__top
+                    .pp-main__badges
+                        span.pbadge.pbadge--primary Распродажа
+                        span.pbadge Рандомный
+                        span.pbadge.pbadge--primary Хит
+                    .pp-main__rating
+                        +rating({
+                            data_count: 4,
+                            count: 4.2,
+                            comments: 'Отзывов 33',
+                            scrollTo: true
+                        })
+                include ../product-connected-sliders/product-connected-sliders--coll-v2
+            .pp-main__options-box.pp-main__options-box--collection
+                .ob
+                    .ob__text «SKYLAND» существует с 2002 года, и на текущий момент уверенно входит в десятку лидеров рынка. Это не просто количественные показатели — это доверие сотен партнеров и десятков тысяч корпоративных и частных клиентов. «SKYLAND» существует с 2002 года, и на текущий момент уверенно входит в десятку лидеров рынка. Это не просто количественные показатели — это доверие сотен партнеров и десятков тысяч корпоративных и частных клиентов.
+                .ob
+                    .ob__title Характеристики
+                    .ob__block
+                        span.dt Материал серии:
+                        span.dd Пластик
+                        span.dt Срок доставки:
+                        span.dd 3-5 дней
+                        span.dt Бренд серии:
+                        span.dd Sky
+                        span.dt Страна производитель:
+                        span.dd Россия
+                        span.dt Толщина столешницы:
+                        span.dd 5 см
+                        span.dt Основной материал:
+                        span.dd Экокожа
+                    .ob__link
+                        a.link--down.js-scroll-to(data-to="js-options-block")
+                            span.text Показать все
+                            span.down
+                                +icon('i-arr-down')
+                .ob
+                    .ob__title Возможные цвета (33):
+                    ul.ob__list.js-colors-list
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#E4ADAD',
+                                badge: '-25%',
+                                name: 'Шелк розовый',
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#ECD893',
+                                badge: '-5%',
+                                name: 'Шелк розовый',
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#E8B05B',
+                                badge: false,
+                                name: 'Шелк розовый',
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#E79B55',
+                                badge: false,
+                                name: 'Шелк розовый',
+                                active: true
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#BC691D',
+                                badge: false,
+                                name: 'Шелк розовый',
+                            })
+                        li.ob__item
+                            +color({
+                                bg: 'background-color:#ADDEE4',
+                                badge: false,
+                                name: 'Шелк розовый',
+                            })
+                    .ob__link
+                        a.link--down.js-scroll-to(href="#" data-to="js-colors-block")
+                            span.text Показать все цвета и материалы
+                            span.down
+                                +icon('i-arr-down')
+            .pp-main__right
+                .pp-main__status.pstatus.pstatus--wait Ожидается через 20 дней
+                .pp-main__buy-box
+                    .b-box
+                        .b-box__docs
+                            .alert
+                                +icon('i-info')
+                                .alert__content Данная коллекция может быть исполнена в любом цвете
+                        .b-box__buy
+                            .btn.btn--primary.js-scroll(data-target=".tabs__titles")
+                                span Посмотреть товары из коллекции
+                            a(
+                                href="#one-click-buy",
+                                data-toggle='modal',
+                                data-target="#one-click-buy"
+                                data-overflow-click='true',
+                                data-overflow-fade='true'
+                                aria-label='Быстрая покупка').btn.btn--outline Быстрая покупка
+                        .b-box__q
+                            a(href="#").link Условия доставки
+                            img(src="images/contact-form2.jpg" alt="img").b-box__q-img
+                            .b-box__q-title Возникли вопросы?
+                            a(href="tel:+74996488477").b-box__q-link +7(499) 648-84-77
+                            a(href="mailto:info@mavikom.ru").b-box__q-link info@mavikom.ru

@@ -1,0 +1,31 @@
++include-style('tabs-section')
++include-script('tabs-section')
+
++b('section').tabs-section
+    .container
+        +e.__header.section-header
+            +e('h2').__title.section-header__title.h1 Кабинеты руководителя
+        +e.__options.lvl1.js-options-group
+            span.option.active Самые долговечные
+            span.option Самые удобные спинки
+            span.option Выдержат большой вес
+            span.option С регулировкой спинки
+            span.option Уникальный дизайн
+        +e.__body
+            +products-slider({
+                collections: false
+            })
++b('section').tabs-section
+    .container
+        +e.__header.section-header
+            +e('h2').__title.section-header__title.h1 Офисные кресла
+        +e.__options.lvl1.js-options-group
+            span.option.active Самые долговечные
+            span.option Самые удобные спинки
+            span.option Выдержат большой вес
+            span.option С регулировкой спинки
+            span.option Уникальный дизайн
+        +e.__body
+            +products-slider({
+                collections: true
+            })

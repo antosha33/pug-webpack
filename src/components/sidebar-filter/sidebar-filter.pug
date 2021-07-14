@@ -1,0 +1,242 @@
+//+range-slider()
++include-style('sidebar-filter')
++include-script('sidebar-filter')
+.sidebar-filter-wrap
+    #ajaxfilter-filter.sidebar-filter
+        .sidebar-filter__block
+            .sidebar-filter__header
+                .sidebar-filter__title Фильтры
+                .sidebar-filter__close.js-btn-toggle.js-close-filters.anim-rotate(
+                    data-target='.sidebar-filter-wrap',
+                    data-overflow-click='true',
+                    data-body-overflow='true',)
+                    +icon('i-close')
+
+            form#filter.form(name='_form', action='', method='get', data-sef='yes')
+                .form__scroll
+                    .sidebar-filter__item.form-group.lvl1.closed
+                        .sidebar-filter__head
+                            span Цена
+                        .sidebar-filter__content
+                            //-.ajaxfilter-num.ajaxfilter-filter-property-body(data-name='price')
+                                .ajaxfilter-range
+                                    input(name='price-range', data-from='429', data-to='7960', data-min='429', data-max='7960', data-grid='false', data-prefix='', data-postfix='<span class="ajaxfilter-range__postfix">р.</span>', data-force-edges='true', data-step='1')
+                                .ajaxfilter-inputs(style='display: none;')
+                                    input#arFilter_P1_MIN.ajaxfilter-input.ajaxfilter-num-from.form-group__input(type='tel', name='price_from', value='429', size='5', placeholder='429')
+                                    input#arFilter_P1_MAX.ajaxfilter-input.ajaxfilter-num-to.form-group__input(type='tel', name='price_to', value='7960', size='5', placeholder='7960')
+                                    span.ajaxfilter-inputs__pref от
+                                    span.ajaxfilter-inputs__pref до
+                            p(style="height: 70px;") Range Slider -------
+                    .sidebar-filter__item.form-group.lvl1.closed
+                        .sidebar-filter__head
+                            span Бренд
+                        .sidebar-filter__content.ajaxfilter-combo.ajaxfilter-filter-property-body.init-more(data-name='all_proizvoditel-23')
+                            +checkbox({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Acqua di parma'
+                            })
+                                //-span.ajaxfilter-cnt.checkbox-counter 11
+                            +checkbox({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Acqua di parma 2'
+                            })
+                            +checkbox({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Acqua di parma 2'
+                            })
+                            +checkbox({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Acqua di parma 2'
+                            })
+                            +checkbox({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Acqua di parma 2'
+                            })
+                            +checkbox({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Acqua di parma 2'
+                            })
+                    .sidebar-filter__item.form-group.lvl1.closed.d-lg-none
+                        .sidebar-filter__head
+                            span Страна производитель
+                        .sidebar-filter__content.ajaxfilter-combo.ajaxfilter-filter-property-body.init-more(data-name='all_cvet-23')
+                            +checkbox({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Россия'
+                            })
+                            +checkbox({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Беларусь'
+                            })
+                            +checkbox({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Германия'
+                            })
+                            +checkbox({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Франция'
+                            })
+                    .sidebar-filter__item.form-group.lvl1.closed.d-lg-none
+                        .sidebar-filter__head
+                            span Основной материал
+                        .sidebar-filter__content.ajaxfilter-combo.ajaxfilter-filter-property-body.init-more(data-name='all_kategoriya-23')
+                            +checkbox({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Основной материал 1'
+                            })
+                            +checkbox({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Основной материал 2'
+                            })
+                            +checkbox({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Основной материал 3'
+                            })
+
+                    .sidebar-filter__item.form-group.lvl1
+                        .sidebar-filter__head
+                            span Цвет
+                        .sidebar-filter__content.ajaxfilter-combo.ajaxfilter-filter-property-body.init-more(data-name='all_proizvoditel')
+                            +checkbox({
+                                wrap_mod: 'checkbox--color',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Серый'
+                            })
+                                span.color(style="background-color: #C4C4C4;")
+                            +checkbox({
+                                wrap_mod: 'checkbox--color',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Зеленый'
+                            })
+                                span.color(style="background-color: #3ED25E;")
+                            +checkbox({
+                                wrap_mod: 'checkbox--color',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Желтый'
+                            })
+                                span.color(style="background-color: #FFEB39;")
+                            +checkbox({
+                                wrap_mod: 'checkbox--color',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Синий'
+                            })
+                                span.color(style="background-color: #00ABE1;")
+                    .sidebar-filter__item.form-group.lvl1
+                        .sidebar-filter__head
+                            span Радио
+                        .sidebar-filter__content.ajaxfilter-combo.ajaxfilter-filter-property-body.init-more(data-name='all_cvet')
+                            +radio({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Синий'
+                            })
+                            +radio({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Синий'
+                            })
+                            +radio({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Синий'
+                            })
+                            +radio({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Синий'
+                            })
+                            +radio({
+                                wrap_mod: '',
+                                require: '',
+                                input_mod: '',
+                                checked: '',
+                                label_mod: '',
+                                label: 'Синий'
+                            })
+
+                #modef.sidebar-filter-footer
+                    button.btn.btn--primary.btn-filter-submit.js-scroll-to-top.js-btn-toggle(data-target='.sidebar-filter', data-overflow-click='true', data-body-overflow='true', aria-label='Показать товары', type='button')
+                        span.full Показать
+                        span#modef_num.result 200&nbsp;
+                        span.num-title
+                            | товаров
+                    a(href='/catalog/stiralnye-mashiny/').btn.btn-filter-reset.anim-rotate
+                        span Очистить фильтр
+                        +icon('i-close')
+

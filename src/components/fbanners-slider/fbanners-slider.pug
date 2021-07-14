@@ -1,0 +1,124 @@
++include-script('fbanners-slider')
+
++b.fbanners-slider
+    .container
+        +swiper({
+            navigation: true,
+            pagination: true,
+            container_mod: '',
+            wrapper_mod: '',
+            arrow_prev_mod: '',
+            arrow_next_mod: '',
+            pagination_mod: '',
+        }).fbanners-slider__inner.js-fbanners-slider
+            .swiper-slide.fs-slide
+                +picture({
+                    source: [
+                        {
+                            img: 'images/fs-slide-0-xl.jpg',
+                            media: 426
+                        }, {
+                            img: 'images/fs-slide-0-sm.jpg 1x',
+                            media: 250
+                        }
+                    ],
+                    link: true,
+                    link_class: 'fs-slide__link',
+                    img: 'images/fs-slide-0-sm.jpg',
+                    img_mod: 'fs-slide__img',
+                    wrap_mod: 'fs-slide__img-wrap',
+                })
+            .swiper-slide.fs-slide    
+                +picture({
+                    source: [
+                        {
+                            img: 'images/fs-slide-1-xl.jpg',
+                            media: 426
+                        }, {
+                            img: 'images/fs-slide-1-sm.jpg 1x',
+                            media: 250
+                        }
+                    ],
+                    link: true,
+                    link_class: 'fs-slide__link',
+                    img: 'images/fs-slide-1-sm.jpg',
+                    img_mod: 'fs-slide__img',
+                    wrap_mod: 'fs-slide__img-wrap',
+                })
+            .swiper-slide.fs-slide
+                +picture({
+                    source: [
+                        {
+                            img: 'images/fs-slide-2-xl.jpg',
+                            media: 426
+                        }, {
+                            img: 'images/fs-slide-2-sm.jpg 1x',
+                            media: 250
+                        }
+                    ],
+                    link: true,
+                    link_class: 'fs-slide__link',
+                    img: 'images/fs-slide-2-sm.jpg',
+                    img_mod: 'fs-slide__img',
+                    wrap_mod: 'fs-slide__img-wrap',
+                })
+            .swiper-slide.fs-slide
+                +lazy-picture-slider({
+                    source: [
+                        {
+                            img: 'images/fs-slide-0-xl.jpg',
+                            placeholder: pixel,
+                            media: 426
+                        }, {
+                            img: 'images/fs-slide-0-sm.jpg 1x',
+                            placeholder: pixel,
+                            media: 250
+                        }
+                    ],
+                    link: true,
+                    link_class: 'fs-slide__link',
+                    img: 'images/fs-slide-0-sm.jpg',
+                    placeholder: 'images/fs-slide-0-sm.jpg',
+                    img_mod: 'fs-slide__img',
+                    wrap_mod: 'fs-slide__img-wrap',
+                })
+            .swiper-slide.fs-slide
+                +lazy-picture-slider({
+                    source: [
+                        {
+                            img: 'images/fs-slide-1-xl.jpg',
+                            placeholder: pixel,
+                            media: 426
+                        }, {
+                            img: 'images/fs-slide-1-sm.jpg 1x',
+                            placeholder: pixel,
+                            media: 250
+                        }
+                    ],
+                    link: true,
+                    link_class: 'fs-slide__link',
+                    img: 'images/fs-slide-1-xsm.jpg',
+                    placeholder: 'images/fs-slide-1-sm.jpg',
+                    img_mod: 'fs-slide__img',
+                    wrap_mod: 'fs-slide__img-wrap',
+                })
+            .swiper-slide.fs-slide
+                +lazy-picture-slider({
+                    source: [
+                        {
+                            img: 'images/fs-slide-2-xl.jpg',
+                            placeholder: pixel,
+                            media: 426
+                        }, {
+                            img: 'images/fs-slide-2-sm.jpg 1x',
+                            placeholder: pixel,
+                            media: 250
+                        }
+                    ],
+                    link: true,
+                    link_class: 'fs-slide__link',
+                    img: 'images/fs-slide-2-sm.jpg',
+                    placeholder: 'images/fs-slide-2-sm.jpg',
+                    img_mod: 'fs-slide__img',
+                    wrap_mod: 'fs-slide__img-wrap',
+                })

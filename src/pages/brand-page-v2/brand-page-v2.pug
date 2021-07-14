@@ -1,0 +1,55 @@
+extends ../../layout/layout
+
+block vars
+    - var pageTitle = 'Wargaming.net'
+    - var pageBodyClass = 'catalog-page brand-page'
+    - var dir = './'
+
+
+block premain
+    .container
+        .row
+            .catalog-page__sidebar.brand-page__sidebar
+                include ../../components/sidebar-brand/sidebar-brand
+            .catalog-page__main.brand-page__main
+                +breadcrumb({
+                    href_content1: '',
+                    content1: 'Бренды',
+                    href_content2: '',
+                    content2: 'Wargaming.net',
+                    content3: ''
+                })
+                .row
+                    .col-lg-8.brand-page__content
+                        h1.h1.page-title Wargaming.net
+                        include ../../components/sidebar-brand/sidebar-brand--mobile
+                        include ../../components/brand-page/brand-page
+                        include ../../components/gallery/gallery
+                        include ../../components/brand-preim/brand-preim
+                        include ../../components/contact-form/contact-form--brand
+                .brand-page__mobile-btn.js-scroll-mobile(data-invise-target=".contact-form__header")
+                    .btn.btn--primary.js-scroll(data-target=".contact-form__header")
+                        span Сделать заказ
+                    //-a(href="#js-brand-order" data-offset="100").btn.btn--primary.js-scroll-to
+                        span Сделать заказ
+
+
+
+block main
+    .no-critical.no-critical--preloader
+
+
+
+block componentsCriticalStyles
+    +componentsCriticalStyles-includer()
+block vendorScripts
+    +vendorScripts-includer()
+block componentsStyles
+    +style-includer()
+
+block componentsScripts
+    +componentsScripts-includer()
+
+block scripts
+
+

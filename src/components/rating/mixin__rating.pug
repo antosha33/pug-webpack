@@ -1,0 +1,15 @@
+mixin rating(args={})
+    +include-style('rating')
+    .rating
+        .rating__stars(data-count=args.data_count)
+            +icon('i-star')
+            +icon('i-star')
+            +icon('i-star')
+            +icon('i-star')
+            +icon('i-star')
+        if(args.count)
+            .rating__count=args.count
+        if(args.comments && args.scrollTo)
+            .rating__comments.js-scroll-to(data-to="js-comments-block")=args.comments
+        else
+            .rating__comments=args.comments

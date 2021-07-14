@@ -1,0 +1,99 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.tabs-section {
+  position: relative;
+  z-index: 2;
+  padding: 20px 0 45px;
+  &__header {
+    margin: 0 0 26px;
+  }
+  &__title {}
+  &__options {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 17px;
+  }
+  &__options .option {
+    &.hidden {
+      display: none;
+    }
+  }
+  &__options-fix {
+    position: sticky;
+    top: 70px;//отступ от sticky шапки
+    left: 0;
+    right: 0;
+    z-index: 102;
+    padding: 10px 0 0;
+    background: $bg-main;
+  }
+  &__more {
+    display: block;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    position: relative;
+    .icon {
+      height: 4px;
+      width: 4px;
+      border-radius: 50%;
+      background: $c-primary;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      &::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: 0;
+        height: 4px;
+        width: 4px;
+        border-radius: 50%;
+        background: $c-primary
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 0;
+        height: 4px;
+        width: 4px;
+        border-radius: 50%;
+        background: $c-primary
+      }
+    }
+  }
+  &__btn {
+    text-align: center;
+    padding-top: 50px;
+  }
+}
+
+.tabs-section--pt0 {
+  padding-top: 0!important;
+}
+
+@media (max-width: $sm - 1) {
+  .tabs-section {
+    padding: 20px 0;
+    &__options {
+      width: calc(100% + 16px);
+      overflow-x: auto;
+      flex-wrap: nowrap;
+    }
+    &__options-fix {
+      top: 101px;//отступ от sticky шапки
+    }
+    &__more {
+      margin-right: 20px;
+      padding-right: 20px;
+    }
+  }
+
+
+  .js-options-group--more {
+    overflow-x: unset;
+    flex-wrap: wrap;
+  }
+}

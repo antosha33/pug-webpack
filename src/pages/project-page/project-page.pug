@@ -1,0 +1,36 @@
+extends ../../layout/layout
+
+block vars
+    - var pageTitle = 'Проект'
+    - var pageBodyClass = 'project-page'
+    - var dir = './'
+
+
+block premain
+    .breadcrumb-wrap
+        .container
+            +breadcrumb({
+                href_content1: '',
+                content1: 'Проекты',
+                href_content2: '',
+                content2: 'Компания Wargaming. Мебель для персонала, кресла.',
+                content3: ''
+            })
+    include ../../components/project-page/project-page
+    include ../../components/tabs-section/tabs-section2
+block main
+    .no-critical.no-critical--preloader
+
+
+
+block componentsCriticalStyles
+    +componentsCriticalStyles-includer()
+block vendorScripts
+    +vendorScripts-includer()
+block componentsStyles
+    +style-includer()
+
+block componentsScripts
+    +componentsScripts-includer()
+
+block scripts

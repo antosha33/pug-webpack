@@ -1,27 +1,55 @@
 extends ../../layout/layout
 
 block vars
-	- var pageTitle = 'Корзина'
-	- var pageBodyClass = ''
-	- var dir = './'
+    - var pageTitle = 'Корзина'
+    - var pageBodyClass = 'basket-page'
+    - var dir = './'
 
 
 block premain
+    .breadcrumb-wrap
+        .container
+            +breadcrumb({
+                href_content1: '',
+                content1: 'Корзина',
+                href_content2: '',
+                content2: '',
+                content3: ''
+            })
+    .container
+        h1.h1.page-title Корзина
+            .basket-page__clear.anim-rotate
+                +icon('i-close')
+                span Очистить корзину
 
-	include ../../components/basket/basket
+        .basket-page__grid
+            .basket-page__main
+                include ../../components/basket-page/basket-page
+            .basket-page__sticky
+                include ../../components/basket-sticky/basket-sticky
+            .basket-page__order
+                .h1 Оформление заказа
+                include ../../components/tabs-section/tabs-section--basket-order
+        .basket-page__mobile-btn.js-invise-scroll(data-invise-target=".basket-sticky")
+            button.btn.btn--primary.js-scroll(data-target=".basket-sticky")
+                span Оформить заказ
+
+
+
+
 
 block main
-	.no-critical.no-critical--preloader
+    .no-critical.no-critical--preloader
 
 
 block componentsCriticalStyles
-	+componentsCriticalStyles-includer()
+    +componentsCriticalStyles-includer()
 block vendorScripts
-	+vendorScripts-includer()
+    +vendorScripts-includer()
 block componentsStyles
-	+style-includer()
+    +style-includer()
 
 block componentsScripts
-	+componentsScripts-includer()
+    +componentsScripts-includer()
 
 block scripts

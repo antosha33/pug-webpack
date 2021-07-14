@@ -1,0 +1,36 @@
++include-style('how-work')
+
+.how-work
+    .container
+        .how-work__inner
+            .row
+                .col-md-10.offset-md-1
+                    .how-work__title.h2 Как мы работаем?
+                    .how-work__list
+                        mixin how-work(args={})
+                            .hw-item-col
+                                .hw-item
+                                    .hw-item__header
+                                        .hw-item__num=args.num
+                                        .hw-item__arr
+                                    .hw-item__text=args.text
+                        +how-work({
+                            num: 1,
+                            text: 'Оставляете заявку на сайте'
+                        })
+                        +how-work({
+                            num: 2,
+                            text: 'Специалист связывается с вами и уточняет детали'
+                        })
+                        +how-work({
+                            num: 3,
+                            text: 'При необходимости к Вам выезжает на замер помещения наш менеджер*'
+                        })
+                        +how-work({
+                            num: 4,
+                            text: 'В течение 3-х дней Вам отправляется 3D проект расстановки с учетом Ваших пожеланий и наших рекомендаций, а также спецификация проекта.'
+                        })
+                        +how-work({
+                            num: 5,
+                            text: 'Доставляем, разгружаем, собираем, расставляем мебель согласно проекта'
+                        })

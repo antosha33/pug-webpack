@@ -1,4 +1,4 @@
-window.addEventListener('load', function (event) {
+$(document).ready(function () {
 	const vigetWrap = $('.pages-viget');
 	const vigetBtn = $('.pages-viget__btn');
 

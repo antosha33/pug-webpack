@@ -1,0 +1,236 @@
++include-style('personal-address')
++include-script('personal-address')
+
+.personal-address.js-personal-address
+    .h2 Адрес доставки
+    .pa-section.js-pa-section
+        .pa-section__header
+            .pa-section__title г. Смоленск, ул. Смоленская, д. 11, подъезд 1, этаж 3, кв. 107
+            .pa-section__actions
+                span.js-edit.edit
+                    +icon('i-edit')
+                span.js-remove.remove.anim-rotate
+                    +icon('i-close')
+        .pa-section__body
+            .pa-section__body-inner
+                .row
+                    .col-md-6
+                        +input({
+                            label: 'Город',
+                            type: 'text',
+                            name: false,
+                            small: false,
+                            placeholder: 'Смоленск',
+                            required: false,
+                            pattern: false,
+                            validation: {
+                                message: 'Обязательное поле',
+                                regexp: 'Неверный формат',
+                                emailaddress: ' ',
+                                identical: false
+                            }
+                        })
+                    .col-md-6
+                        +input({
+                            label: 'Улица',
+                            type: 'text',
+                            name: false,
+                            small: false,
+                            placeholder: 'Смоленская',
+                            required: false,
+                            pattern: false,
+                            validation: {
+                                message: 'Обязательное поле',
+                                regexp: 'Неверный формат',
+                                emailaddress: ' ',
+                                identical: false
+                            }
+                        })
+                    .col-6.col-md-3
+                        +input({
+                            label: 'Дом',
+                            type: 'text',
+                            name: false,
+                            small: false,
+                            placeholder: '11',
+                            required: false,
+                            pattern: false,
+                            validation: {
+                                message: 'Обязательное поле',
+                                regexp: 'Неверный формат',
+                                emailaddress: ' ',
+                                identical: false
+                            }
+                        })
+                    .col-6.col-md-3
+                        +input({
+                            label: 'Подъезд',
+                            type: 'text',
+                            name: false,
+                            small: false,
+                            placeholder: '1',
+                            required: false,
+                            pattern: false,
+                            validation: {
+                                message: 'Обязательное поле',
+                                regexp: 'Неверный формат',
+                                emailaddress: ' ',
+                                identical: false
+                            }
+                        })
+                    .col-6.col-md-3
+                        +input({
+                            label: 'Этаж',
+                            type: 'text',
+                            name: false,
+                            small: false,
+                            placeholder: '3',
+                            required: false,
+                            pattern: false,
+                            validation: {
+                                message: 'Обязательное поле',
+                                regexp: 'Неверный формат',
+                                emailaddress: ' ',
+                                identical: false
+                            }
+                        })
+                    .col-6.col-md-3
+                        +input({
+                            label: 'Квартира',
+                            type: 'text',
+                            name: false,
+                            small: false,
+                            placeholder: '107',
+                            required: false,
+                            pattern: false,
+                            validation: {
+                                message: 'Обязательное поле',
+                                regexp: 'Неверный формат',
+                                emailaddress: ' ',
+                                identical: false
+                            }
+                        })
+                    .col-md-12
+                        a(href="javascript:;").btn.btn--primary.js-save
+                            span Сохранить
+    .pa-section.pa-section--new.js-pa-section.js-pa-section-new.active
+        .pa-section__header
+            .pa-section__title г. Смоленск, ул. Смоленская, д. 11, подъезд 1, этаж 3, кв. 107
+            .pa-section__actions
+                span.js-edit.edit
+                    +icon('i-edit')
+                span.js-remove.remove.anim-rotate
+                    +icon('i-close')
+        .pa-section__body
+            .pa-section__body-inner
+                .row
+                    .col-md-6
+                        +input({
+                            label: 'Город',
+                            type: 'text',
+                            name: false,
+                            small: false,
+                            placeholder: 'Смоленск',
+                            required: false,
+                            pattern: false,
+                            validation: {
+                                message: 'Обязательное поле',
+                                regexp: 'Неверный формат',
+                                emailaddress: ' ',
+                                identical: false
+                            }
+                        })
+                    .col-md-6
+                        +input({
+                            label: 'Улица',
+                            type: 'text',
+                            name: false,
+                            small: false,
+                            placeholder: 'Смоленская',
+                            required: false,
+                            pattern: false,
+                            validation: {
+                                message: 'Обязательное поле',
+                                regexp: 'Неверный формат',
+                                emailaddress: ' ',
+                                identical: false
+                            }
+                        })
+                    .col-6.col-md-3
+                        +input({
+                            label: 'Дом',
+                            type: 'text',
+                            name: false,
+                            small: false,
+                            placeholder: '11',
+                            required: false,
+                            pattern: false,
+                            validation: {
+                                message: 'Обязательное поле',
+                                regexp: 'Неверный формат',
+                                emailaddress: ' ',
+                                identical: false
+                            }
+                        })
+                    .col-6.col-md-3
+                        +input({
+                            label: 'Подъезд',
+                            type: 'text',
+                            name: false,
+                            small: false,
+                            placeholder: '1',
+                            required: false,
+                            pattern: false,
+                            validation: {
+                                message: 'Обязательное поле',
+                                regexp: 'Неверный формат',
+                                emailaddress: ' ',
+                                identical: false
+                            }
+                        })
+                    .col-6.col-md-3
+                        +input({
+                            label: 'Этаж',
+                            type: 'text',
+                            name: false,
+                            small: false,
+                            placeholder: '3',
+                            required: false,
+                            pattern: false,
+                            validation: {
+                                message: 'Обязательное поле',
+                                regexp: 'Неверный формат',
+                                emailaddress: ' ',
+                                identical: false
+                            }
+                        })
+                    .col-6.col-md-3
+                        +input({
+                            label: 'Квартира',
+                            type: 'text',
+                            name: false,
+                            small: false,
+                            placeholder: '107',
+                            required: false,
+                            pattern: false,
+                            validation: {
+                                message: 'Обязательное поле',
+                                regexp: 'Неверный формат',
+                                emailaddress: ' ',
+                                identical: false
+                            }
+                        })
+                    .col-md-12
+                        a(href="javascript:;").btn.btn--primary.js-save
+                            span Сохранить
+    a(href="javascript:;").link.js-add
+        span Добавить адрес +
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 mixin counter(args = {})
-	+include-style('counter')
+	//-+include-style('counter')
 	+include-script('counter')
 	//-
 		+counter({
@@ -22,4 +22,4 @@ mixin counter(args = {})
 			name= 'NAME' + id, aria-label='Счетчик')
 		button.counter-btn.counter-minus.js-counter-minus(type='button') -
 		button.counter-btn.counter-plus.js-counter-plus(type='button') +
-		.disabled-text Выбрано максимальное количество
+		.disabled-text максимальное

@@ -1,0 +1,41 @@
+extends ../../layout/layout
+
+block vars
+    - var pageTitle = '404'
+    - var pageBodyClass = 'not-found'
+    - var dir = './'
+
+
+block premain
+    +not-found()
+    .container.not-found__inner
+        .row
+            .col-lg-8.offset-lg-2
+                 .not-found__title 404
+                 p К сожалению, тут ничего нет.
+                 +lazy-img({
+                    img: 'images/404_3.png',
+                    placeholder: pixel,
+                    img_mod: 'not-found__img',
+                    wrap_mod: 'not-found__img-wrap',
+                    link: false,
+                    aria_label: false,
+                 })
+                 p А вам явно нужна <a href="index.html">мебель</a>
+
+
+block main
+    .no-critical.no-critical--preloader
+
+
+block componentsCriticalStyles
+    +componentsCriticalStyles-includer()
+block vendorScripts
+    +vendorScripts-includer()
+block componentsStyles
+    +style-includer()
+
+block componentsScripts
+    +componentsScripts-includer()
+
+block scripts

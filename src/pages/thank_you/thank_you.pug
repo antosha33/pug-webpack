@@ -1,0 +1,32 @@
+extends ../../layout/layout
+
+block vars
+    - var pageTitle = 'Корзина'
+    - var pageBodyClass = 'thank-you'
+    - var dir = './'
+
+
+block premain
+    .container
+        include ../../components/thank-you/thank-you
+
+
+
+
+
+
+block main
+    .no-critical.no-critical--preloader
+
+
+block componentsCriticalStyles
+    +componentsCriticalStyles-includer()
+block vendorScripts
+    +vendorScripts-includer()
+block componentsStyles
+    +style-includer()
+
+block componentsScripts
+    +componentsScripts-includer()
+
+block scripts

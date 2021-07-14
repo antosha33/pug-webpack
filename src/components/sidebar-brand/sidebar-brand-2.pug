@@ -1,0 +1,29 @@
++include-style('sidebar-brand')
+
+.sidebar-brand
+    +lazy-img({
+        img: 'images/brand-warg.png',
+        placeholder: pixel,
+        img_mod: 'sidebar-brand__img',
+        wrap_mod: 'sidebar-brand__img-wrap',
+        link: false,
+        aria_label: false,
+    })
+    .sidebar-brand__docs
+        +file-download({
+            mod_class: 'file-download--xls',
+            icon: 'XLS',
+            name: 'Скачать xls'
+        })
+        +file-download({
+            mod_class: 'file-download--zip',
+            icon: 'ZIP',
+            name: 'ZIP-files'
+        })
+        +file-download({
+            mod_class: 'file-download--pdf',
+            icon: 'PDF',
+            name: 'Скачать pdf'
+        })
+    .btn.btn--primary.js-scroll(data-target=".tabs-section__header")
+        span Товары бренда
