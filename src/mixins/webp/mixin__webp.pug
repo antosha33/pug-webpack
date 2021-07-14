@@ -1,0 +1,11 @@
+mixin webp(args= {})
+	-
+		if (!args.http) {
+			args.webpImg = SITE_TEMPLATE_PATH + args.img + '.webp';
+			args.jpg = SITE_TEMPLATE_PATH + args.img  + '.jpg';
+		}
+
+	picture.lazy-img-wrap(class= args.wrap_mod)
+		source(srcset= args.webpImg  type="image/webp")
+		source(srcset= args.jpg   type="image/jpeg")
+		img(class= args.img_mod, data-srcset= args.jpg, data-src= pixel, alt='img')

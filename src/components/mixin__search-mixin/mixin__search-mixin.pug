@@ -1,0 +1,12 @@
+mixin search-mixin(args={})
+	+include-style('mixin__search-mixin')
+	.input-search
+		form.input-search__form(autocomplete='off', action='/search/')
+			input.input-search__input.js-input-search__input.js-ajax-search(type='text', placeholder='введите запрос', name='q', aria-label='Введите запрос', value='', data-iblock-id='')
+			button.input-search__clear.js-input-search__clear.hidden(type='button')
+				+icon('i-close-lg')(style='width: 16px; height: 16px; fill: #af226f')
+			button.input-search__submit(type='submit', aria-label='Кнопка поиска')
+				+icon('search')(style='width: 24px; height: 24px; fill: #fff; stroke: #af226f; stroke-width: 2px')
+			button.btn.btn--link.input-search__submit(type='submit', aria-label='Кнопка поиска') Искать
+	//- include ../search-result/search-result
+	

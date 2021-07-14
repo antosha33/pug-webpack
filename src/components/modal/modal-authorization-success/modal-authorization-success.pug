@@ -1,0 +1,17 @@
++include-style('modal')
++include-script('modal')
+.modal.fade(
+	id = 'modal-authorization-success', 
+	class= 'modal-authorization-success' tabindex='-1', 
+	aria-modal= 'true',
+	aria-hidden='true',
+	)
+	.modal-dialog.modal-dialog-centered(class= '' role='document')
+		.modal-content
+			button.modal-close(type="button" data-dismiss="modal" aria-label="Close")
+				+icon('i-close')(style='width: 26px; height: 26px;')
+			.modal-body
+				.modal-body__title Спасибо
+				.modal-body__descr Вы успешно авторизованы
+				a(href='#').btn.btn--primary.js-ok Продолжить читать
+				a(href='#').btn.btn--link Личный кабинет

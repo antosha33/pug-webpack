@@ -1,0 +1,74 @@
++include-style('order-success')
+.order-success-wrap
+	.container
+		.order-success
+			.order-success__title Заказ №201 успешно оформлен!
+			.order-success__descr Наш менеджер свяжется с Вами для уточнения и подтверждения деталей заказа. <br>Спасибо, что выбрали товары FABRIKA MVK!
+		.row
+			.col-md-10.col-lg-8.col-xl-6
+				.order-detail
+					.order-detail__title  Детали заказа
+					table.order-detail-content
+						tbody.order-detail__section
+							tr.order-detail__item
+								td.order-detail__prop Товары
+								td.order-detail__value 
+									.order-detail__value-item
+										.order-detail__value-code Артикул: Brd3HL
+										.order-detail__value-wrap
+											.order-detail__value-title
+												span Офисный диван БРИДЖ с высокими боковыми Офисный диван БРИДЖ с высокими боковыми Офисный диван БРИДЖ с высокими боковыми
+											.order-detail__value-count 10шт.
+									.order-detail__value-item
+										.order-detail__value-code Артикул: Brd3HL
+										.order-detail__value-wrap
+											.order-detail__value-title
+												span Офисный диван БРИДЖ с высокими боковыми Офисный диван БРИДЖ с высокими боковыми Офисный диван БРИДЖ с высокими боковыми
+											.order-detail__value-count 10шт.
+									.order-detail__value-item
+										.order-detail__value-code Артикул: Brd3HL
+										.order-detail__value-wrap
+											.order-detail__value-title
+												span Офисный диван БРИДЖ с высокими боковыми Офисный диван БРИДЖ с высокими боковыми Офисный диван БРИДЖ с высокими боковыми
+											.order-detail__value-count 10шт.
+									.order-detail__value-item
+										.order-detail__value-code Артикул: Brd3HL
+										.order-detail__value-wrap
+											.order-detail__value-title
+												span Офисный диван БРИДЖ с высокими боковыми Офисный диван БРИДЖ с высокими боковыми Офисный диван БРИДЖ с высокими боковыми
+											.order-detail__value-count 10шт.
+						tbody.order-detail__section
+							tr.order-detail__item
+								td.order-detail__prop Вес заказа
+								td.order-detail__value 500 кг
+							tr.order-detail__item
+								td.order-detail__prop Объем заказа
+								td.order-detail__value 5,3 м3
+						tbody.order-detail__section
+							tr.order-detail__item
+								td.order-detail__prop Способ доставки
+								td.order-detail__value Самовывоз
+							tr.order-detail__item
+								td.order-detail__prop Стоимость доставки
+								td.order-detail__value Бесплатно
+							tr.order-detail__item
+								td.order-detail__prop Оплата
+								td.order-detail__value Безналичная
+							tr.order-detail__item
+								td.order-detail__prop Скидка
+								td.order-detail__value 25 000 р.
+				.order-detail__total
+					.order-detail__total-title Оплачено:
+					.order-detail__total-sum 301 594 ₽
+		.to-main
+			a(href="/index.html").btn.btn--primary Перейти на главную
+				+icon('i-link')(style="width: 24px; height:24px")
++include-style('collections-section')
+.collections-wrap 
+	.container
+		+presection-main({
+			title: 'Популярные коллекции',
+			linkTitle: 'Все коллекции'
+		})
+		include ../collections-slider/collections-slider 
+	.collections-slider-slider-pagination

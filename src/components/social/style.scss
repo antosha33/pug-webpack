@@ -1,0 +1,19 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.social {
+	display: flex;
+	margin: 15px 0px;
+	&__item {
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.icon {
+			fill: $c-link;
+		}
+		&:hover {
+			background-color: $c-bg-3;
+		}
+	}
+}

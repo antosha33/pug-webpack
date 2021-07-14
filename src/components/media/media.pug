@@ -1,0 +1,33 @@
++include-style('category')
++include-style('contacts')
+.category
+	.container.custom-gutters
+		+presection-title({
+			title: "Налоги"
+		})
+		.row
+			.col-sm-8.col-lg-8.col-custom-8
+				include ../grid-layout-media/grid-layout
+			.col-sm-2.col-lg-2.col-custom-2.download-wrap
+				+nav({
+						modClass: 'nav--side',
+						list: [
+							{name: 'Об издании', link: '#'},
+							{name: 'Контакты', link: '#'},
+							{name: 'Обратная связь', link: '#'},
+							{name: 'Авторы', link: '#'},
+							{name: 'Проверка контрагента', link: '#'},
+							{name: 'Эталон онлайн', link: '#'},
+						]
+				})
+				+download-latest({
+					mod: 'download-latest--dekstop',
+					archive: true
+				})
+				+side-banner({
+					mod: 'side-banner--big prlx-wrap',
+					link: 'side-banner.jpg'
+				})
+				include ../banner-link/banner-link
+	include ../solutions/solutions
+	include ../paid-content/paid-content

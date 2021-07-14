@@ -1,0 +1,8 @@
+mixin presection-main(args={})
+	+include-style('mixin__presection-main')
+	.presection
+		h2.presection__title= args.title
+		if(args.linkTitle)
+			+arrow-link({
+				linkTitle: args.linkTitle
+			})

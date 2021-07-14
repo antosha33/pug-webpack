@@ -1,114 +1,151 @@
 +include-style('footer')
 +include-script('footer')
-
 footer.footer
-    +b.footer-top
-        .container
-            .row
-                .col-md-6.col-xl-4
-                    +e.__title.js-f-title Каталог
-                        span.arr
-                    +nav({
-                        modClass: 'footer-top__nav footer-top__nav--cols',
-                        list: [
-                            {name: 'Мебель для персонала'},
-                            {name: 'Кабинеты руководителя', active: true},
-                            {name: 'Стойки ресепшн'},
-                            {name: 'Переговорные', link: ''},
-                            {name: 'Офисные кресла'},
-                            {name: 'Офисные стулья', link: ''},
-                            {name: 'Офисные диваны', link: ''},
-                            {name: 'Распродажа', link: ''},
-                        ]
-                    })
-                .col-md-3.col-xl-2.footer-top__borders
-                    +e.__title.js-f-title Покупателям
-                        span.arr
-                    +nav({
-                        modClass: 'footer-top__nav',
-                        list: [
-                            {name: 'О нас'},
-                            {name: 'Оплата', active: true},
-                            {name: 'Политика безопасности данных'},
-                            {name: 'Дизайн проект', link: ''},
-                            {name: 'Доставка и сборка'},
-                        ]
-                    })
-                .col-md-3.col-xl-2
-                    +e.__title Контакты
-                    +e.__contacts
-                        +e.__contact.anim-map
-                            +icon("i-map")
-                            span.text Бизнес-центр „Сириус Парк“ Москва, Каширское ш. 3, корп. 2, стр. 2
-                        +e.__contact
-                            +e('a').__contact-link.anim-mail(href="mailto:info@mavikom.ru")
-                                +icon("anim-i-mail-top").anim-mail-top
-                                +icon("anim-i-mail-bottom")
-                                span.text info@mavikom.ru
-                        +e.__contact
-                            +e('a').__contact-link.anim-ding(href="tel:+74996488477")
-                                +icon("i-tel")
-                                span.text +7(499) 648-84-77
-                        +e.__contact
-                            +icon("i-time")
-                            span.text Будние дни с 9.00 до 18.00
-                .col-md-12.col-xl-4
-                    +e.__info
-                        +lazy-img({
-                            img: 'images/footer.jpg',
-                            placeholder: pixel,
-                            img_mod: '',
-                            wrap_mod: 'footer-top__img-wrap',
-                            link: false,
-                            aria_label: false,
-                        })
-                        +e.__info-p Все права защищены, копирование, публикация материалов без разрешения владельцев домена запрещены
-                        .subscribe
-                            .subscribe__title Подписаться на рассылку
-                            form.subscribe__form
-                                +input({
-                                    label: '',
-                                    type: 'email',
-                                    name: false,
-                                    small: false,
-                                    placeholder: 'Ваша электронная почта',
-                                    required: true,
-                                    pattern: 'email',
-                                    validation: {
-                                        message: 'Обязательное поле',
-                                        regexp: 'Неверный формат',
-                                        emailaddress: ' ',
-                                        identical: false
-                                    }
-                                })
-                                button.btn.subscribe__submit(type='submit' aria-label='Подписаться')
-                                    +icon('i-subscribe')
-    +b.footer-bottom
-        .container
-            .row
-                .col-md-3.col-xl-4
-                    a(href="https://slam.by/").slam
-                        +icon('i-slam')
-                        span Разработка сайта — SLAM
-                .col-md-3.col-xl-4
-                    .pay
-                        +lazy-img({
-                            img: 'images/visa.svg',
-                            placeholder: pixel,
-                            img_mod: '',
-                            wrap_mod: 'pay__img-wrap',
-                            link: false,
-                            aria_label: false,
-                        })
-                        +lazy-img({
-                            img: 'images/mastercard.svg',
-                            placeholder: pixel,
-                            img_mod: '',
-                            wrap_mod: 'pay__img-wrap',
-                            link: false,
-                            aria_label: false,
-                        })
-                .col-md-6.col-xl-4
-                    +e.__right
-                        a(href="#").sitemap Карта сайта
-                        .copyright © 2001—2021 ООО «Мавиком-офис»
+	.footer-top
+		.container
+			.subscribe
+				.header-top__logo.header-top__logo--footer
+					a.logo(href='/local/templates/html/index.html' aria-label='На главную')
+						+picture({
+							modClass: 'logo__img',
+							imgBig: 'logo.svg',
+							imgSmall: 'logo.svg'
+						})
+				.subscribe__title Подпишись на рассылку
+				form.bv-form.subscribe-form
+					+input({
+						type: 'email',
+						name: 'email',
+						small: false,
+						placeholder: 'Ваш e-mail',
+						required: true,
+						pattern: false,
+						validation: {
+							message: 'Обязательное поле',
+							regexp: 'Неверный формат',
+							emailaddress: ' ',
+							identical: false
+						}
+					})
+					button.btn.btn--primary(data-submit="true")
+						span Подписаться
+						+icon('i-email')(style="width: 24px; height: 24px")
+
+	.footer-center
+		.container
+			.footer-nav
+				.footer-col
+					+nav(
+						{	modClass: 'nav--footer',
+						big_nav: '',
+						list_hidden: '',
+						list: [
+							{   name: 'Компания',
+								span: true,
+								list: [
+									{ name: 'Политика конфиденциальности'},
+									{ name: 'О персональный данных'},
+									{ name: 'Новости'},
+									{ name: 'Статьи'},
+									{ name: 'Доставка и оплата'},
+									{ name: 'Проекты'},
+									{ name: '3D-планировщик'},
+								]
+							}
+						]
+					}
+					)
+				.footer-col
+					+nav(
+						{	modClass: 'nav--footer',
+						big_nav: '',
+						list_hidden: '',
+						list: [
+							{   name: 'Скачать материалы',
+								span: true,
+								list: [
+									{ name: '3D-модели'},
+									{ name: 'Обивки'},
+									{ name: 'Тех.листы'},
+									{ name: 'Схемы'},
+									{ name: 'Инструкции по сборке'},
+									{ name: 'Изображения'},
+									{ name: 'Фотографии'},
+									{ name: 'Сертификаты'},
+									{ name: 'Бланк рекламации'},
+									{ name: 'Рекламные материалы'},
+								]
+							}
+						]
+					}
+					)
+				.footer-col
+					+nav(
+						{	modClass: 'nav--footer',
+						big_nav: '',
+						list_hidden: '',
+						list: [
+							{   name: 'Каталог',
+								span: true,
+								list: [
+									{ name: 'Диваны и кресла'},
+									{ name: 'Банкетки и пуфы'},
+									{ name: 'Мобильные перегородки'},
+								]
+							}
+						]
+					}
+					)
+					+nav(
+						{	modClass: 'nav--footer',
+						big_nav: '',
+						list_hidden: '',
+						list: [
+							{   name: 'Партнерам',
+								span: true,
+								list: [
+									{ name: 'Дилерам'},
+									{ name: 'Дизайнерам'},
+									{ name: 'Поставщикам'},
+								]
+							}
+						]
+					}
+					)
+				.footer-col
+					+nav(
+						{	modClass: 'nav--footer',
+						big_nav: '',
+						list_hidden: '',
+						list: [
+							{   name: 'Информация',
+								span: true,
+								list: [
+									{ name: 'Новинки'},
+									{ name: 'Остатки на складе'},
+									{ name: 'Шоу-рум'},
+									{ name: 'Прайс'},
+								]
+							}
+						]
+					}
+					)
+				.footer-col
+					.footer-contacts
+						.footer-contacts__title Контакты
+						.footer-contacts__descr Склад, офис, производство, шоу-рум находятся по адресу:
+						.footer-contacts__address Домодедово, Промзона Текстильщик, с12
+						a(href="#").btn.btn--light Схема проезда
+						.footer-contacts__time
+							span.time__icon
+								+icon('i-timer')(style='width: 24px; height: 24px;')
+							span.time__period Пн–Пт  9:00–18:00
+						include ../contacts/contacts
+						.btn.btn--light(data-target="#modal-feedback" data-toggle="modal") Обратный звонок
+	.footer-bottom
+		.container
+			a(href='#').footer-dev
+				+icon('i-slam')(style="width:14px; height: 14px")
+				span Разработка сайта - SLAM
+			a(href="#").footer-map Карта сайта
+			.footer-copyright 2020 © Fabrika MVK

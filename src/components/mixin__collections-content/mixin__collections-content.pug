@@ -1,0 +1,9 @@
+mixin collections-content(args={})
+	+include-script('mixin__collections-content')
+	+include-style('mixin__collections-content')
+	.collections-content
+		p= args.p
+		p.p-hidden= args.phidden
+		.collections-content__trigger 
+			.collections-content__toggle.js-collection-toggle.collections__toggle-up.active Развернуть
+			.collections-content__toggle.js-collection-toggle.collections__toggle-down Свернуть

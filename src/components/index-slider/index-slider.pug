@@ -1,0 +1,114 @@
++include-script('index-slider')
+.index-slider-wrap
+	.index-slider
+		+swiper({
+			wrapper_mod: '',
+			container_mod: '',
+			pagination_mod: '',
+			arrow_prev_mod: 'custom-swiper-btn__prev custom-swiper-btn__prev-index-slider',
+			arrow_next_mod: 'custom-swiper-btn__next custom-swiper-btn__next-index-slider',
+			pagination: false,
+			navigation: true,
+			lazy: true,
+		}).js-index-slider
+				.swiper-slide.index-slider__slide
+					.index-slide__bg-left
+					.index-slider__slide-text-wrap
+						.index-slider__slide-text-header Диваны для кабинетов
+						.index-slider__slide-text-title Bentley
+						.index-slider__slide-text-footer Комфортный модульный диван идеально подходящий для зон ожидания
+					.index-slider__slide-img-wrap
+							<a class="fs-slider__link" href="#" aria-label="#">
+								<picture class="lazy-img-wrap index-slider__img-wrap">
+										<source data-srcset="/local/templates/html/images/index-slider-1-xl.jpg" media="(min-width: 415px)" data-was-processed="true" srcset="/local/templates/html/images/index-slider-1-xl.jpg">
+										<source data-srcset="/local/templates/html/images/index-slider-1-sm.jpg" media="(min-width: 250px)" data-was-processed="true" srcset="/local/templates/html/images/index-slider-1-sm.jpg">
+										<img class="index-slider__img" data-src="/local/templates/html/images/index-slider-1-xl.jpg" alt="img" src="/local/templates/html/images/index-slider-1-xl.jpg" data-was-processed="true">
+								</picture>
+							</a>
+				.swiper-slide.index-slider__slide.swiper-slide-next
+					.index-slide__bg-left
+					.index-slider__slide-text-wrap
+						.index-slider__slide-text-header Диваны для кабинетов
+						.index-slider__slide-text-title Bentley
+						.index-slider__slide-text-footer Комфортный модульный диван идеально подходящий для зон ожидания
+					.index-slider__slide-img-wrap
+							<a class="fs-slider__link" href="#" aria-label="#">
+								<picture class="lazy-img-wrap index-slider__img-wrap">
+										<source data-srcset="/local/templates/html/images/index-slider-2-xl.jpg" media="(min-width: 415px)" data-was-processed="true" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+										<source data-srcset="/local/templates/html/images/index-slider-2-sm.jpg" media="(min-width: 250px)" data-was-processed="true" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+										<img class="swiper-lazy index-slider__img" data-src="/local/templates/html/images/index-slider-2-xl.jpg" alt="img" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-was-processed="true">
+								</picture>
+							</a>
+				.swiper-slide.index-slider__slide
+					.index-slide__bg-left
+					.index-slider__slide-text-wrap
+						.index-slider__slide-text-header Диваны для кабинетов
+						.index-slider__slide-text-title Bentley
+						.index-slider__slide-text-footer Комфортный модульный диван идеально подходящий для зон ожидания
+					.index-slider__slide-img-wrap
+						+lazy-picture-slider({
+								source: [
+									{
+										img: '/images/index-slider-3-xl.jpg',
+										pixel,
+										media: 415
+									}, {
+										img: '/images/index-slider-4-sm.jpg',
+										pixel,
+										media: 250
+									}
+								],
+								link: true,
+								link_class: 'fs-slider__link',
+								img: '/images/index-slider-3-xl.jpg',
+								placeholder: pixel,
+								img_mod: 'index-slider__img',
+								wrap_mod: 'index-slider__img-wrap'
+							})
+
+				.swiper-slide.index-slider__slide
+					.index-slide__bg-left
+					.index-slider__slide-text-wrap
+						.index-slider__slide-text-header Диваны для кабинетов
+						.index-slider__slide-text-title Bentley
+						.index-slider__slide-text-footer Комфортный модульный диван идеально подходящий для зон ожидания
+					.index-slider__slide-img-wrap
+						+lazy-picture-slider({
+								source: [
+									{
+										img: '/images/index-slider-3-xl.jpg',
+										pixel,
+										media: 415
+									}, {
+										img: '/images/index-slider-4-sm.jpg',
+										pixel,
+										media: 250
+									}
+								],
+								link: true,
+								link_class: 'fs-slider__link',
+								img: '/images/index-slider-3-xl.jpg',
+								placeholder: pixel,
+								img_mod: 'index-slider__img',
+								wrap_mod: 'index-slider__img-wrap'
+							})
+				.swiper-slide.index-slider__slide.swiper-slide-prev
+					.index-slide__bg-left
+					.index-slider__slide-text-wrap
+						.index-slider__slide-text-header Диваны для кабинетов
+						.index-slider__slide-text-title Bentley
+						.index-slider__slide-text-footer Комфортный модульный диван идеально подходящий для зон ожидания
+					.index-slider__slide-img-wrap
+						<a class="fs-slider__link" href="#" aria-label="#">
+							<picture class="lazy-img-wrap index-slider__img-wrap">
+									<source data-srcset="/local/templates/html/images/index-slider-3-xl.jpg" media="(min-width: 415px)" data-was-processed="true" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+									<source data-srcset="/local/templates/html/images/index-slider-3-sm.jpg" media="(min-width: 250px)" data-was-processed="true" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+									<img class="swiper-lazy index-slider__img" data-src="/local/templates/html/images/index-slider-3-xl.jpg" alt="img" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-was-processed="true">
+							</picture>
+						</a>
+	.mob-slider-footer
+		.mob-slide-prev
+		.pagination-wrap
+			.container
+				.swiper-pagination.js-swiper-pagination.swiper-pagination-custom
+		.mob-slide-next

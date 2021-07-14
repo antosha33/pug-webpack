@@ -1,0 +1,228 @@
+include ../../utility/_globalVars
+include ../../utility/_mixins
+include ../../utility/_functions
+
+
+.mob-menu-top
+	.mob-menu-close.js-btn-toggle.active(data-target='.mob-menu' aria-label='закрыть меню')
+		+icon('i-close')(width='24px' height='24px')
+		.mob-menu-title Меню
+.mob-menu-body-wrap
+	.mob-menu-body
+		.mob-header-nav 
+			+nav({
+				modClass: 'nav--mobile',
+				list: [
+					{name: 'Каталог',
+						span: true,
+							icon: {
+name: 'i-link',
+width: '14px',
+height: '14px',
+},
+	list: [
+		{name: 'Диваны и кресла',
+			icon: {
+			name: 'i-link',
+			width: '14px',
+			height: '14px',
+		},
+		more: true,
+		list:[
+			{name: 'Алекто',
+			img: './images/mobile-catalog-item-1.jpg',
+			dataImg: '/local/templates/html/images/catalog-menu-banner-1.jpg',
+			},
+			{name: 'Астро',
+				img: './images/mobile-catalog-item-2.png',
+				dataImg: '/local/templates/html/images/catalog-menu-banner-2.jpg',
+			},
+			{name: 'Бридж',
+				img: './images/mobile-catalog-item-3.png',
+				dataImg: '/local/templates/html/images/catalog-menu-banner-3.jpg',
+			},
+			{name: 'Беверли',
+				img: './images/mobile-catalog-item-4.png',
+				dataImg: '/local/templates/html/images/catalog-menu-banner-4.jpg',
+			},
+			{name: 'Бентли',
+				img: './images/mobile-catalog-item-5.png',
+				dataImg: '/local/templates/html/images/catalog-menu-banner-1.jpg',
+			},
+			{name: 'Бизнес',
+				img: './images/mobile-catalog-item-2.png',
+				dataImg: '/local/templates/html/images/catalog-menu-banner-2.jpg',
+			},
+			{name: 'Боссо',
+				img: './images/mobile-catalog-item-3.png',
+				dataImg: '/local/templates/html/images/catalog-menu-banner-3.jpg',
+			},
+			{name: 'Бэлла',
+				img: './images/mobile-catalog-item-4.png',
+				dataImg: '/local/templates/html/images/catalog-menu-banner-4.jpg',
+			},
+				{name: 'Бэлла',
+				img: './images/mobile-catalog-item-4.png',
+				dataImg: '/local/templates/html/images/catalog-menu-banner-1.jpg',
+			},
+				{name: 'Бэлла',
+				img: './images/mobile-catalog-item-4.png',
+				dataImg: '/local/templates/html/images/catalog-menu-banner-2.jpg',
+			},
+				{name: 'Бэлла',
+				img: './images/mobile-catalog-item-4.png',
+				dataImg: '/local/templates/html/images/catalog-menu-banner-3.jpg',
+			}
+		]
+		},
+			{name: 'Банкетки и пуфы',
+				icon: {
+			name: 'i-link',
+			width: '14px',
+			height: '14px',
+		},
+		list:[
+			{name: 'Алекто',
+			img: './images/mobile-catalog-item-1.jpg'
+			},
+			{name: 'Астро',
+				img: './images/mobile-catalog-item-2.png'
+			},
+			{name: 'Бридж',
+				img: './images/mobile-catalog-item-3.png'
+			},
+			{name: 'Беверли',
+				img: './images/mobile-catalog-item-4.png'
+			},
+			{name: 'Бентли',
+				img: './images/mobile-catalog-item-5.png'
+			},
+			{name: 'Бизнес',
+				img: './images/mobile-catalog-item-2.png'
+			},
+			{name: 'Боссо',
+				img: './images/mobile-catalog-item-3.png'
+			},
+			{name: 'Бэлла',
+				img: './images/mobile-catalog-item-4.png'
+			}
+		]
+		},
+			{name: 'Мобильные перегородки',
+				icon: {
+			name: 'i-link',
+			width: '14px',
+			height: '14px',
+		},
+		list:[
+			{name: 'Алекто',
+			img: './images/mobile-catalog-item-1.jpg'
+			},
+			{name: 'Астро',
+				img: './images/mobile-catalog-item-2.png'
+			},
+			{name: 'Бридж',
+				img: './images/mobile-catalog-item-3.png'
+			},
+			{name: 'Беверли',
+				img: './images/mobile-catalog-item-4.png'
+			},
+			{name: 'Бентли',
+				img: './images/mobile-catalog-item-5.png'
+			},
+			{name: 'Бизнес',
+				img: './images/mobile-catalog-item-2.png'
+			},
+			{name: 'Боссо',
+				img: './images/mobile-catalog-item-3.png'
+			},
+			{name: 'Бэлла',
+				img: './images/mobile-catalog-item-4.png'
+			}
+		]
+		},
+			{name: 'Новинки',
+				icon: {
+			name: 'i-link',
+			width: '14px',
+			height: '14px',
+		},
+		list:[
+			{name: 'Алекто',
+			img: './images/mobile-catalog-item-1.jpg'
+			},
+			{name: 'Астро',
+				img: './images/mobile-catalog-item-2.png'
+			},
+			{name: 'Бридж',
+				img: './images/mobile-catalog-item-3.png'
+			},
+			{name: 'Беверли',
+				img: './images/mobile-catalog-item-4.png'
+			},
+			{name: 'Бентли',
+				img: './images/mobile-catalog-item-5.png'
+			},
+			{name: 'Бизнес',
+				img: './images/mobile-catalog-item-2.png'
+			},
+			{name: 'Боссо',
+				img: './images/mobile-catalog-item-3.png'
+			},
+			{name: 'Бэлла',
+				img: './images/mobile-catalog-item-4.png'
+			}
+		]
+		},
+			{name: 'Хиты продаж',
+				icon: {
+			name: 'i-link',
+			width: '14px',
+			height: '14px',
+		},
+		list:[
+			{name: 'Алекто',
+			img: './images/mobile-catalog-item-1.jpg'
+			},
+			{name: 'Астро',
+				img: './images/mobile-catalog-item-2.png'
+			},
+			{name: 'Бридж',
+				img: './images/mobile-catalog-item-3.png'
+			},
+			{name: 'Беверли',
+				img: './images/mobile-catalog-item-4.png'
+			},
+			{name: 'Бентли',
+				img: './images/mobile-catalog-item-5.png'
+			},
+			{name: 'Бизнес',
+				img: './images/mobile-catalog-item-2.png'
+			},
+			{name: 'Боссо',
+				img: './images/mobile-catalog-item-3.png'
+			},
+			{name: 'Бэлла',
+				img: './images/mobile-catalog-item-4.png'
+			}
+		]
+		},							
+	]
+		},
+		{
+			name: 'О нас'
+		},
+		{name: 'Шоу-рум'},
+		{name: 'Стать дилером'},
+		{name: 'Остатки на складе'},
+		{name: 'Контакты'}
+		]
+				})
+	.mob-menu-contact
+		.footer-contacts__time
+			span.time__icon
+				+icon('i-timer')(style='width: 24px; height: 24px;')
+			span.time__period Пн–Пт  9:00–18:00
+		include ../contacts/contacts
+		include ../social/social
+		a(href="#modal-feedback",  aria-label='Обратный звонок', 	data-toggle='modal', data-target="#modal-feedback").btn.btn--light Обратный звонок

@@ -38,7 +38,7 @@ mixin style-includer()
 				//- link(rel='preload' href= dir + 'css/styles.min.css' as='style' onload="this.onload=null;this.rel='stylesheet'")
 
 				each item in componentsList
-						link(rel='preload' href= dir + 'components-template/' + item + '/style.css' as='style' onload="this.onload=null;this.rel='stylesheet'")
+					link(rel='preload' href= dir + 'components-template/' + item + '/style.css' as='style' onload="this.onload=null;this.rel='stylesheet'")
 
 				each item in componentsModList
 					link(rel='preload' href= dir + 'components-template/' + item[0] + '/' + item[1] + '.css' as='style' onload="this.onload=null;this.rel='stylesheet'")

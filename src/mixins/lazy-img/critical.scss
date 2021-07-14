@@ -1,10 +1,13 @@
 @import 'src/assets/css/vars_mixins/vars_mixins';
 
 .lazy-img-wrap {
-  position: relative;
-  display: block;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+	align-items: center;
   &.loaded .preloader {
     display: none;
+  }
+  .lazy-img{
+	  max-width: 100%;
   }
 }

@@ -1,0 +1,38 @@
+mixin cart-item(args={})
+	+include-style('mixin__cart-item')
+	.cart-item(class= args.mod)
+		a(href="#").cart-item__img
+			+lazy-img({
+				img: 'images/cart-item-img.png',
+				placeholder: pixel
+			})
+		.cart-item__main
+			.cart-item__descr
+				.cart-item__code Артикул: Brd3HR
+				.cart-item__title= args.title 
+			if (args.counter)
+				.cart-item__casing
+					.cart-item__casing-color(style="background-color: #9D8C87")
+					.cart-item__casing-code Бежевый <br> (Oregon 03)
+				.cart-item__counter
+					+counter({
+						max_value: 10,
+						min_value: 1,
+						baseStep: 1,
+						step: 1
+					})
+			else
+				.cart-item__count 2 шт.
+			.cart-item__price
+				.cart-item__price-main 55 424 ₽
+				.cart-item__price-discount
+					.cart-item__price-discount-sum 73 280 ₽
+					.cart-item__price-discount-int
+						+label({
+							mod: 'label--discount',
+							title: '-25%'
+						})
+			button.cart-item__delete
+				span.cart-item__delete-title Удалить из корзины
+				+icon('i-trash')(style="width:15px; height: 15px")
+

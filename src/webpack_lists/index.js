@@ -1,0 +1,1 @@
+import ../C:\Users\Anton\Documents\dev\SLAM\neg.by\src\components\events\events

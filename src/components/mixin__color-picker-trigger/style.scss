@@ -1,0 +1,36 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.color-picker-trigger{
+	width: 205px;
+	border: 1px solid #E7E7E7;
+	padding: 17px 15px 15px 16px;
+	position: relative;
+	&__title{
+		position: absolute;
+		left: 15;
+		top: 0;
+		transform: translateY(-50%);
+		font-weight: 300;
+		font-size: 12px;
+		line-height: 12px;
+		background-color: #fff;
+		padding: 0px 4px;
+	}
+	&__color{
+		width: 24px;
+		height: 24px;
+		margin-right: 14px;
+		
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	display: flex;
+	@media (min-width: 1024px){
+		&:hover{
+			border-color: $c-link;
+			cursor: pointer;
+		}
+	}
+
+}

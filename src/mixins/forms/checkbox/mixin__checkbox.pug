@@ -1,0 +1,25 @@
+mixin checkbox(args={})
+	- var id = Math.floor(Math.random() * 9999999999)
+	.form-group(class= args.fg_mod)
+		.checkbox(class= args.wrap_mod)
+			if (args.require)
+				if (args.checked)
+					input(type='checkbox', id= 'ID' + id, name= 'NAME' + id, value='active', required, checked class= args.input_mod)&attributes(attributes)
+				else
+					input(type='checkbox', id= 'ID' + id, name= 'NAME' + id, value='active', required class= args.input_mod)&attributes(attributes)
+
+			else
+				if (args.checked)
+					input(type='checkbox', id= 'ID' + id, name= 'NAME' + id, value='active', checked class= args.input_mod)&attributes(attributes)
+				else
+					input(type='checkbox', id= 'ID' + id, name= 'NAME' + id, value='active' class= args.input_mod)&attributes(attributes)
+			if (args.sort)
+				label(for= 'ID' + id class= args.label_mod)
+					span.checkbox__title Сортировать:
+					span.checkbox__descr= args.label
+						+icon('i-sort')(style="width: 14px; height: 14px")
+			else
+				label(for= 'ID' + id class= args.label_mod)
+					span.checkbox__label
+					span.checkbox__descr= args.label
+					block

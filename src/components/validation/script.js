@@ -1,5 +1,6 @@
-window.addEventListener( 'load', function( event ) {
-	var validation= function () {
+window.addEventListener('load', function (event) {
+
+	var validation = function () {
 
 		let loadedFlag = {
 			BV: true,
@@ -7,13 +8,14 @@ window.addEventListener( 'load', function( event ) {
 		};
 
 		function BVInit() {
-			$('.bv-form:not(.bv-form-initialized)')
+			$('.bv-form-front:not(.bv-form-initialized)')
 				.on('init.form.bv', function (e) {
 					let $this = $(this);
 					$this.addClass('bv-form-initialized');
 					loadedFlag.BV = true;
 				})
 				.bootstrapValidator({
+					submitButtons: 'button[data-submit="true"]',
 					feedbackIcons: {
 						valid: 'bv-icon-ok',
 						invalid: 'bv-icon-not',
@@ -24,7 +26,7 @@ window.addEventListener( 'load', function( event ) {
 
 		function inputmaskInit() {
 			$('input[type="tel"]:not(.inputmask-initialized)').inputmask({
-				mask: "+375 (99) 999-99-99",
+				mask: "+7 (999) 999-99-99",
 				clearMaskOnLostFocus: false
 			}).addClass('inputmask-initialized');
 			$('.js-form-control--data:not(.inputmask-initialized)').inputmask({
@@ -39,7 +41,7 @@ window.addEventListener( 'load', function( event ) {
 				BVInit()
 			} else {
 				loadedFlag.BV = false;
-				$.getScript('./js/vendor/bootstrapValidator.min.js', BVInit);
+				$.getScript('/local/templates/html/js/vendor/bootstrapValidator.min.js', BVInit);
 			}
 		}
 
@@ -50,12 +52,12 @@ window.addEventListener( 'load', function( event ) {
 				inputmaskInit()
 			} else {
 				loadedFlag.inputmask = false;
-				$.getScript('./js/vendor/jquery.inputmask.min.js', inputmaskInit);
+				$.getScript('/local/templates/html/js/vendor/jquery.inputmask.min.js', inputmaskInit);
 			}
 		}
 
 
-		$(document).on('mouseover touchstart touchend', '.bv-form', function () {
+		$(document).on('mouseover touchstart touchend', '.bv-form-front', function () {
 			if (loadedFlag.BV && loadedFlag.inputmask) {
 				loaderBV();
 				loaderInputmask();

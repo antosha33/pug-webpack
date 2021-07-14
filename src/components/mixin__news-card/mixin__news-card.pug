@@ -1,0 +1,26 @@
+mixin news-card(args={})
+	-
+		let num = Math.round(Math.random()* (6 - 8) + 6)
+	+include-style('mixin__news-card')
+	.news-card(class= args.mod)
+		a(href="#").news-card__img
+			span.lazy-img-wrap 
+				img(src=args.img).lazy-img.loaded
+			//- if (args.img)
+			//- 	+lazy-img({
+			//- 		img: args.img,
+			//- 		placeholder: pixel
+			//- 	})
+			//- else
+			//- 	+lazy-img({
+			//- 		img: `images/room-card-${num}.jpg`,
+			//- 		placeholder: pixel
+			//- 	})
+		.news-card__date 
+			span 21.12.2020
+			if (args.type)
+				span.news-card__type= args.type
+		a(href="#").news-card__title-wrap
+			span.news-card__title= args.title
+				+icon('i-link')(style="width: 15px; height: 15px")
+		.news-card__descr= args.descr

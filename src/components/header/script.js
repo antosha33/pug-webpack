@@ -1,197 +1,113 @@
 window.addEventListener('load', function (event) {
 
-    //alert
-    $('.js-close-alert').on('click touch', function(){
-        $('.js-top-alert').slideUp();
-    });
+	setTimeout(() => {
+		$('.header').css({
+			'position': 'sticky'
+		})
+	}, 100)
 
-    //скролл меню тенюшка
-    $(window).on('scroll', function () {
-        let headerMiddle = $('.header-middle'),
-            maxScrollTop = 100;//с учетом баннера и топ меню
-        if (maxScrollTop < $(this).scrollTop()) {
-            maxScrollTop = $(this).scrollTop();
-            headerMiddle.addClass('scroll');
-        } else {
-            maxScrollTop = $(this).scrollTop();
-            headerMiddle.removeClass('scroll');
-        }
-    });
+	$('.js-mobile-menu-trigger').click(function () {
+		$(this).closest('.header').find('.mob-menu').toggleClass('active');
+	})
+	$('.header-main__search').click(function () {
+		$(this).addClass('active');
+	})
+	let scrollTop = $(window).scrollTop();
+	let timeout = null
+	$(window).scroll(function () {
+		if (timeout) clearTimeout(timeout);
+		if ($(window).scrollTop() > scrollTop + 75) {
+			$('.header').addClass('sticky');
+			scrollTop = $(window).scrollTop();
+		}
 
-    //header-bottom
-    //показать меню по ховеру
-    $('.header-bottom .nav-link[data-slam-ajax]').on('mouseenter', function (){
-        let dropNav = $('.header-drop'),
-            _thisIndex = $(this).closest('.nav-item').index();
-        dropNav.addClass('active');
-        dropNav.find('.header-drop__inner').removeClass('active');
-        dropNav.find('.data-drop-'+_thisIndex).addClass('active');
-        $('.mob-overlay').addClass('active');
-        $('body').addClass('overflow');
-    });
-    //header-catalog-drop
-    //показать меню по клику
-    $('.header-action__catalog-btn').on('click touch', function (e) {
-        let dropNav = $('.header-drop'),
-            dropCatNav = $('.header-catalog-drop'),
-            _this = $(this);
-        if(_this.hasClass('active')){
-            _this.removeClass('active');
-            dropCatNav.removeClass('active');
-            $('.mob-overlay').removeClass('active');
-            $('body').removeClass('overflow');
-        } else {
-            _this.addClass('active');
-            dropNav.removeClass('active');
-            dropCatNav.addClass('active');
-            $('.mob-overlay').addClass('active');
-            $('body').addClass('overflow');
-        }
+		if ($(window).scrollTop() < scrollTop - 70) {
+			setTimeout(() => {
+				scrollTop = $(window).scrollTop();
+			}, 300)
 
-    });
-    //убрать менюшку по ховеру вне кнопок и области менюшки
-    $(document).on('mousemove', function (e) {
-        let dropNav = $('.header-drop'),
-            _target = $(e.target),
-            link = $('.header-bottom .nav-link[data-slam-ajax]');
-        if($('.header-catalog-drop').hasClass('active')) {
-            return
-        }
-        if(
-            _target.closest('.header-drop').length ||
-            _target.closest('.header-bottom').length ||
-            _target.hasClass('header-drop') ||
-            _target.hasClass('nav-link')
-        ){
-            return
-        } else {
-            dropNav.removeClass('active');
-            $('.mob-overlay').removeClass('active');
-            $('body').removeClass('overflow');
-        }
-    });
-    //убрать менюшку по клику вне кнопок и области менюшки
-    $(document).on('click touch', function (e) {
-        let dropCatNav = $('.header-catalog-drop'),
-            _target = $(e.target),
-            link = $('.header-bottom .nav-link[data-slam-ajax]');
-        if(
-            _target.closest('.header-action__catalog-btn').length ||
-            _target.closest('.header-catalog-drop').length ||
-            _target.hasClass('header-action__catalog-btn') ||
-            _target.hasClass('header-catalog-drop')
-        ){
-            return
-        } else {
-            $('.header-action__catalog-btn').removeClass('active');
-            dropCatNav.removeClass('active');
-            $('.mob-overlay').removeClass('active');
-            $('body').removeClass('overflow');
-        }
-    });
-    //смена фотки по ховеру
-    $(document).on('mouseenter','.header-drop__nav [data-drop-img]', function (){
-        let _this = $(this),
-            thisImg = _this.attr('data-drop-img');
-        _this.closest('.header-drop__inner').find('.header-drop__img').attr('src',thisImg);
-    });
+			$('.header').removeClass('sticky');
+		}
+		if ($('body').hasClass('main-page')) {
+			if ($(window).scrollTop() <= 0) {
+				$('.header-bottom').css({
+					'border-bottom': '1px solid transparent'
+				})
+			} else {
 
-    //desctop search
-    $('.header-search__input').on('input', function () {
-        $('.js-search-clear').addClass('active');
-    });
-    $('.js-search-clear').on('click touch', function () {
-        $('.header-search__input').val('');
-        $('.js-search-clear').removeClass('active');
-    });
-    //mobile-search
-    $('.js-toggle-search').on('click touch', function () {
-        let _this = $(this),
-            searchFieldBox = $('.js-search-field-box');
-
-        if(searchFieldBox.hasClass('active')){
-            _this.removeClass('active');
-            searchFieldBox.removeClass('active');
-
-        } else {
-            _this.addClass('active');
-            searchFieldBox.addClass('active');
-        }
-    });
-    $(document).on('touch click', function (e){
-        let _target = $(e.target);
-        if(
-            _target.hasClass('js-toggle-search') ||
-            _target.hasClass('js-search-field-box') ||
-            _target.closest('.js-toggle-search').length ||
-            _target.closest('.js-search-field-box').length
-        ) {
-            return
-        } else {
-            $('.js-toggle-search').removeClass('active');
-            $('.js-search-field-box').removeClass('active');
-        }
-    });
-
-    //mobile-drop-nav
-    $('.js-open-mob-nav').on('click touch', function (){
-       let _this = $(this),
-           navBody = $('.header-mob-drop');
-       _this.addClass('active');
-       navBody.addClass('active');
-       $('body').addClass('overflow-mob');
-        $('.mob-overlay').addClass('active-mob');
-
-    });
-    $(document).on('click touch','.js-close-mob-nav', function (){
-        let _this = $(this),
-            navBody = $('.header-mob-drop');
-        $('.js-open-mob-nav').removeClass('active');
-        navBody.removeClass('active');
-        $('body').removeClass('overflow-mob');
-        $('.mob-overlay').removeClass('active-mob');
-    });
-
-    //кнопка каталога в моб меню
-    $(document).on('click touch', '.js-mob-catalog-btn', function (){
-        let _this = $(this),
-            navBody = $(document).find('.header-mob-drop__catalog-nav');
-        if(_this.hasClass('active')) {
-            _this.removeClass('active');
-            navBody.removeClass('active');
-        } else {
-            _this.addClass('active');
-            navBody.addClass('active');
-        }
-    });
-
-    //второй уровень меню каталога/мобильн
-    $(document).on('click touch', '.header-mob-drop__catalog-nav .nav-link', function (ev){
-			ev.preventDefault();
-        let _this = $(this),
-            navBody = _this.next();
-        if(_this.hasClass('open')) {
-            _this.removeClass('open');
-            navBody.removeClass('open');
-        } else {
-            _this.addClass('open');
-            navBody.addClass('open');
-        }
-    });
-
-    //дополнительное меню/мобильное
-    $(document).on('click touch', '.header-mob-drop__sec-nav .nav-link', function (){
-        let _this = $(this),
-            navBody = _this.next();
-        if(_this.hasClass('open')) {
-            _this.removeClass('open');
-            navBody.removeClass('open');
-        } else {
-            _this.addClass('open');
-            navBody.addClass('open');
-        }
-    });
-
-
+				$('.header-bottom').css({
+					'border-bottom': '1px solid #000'
+				})
+			}
+		}
+	})
 });
 
+
+window.addEventListener('load', function (event) {
+
+
+	const inputsfile = Array.from(document.querySelectorAll('.input__file'));
+
+	console.log(inputsfile);
+	if (inputsfile.length) {
+		inputsfile.forEach((input) => {
+
+			const $bxInputWrap = $(input).closest('.webform-field-upload')
+			$bxInputWrap
+				.find('.webform-small-button')
+				.text('Прикрепить файл')
+				.addClass(['input__file-button', 'empty'])
+				.removeClass(['btn', 'btn-primary', 'webform-small-button', 'webform-button-upload']);
+
+			const $fileInput = $bxInputWrap.closest('.file-input')
+			$fileInput.addClass('file-input--mod');
+			$fileInput.find('.webform-field-upload-list').addClass('webform-field-upload-list--mod');
+
+			const extArray = [];
+
+			const addExt = () => {
+				$fileInput.find('ol li').each(function(index){
+					$(this).prepend(extArray[index]);
+				})
+			}
+
+			function handler() {
+				let count = 0;
+				$fileInput.find('ol li').addClass('choosen-file__item');
+				
+				if (this.files.length) {
+					for (key in this.files) {
+
+						if (this.files[key].name && key !== 'item') {
+							const ext = this.files[key].name.match(/\..{3}$/g)[0].split('.').join('');
+							const newIconDiv = document.createElement('span');
+							$(newIconDiv).addClass('ext-icon');
+							const newImg = new Image();
+							newImg.src = `/local/templates/html/images/i-${ext}.svg`;
+							newIconDiv.append(newImg)
+							extArray.push(newIconDiv);
+						}
+
+					}
+					$bxInputWrap.find('.webform-small-button').text('Добавить ещё файл +')
+				};
+
+				setTimeout(() => {
+					addExt();
+					$('.input__file').each(function(){
+						$(this)[0].addEventListener('change', handler);
+					})
+				}, 1000)
+
+
+			}
+
+
+
+			input.addEventListener('change', handler)
+		})
+	}
+
+
+})

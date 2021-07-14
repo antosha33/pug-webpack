@@ -1,0 +1,13 @@
+mixin catalog-item(args={})
+	+include-style('mixin__catalog-item')
+	a.quick-catalog__item(href='#' class= args.mod)
+		span.quick-catalog__img
+			img(src = args.img)
+		span.quick-catalog__title-wrap
+			if (args.label)
+				+label({
+					title: 'Новинка',
+					mod: 'label--new label--catalog-collections'
+				})
+			span.quick-catalog__title= args.title
+				+icon('i-link')(style="width: 24px; height: 24px")

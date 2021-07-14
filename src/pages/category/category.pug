@@ -1,35 +1,43 @@
 extends ../../layout/layout
 
 block vars
-    - var pageTitle = 'Категории'
-    - var pageBodyClass = 'items-list'
-    - var dir = './'
+	- var pageTitle = 'Остатки на складе'
+	- var pageBodyClass = ''
+	- var dir = './'
 
 
 block premain
-    .breadcrumb-wrap
-        .container
-            +breadcrumb({
-                href_content1: '',
-                content1: 'Категории',
-                href_content2: '',
-                content2: '',
-                content3: ''
-            })
-    include ../../components/category-list/category-list
+	+page-header-section({
+		title: 'Остатки на складе',
+		id: '',
+		colClasses: 'col-12',
+	})
+		+breadcrumb({
+			content1: 'Остатки на складе',
+			href_content1: '',
+			content2: '',
+			href_content2: '',
+			content3: '',
+		})
+	include ../../components/category/category
+
+
 block main
-    .no-critical.no-critical--preloader
+	.no-critical.no-critical--preloader
+
+
 
 
 
 block componentsCriticalStyles
-    +componentsCriticalStyles-includer()
+	+componentsCriticalStyles-includer()
 block vendorScripts
-    +vendorScripts-includer()
+	+vendorScripts-includer()
 block componentsStyles
-    +style-includer()
+	+style-includer()
 
 block componentsScripts
-    +componentsScripts-includer()
+	+componentsScripts-includer()
 
 block scripts
+	script(src="./js/vendor/masonry.min.js" defer)

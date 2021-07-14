@@ -4,4 +4,4 @@ function importAll(contextLoader) {
 
 const contextLoader = require.context('../components/', true, /.*\/ajax__.*\.pug/);
 importAll(contextLoader);
-                                                                                                    
+                                                                                                                                                                                                                                  

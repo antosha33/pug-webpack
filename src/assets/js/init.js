@@ -8,15 +8,13 @@ const uiInits = {
 		this.vendorLoader();
 		this.slider();
 		this.oneevent();
-		this.removeNoTransition();
+		this.transition();
 	},
-
-	removeNoTransition: function () {
-		window.addEventListener('load', () => {
+	transition: function () {
+		window.addEventListener('load', function (event) {
 			$('body').removeClass('no-transition');
 		})
 	},
-
 	oneevent: function () {
 
 		/*
@@ -41,9 +39,8 @@ const uiInits = {
 				console.warn('vendorLoader: You must pass the name!');
 				return;
 			}
+			// console.log(args.name)
 			!window.vendor && (window.vendor = {});
-
-			//console.log(args.name)
 			window.vendor[args.name] = {};
 			window.vendor[args.name].enter = {};
 			window.vendor[args.name].enter.timeout;
@@ -90,6 +87,7 @@ const uiInits = {
 	},
 	vendorLoader: function () {
 
+
 		const vendorloadStatus = {};
 
 		window.vendorLoadStatus = vendorloadStatus;
@@ -106,7 +104,6 @@ const uiInits = {
 
 			!window.vendor && (window.vendor = {});
 			!window.SITE_TEMPLATE_PATH && (window.SITE_TEMPLATE_PATH = '/local/templates/html/');
-
 			window.vendor[args.name] = {};
 			window.vendor[args.name].load = {};
 			window.vendor[args.name].load.timeout;
@@ -153,11 +150,107 @@ const uiInits = {
 			}
 		}
 	},
+
+	// slider: function () {
+	// 	window.slam_slider = function (args) {
+	// 		const $slider_wrap = $(args.el);
+	// 		const slider = $slider_wrap.find('.js-swiper-slider');
+	// 		const tab = $slider_wrap.closest('.tab-pane:not(.active)');
+	// 		const data = {
+	// 			media: $slider_wrap.attr('data-media'),
+	// 		};
+	// 		const slider_prev = $slider_wrap.find('.js-swiper-button-prev');
+	// 		const slider_next = $slider_wrap.find('.js-swiper-button-next');
+	// 		const slider_pagination = $slider_wrap.find('.js-swiper-pagination');
+	// 		let sliderLength = $slider_wrap.find('.swiper-slide').length;
+	// 		let swiper = {};
+	// 		!args.args.navigation && (args.args.navigation = {});
+	// 		args.args.navigation.nextEl = slider_next;
+	// 		args.args.navigation.prevEl = slider_prev;
+	// 		!args.args.pagination && (args.args.pagination = {});
+	// 		args.args.pagination.el = slider_pagination;
+	// 		args.args.pagination.type = 'bullets';
+	// 		args.args.pagination.dynamicBullets = sliderLength > 5;
+	// 		args.args.pagination.clickable = true;
+
+	// 		let swiper_init = function() {
+	// 			swiper = new Swiper(slider, args.args)
+	// 				// .on('imgLazyLoaded', function () {
+	// 				// 	setTimeout(function () {
+	// 				// 		swiper.update();
+	// 				// 	}, 3000);
+	// 				// 	setTimeout(function () {
+	// 				// 		swiper.update();
+	// 				// 	}, 1000);
+	// 				// })
+	// 		}
+
+	// 		const init = function () {
+	// 			if (tab.length > 0) {
+	// 				let tab_id = tab.attr('id');
+	// 				$('[data-target="#'+tab_id+'"]').on('shown.bs.tab', function (e) {
+	// 					swiper_init()
+	// 				})
+	// 			} else {
+	// 				swiper_init()
+	// 			}
+	// 		};
+
+	// 		const destroy = function () {
+	// 			swiper.destroy && swiper.destroy();
+	// 			new LazyLoad({
+	// 				threshold: 0,
+	// 			}, $slider_wrap.find('.swiper-lazy'));
+	// 		};
+
+	// 		if ($slider_wrap.attr('data-media')) {
+	// 			let handler_media = function (state) {
+	// 				if (state) {
+	// 					init();
+	// 				} else {
+	// 					destroy()
+	// 				}
+	// 			};
+	// 			window.check_media(data.media, handler_media)
+	// 		} else {
+	// 			init();
+	// 		}
+	// 		return swiper;
+	// 	};
+
+	// 	window.slam_slider_with_nav = function(args) {
+	// 		const $slider_wrap = $(args.el);
+	// 		console.log($(args.el))
+	// 		console.log($slider_wrap)
+	// 		const $slider_nav = $slider_wrap.find('.js-swiper-nav');
+	// 		const $slider_main = $slider_wrap.find('.js-swiper-main');
+	// 		let swiper_nav;
+	// 		let swiper_main;
+	// 		swiper_nav = $slider_nav.length > 0 && window.slam_slider({
+	// 			el: $slider_nav,
+	// 			args: args.args_nav
+	// 		}).on('transitionEnd', function(e,slider) {
+	// 			$slider_nav.find('.swiper-slide-thumb-active').length < 1 && $slider_nav.find('.swiper-slide-active').addClass('swiper-slide-thumb-active');
+	// 		});
+
+	// 		swiper_main = window.slam_slider({
+	// 			el: $slider_main,
+	// 			args: {
+	// 				thumbs: {
+	// 					swiper: swiper_nav
+	// 				},
+	// 				...args.args_main
+	// 			}
+	// 		});
+
+	// 		return {main: swiper_main, nav: swiper_nav}
+	// 	}
+	// },
 	slider: function () {
 
 		window.slam_slider = function (args) {
 			const $slider_wrap = $(args.el);
-			const slider = $slider_wrap.find('.js-swiper-slider');
+			const slider = $slider_wrap.find('.js-swiper-slider')[0];
 			const data = {
 				media: $slider_wrap.attr('data-media'),
 			};
@@ -167,30 +260,20 @@ const uiInits = {
 
 			let swiper = {};
 			!args.args.navigation && (args.args.navigation = {});
-			args.args.navigation.nextEl = slider_next;
-			args.args.navigation.prevEl = slider_prev;
 			!args.args.pagination && (args.args.pagination = {});
-			args.args.pagination.el = slider_pagination;
-			args.args.pagination.type = 'bullets';
-			args.args.pagination.dynamicBullets = true;
-			args.args.pagination.clickable = true;
-
+			// args.args.pagination.el = slider_pagination[0];
+			// args.args.pagination.type = 'bullets';
+			// args.args.pagination.dynamicBullets = true;
+			// args.args.pagination.clickable = true;
 
 
 			const init = function () {
-				swiper = new Swiper(slider, args.args, {
-					preloadImages: false,
-					lazy: {
-						loadPrevNext: true,
-					},
-				})
-
+				swiper = new Swiper(slider, args.args)
 					.on('imgLazyLoaded', function () {
 						setTimeout(function () {
 							swiper.update();
 						}, 300)
 					});
-
 				setTimeout(function () {
 					swiper.update();
 				}, 1000)
@@ -209,7 +292,7 @@ const uiInits = {
 					if (state) {
 						init();
 					} else {
-						destroy();
+						destroy()
 					}
 				};
 
@@ -220,31 +303,6 @@ const uiInits = {
 			}
 
 			return swiper;
-		}
-		window.slam_slider_with_nav = function (args) {
-			const $slider_wrap = args.$el;
-			const $slider_nav = $slider_wrap.find('.js-swiper-nav');
-			const $slider_main = $slider_wrap.find('.js-swiper-main');
-			let swiper_nav;
-			let swiper_main;
-			swiper_nav = $slider_nav.length > 0 && window.slam_slider({
-				el: $slider_nav,
-				args: args.args_nav
-			}).on('transitionEnd', function (e, slider) {
-				$slider_nav.find('.swiper-slide-thumb-active').length < 1 && $slider_nav.find('.swiper-slide-active').addClass('swiper-slide-thumb-active');
-			});
-
-			swiper_main = window.slam_slider({
-				el: $slider_main,
-				args: {
-					thumbs: {
-						swiper: swiper_nav
-					},
-					...args.args_main
-				}
-			});
-
-			return { main: swiper_main, nav: swiper_nav }
 		}
 
 	},

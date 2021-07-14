@@ -1,0 +1,63 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.sertificates-wrap {
+	margin-top: 60px;
+	@media (max-width: $sm - 1){
+		margin-top: 30px;
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+}
+
+.sertificate {
+	padding: 30px;
+	border: 1px solid transparent;
+	width: 25%;
+	margin-bottom: 60px;
+	@media (max-width: $lg - 1){
+		width: 33.33%;
+	}
+	@media (max-width: $sm - 1){
+		width: 50%;
+		margin-bottom: 30px;
+		padding: 15px;
+	}
+	&__img {
+		display: block;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		margin-bottom: 30px;
+	}
+	&__title {
+		font-weight: normal;
+		font-size: 20px;
+		position: relative;
+		@include lineheight(20, 26);
+		.icon {
+			display: block;
+			position: absolute;
+			right: -10px;
+			transform: translate(100%, -20px);
+		}
+		@media (min-width: 1024px) {
+			// &:hover {
+			// 	border-bottom: 1px solid #000;
+			// 	.icon {
+			// 		stroke: #000;
+			// 	}
+			// }
+		}
+	}
+	@media (min-width: 1024px) {
+		&:hover {
+			border: 1px solid #000;
+		}
+	}
+}
+.sertificates-list {
+	display: flex;
+	flex-wrap: wrap;
+}

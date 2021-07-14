@@ -1,0 +1,84 @@
+extends ../../layout/layout
+
+block vars
+	- var pageTitle = 'Диван Бридж Brd2-2 (артикул: Brd2-2)'
+	- var bodyClass = 'product-page'
+	- var dir = './'
+
+
+block premain
+	+page-header-section({
+		title: 'Диван Бридж Brd2-2 (артикул: Brd2-2)',
+		id: 'ID:789456123',
+		colClasses: 'col-12',
+	})
+		+breadcrumb({
+			content1: 'Каталог',
+			href_content1: '',
+			content2: 'Коллекция',
+			href_content2: '',
+			content3: 'Диван Бридж Brd2-2',
+		})
+	include ../../components/product-page/product-page
+
+
+
+block main
+	.no-critical.no-critical--preloader
+		+include-style('collections-section')
+		.collections-wrap
+			.container
+				+presection-main({
+					title: 'Товары из этой коллекции',
+				})
+				include ../../components/collections-slider/collections-slider
+			.collections-slider-slider-pagination
+		.collections-wrap
+			.container
+				+presection-main({
+					title: 'Товары аналоги',
+				})
+				include ../../components/collections-slider/collections-slider
+			.collections-slider-slider-pagination
+
+block popups
+	+include-style('modal')
+	+include-script('modal')
+	.modal.fade(
+		id= 'casing-picker-modal',
+		class = 'casing-picker-modal',
+		aria-modal= 'true',
+		aria-hidden='true',
+	)
+		.modal-dialog.modal-dialog-centered.modal-dialog--color-picker(role='document')
+			.modal-content
+				.modal-header.modal-header--color-picker
+					button.modal-close.modal-close--color-picker(type="button" data-dismiss="modal" aria-label="Close")
+						+icon('i-link')(style="width: 24px; height: 24px; stroke: #fff; transform: rotate(180deg)")
+					.modal-header__title Цвет обивки
+				.modal-body.modal-body--color-picker.js-modal-body-color-picker
+				.modal-footer.modal-footer--color-picker
+					.modal-footer__choose.color-picker__choose 
+						button.btn.btn--primary Выбрать цвет
+					.modal-footer__price.casing-picker__price 202 280 ₽
+					.modal-footer__discount.casing-picker__discount
+						.modal-footer__discount-sum.casing-picker__discount-sum 252 280 ₽
+						.modal-footer__discount-int.casing-picker__discount-int
+							+label({
+								mod: 'label--discount',
+								interest: '-25%'
+							})
+
+
+
+block componentsCriticalStyles
+	+componentsCriticalStyles-includer()
+block vendorScripts
+	+vendorScripts-includer()
+block componentsStyles
+	+style-includer()
+
+block componentsScripts
+	+componentsScripts-includer()
+
+block scripts

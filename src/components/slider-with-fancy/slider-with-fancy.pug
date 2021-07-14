@@ -1,0 +1,142 @@
++include-script('slider-with-fancy')
++fancy-box()
+.slider-with-fancy
+	+swiper({
+		wrapper_mod: '',
+		container_mod: '',
+		pagination_mod: '',
+		arrow_prev_mod: '',
+		arrow_next_mod: '',
+		pagination: false,
+		navigation: false,
+	}).fancy-slider.js-gallery-fancy-top
+		.swiper-slide
+			a(href='/local/templates/html/images/fancy-slider-1.jpg' data-fancybox="gallery")
+				img(src="images/fancy-slider-1.jpg")
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-1.jpg',
+				placeholder: pixel,
+				img_mod: 'fancy-slider__img',
+				link: true,
+				fancy: true,
+				href: '/local/templates/html/images/fancy-slider-1.jpg'
+			})(data-fancybox="gallery")
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-2.jpg',
+				placeholder: pixel,
+				img_mod: 'fancy-slider__img',
+				link: true,
+				fancy: true,
+				href: '/local/templates/html/images/fancy-slider-2.jpg'
+			})(data-fancybox="gallery")
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-3.jpg',
+				placeholder: pixel,
+				img_mod: 'fancy-slider__img',
+				link: true,
+				fancy: true,
+				href: '/local/templates/html/images/fancy-slider-3.jpg'
+			})(data-fancybox="gallery")
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-1.jpg',
+				placeholder: pixel,
+				img_mod: 'fancy-slider__img',
+				link: true,
+				fancy: true,
+				href: '/local/templates/html/images/fancy-slider-1.jpg'
+			})(data-fancybox="gallery")
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-1.jpg',
+				placeholder: pixel,
+				img_mod: 'fancy-slider__img',
+				link: true,
+				fancy: true,
+				href: '/local/templates/html/images/fancy-slider-1.jpg'
+			})(data-fancybox="gallery")
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-1.jpg',
+				placeholder: pixel,
+				img_mod: 'fancy-slider__img',
+				link: true,
+				fancy: true,
+				href: '/local/templates/html/images/fancy-slider-1.jpg'
+			})(data-fancybox="gallery")
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-1.jpg',
+				placeholder: pixel,
+				img_mod: 'fancy-slider__img',
+				link: true,
+				fancy: true,
+				href: '/local/templates/html/images/fancy-slider-1.jpg'
+			})(data-fancybox="gallery")
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-1.jpg',
+				placeholder: pixel,
+				img_mod: 'fancy-slider__img',
+				link: true,
+				fancy: true,
+				href: '/local/templates/html/images/fancy-slider-1.jpg'
+			})(data-fancybox="gallery")
+	+swiper({
+		wrapper_mod: '',
+		container_mod: '',
+		pagination_mod: '',
+		arrow_prev_mod: 'slider-fancy-button-prev',
+		arrow_next_mod: 'slider-fancy-button-next',
+		pagination: false,
+		navigation: true,
+	}).fancy-slider-thumb.js-gallery-fancy-thumbs
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-thumb-1.jpg',
+				placeholder: pixel,
+			})
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-thumb-1.jpg',
+				placeholder: pixel,
+			})
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-thumb-1.jpg',
+				placeholder: pixel,
+			})
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-thumb-1.jpg',
+				placeholder: pixel,
+			})
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-thumb-1.jpg',
+				placeholder: pixel,
+			})
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-thumb-1.jpg',
+				placeholder: pixel,
+			})
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-thumb-1.jpg',
+				placeholder: pixel,
+			})
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-thumb-1.jpg',
+				placeholder: pixel,
+			})
+		.swiper-slide
+			+lazy-img-slider({
+				img: 'images/fancy-slider-thumb-1.jpg',
+				placeholder: pixel,
+			})
+	.fancy-slider-pagination

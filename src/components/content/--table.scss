@@ -1,16 +1,48 @@
-@import '../../assets/css/vars_mixins/vars_mixins';
+@import "../../assets/css/vars_mixins/vars_mixins";
 
 .content {
-  table {
-    margin: 20px 0;
-    @media (min-width: $xs) {
-      margin: 40px 0;
-    }
-  }
-  tr {}
-  th,
-  td {
-    padding: 5px 10px;
-    border: 1px solid $c-primary;
-  }
+	.table {
+		margin: 24px 0px 24px;
+		@media (max-width: $sm - 1) {
+			overflow: auto;
+		}
+	}
+	table {
+		margin: 20px 0;
+		border: 1px solid #e0e0e0;
+		@media (min-width: $xs) {
+			margin: 0px 0;
+		}
+		@media (max-width: $sm - 1) {
+			min-width: 700px;
+		}
+	}
+	tr {
+		&:nth-child(2n-1) {
+			background-color: #fafafa;
+		}
+	}
+	th {
+		white-space: nowrap;
+		text-align: left;
+		vertical-align: middle;
+		padding: 8px 16px;
+		font-size: 15px;
+		font-weight: bold;
+	}
+	td {
+		text-align: left;
+		padding: 24px 16px;
+		font-size: 16px;
+	}
+	.table-descr {
+		display: block;
+		margin-top: 10px;
+		color: $c-grey;
+		font-size: 14px;
+		text-align: left;
+		@media (max-width: $sm - 1) {
+			margin-bottom: 10px;
+		}
+	}
 }

@@ -1,80 +1,118 @@
-@import '../../assets/css/vars_mixins/vars_mixins';
-
-.content .h1, .content h1,
-.h1, h1 {
-  font-size: rem(40);
-  line-height: lineheight(40,48);
-  font-weight: 300;
-  font-style: normal;
-  margin: 0 0 rem(20);
-  color: #000;
-}
-
-.content .h2,.content h2,
-.h2,h2 {
-  font-size: rem(28);
-  line-height: lineheight(28,34);
-  font-weight: 300;
-  font-style: normal;
-  margin: 0 0 rem(20);
-}
-
-.content .h3,.content h3,
-.h3,h3 {
-  font-size: rem(24);
-  line-height: lineheight(24,29);
-  font-weight: 300;
-  font-style: normal;
-  margin: 0 0 rem(20);
-}
-
-.content .h4,.content h4,
-.h4,h4 {
-  font-size: rem(20);
-  line-height: lineheight(20,24);
-  font-weight: 600;
-  font-style: normal;
-  margin: 0 0 rem(20);
-}
-
-.content .h5,.content h5,
-.h5,h5 {
-  font-size: rem(16);
-  line-height: 1.4;
-  font-weight: 600;
-  font-style: normal;
-  margin: 0 0 rem(20);
-}
-
-.content .h1:not(:first-child), .content h1:not(:first-child),
-.content .h2:not(:first-child), .content h2:not(:first-child),
-.content .h3:not(:first-child), .content h3:not(:first-child),
-.content .h4:not(:first-child), .content h4:not(:first-child),
-.content .h5:not(:first-child), .content h5:not(:first-child) {
-  margin: rem(40) 0 rem(20);
-}
-
-@media (max-width: $md - 1) {
-  .content .h1, .content h1,
-  .h1, h1 {
-    font-size: rem(32);
-  }
-
-}
-@media (max-width: $sm - 1) {
-  .content .h1, .content h1,
-  .h1, h1 {
-    font-size: rem(25);
-  }
-  .content .h2, .content h2,
-  .h2, h2 {
-    font-size: rem(20);
-  }
-  .content .h4, .content h4,
-  .h4, h4 {
-    font-size: rem(14);
-  }
-}
-
-
+@import "../../assets/css/vars_mixins/vars_mixins";
+@import "--imgs";
+@import "--lists";
+@import "--table";
 @import "--typography";
+.content{
+	padding-top: 50px;
+	@media (max-width: $sm - 1){
+		padding-top: 10px;
+	}
+	.slider-with-fancy{
+		margin-top: 60px;
+		@media (max-width: $sm - 1){
+			margin-top: 30px;
+		}
+	}
+}
+.content .h1,
+.content h1,
+.h1,
+h1 {
+	font-family: $f-sec;
+	font-size: rem(48);
+	line-height: 1.2;
+	font-weight: 300;
+	font-style: normal;
+	@media (max-width: $md - 1){
+		font-size: rem(28);
+	}
+}
+
+.content h1 {
+	padding-top: 48px;
+	margin-bottom: 32px;
+	@media (max-width: $sm - 1) {
+		font-size: rem(20);
+	}
+}
+
+.content h2 {
+	& + p {
+		margin-top: 0px;
+	}
+}
+
+.content .h2,
+.content h2,
+.h2,
+h2 {
+	font-family: $f-sec;
+	font-size: rem(36);
+	@include lineheight(36, 36);
+	font-weight: 300;
+	margin: 0 0 rem(20);
+	text-transform: none;
+	@media (max-width: $md - 1){
+		font-size: rem(26);
+	}
+}
+
+h2.page {
+	font-size: 36px;
+	line-height: 1.4;
+	font-weight: 700;
+	font-style: normal;
+	margin: 0 0 rem(36);
+	text-transform: none;
+}
+
+.content .h3,
+.content h3,
+.h3,
+h3 {
+	font-family: $f-sec;
+	font-size: rem(28);
+	@include lineheight(28, 28);
+	font-weight: 300;
+	font-style: normal;
+	margin: 0 0 rem(20);
+}
+
+.content .h4,
+.content h4,
+.h4,
+h4 {
+	font-family: $f-sec;
+	font-size: rem(24);
+	@include lineheight(24, 24);
+	font-style: normal;
+	font-weight: 300;
+	margin: 0 0 rem(20);
+}
+
+.content .h5,
+.content h5,
+.h5,
+h5 {
+	font-family: $f-sec;
+	font-size: rem(20);
+	@include lineheight(20, 20);
+	font-style: normal;
+	font-weight: 300;
+	font-style: normal;
+	margin: 0 0 rem(20);
+}
+
+.content .h1:not(:first-child),
+.content h1:not(:first-child),
+.content .h2:not(:first-child),
+.content h2:not(:first-child),
+.content .h3:not(:first-child),
+.content h3:not(:first-child),
+.content .h4:not(:first-child),
+.content h4:not(:first-child),
+.content .h5:not(:first-child),
+.content h5:not(:first-child) {
+	margin: rem(32) 0 rem(16);
+}

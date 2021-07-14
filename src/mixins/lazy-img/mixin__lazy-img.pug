@@ -14,6 +14,7 @@ mixin lazy-img(args={})
 			args.placeholder = !args.http && args.placeholder === pixel ? pixel : SITE_TEMPLATE_PATH + args.placeholder
 		}
 
+
 	if (args.link)
 		a.lazy-img-wrap(href=args.href || '#' class= args.wrap_mod aria-label= args.aria_label)&attributes(attributes)
 			img.lazy-img(class= args.img_mod, src=args.placeholder, data-src=args.img, alt= args.alt || 'img' title= args.title)

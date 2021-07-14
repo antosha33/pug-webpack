@@ -1,0 +1,81 @@
+
++include-script('room-index-slider')
+.room-index-slider-wrap
+	.container
+		.index-slider
+			+swiper({
+				wrapper_mod: '',
+				container_mod: '',
+				pagination_mod: '',
+				arrow_prev_mod: 'custom-swiper-btn__prev custom-swiper-btn__prev-index-slider',
+				arrow_next_mod: 'custom-swiper-btn__next custom-swiper-btn__next-index-slider',
+				pagination: false,
+				navigation: true,
+				lazy: true,
+			}).js-room-index-slider
+					.swiper-slide.index-slider__slide
+						.index-slider__slide-text-wrap
+							.index-slider__slide-text-header Диваны для кабинетов
+							.index-slider__slide-text-footer Комфортный модульный диван идеально подходящий для зон ожидания
+						.index-slider__slide-img-wrap
+							<a class="fs-slider__link" href="#" aria-label="#">
+								<picture class="lazy-img-wrap index-slider__img-wrap">
+										<source data-srcset="images/index-slider-1-xl.jpg" media="(min-width: 415px)" data-was-processed="true" srcset="images/index-slider-1-xl.jpg">
+										<source data-srcset="images/index-slider-1-sm.jpg" media="(min-width: 250px)" data-was-processed="true" srcset="images/index-slider-1-sm.jpg">
+										<img class="index-slider__img" data-src="images/index-slider-1-xl.jpg" alt="img" src="images/index-slider-1-xl.jpg" data-was-processed="true">
+								</picture>
+							</a>
+					.swiper-slide.index-slider__slide
+						.index-slider__slide-text-wrap
+							.index-slider__slide-text-header Диваны для кабинетов
+							.index-slider__slide-text-footer Комфортный модульный диван идеально подходящий для зон ожидания
+						.index-slider__slide-img-wrap
+							<a class="fs-slider__link" href="#" aria-label="#">
+								<picture class="lazy-img-wrap index-slider__img-wrap">
+										<source data-srcset="images/index-slider-1-xl.jpg" media="(min-width: 415px)" data-was-processed="true" srcset="images/index-slider-1-xl.jpg">
+										<source data-srcset="images/index-slider-2-sm.jpg" media="(min-width: 250px)" data-was-processed="true" srcset="images/index-slider-2-sm.jpg">
+										<img class="index-slider__img" data-src="images/index-slider-1-xl.jpg" alt="img" src="images/index-slider-1-xl.jpg" data-was-processed="true">
+								</picture>
+							</a>
+					.swiper-slide.index-slider__slide
+						.index-slider__slide-text-wrap
+							.index-slider__slide-text-header Диваны для кабинетов
+							.index-slider__slide-text-footer Комфортный модульный диван идеально подходящий для зон ожидания
+						.index-slider__slide-img-wrap
+							<a class="fs-slider__link" href="#" aria-label="#">
+								<picture class="lazy-img-wrap index-slider__img-wrap">
+										<source data-srcset="images/index-slider-1-xl.jpg" media="(min-width: 415px)" data-was-processed="true" srcset="images/index-slider-1-xl.jpg">
+										<source data-srcset="images/index-slider-3-sm.jpg" media="(min-width: 250px)" data-was-processed="true" srcset="images/index-slider-3-sm.jpg">
+										<img class="index-slider__img" data-src="images/index-slider-1-xl.jpg" alt="img" src="images/index-slider-1-xl.jpg" data-was-processed="true">
+								</picture>
+							</a>
+					.swiper-slide.index-slider__slide
+						.index-slider__slide-text-wrap
+							.index-slider__slide-text-header Диваны для кабинетов
+							.index-slider__slide-text-footer Комфортный модульный диван идеально подходящий для зон ожидания
+						.index-slider__slide-img-wrap
+							+lazy-picture-slider({
+									source: [
+										{
+											img: 'images/index-slider-1-xl.jpg',
+											pixel,
+											media: 415
+										}, {
+											img: 'images/index-slider-4-sm.jpg',
+											pixel,
+											media: 250
+										}
+									],
+									link: true,
+									link_class: 'fs-slider__link',
+									img: 'images/index-slider-1-xl.jpg',
+									placeholder: pixel,
+									img_mod: 'index-slider__img',
+									wrap_mod: 'index-slider__img-wrap'
+								})
+		.mob-slider-footer.mob-slider-footer--room
+			.mob-slide-prev
+			.pagination-wrap
+				.container
+					.swiper-pagination.js-swiper-pagination.swiper-pagination-custom
+			.mob-slide-next

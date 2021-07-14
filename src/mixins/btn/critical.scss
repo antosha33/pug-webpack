@@ -1,112 +1,40 @@
-@import 'src/assets/css/vars_mixins/vars_mixins';
+@import "src/assets/css/vars_mixins/vars_mixins";
 
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 90px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background .3s, color .3s, border .3s;
-  text-align: center;
-  //white-space: nowrap;
-  text-decoration: none;
-  letter-spacing: 0;
-  color: $white;
-  font-size: 16px;
-  font-weight: 500;
-  border-radius: 4px;
-  line-height: 1;
-  svg {
-    transition: fill .3s;
-  }
-  &:hover {
-    text-decoration: none;
-  }
-  @media (max-width: 575px) {
-    font-size: 14px;
-  }
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 90px;
+	padding: 6px 14px;
+	cursor: pointer;
+	transition: background 0.3s, color 0.3s, border 0.3s;
+	text-align: center;
+	white-space: nowrap;
+	text-decoration: none;
+	letter-spacing: 0;
+	color: $white;
+	font-size: 16px;
+	line-height: 1;
+	svg {
+		transition: fill 0.3s;
+	}
+	&:hover {
+		text-decoration: none;
+	}
+	@media (max-width: 575px) {
+		font-size: 14px;
+	}
 }
 
-.link {
-  color: $c-primary;
-  font-weight: 300;
-  border-bottom: 1px solid rgba(0,0,0,0.0);
-  transition: border-color ease 0.4s;
-  &:hover {
-    border-bottom-color: $c-primary;
-  }
-}
-.link--icon {
-  font-weight: 600;
-  font-size: 20px;
-  display: inline-flex;
-  align-items: center;
-  line-height: 1.2;
-  .icon {
-    height: 20px;
-    width: 20px;
-    fill: $c-primary;
-    margin-right: 10px;
-  }
-  span {
-    border-bottom: 1px dashed;
-    transition: border-color ease 0.4s;
-  }
-  &:hover {
-    span {
-      border-bottom-color: rgba(0,0,0,0.0);
-    }
-  }
-}
-.link--down {
-  display: flex;
-  align-items: center;
-  color: $c-primary;
-  .text {
-    padding-right: 15px;
-  }
-  .down {
-    height: 16px;
-    width: 14px;
-    overflow: hidden;
-  }
-  .icon {
-    height: 14px;
-    width: 14px;
-    fill: $c-primary;
-  }
-  &:hover {
-
-  }
-}
-.btn--icon {
-  font-weight: 400;
-  span {
-    padding-right: 10px;
-  }
-  .icon {
-    height: 20px;
-    width: 20px;
-    min-width: 20px;
-    fill: #fff;
-    position: relative;
-    z-index: 1;
-  }
-}
-
-@media (max-width: $sm) {
-  .link--icon {
-    font-size: 14px;
-  }
-}
-
-@import '--primary';
-@import '--outline';
-@import '--loading';
-@import '--link';
-@import '--small';
-@import '--large';
-@import '--disabled';
-@import '--error';
-
+@import "--primary";
+@import "--light";
+@import "--tab";
+@import "--trash";
+@import "--order";
+// @import "--outline";
+// @import "--loading";
+// @import "--link";
+// @import "--small";
+// @import "--large";
+// @import "--disabled";
+// @import "--error";

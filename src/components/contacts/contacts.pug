@@ -1,0 +1,16 @@
+.contacts
+	a(href="mailto:info@fabrikamvk.ru").contacts-mail
+		span.contacts__icon
+			+icon('i-mail-2')(style='width: 24px; height: 24px;')
+		span.contacts__content info@fabrikamvk.ru
+	a(tel="+7 (495) 646-06-05").contacts-phone
+		span.contacts__icon
+			+icon('i-phone')(style='width: 24px; height: 24px;')
+		span.contacts__content +7 (495) 646-06-05
+		span.trigger
+		span.phone-popup
+			span.time
+				span.time__icon
+					+icon('i-timer')(style='width: 24px; height: 24px;')
+				span.time__period Пн–Пт  9:00–18:00
+			.btn.btn--primary.btn--fw(data-target="#modal-feedback" data-toggle="modal") Заказать звонок

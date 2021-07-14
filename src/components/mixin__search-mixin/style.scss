@@ -1,0 +1,102 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.input-search {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	&__form {
+		position: relative;
+		width: 100%;
+		&:after {
+			position: absolute;
+			content: "";
+			width: 100%;
+			bottom: -8px;
+			left: 0;
+			height: 1px;
+		}
+	}
+	&__input {
+		width: 100%;
+		padding: 10px 30px 19px 55px;
+		border-bottom: 1px solid #E0E0E0;
+		background: $c-bg;
+		font-size: 15px;
+		line-height: 15px;
+		transition: all .3s ease;
+		&:focus {
+			border-bottom: 1px solid $c-primary-2;
+		}
+	}
+	&__clear {
+		position: absolute;
+		top: calc(50% - 8px);
+		right: 15px;
+	}
+	&__submit {
+		position: absolute;
+		top: 7px;
+		left: 15px;
+	}
+	.search-result {
+		margin: 0;
+	}
+
+	.btn.btn--link{
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
+		left: auto;
+	}
+	@media (max-width: 1024px) {
+		&__input {
+			padding: 13px 25px 13px 45px;
+			font-size: 14px;
+		}
+	}
+	@media (max-width: 767px) {
+		&__input {
+			padding: 13px 13px 13px 43px;
+			font-size: 13px;
+		}
+	}
+	@media (max-width: 575px) {
+		display: none;
+		&.active {
+			position: absolute;
+			z-index: 1;
+			top: -3px;
+			left: 10px;
+			display: flex;
+			width: calc(100vw - 20px);
+			height: 40px;
+			background: red;
+			.header-search {
+				&__form {
+					position: relative;
+					width: calc(100% - 40px);
+				}
+				&__input {
+					width: 100%;
+					padding: 5px 30px 5px 10px;
+					border-radius: 30px;
+					background: red;
+					font-size: 15px;
+					line-height: 1.5;
+				}
+				&__clear {
+					position: absolute;
+					top: calc(50% - 8px);
+					right: -33px;
+				}
+				&__submit {
+					position: absolute;
+					top: calc(50% - 13px);
+					right: 7px;
+					left: auto;
+					width: 20px;
+				}
+			}
+		}
+	}
+}

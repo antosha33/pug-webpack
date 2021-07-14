@@ -1,0 +1,17 @@
+mixin custom-select(args = {})
+	.form-group.form-group-select(class= args.fg_mod)
+		if (args.label)
+			label.form-control-label(for= 'ID' + id class= args.label_mod)= args.label || 'label' 
+			if (args.label_desc)
+				span.field-label-descr= args.label_desc
+			if (args.required)
+				span.label-required *
+		select.custom-select.form-control(class=args.mod data-visible-options="10" data-placeholder= args.placeholder)&attributes(attributes)
+			each item, index in args.items
+				if item.disabled
+					option(value=item.value data-url= item.url disabled data-color=args.color data-deliveryCenter=item.center data-counter= item.counter class=args.class)!= item.text || item.value 
+				else
+					if (item.default)
+						option(disabled selected value data-hidden data-deliveryCenter=item.center class=args.class data-color=item.color)!=item.text || item.value
+					else
+						option(value=item.value data-url= item.url data-color=item.color data-deliveryCenter=item.center data-counter= item.counter class=item.class)!=item.text || item.value

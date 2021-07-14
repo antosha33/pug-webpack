@@ -1,0 +1,413 @@
++include-style('cart')
++include-script('cart')
+.cart-wrap
+	.container
+		.row
+			.col-12.col-lg-9
+				.cart
+					.cart__header
+						.cart__title Заказ №201
+						a(href="#").btn--trash.cart__trash Очистить корзину
+							+icon('i-close')(style="width: 16px; height: 16px")
+					+cart-item({
+						title: 'Офисный диван Бридж с высокими боковыми панелями и спинкой',
+						mod: 'cart-item--big',
+						counter: 'true'
+					})
+					+cart-item({
+						title: 'Офисный диван Бридж с высокими боковыми панелями и спинкой',
+						mod: 'cart-item--big',
+						counter: 'true'
+					})
+					+cart-item({
+						title: 'Офисный диван Бридж с высокими боковыми панелями и спинкой',
+						mod: 'cart-item--big',
+						counter: 'true'
+					})
+					+cart-item({
+						title: 'Офисный диван Бридж с высокими боковыми панелями и спинкой',
+						mod: 'cart-item--big',
+						counter: 'true'
+					})
+					+cart-item({
+						title: 'Офисный диван Бридж с высокими боковыми панелями и спинкой',
+						mod: 'cart-item--big',
+						counter: 'true'
+					})
+				.cart__form
+					form.bv-form.cart-from
+						.cart-form-section.js-cart-form-section
+							.cart-form-section__title Контактная информация
+							+tabs({
+								mod: 'tab-list--full-width tab-list--form-section',
+								tabList: [
+									{
+										title: 'Юридическое лицо',
+										dataTarget: '1'
+								},
+								{
+									title: 'Физическое лицо',
+									dataTarget: '2'
+								}
+								]
+							})
+							.cart-form-section__tab(data-tab="1")
+								+input({
+									label: 'Получатель',
+									type: 'text',
+									name: false,
+									small: true,
+									placeholder: 'ФИО',
+									fg_mod: 'form-group--light',
+									mod: 'form-control--light',
+									required: true,
+									pattern: false,
+									validation: {
+										message: 'Обязательное поле',
+										regexp: 'Неверный формат',
+										emailaddress: ' ',
+										identical: false
+									}
+								})
+								+input({
+									label: 'Название организации',
+									type: 'text',
+									name: false,
+									small: true,
+									placeholder: '',
+									fg_mod: 'form-group--light',
+									mod: 'form-control--light',
+									required: false,
+									pattern: false,
+									validation: {
+										message: 'Обязательное поле',
+										regexp: 'Неверный формат',
+										emailaddress: ' ',
+										identical: false
+									}
+								})
+								.half-width
+									+input({
+										label: 'Контактный телефон',
+										type: 'tel',
+										name: false,
+										small: true,
+										placeholder: '+ 7 (XXX) XXX-XX-XX',
+										fg_mod: 'form-group--light',
+										mod: 'form-control--light',
+										required: true,
+										pattern: 'phone',
+										validation: {
+											message: 'Обязательное поле',
+											regexp: 'Неверный формат',
+											emailaddress: '',
+											identical: false
+										}
+									})
+									+input({
+										label: 'Email',
+										type: 'email',
+										name: false,
+										small: true,
+										placeholder: 'example@example.com',
+										fg_mod: 'form-group--light',
+										mod: 'form-control--light',
+										required: true,
+										pattern: true,
+										validation: {
+											message: 'Обязательное поле',
+											regexp: 'Неверный формат',
+											emailaddress: '',
+											identical: false
+										}
+									})
+								+input({
+									label: 'ИНН',
+									type: 'text',
+									name: false,
+									small: true,
+									placeholder: '',
+									fg_mod: 'form-group--light',
+									mod: 'form-control--light',
+									required: false,
+									pattern: false,
+									validation: {
+										message: 'Обязательное поле',
+										regexp: 'Неверный формат',
+										emailaddress: ' ',
+										identical: false
+									}
+								})
+							.cart-form-section__tab(data-tab="2")
+								+input({
+									label: 'Получатель',
+									type: 'text',
+									name: false,
+									small: true,
+									placeholder: 'ФИО',
+									fg_mod: 'form-group--light',
+									mod: 'form-control--light',
+									required: true,
+									pattern: false,
+									validation: {
+										message: 'Обязательное поле',
+										regexp: 'Неверный формат',
+										emailaddress: ' ',
+										identical: false
+									}
+								})
+								.half-width
+									+input({
+										label: 'Контактный телефон',
+										type: 'tel',
+										name: false,
+										small: true,
+										placeholder: '+ 7 (XXX) XXX-XX-XX',
+										fg_mod: 'form-group--light',
+										mod: 'form-control--light',
+										required: true,
+										pattern: 'phone',
+										validation: {
+											message: 'Обязательное поле',
+											regexp: 'Неверный формат',
+											emailaddress: '',
+											identical: false
+										}
+									})
+									+input({
+										label: 'Email',
+										type: 'email',
+										name: false,
+										small: true,
+										placeholder: 'example@example.com',
+										fg_mod: 'form-group--light',
+										mod: 'form-control--light',
+										required: true,
+										pattern: true,
+										validation: {
+											message: 'Обязательное поле',
+											regexp: 'Неверный формат',
+											emailaddress: '',
+											identical: false
+										}
+									})
+						.cart-form-section.cart-form-delivery.js-cart-form-section
+							.cart-form-section__title Способ доставки
+							+tabs({
+								mod: 'tab-list--full-width tab-list--form-section',
+								tabList: [
+									{
+										title: 'Самовывоз',
+										dataTarget: '1'
+								},
+								{
+									title: 'Доставка до транспортной компании',
+									dataTarget: '2'
+								}
+								]
+							})
+							.cart-form-section__tab(data-tab="1")
+								.cart-form-delivery__self
+									.cart-form-delivery__address-wrap
+										table.cart-form-delivery__address
+											tr.cart-form-delivery__address-item
+												td.cart-form-delivery__address-prop Адрес
+												td.cart-form-delivery__address-val Московская обл., <br> г. Домодедово, <br>Промзона Текстильщик, с12
+											tr.cart-form-delivery__address-item
+												td.cart-form-delivery__address-prop График работы
+												td.cart-form-delivery__address-val Пн–Пт  9:00–18:00
+											tr.cart-form-delivery__address-item
+												td.cart-form-delivery__address-prop Стоимость доставки
+												td.cart-form-delivery__address-val Бесплатно
+										a(download).btn.btn--light.cart-form-delivery--download Скачать схему проезда
+											+icon('i-download-2')(style="width:14px; heigth:14px")
+									.cart-form-delivery__map
+										+lazy-img({
+											img: 'images/delivery-map.jpg',
+											placeholder: pixel
+										})
+							.cart-form-section__tab(data-tab="2")
+								.cart-form-delivery__paid
+									+input({
+										label: 'Транспортная компания',
+										type: 'text',
+										name: false,
+										small: true,
+										placeholder: 'Укажите название',
+										fg_mod: 'form-group--light form-group--hw form-group--company',
+										mod: 'form-control--light',
+										required: true,
+										pattern: false,
+										validation: {
+											message: 'Обязательное поле',
+											regexp: 'Неверный формат',
+											emailaddress: ' ',
+											identical: false
+										}
+									})
+									.transport-delivery-wrap
+										+input({
+											label: 'Плательщик',
+											type: 'text',
+											name: false,
+											small: true,
+											placeholder: '',
+											fg_mod: 'form-group--light form-group--payer',
+											mod: 'form-control--light js-payer-form-control',
+											required: false,
+											pattern: false,
+											validation: {
+												message: 'Обязательное поле',
+												regexp: 'Неверный формат',
+												emailaddress: ' ',
+												identical: false
+											}
+										})
+										+checkbox({
+											require: false,
+											fg_mod: 'equal-checkbox',
+											input_mod: 'js-equal-checkbox',
+												label: 'Плательщик и получатель совпадают'
+											})
+									+input({
+										label: 'Доставка до терминала',
+										type: 'text',
+										name: false,
+										small: true,
+										placeholder: 'Укажите город',
+										fg_mod: 'form-group--light form-group--hw form-group--terminal',
+										mod: 'form-control--light js-delivery-terminal',
+										required: false,
+										pattern: false,
+										validation: {
+											message: 'Обязательное поле',
+											regexp: 'Неверный формат',
+											emailaddress: ' ',
+											identical: false
+										}
+									})
+									+input({
+										label: 'Получатель',
+										type: 'text',
+										name: false,
+										small: true,
+										placeholder: '',
+										fg_mod: 'form-group--light form-group--hw form-group--recipient',
+										mod: 'form-control--light js-recipient-form-control',
+										required: true,
+										pattern: false,
+										validation: {
+											message: 'Обязательное поле',
+											regexp: 'Неверный формат',
+											emailaddress: ' ',
+											identical: false
+										}
+									})
+									+input({
+										label: 'Доставка до адреса',
+										type: 'text',
+										name: false,
+										small: true,
+										placeholder: 'Индекс, город, улица, дом, номер офиса/квартиры',
+										fg_mod: 'form-group--light form-group--hw form-group--adress',
+										mod: 'form-control--light js-delivery-adress',
+										required: false,
+										pattern: false,
+										validation: {
+											message: 'Обязательное поле',
+											regexp: 'Неверный формат',
+											emailaddress: ' ',
+											identical: false
+										}
+									})
+									+input({
+										label: 'Телефон получателя',
+										type: 'tel',
+										name: false,
+										small: true,
+										placeholder: '+ 7 (XXX) XXX-XX-XX',
+										fg_mod: 'form-group--light form-group--hw form-group--phone',
+										mod: 'form-control--light',
+										required: true,
+										pattern: 'phone',
+										validation: {
+											message: 'Обязательное поле',
+											regexp: 'Неверный формат',
+											emailaddress: '',
+											identical: false
+										}
+									})
+								//- .cart-form-delivery__box-type
+								//- 	.cart-form-delivery__box-type-title Нужна обрешетка:
+								//- 	+radio({
+								//- 		wrap_mod: 'form-group--radio',
+								//- 		required: true,
+								//- 		checked: true,
+								//- 		label: "Да"
+								//- 	})
+								//- 	+radio({
+								//- 		wrap_mod: 'form-group--radio',
+								//- 		required: true,
+								//- 		checked: true,
+								//- 		label: "Нет"
+								//- 	})
+								.cart-form-delivery__price
+									span.cart-form-delivery__price-title Стоимость доставки до транспортной компании:
+									span.cart-form-delivery__price-sum  от 1 500 р.
+									span.cart-form-delivery__price-rate  (35 р./км)
+						.cart-form-section.cart-form-payment-method
+							.cart-form-section__title Способ оплаты
+							span Безналичная оплата по счёту
+						.cart-form-section.cart-form-comment
+							.cart-form-section__title Комментарий к заказу
+							+textarea({
+								label: 'Дополнительная информация',
+								type: 'text',
+								fg_mod: 'form-group--light form-group--cart-comment',
+								mod: 'form-control--light',
+								name: false,
+								small: false,
+								rows: 3
+							})
+					//- .cart-form__subscribe
+						//- +checkbox({
+						//- 	require: true,
+						//- 	label: 'Я хочу получать информацию о новинках, акциях и скидках'
+						//- })(data-bv-message="Примите соглашение")
+
+			.col-12.col-lg-3
+				.order-info.js-sticky-order-info
+					.order-info__title Ваш заказ
+					table.order-info-content
+						tr.order-info-content__item
+							td.order-info-content__prop Товары
+							td.order-info-content__value 23шт
+						tr.order-info-content__item
+							td.order-info-content__prop Скидка
+							td.order-info-content__value 25 000 р.
+						tr.order-info-content__item
+							td.order-info-content__prop Вес заказа
+							td.order-info-content__value 500 кг
+						tr.order-info-content__item
+							td.order-info-content__prop Объём заказа
+							td.order-info-content__value 5,3 м3
+						tr.order-info-content__item
+							td.order-info-content__prop Способ доставки
+							td.order-info-content__value Самовывоз
+						tr.order-info-content__item
+							td.order-info-content__prop Стоимость доставки
+							td.order-info-content__value Бесплатно
+						tr.order-info-content__item
+							td.order-info-content__prop Оплата
+							td.order-info-content__value Безналичная
+					.order-info__total <span>Итого:</span> 301 594 ₽
+					form.bv-form.order-info-form.js-order-info-form
+						.order-info__button
+							button.btn.btn--primary.btn--fw(data-submit="true")
+								.order-info__button-title Оформить заказ
+								.order-info__button-title-mobile Оформить заказ на
+								.order-info__button-title-price 301 594 ₽
+						+checkbox({
+							require: true,
+							label: 'Я принимаю пользовательское соглашение'
+						})(data-bv-message="Примите соглашение")

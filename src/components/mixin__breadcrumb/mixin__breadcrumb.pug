@@ -1,0 +1,18 @@
+mixin breadcrumb(args={})
+	.breadcrumb
+		ul.breadcrumb__list(itemscope itemtype="http://schema.org/BreadcrumbList")
+			li.breadcrumb__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+				a(href="/local/templates/html/index.html" title="Главная" itemprop="item").breadcrumb__link
+					span(itemprop="name") Главная
+					meta(itemprop="position" content="0")
+
+			li.breadcrumb__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+				if args.href_content1
+					a(href=args.href_content1 || '#' title=args.content1 itemprop="item").breadcrumb__link
+						span(itemprop="name")= args.content1
+						meta(itemprop="position" content="1")
+				else
+					span(title=args.content1 itemprop="name").breadcrumb__link
+						span(itemprop="name")= args.content1
+						meta(itemprop="position" content="1")
+

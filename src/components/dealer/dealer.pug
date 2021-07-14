@@ -1,0 +1,133 @@
++include-style('dealer')
+.dealer-wrap
+	.container
+		.row
+			.col-md-10.offset-md-1.col-lg-6.offset-lg-3
+				.dealer-welcome
+					.dealer-welcome__title Мы рады сотрудничеству
+					.dealer-welcome__descr
+						p В первых числах января 2014 года в Кельне пройдет долгожданная выставка IMM Cologne 2014. Ежегодно это событие объединяет под одной крышей в здании площадью 280 тыс. кв. м более 1000 экспонентов и свыше 100 тыс. посетителей. 
+						p IMM Cologne представляет собой крупнейший в мире Мебельный Салон и огромнейший выставочный проект, посвященный мебельной тематике. По географии и числу посетителей ему практически нет равных. Лишь Миланский и Парижский Мебельные салоны могут приблизиться к результатам IMM Cologne. 
+						p Даты проведения выставки в 2014 году припадают на 13-19 января. В это же время здесь проходит выставка дизайна интерьеров LivingInteriors 2014.
+				form.bv-form.dealer-form
+					.dealer-form__title Стать дилером
+					+input({
+						label: 'Представитель',
+						type: 'text',
+						name: false,
+						small: true,
+						placeholder: 'ФИО',
+						fg_mod: 'form-group--light',
+						mod: 'form-control--light',
+						required: true,
+						pattern: false,
+						validation: {
+							message: 'Обязательное поле',
+							regexp: 'Неверный формат',
+							emailaddress: ' ',
+							identical: false
+						}
+					})
+					+input({
+						label: 'Название организации',
+						type: 'text',
+						name: false,
+						small: true,
+						placeholder: '',
+						fg_mod: 'form-group--light',
+						mod: 'form-control--light',
+						required: false,
+						pattern: false,
+						validation: {
+							message: 'Обязательное поле',
+							regexp: 'Неверный формат',
+							emailaddress: ' ',
+							identical: false
+						}
+					})
+					.half-width
+						+input({
+							label: 'Город',
+							type: 'text',
+							name: false,
+							small: true,
+							placeholder: '',
+							fg_mod: 'form-group--light',
+							mod: 'form-control--light',
+							required: false,
+							pattern: false,
+							validation: {
+								message: 'Обязательное поле',
+								regexp: 'Неверный формат',
+								emailaddress: '',
+								identical: false
+							}
+						})
+						+input({
+							label: 'Сайт',
+							type: 'text',
+							name: false,
+							small: true,
+							placeholder: '',
+							fg_mod: 'form-group--light',
+							mod: 'form-control--light',
+							required: false,
+							pattern: false,
+							validation: {
+								message: 'Обязательное поле',
+								regexp: 'Неверный формат',
+								emailaddress: '',
+								identical: false
+							}
+						})
+					.half-width
+						+input({
+							label: 'Контактный телефон',
+							type: 'tel',
+							name: false,
+							small: true,
+							placeholder: '+ 7 (XXX) XXX-XX-XX',
+							fg_mod: 'form-group--light',
+							mod: 'form-control--light',
+							required: true,
+							pattern: 'phone',
+							validation: {
+								message: 'Обязательное поле',
+								regexp: 'Неверный формат',
+								emailaddress: '',
+								identical: false
+							}
+						})
+						+input({
+							label: 'Email',
+							type: 'email',
+							name: false,
+							small: true,
+							placeholder: 'example@example.com',
+							fg_mod: 'form-group--light',
+							mod: 'form-control--light',
+							required: true,
+							pattern: true,
+							validation: {
+								message: 'Обязательное поле',
+								regexp: 'Неверный формат',
+								emailaddress: '',
+								identical: false
+							}
+						})
+					+textarea({
+						label: 'Комментарий',
+						type: 'text',
+						fg_mod: 'form-group--light',
+						mod: 'form-control--light',
+						name: false,
+						small: false,
+						rows: 5
+					})
+					.dealer-form__file
+						+input-file({
+							title: 'Прикрепить файл'
+						}) 
+					.dealer-form__submit
+						button.btn.btn--primary(data-submit="true") Отправить заявку
+include ../achievments/achievments

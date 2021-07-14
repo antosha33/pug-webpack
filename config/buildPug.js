@@ -1,3 +1,4 @@
+const { worker } = require('cluster');
 
 module.exports = {
 	pugBuilder: () => {
@@ -63,32 +64,45 @@ module.exports = {
 
 					new HtmlsWebpackPlugin({
 						htmls: [...pages.map((page, index) => {
-							if (pages.length > 1) {
-								// use worker-farm for parallel pug render
-								return {
-									src: `./src/pages/${page}/${page}.pug`,
-									filename: `${page}.html`,
-									async render() {
-										const string = await new Promise((resolve, reject) => {
-											workers(page, (err, render) => {
-												if (err) return err;
-												resolve(render);
-												if (index === page.length - 1) {
-													workerFarm.end(workers)
+							try {
+								if (pages.length > 1) {
+									// use worker-farm for parallel pug render
+									return {
+										src: `./src/pages/${page}/${page}.pug`,
+										filename: `${page}.html`,
+										async render() {
+											const string = await new Promise((resolve, reject) => {
+												try {
+													workers(page, (err, render) => {
+														if (err) {
+															reject(err);
+														};
+														resolve(render);
+														if (index === page.length - 1) {
+															workerFarm.end(workers);
+														}
+													})
+												} catch (err) {
+													console.error('ERROR =>>>>>>>', err);
+													workerFarm.end(workers);
 												}
+
 											})
-										})
-										return string;
+											return string;
+										}
+									}
+								} else {
+									// worker-farm not needed for one page
+									return {
+										src: `../src/pages/${page}/${page}.pug`,
+										filename: `${page}.html`,
+										render: (file) => pug.renderFile(file, { pretty: true })
 									}
 								}
-							} else {
-								// worker-farm not needed for one page
-								return {
-									src: `../src/pages/${page}/${page}.pug`,
-									filename: `${page}.html`,
-									render: (file) => pug.renderFile(file, { pretty: true })
-								}
+							} catch {
+								throw new Error('PUG BUILD ERROR');
 							}
+
 						})]
 					})
 

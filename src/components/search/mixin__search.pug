@@ -1,0 +1,13 @@
+mixin search(args={})
+	+include-script('search')
+	+b.search(class=args.mod_class)
+		+e('form').__form(autocomplete='off', action='/search/')
+			+e('input').__input.js-header-search__input.js-ajax-search(type='text', placeholder='Что ищем?', name='q', aria-label='Введите название товара', value='', data-iblock-id='[38]')
+			+e('button').__clear.js-header-search__clear(type='button')
+				+icon('i-close')(style='width: 16px; height: 16px;')
+			+e('button').__submit#ajax-search-submit(type='submit', aria-label='Кнопка поиска')
+				+icon('i-search')(style='width: 24px; height: 24px;')
+			+e('div').__close
+				+icon('i-close')(style='width: 24px; height: 24px;')
+	//include ../search-result/search-result
+	

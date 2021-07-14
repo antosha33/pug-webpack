@@ -1,0 +1,46 @@
+mixin input(args = {})
+
+	//- +input({
+	//- 	label: 'LABEL',
+	//- 	type: 'TYPE',
+	//- 	name: false,
+	//- 	small: false,
+	//- 	placeholder: false,
+	//- 	required: false,
+	//- 	pattern: false,
+	//- 	validation: {
+	//- 		message: 'Обязательное поле',
+	//- 		regexp: 'Неверный формат',
+	//- 		emailaddress: ' ',
+	//- 		identical: false
+	//- 	}
+	//- })
+
+	- var pattern = {phone: '\\+7 \\([0-9]{3}\\) [0-9]{3}-[0-9]{2}-[0-9]{2}', email: '[A-Za-zА-Яа-я0-9\_\-]{1,}@[A-Za-zА-Яа-я0-9\_\-]{1,}\.[A-Za-zА-Яа-я0-9]{2,}', password : "(?=.*[a-z]).{6,}"}
+
+	- var id = args.id || Math.floor(Math.random() * 9999999999);
+
+	.form-group(class= args.fg_mod)
+		if(args.label)
+			label.form-control-label(for= 'ID' + id class= args.label_mod)= args.label
+				if (args.required)
+					//- span.label-required *
+		input.form-control(
+			class= args.mod
+			type= args.type || 'text',
+			id= 'ID' + id,
+			name= args.name || 'NAME' + id,
+			placeholder= args.placeholder || ' ',
+			required= args.required ? true : false,
+			pattern= args.pattern && pattern[args.pattern],
+			value= args.value,
+			max-value= args.max_value,
+			data-bv-notempty-message= args.validation && args.validation.message || 'Обязательное поле',
+			data-bv-regexp-message= args.validation && args.validation.regexp || 'Неверный формат',
+			data-bv-emailaddress-message= 'Неверный формат',
+			data-bv-identical= args.validation && args.validation.identical && 'true',
+			data-bv-identical-field= args.validation && args.validation.identical && args.validation.identical.field,
+			data-bv-identical-message= args.validation && args.validation.identical && args.validation.identical.message,
+			)&attributes(attributes)
+		block
+

@@ -1,0 +1,46 @@
+extends ../../layout/layout
+
+block vars
+	- var pageTitle = 'Корзина и оформление заказа'
+	- var pageBodyClass = ''
+	- var dir = './'
+
+
+block premain
+	+page-header-section({
+		title: 'Корзина и оформление заказа',
+		colClasses: 'col-12',
+	})
+		+breadcrumb({
+			content1: 'Корзина и оформление заказа',
+			href_content1: '',
+			content2: '',
+			href_content2: '',
+			content3: '',
+		})
+
+
+
+block main
+	.no-critical.no-critical--preloader
+		include ../../components/cart/cart
+		//- include ../../components/about-section/about-section
+		//- include ../../components/news-section/news-section
+		//- include ../../components/achievments/achievments
+
+
+
+
+
+block componentsCriticalStyles
+	+componentsCriticalStyles-includer()
+block vendorScripts
+	+vendorScripts-includer()
+block componentsStyles
+	+style-includer()
+
+block componentsScripts
+	+componentsScripts-includer()
+
+block scripts
+	script(src="./js/vendor/noframework.waypoints.min.js" defer)

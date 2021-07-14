@@ -1,0 +1,22 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.nav--side {
+	.nav-list {
+		display: flex;
+		flex-direction: column;
+		padding-left: 0px;
+		.nav-item {
+			margin-bottom: 16px;
+			font-weight: 500;
+			.nav-link {
+				color: #000;
+				font-size: 16px;
+				&:hover{
+					color: $c-primary-2;
+				}
+			}
+		}
+	}
+	@media (max-width: $sm - 1){
+		display: none;
+	}
+}

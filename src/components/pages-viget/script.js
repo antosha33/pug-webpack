@@ -1,4 +1,4 @@
-$(document).ready(function () {
+window.addEventListener('load', () => {
 	const vigetWrap = $('.pages-viget');
 	const vigetBtn = $('.pages-viget__btn');
 
@@ -12,4 +12,4 @@ $(document).ready(function () {
 		}
 		e.stopPropagation();
 	});
-});
+})

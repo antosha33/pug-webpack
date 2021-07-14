@@ -1,0 +1,17 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.btn--trash{
+	position: relative;
+	display: flex;
+	align-items: center;
+	stroke: $c-link;
+	.icon{
+		stroke: $c-link;
+		margin-left: 8px;
+	}
+	&:hover{
+		color: darken($c-link, 80%);
+		.icon{
+			stroke:  darken($c-link, 80%);
+		}
+	}
+}

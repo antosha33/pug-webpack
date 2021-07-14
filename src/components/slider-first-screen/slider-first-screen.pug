@@ -1,0 +1,42 @@
++include-script('slider-first-screen')
++include-style('slider-first-screen')
+
+.slider-first-screen
+	+swiper({
+		wrapper_mod: '',
+		container_mod: '',
+		pagination_mod: '',
+		arrow_prev_mod: 'custom-swiper-btn__prev',
+		arrow_next_mod: 'custom-swiper-btn__next',
+		pagination: true,
+		navigation: true,
+	}).fs-slider.js-fs-slider
+		.swiper-slide.fs-slider__slide
+			+fs-slider__item({
+				count: 0,
+				first: true
+			})
+		.swiper-slide.fs-slider__slide
+			+fs-slider__item({
+				count: 1,
+			})
+		.swiper-slide.fs-slider__slide
+			+fs-slider__item({
+				count: 2,
+			})
+		.swiper-slide.fs-slider__slide
+			+fs-slider__item({
+				count: 3,
+			})
+		.swiper-slide.fs-slider__slide
+			+fs-slider__item({
+				count: 4,
+			})
+		.swiper-slide.fs-slider__slide
+			+fs-slider__item({
+				count: 5,
+			})
+		.swiper-slide.fs-slider__slide
+			+fs-slider__item({
+				count: 6,
+			})

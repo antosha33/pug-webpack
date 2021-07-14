@@ -1,0 +1,43 @@
+extends ../../layout/layout
+
+block vars
+	- var pageTitle = 'Поиск'
+	- var pageBodyClass = ''
+	- var dir = './'
+
+
+block premain
+	+page-header-section({
+		title: 'Результаты по запросу Диван(20)',
+		id: '',
+		colClasses: 'col-12',
+	})
+		+breadcrumb({
+			content1: 'Поиск',
+			href_content1: '',
+			content2: '',
+			href_content2: '',
+			content3: '',
+		})
+	include ../../components/search-result/search-result
+
+
+block main
+	.no-critical.no-critical--preloader
+
+
+
+
+
+block componentsCriticalStyles
+	+componentsCriticalStyles-includer()
+block vendorScripts
+	+vendorScripts-includer()
+block componentsStyles
+	+style-includer()
+
+block componentsScripts
+	+componentsScripts-includer()
+
+block scripts
+	script(src="./js/vendor/masonry.min.js" defer)

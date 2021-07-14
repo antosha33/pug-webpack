@@ -1,0 +1,19 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.category {
+	.nav--side {
+		@media (max-width: $sm - 1) {
+			display: none;
+		}
+	}
+	.download-latest {
+		margin-top: 36px;
+		position: relative;
+	}
+	.side-banner {
+		margin-top: 16px;
+		margin-bottom: 16px;
+	}
+	.solutions{
+		margin-top: 48px;
+	}
+}

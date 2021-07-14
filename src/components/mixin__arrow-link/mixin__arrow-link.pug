@@ -1,0 +1,4 @@
+mixin arrow-link(args={})
+	+include-style('mixin__arrow-link')
+	a.arrow-link(href= args.link)= args.linkTitle
+		+icon('i-link')(style="width: 14px; height: 14px")

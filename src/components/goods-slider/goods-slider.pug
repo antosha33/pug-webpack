@@ -1,0 +1,59 @@
++include-style('goods-slider')
++include-script('goods-slider')
+.goods-slider-wrap
+	.container
+		+presection({
+			title: 'Товары, представленные в проекте'
+		})
+		+swiper({
+			wrapper_mod: '',
+			container_mod: '',
+			pagination_mod: '',
+			arrow_prev_mod: '',
+			arrow_next_mod: '',
+			pagination: false,
+			navigation: true,
+		}).goods-slider.js-goods-slider
+			.swiper-slide
+				+product-card({
+					price: 'от 202 280 ₽',
+					mod: 'product-card--buy',
+					title: 'Офисный диван БРИДЖ с высокими  боковыми панелями и спинкой',
+					slider: 'slider-card'
+				})
+			.swiper-slide
+				+product-card({
+					price: 'от 202 280 ₽',
+					mod: 'product-card--buy',
+					title: 'Офисный диван БРИДЖ с высокими  боковыми панелями и спинкой',
+					slider: 'slider-card'
+				})
+			.swiper-slide
+				+product-card({
+					price: 'от 202 280 ₽',
+					mod: 'product-card--buy',
+					title: 'Офисный диван БРИДЖ с высокими  боковыми панелями и спинкой',
+					slider: 'slider-card'
+				})
+			.swiper-slide
+				+product-card({
+					price: 'от 202 280 ₽',
+					mod: 'product-card--buy',
+					title: 'Офисный диван БРИДЖ с высокими  боковыми панелями и спинкой',
+					slider: 'slider-card'
+				})
+			.swiper-slide
+				+product-card({
+					price: 'от 202 280 ₽',
+					mod: 'product-card--buy',
+					title: 'Офисный диван БРИДЖ с высокими  боковыми панелями и спинкой',
+					slider: 'slider-card'
+				})
+			.swiper-slide
+				+product-card({
+					price: 'от 202 280 ₽',
+					mod: 'product-card--buy',
+					title: 'Офисный диван БРИДЖ с высокими  боковыми панелями и спинкой',
+					slider: 'slider-card'
+				})
+	.goods-slider-slider-pagination

@@ -1,0 +1,47 @@
+mixin collections(args={})
+	.collections-description
+		.container
+			.row
+				.col-12.col-md-6
+					include ../slider-with-fancy/slider-with-fancy
+				.col-12.col-md-6
+					if (args.p)
+						h2.collections-description__title Описание
+						.collections-description__content
+							+collections-content({
+								p: 'Новая большая серия офисных диванов БРИДЖ включает в себя модели с высокими и низкими боковыми панелями и спинками. Противоречивый дизайн сочетает в себе строгие линии снаружи и более мягкие внутри, элегантные тонкие опоры и объемные мягкие элементы. Высокие диваны прекрасно подойдут для зонирования open-spaces, создания комфортных приватных зон для общения и работы.',
+								phidden: 'Новая большая серия офисных диванов БРИДЖ включает в себя модели с высокими и низкими боковыми панелями и спинками. Противоречивый дизайн сочетает в себе строгие линии снаружи и более мягкие внутри, элегантные тонкие опоры и объемные мягкие элементы. Высокие диваны прекрасно подойдут для зонирования open-spaces, создания комфортных приватных зон для общения и работы. Новая большая серия офисных диванов БРИДЖ включает в себя модели с высокими и низкими боковыми панелями и спинками. Противоречивый дизайн сочетает в себе строгие линии снаружи и более мягкие внутри, элегантные тонкие опоры и объемные мягкие элементы. Высокие диваны прекрасно подойдут для зонирования open-spaces, создания комфортных приватных зон для общения и работы. Новая большая серия офисных диванов БРИДЖ включает в себя модели с высокими и низкими боковыми панелями и спинками. Противоречивый дизайн сочетает в себе строгие линии снаружи и более мягкие внутри, элегантные тонкие опоры и объемные мягкие элементы. Высокие диваны прекрасно подойдут для зонирования open-spaces, создания комфортных приватных зон для общения и работы. Новая большая серия офисных диванов БРИДЖ включает в себя модели с высокими и низкими боковыми панелями и спинками. Противоречивый дизайн сочетает в себе строгие линии снаружи и более мягкие внутри, элегантные тонкие опоры и объемные мягкие элементы. Высокие диваны прекрасно подойдут для зонирования open-spaces, создания комфортных приватных зон для общения и работы.',
+							})
+					if (args.details)
+						if (!args.detailsTitle)
+							h2.collections-description__title Подробности
+						table.collections-details
+							tr.collections-details__item
+								td.collections-details__prop Клиент
+								td.collections-details__value Компания по продаже газового оборудования
+							tr.collections-details__item
+								td.collections-details__prop Объект
+								td.collections-details__value Офисы компании
+							tr.collections-details__item
+								td.collections-details__prop Клиент
+								td.collections-details__value Компания по продаже газового оборудования
+							tr.collections-details__item
+								td.collections-details__prop Город
+								td.collections-details__value Сыктывкар, Россия
+							tr.collections-details__item
+								td.collections-details__prop Год реализации
+								td.collections-details__value 2020
+					if (args.utp)
+						include ../collection-utp/collection-utp
+							//- .collections-details__item
+							//- 	.collections-details__prop Клиент
+							//- 	.collections-details__value Компания по продаже газового оборудования
+							//- .collections-details__item
+							//- 	.collections-details__prop Объект
+							//- 	.collections-details__value Офисы компании
+							//- .collections-details__item
+							//- 	.collections-details__prop Город
+							//- 	.collections-details__value Сыктывкар, Россия
+							//- .collections-details__item
+							//- 	.collections-details__prop Год реализации
+							//- 	.collections-details__value 2020

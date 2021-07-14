@@ -1,58 +1,202 @@
-@import '../../assets/css/vars_mixins/vars_mixins';
+@import "../../assets/css/vars_mixins/vars_mixins";
 
 .content {
 	font-style: normal;
-	font-weight: 300;
-	line-height: lineheight(16,24);
+	font-weight: normal;
+	line-height: 1.4;
 	color: $c-text;
-
-	&.container {
-		margin-bottom: 90px;
+	p {
+		font-size: 16px;
+		font-weight: 300;
+		@include lineheight(16, 24);
+		margin-top: 30px;
+		letter-spacing: normal;
+		&:first-child {
+			margin: 0;
+		}
+		@media (max-width: $sm - 1) {
+			font-size: 16px;
+		}
 	}
-
-  p {
-    margin-bottom: 20px;
-    &:last-child {
-      margin: 0;
-    }
-  }
 	a:not([class]) {
-		color: $c-primary;
+		color: $c-link;
 		text-decoration: none;
-		border-bottom: 1px dashed;
-		transition: color .3s;
+		padding: 2px;
+		border-bottom: 1px solid $c-link;
+		transition: color 0.3s;
 		&:hover {
-			color: $c-primary-hover;
+			color: #000;
+			border-color: transparent;
 		}
 	}
 	hr {
 		position: relative;
 		height: 1px;
-    	background: $c-primary;
+		background: $c-primary;
 		border: 0;
 		margin: 20px 0;
 		&:after,
-    &:before {
-			content: '';
+		&:before {
+			content: "";
 			display: table;
 			clear: both;
 		}
 	}
 	mark {
-		background: $c-primary;
-		color: $c-text;
-		font-weight: normal;
-		padding: 0 5px;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 140%;
+		background-color: transparent;
+		font-style: normal;
 	}
 	s {
 		text-decoration: line-through;
 	}
 	blockquote {
 		display: block;
-		margin-bottom: 25px;
-		line-height: 1.4;
-		padding: 0 10px;
+		margin-top: 24px;
+		margin-bottom: 24px;
+		padding: 36px 146px;
+		background-color: $c-bg-2;
 		color: $c-text;
-		border-left: 2px solid #828282;
+		position: relative;
+		@media (max-width: $sm - 1) {
+			padding: 36px 36px;
+		}
+		p {
+			font-style: normal;
+			font-weight: 500;
+			font-size: 22px;
+			line-height: 31px;
+			letter-spacing: 0.03em;
+			position: relative;
+			@media (max-width: $sm - 1) {
+				font-size: 18px;
+			}
+		}
+		&:after {
+			position: absolute;
+			content: "“";
+			left: 72px;
+			top: 36px;
+			font-weight: 500;
+			font-size: 144px;
+			line-height: 120px;
+			color: rgba(0, 0, 0, 0.1);
+			@media (max-width: $sm - 1) {
+				top: auto;
+				bottom: 18px;
+				left: auto;
+				right: 36px;
+				line-height: 0px;
+			}
+		}
+	}
+	cite,
+	.article-author {
+		display: block;
+		margin-top: 32px;
+		.img {
+			float: left;
+			margin-right: 16px;
+			width: 50px;
+			height: 50px;
+			border-width: 4px;
+			overflow: hidden;
+		}
+		.name {
+			font-weight: bold;
+			font-size: 17px;
+			line-height: 24px;
+			display: block;
+		}
+		.descr {
+			display: block;
+			font-weight: normal;
+			font-size: 16px;
+			line-height: 22px;
+		}
+		&__title {
+			font-weight: normal;
+			font-size: 15px;
+			margin-bottom: 8px;
+		}
+		a.name {
+			color: #000;
+			display: inline-block;
+			&:hover {
+				cursor: pointer;
+				color: $c-primary-2-hover;
+			}
+		}
+	}
+	.text-aside-snippet {
+		padding: 24px;
+		background-color: #f4f4f4;
+		max-width: 276px;
+		float: left;
+		margin: 0px 16px 0px 0px;
+		position: relative;
+
+		&__title {
+			font-weight: bold;
+			font-size: 18px;
+			line-height: 130%;
+			text-transform: uppercase;
+			margin-bottom: 16px;
+		}
+		&__content {
+			font-weight: normal;
+			font-size: 16px;
+			line-height: 140%;
+		}
+		p {
+			&:after {
+				position: absolute;
+				content: "";
+			}
+		}
+		@media (max-width: $sm - 1) {
+			width: 100%;
+			float: none;
+			max-width: none;
+		}
+	}
+	.text-centered-snippet {
+		padding: 24px;
+		background-color: #f4f4f4;
+		margin: 24px 0px 0px 0px;
+		position: relative;
+		&__title {
+			font-weight: bold;
+			font-size: 18px;
+			line-height: 130%;
+			text-transform: uppercase;
+			margin-bottom: 16px;
+			color: #c4c4c4;
+		}
+		&__content {
+			font-weight: normal;
+			font-size: 16px;
+			line-height: 140%;
+		}
+		@media (max-width: $sm - 1) {
+			width: 100%;
+		}
+	}
+	a.tag {
+		padding: 8px 16px;
+		display: inline-block;
+		background-color: #f4fafb;
+		border-width: 2px;
+		color: $c-grey;
+		margin: 32px 0px 0px;
+		margin-right: 16px;
+		transition: all 0.3s ease;
+		&:hover {
+			cursor: pointer;
+			background-color: $c-blue-hover;
+			color: #fff;
+		}
 	}
 }

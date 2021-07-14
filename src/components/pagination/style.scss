@@ -1,99 +1,108 @@
 @import "src/assets/css/vars_mixins/vars_mixins";
-
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 20px 0 0;
-  text-align: center;
-  &__list {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
-  }
-  &__item {
-    display: flex;
-    margin: 0 7px;
-    &.active {
-      cursor: default;
-      .pagination__link {
-        border: 1px solid $c-add;
-        background: $c-add;
-        color: #fff;
-      }
-    }
-  }
-  &__next {
-    transform: rotate(180deg);
-  }
-  &__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    transition: background 0.4s, color 0.4s, border 0.4s;
-    color: $c-text;
-    border-radius: 4px;
-    font-size: 15px;
-    line-height: 1;
-    &:hover {
-      background: $c-add;
-      color: #fff;
-    }
-  }
-  &__arr {
-    display: block;
-    border-radius: 4px;
-    width: 40px;
-    height: 40px;
-    background-color: #fff;
-    background-repeat: no-repeat;
-    background-size: 8px 12px;
-    background-image: url('data:image/svg+xml,%3Csvg width=\'12\' height=\'20\' viewBox=\'0 0 12 20\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M11 1L1.92307 10L10.9231 19\' stroke=\'black\' stroke-width=\'2\' stroke-miterlimit=\'10\' stroke-linecap=\'round\' stroke-linejoin=\'round\'/%3E%3C/svg%3E%0A');
-    background-position: 45% 50%;
-    transition: box-shadow ease 0.4s;
-    &:hover {
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.13);
-    }
-  }
-  &__more {
-    .pagination__link {
-      background: #fff;
-      width: auto;
-      padding-left: 15px;
-      padding-right: 15px;
-      &:hover {
-        background: $c-add;
-      }
-    }
-  }
-  @media (max-width: 575px) {
-    &__item {
-      margin: 0 2px;
-    }
-    &__arr,
-    &__link {
-      width: 27px;
-      height: 27px;
-      font-size: 14px;
-    }
-    &__total {
-      //display: none;
-    }
-    &__more {
-      width: 100%;
-      order: -1;
-      .pagination__link {
-        width: 100%;
-        margin-bottom: 10px;
-      }
-    }
-  }
+.pagination-loader {
+	width: 100%;
+	margin-top: 20px;
 }
 
+
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin-top: 30px;
+	text-align: center;
+	&__list {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0 auto;
+		padding: 0;
+		list-style: none;
+	}
+	&__item {
+		display: flex;
+		margin: 0 6px;
+		transition: background 0.3s, color 0.2s, border 0.3s;
+		border: 1px solid transparent;
+		color: $c-link;
+		&--first {
+			transform: rotate(180deg);
+		}
+		&:hover {
+			border: 1px solid $c-bg-3;
+			background: $c-bg-3;
+			.pagination__link {
+				color: $c-link;
+			}
+			.icon {
+				fill: $white;
+			}
+		}
+		&.active {
+			cursor: default;
+			border: 1px solid transparent;
+			background: $c-link;
+			position: relative;
+			box-sizing: border-box;
+			&:after {
+				left: 0px;
+				top: 1px;
+				position: absolute;
+				content: "";
+				width: 100%;
+				height: calc(100% - 2px);
+				background-color: transparent;
+				border-top: 1px solid #fff;
+				border-bottom: 1px solid #fff;
+			}
+			.pagination__link {
+				color: $white;
+			}
+			.icon {
+				stroke: $c-link;
+			}
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 44px;
+		height: 44px;
+		transition: background 0.3s, color 0.2s, border 0.3s;
+		color: $c-link;
+		font-size: 20px;
+		line-height: 1;
+		.icon {
+			stroke: $c-link;
+		}
+	}
+
+	@media (max-width: 575px) {
+		&__total {
+			display: none;
+		}
+		&__item {
+			margin: 0 2px;
+		}
+		&__link {
+			width: 27px;
+			height: 27px;
+			font-size: 14px;
+		}
+		&__item--first {
+			margin: 0;
+		}
+		&__item--last {
+			margin: 0;
+		}
+	}
+}
+.pagination-to-end, .pagination-to-start{
+	@media (max-width: $md - 1){
+		display: none;
+	}
+}

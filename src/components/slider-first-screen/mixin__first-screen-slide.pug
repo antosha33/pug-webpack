@@ -1,0 +1,22 @@
+mixin fs-slider__item(args= {})
+	- var path = '../images/fs-slide-';
+	+lazy-picture-slider({
+		source: [
+			{
+				img: path + args.count +'-xl.jpg',
+				placeholder: args.first ? path + args.count +'-xl.jpg' : pixel,
+				media: 415
+			}, {
+				img: path + args.count +'-sm.jpg 1x',
+				placeholder: args.first ? path + args.count +'-sm.jpg' : pixel,
+				media: 250
+			}
+		],
+		link: true,
+		link_class: 'fs-slider__link',
+		img: path + args.count +'-xl.jpg',
+		placeholder: path + args.count +'-xl.jpg' ,
+		img_mod: 'fs-slider__img',
+		wrap_mod: 'fs-slider__img-wrap'
+	})
+

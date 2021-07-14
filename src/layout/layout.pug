@@ -1,12 +1,16 @@
-include ../utility/bemto-setting
 include ../utility/_globalVars
 include ../utility/_mixins
 include ../utility/_functions
 
 block vars
+	- var pageName
 	- var pageTitle
-	- var pageBodyClass
+	- var bodyClass
+	- var pageHeaderClass
+	- var footerClass
 	- var dir
+	- var layout
+	- var isSidebar
 
 - var mixinsList = [] //список имен всех миксинов проекта
 - var componentsList = [] //список имен всех компонентов
@@ -19,15 +23,16 @@ doctype html
 html(lang='ru-RU')
 
 	head
-		//- Мета инфо
-		include ../utility/_favicon
+		meta(name="msapplication-TileColor" content="#006BAD")
+		meta(name="theme-color" content="#006BAD")
 		meta(charset='UTF-8')
-		meta(name='format-detection', content='telephone=no')
-		meta(name='viewport', content='width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1.0')
-		meta(name='description', content='glo')
+		meta(name='format-detection' content='telephone=no')
+		meta(name='viewport' content='width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1.0')
+		meta(name='description' content='MBK')
 		title= pageTitle
 
 		//- Подключение общих критический стилей
+		//link(rel='stylesheet', href= dir + '../assets/css/critical/critical.css' inline)
 		if (PROJECT_MODE !== 'dev')
 			style(data-critical)
 				//- include ../../local/templates/html/critical.css
@@ -36,9 +41,8 @@ html(lang='ru-RU')
 			script.
 				const userAgent = navigator.userAgent;
 				if (window.location.host.includes('localhost')) {
-					eval(atob('CQljb25zdCBjb25uZWN0aW9uID0gbmV3IFdlYlNvY2tldChgd3M6Ly9sb2NhbGhvc3Q6JHsrbG9jYXRpb24ucG9ydCArIDF9YCk7CgkJY29ubmVjdGlvbi5vbm9wZW4gPSAoKSA9PiB7CgkJCWNvbnNvbGUubG9nKCdbd3NITVJdIGhvdCBtb2R1bGUgcmVwbGFjZW1lbnQgZW5hYmxlZC4uLiBsaXN0ZW5pbmcgZm9yIHRoZSBjc3MgY2hhbmdlcycpOwoJCQljb25zb2xlLmxvZygnW3dzTFJdIGxpdmUgcmVsb2FkaW5nIGVuYWJsZWQuLi4gbGlzdGVuaW5nIGZvciB0aGUgY2hhbmdlcycpOwoJCQljb25uZWN0aW9uLnNlbmQoJ3JlYWR5Jyk7CgkJfQoJCWNvbm5lY3Rpb24ub25tZXNzYWdlID0gKGUpID0+IHsKCQkJY29uc3QgeyBwYXRoLCBtZXNzYWdlIH0gPSBKU09OLnBhcnNlKGUuZGF0YSk7CgkJCXN3aXRjaCAobWVzc2FnZSkgewoJCQkJY2FzZSAnY3JpdGljYWwnOgoJCQkJCShhc3luYyBmdW5jdGlvbiAoKSB7CgkJCQkJCWNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goJy4vY3JpdGljYWwuY3NzJyk7CgkJCQkJCWNvbnN0IHJlc3VsdCA9IGF3YWl0IHJlc3BvbnNlLnRleHQoKTsKCQkJCQkJJCgnc3R5bGVbZGF0YS1jcml0aWNhbF0nKS5odG1sKCcnKS5odG1sKHJlc3VsdCk7CgkJCQkJCWNvbnNvbGUubG9nKGBjcml0aWNhbCBpcyB1cGRhdGVkIWApOwoJCQkJCX0pKCkKCQkJCQlicmVhazsKCQkJCWNhc2UgJ3JlbG9hZCc6CgkJCQkJZG9jdW1lbnQubG9jYXRpb24ucmVsb2FkKCk7CgkJCQkJYnJlYWs7CgkJCQljYXNlICdzdHlsZXMnOgoJCQkJCWNvbnN0IHBhdHRlcm4gPSAvKD88PXRlbXBsYXRlc1xcaHRtbClcXC4qL2c7CgkJCQkJY29uc3QgcHVibGlja1BhdGggPSBwYXRoLm1hdGNoKHBhdHRlcm4pWzBdLnNwbGl0KCdcXCcpLmpvaW4oJy8nKTsKCQkJCQljb25zdCBsaW5rQ2xvbmUgPSAkKCcuanMtc3R5bGUtY29tcG9uZW50cycpLmZpbmQoYGxpbmtbaHJlZj0iLiR7cHVibGlja1BhdGh9Il1gKS5jbG9uZSgpOwoJCQkJCWlmICgkKCcuanMtc3R5bGUtY29tcG9uZW50cycpLmZpbmQoYGxpbmtbaHJlZj0iLiR7cHVibGlja1BhdGh9Il1gKVswXSkgewoJCQkJCQljb25zb2xlLmxvZyhgJHtwdWJsaWNrUGF0aH0gaXMgdXBkYXRlZCFgKTsKCQkJCQkJJCgnLmpzLXN0eWxlLWNvbXBvbmVudHMnKS5maW5kKGBsaW5rW2hyZWY9Ii4ke3B1YmxpY2tQYXRofSJdYCkucmVtb3ZlKCk7CgkJCQkJCSQoJy5qcy1zdHlsZS1jb21wb25lbnRzJykuYXBwZW5kKGxpbmtDbG9uZSk7CgkJCQkJfQoJCQkJCWJyZWFrOwoJCQl9CgkJfQ=='))
+										eval(atob('CQljb25zdCBjb25uZWN0aW9uID0gbmV3IFdlYlNvY2tldChgd3M6Ly9sb2NhbGhvc3Q6JHsrbG9jYXRpb24ucG9ydCArIDF9YCk7CgkJY29ubmVjdGlvbi5vbm9wZW4gPSAoKSA9PiB7CgkJCWNvbnNvbGUubG9nKCdbd3NITVJdIGhvdCBtb2R1bGUgcmVwbGFjZW1lbnQgZW5hYmxlZC4uLiBsaXN0ZW5pbmcgZm9yIHRoZSBjc3MgY2hhbmdlcycpOwoJCQljb25zb2xlLmxvZygnW3dzTFJdIGxpdmUgcmVsb2FkaW5nIGVuYWJsZWQuLi4gbGlzdGVuaW5nIGZvciB0aGUgY2hhbmdlcycpOwoJCQljb25uZWN0aW9uLnNlbmQoJ3JlYWR5Jyk7CgkJfQoJCWNvbm5lY3Rpb24ub25tZXNzYWdlID0gKGUpID0+IHsKCQkJY29uc3QgeyBwYXRoLCBtZXNzYWdlIH0gPSBKU09OLnBhcnNlKGUuZGF0YSk7CgkJCXN3aXRjaCAobWVzc2FnZSkgewoJCQkJY2FzZSAnY3JpdGljYWwnOgoJCQkJCShhc3luYyBmdW5jdGlvbiAoKSB7CgkJCQkJCWNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goJy4vY3JpdGljYWwuY3NzJyk7CgkJCQkJCWNvbnN0IHJlc3VsdCA9IGF3YWl0IHJlc3BvbnNlLnRleHQoKTsKCQkJCQkJJCgnc3R5bGVbZGF0YS1jcml0aWNhbF0nKS5odG1sKCcnKS5odG1sKHJlc3VsdCk7CgkJCQkJCWNvbnNvbGUubG9nKGBjcml0aWNhbCBpcyB1cGRhdGVkIWApOwoJCQkJCX0pKCkKCQkJCQlicmVhazsKCQkJCWNhc2UgJ3JlbG9hZCc6CgkJCQkJZG9jdW1lbnQubG9jYXRpb24ucmVsb2FkKCk7CgkJCQkJYnJlYWs7CgkJCQljYXNlICdzdHlsZXMnOgoJCQkJCWNvbnN0IHBhdHRlcm4gPSAvKD88PXRlbXBsYXRlc1xcaHRtbClcXC4qL2c7CgkJCQkJY29uc3QgcHVibGlja1BhdGggPSBwYXRoLm1hdGNoKHBhdHRlcm4pWzBdLnNwbGl0KCdcXCcpLmpvaW4oJy8nKTsKCQkJCQljb25zdCBsaW5rQ2xvbmUgPSAkKCcuanMtc3R5bGUtY29tcG9uZW50cycpLmZpbmQoYGxpbmtbaHJlZj0iLiR7cHVibGlja1BhdGh9Il1gKS5jbG9uZSgpOwoJCQkJCWlmICgkKCcuanMtc3R5bGUtY29tcG9uZW50cycpLmZpbmQoYGxpbmtbaHJlZj0iLiR7cHVibGlja1BhdGh9Il1gKVswXSkgewoJCQkJCQljb25zb2xlLmxvZyhgJHtwdWJsaWNrUGF0aH0gaXMgdXBkYXRlZCFgKTsKCQkJCQkJJCgnLmpzLXN0eWxlLWNvbXBvbmVudHMnKS5maW5kKGBsaW5rW2hyZWY9Ii4ke3B1YmxpY2tQYXRofSJdYCkucmVtb3ZlKCk7CgkJCQkJCSQoJy5qcy1zdHlsZS1jb21wb25lbnRzJykuYXBwZW5kKGxpbmtDbG9uZSk7CgkJCQkJfQoJCQkJCWJyZWFrOwoJCQl9CgkJfQ=='))
 				}
-			//- Якорь для втавки критикал стилей компнентов 
 			style(data="component")
 
 		//- Подключение критический стилей отдельных страниц
@@ -47,27 +51,32 @@ html(lang='ru-RU')
 		script.
 			!function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
 
+		// Мета инфо
+		//- include ../utility/_favicon
 
-	body.no-transition.no-js(class = pageBodyClass)
+	body.no-js(class = bodyClass)
 		script.
 			document.querySelector('body').classList.remove('no-js');
 
 		.wrapper
-			//- include ../components/header/header
+			include ../components/header/header
 			main.main
 				block premain
 				block main
 
 			.no-critical
-				//- include ../components/footer/footer
-		//- include ../components/adult-attention/adult-attention
-		//- include ../components/popup/popup
+				include ../components/footer/footer 
+
+		block popups
+
 	// Модальные окна, перенести в ajax все модалки
 	.modals-list.js-modals-list
-		//- include ../components/modal/feedback/modal-feedback
+		include ../components/modal/feedback/modal-feedback
+		include ../components/modal/contacts/modal-contacts
+		//- include ../components/modal/modal-reset-password/modal-reset-password
+		//- include ../components/modal/modal-authorization-success/modal-authorization-success
+		//- include ../components/modal/modal-registration-success/modal-registration-success
 
-	//мадалки для определнных страниц
-	block pageModal
 
 	// Фон мобильного меню
 	.mob-overlay
@@ -77,9 +86,10 @@ html(lang='ru-RU')
 
 	if (PROJECT_NAME == '' && PROJECT_MODE !== 'dev')
 		// Либы, используемые на всех страницах
-		script(src="./js/jquery/jquery.min.js" defer)
+	script(src="./js/jquery/jquery.min.js" defer)
+	script(src="./js/vendor/swiper.min.js" defer)
 		// Вялая загрузка картинок
-		script(src="./js/vendor/lazyload.min.js" defer)
+	script(src="./js/vendor/lazyload.min.js" defer)
 
 	if (PROJECT_NAME == '')
 		// Скрипты компонентов только для этой страницы
@@ -97,6 +107,8 @@ html(lang='ru-RU')
 	block componentsScripts
 
 	block componentsStyles
+
+	block scriptsLast
 
 	//якорь подключения объединенного js
 	script(data="component")

@@ -1,0 +1,15 @@
+mixin tag(args={})
+	+include-style('mixin__tag')
+	.tag
+		.tag__wrap
+			.tag__title= args.title
+			.tag__content
+				.tag__value= args.value1
+				.tag__trigger
+					+icon('i-close')(style="width:12px; height: 12px;")
+		.tag__wrap
+			.tag__title= args.title
+			.tag__content
+				.tag__value= args.value2
+				.tag__trigger
+					+icon('i-close')(style="width:12px; height: 12px;")

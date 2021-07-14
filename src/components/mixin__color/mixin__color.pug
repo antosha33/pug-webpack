@@ -1,0 +1,26 @@
+mixin color(args={})
+	+include-style('mixin__color')
+	if (args.fancy)
+		a(href="/local/templates/html/images/color-picker-big-2.jpg" data-fancybox="gallery" class=args.mod).casing-color&attributes(attributes)
+			span.casing-color__img
+				+lazy-img({
+					img: args.img
+				})
+			span.casing-color__descr
+				span.casing-color__title= args.title
+				span.casing-color__code= args.code
+				span.casing-color__hover Выбрать цвет
+			span.casing-color__link
+				+icon('i-link-thin')(style="width: 44px; height: 44px;")
+	else
+		.casing-color(class=args.mod)&attributes(attributes)
+			.casing-color__img
+				+lazy-img({
+					img: args.img
+				})
+			.casing-color__descr
+				.casing-color__title= args.title
+				.casing-color__code= args.code
+				.casing-color__hover Выбрать цвет
+			.casing-color__link
+				+icon('i-link-thin')(style="width: 44px; height: 44px;")

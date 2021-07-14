@@ -1,0 +1,172 @@
+.choosen-file__item {
+	padding         : 11px 16px;
+	background-color: #f9f9f9;
+	border-radius   : 50px;
+	font-weight     : normal;
+	font-size       : 16px;
+	line-height     : 1.5;
+	color           : #000;
+	margin-bottom   : 16px;
+	margin-right    : 16px;
+	display         : flex;
+	align-items     : center;
+	position        : relative;
+	padding-right   : 40px;
+}
+
+.choosen-file__item .icon {
+	flex        : 0 0 auto;
+	margin-right: 15px;
+}
+
+.choosen-file__item-img {
+	width       : 15px;
+	height      : 20px;
+	margin-right: 6px;
+}
+
+.choosen-files-wrap {
+	display: flex;
+}
+
+@media (max-width: 767px) {
+	.choosen-files-wrap {
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 767px) {
+	.label-input-file {
+		display: flex;
+	}
+}
+
+input[name=input__file] {
+	display: none;
+}
+
+.input__file-icon {
+	stroke: #4A4A4A;
+}
+
+.input__file-button {
+	color       : #4A4A4A;
+	padding-left: 20px;
+	display     : inline-flex;
+	align-items : center;
+	z-index: 1000;
+	&:hover{
+		@media (min-width: 1024px){
+			cursor: pointer;
+		}
+	}
+}
+
+.input__file-button .icon {
+	stroke     : #4A4A4A;
+	margin-left: 12px;
+}
+
+.input__file-button.empty {
+	text-decoration: underline;
+	position       : relative;
+}
+
+.input__file-button.empty:after {
+	position           : absolute;
+	content            : "";
+	left               : 0;
+	top                : calc(50% - 7px);
+	width              : 14px;
+	height             : 14px;
+	background-position: center;
+	background-repeat  : no-repeat;
+	background-image   : url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.4451 7.29045L7.89561 1.74093C6.37721 0.222537 3.9154 0.222536 2.39701 1.74093C0.878609 3.25933 0.878609 5.72114 2.39701 7.23954L7.69196 12.5345C8.81669 13.6592 10.6403 13.6592 11.765 12.5345C12.8897 11.4097 12.8897 9.58619 11.765 8.46145L6.77552 3.47197C6.10068 2.79713 5.00654 2.79713 4.3317 3.47197C3.65686 4.14682 3.65686 5.24095 4.3317 5.9158L9.57574 11.1598' stroke='%234A4A4A'/%3E%3C/svg%3E%0A");
+}
+
+.input__file-button.empty .icon {
+	stroke: transparent;
+}
+
+.webform-field-upload-list.webform-field-upload-list--mod {
+	margin      : 0px;
+	margin-right: 15px;
+}
+
+.webform-field-upload-list--mod .upload-file-size {
+	display: none;
+}
+
+.webform-field-upload-list--mod .webform-field-item-wrap {
+	display        : flex;
+	justify-content: flex-end;
+}
+
+.webform-field-upload-list--mod .webform-field-item-wrap {
+	overflow       : hidden;
+	padding-right  : 40px;
+	width          : 100%;
+	justify-content: flex-start;
+}
+
+.webform-field-upload-list.webform-field-upload-list--mod a.upload-file-name {
+	margin     : 0px;
+	margin-left: 6px;
+}
+
+.webform-field-upload-list.webform-field-upload-list--mod li div.webform-field-item-wrap {
+	margin: 0px;
+}
+
+.webform-field-upload-list.webform-field-upload-list--mod del {
+	position : absolute;
+	margin   : 0px;
+	right    : 20px;
+	top      : 50%;
+	transform: translateY(-50%);
+}
+
+.webform-field-upload-list.webform-field-upload-list--mod .webform-field-upload-icon {
+	display         : none;
+	width           : 15px;
+	height          : 20px;
+	border-radius   : 0px;
+	background-image: none;
+	margin          : 0px;
+}
+
+.ext-icon {
+	width          : 22px;
+	height         : 22px;
+	display        : flex;
+	align-items    : center;
+	justify-content: center;
+}
+
+.file-input--mod {
+	display: flex;
+}
+
+.webform-field-upload {
+	.input__file-button {
+		transition: al .3s ease;
+
+	}
+
+	&:hover {
+		cursor: pointer !important;
+		.input__file-button {
+			@media (min-width: 1024px) {
+				opacity: 0.75;
+				
+			}
+		}
+	}
+}
+
+
+@media(max-width: 768px) {
+	.file-input--mod {
+		flex-direction: column;
+	}
+}

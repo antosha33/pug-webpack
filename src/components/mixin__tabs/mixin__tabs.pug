@@ -1,0 +1,9 @@
+mixin tabs(args={})
+	+include-style('mixin__tabs')
+	+include-script('mixin__tabs')
+	ul.tab-list.js-tab-list(class= args.mod)
+		each item, i in args.tabList
+			if (i == 0)
+				li.tab-list__item.btn.btn--tab(data-target= item.dataTarget).active= item.title
+			else
+				li.tab-list__item.btn.btn--tab(data-target= item.dataTarget)= item.title

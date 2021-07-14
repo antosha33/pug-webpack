@@ -1,29 +1,28 @@
 +include-style('news-section')
-
-+b('section').news-section
-    .container
-        +e.__header.section-header
-            +e('h2').__title.section-header__title.h1 Новости компании
-            +e.__link.section-header__link
-                a(href="#").link Все новости
-        +e.__scroll.row
-            .col-sm-4
-                mixin news-item(args={})
-                    a.news-item(href="#")
-                        .news-item__date 09.04.2020
-                        .news-item__title=args.title
-                        .news-item__text=args.text
-                +news-item({
-                    title: 'Новая мебель для московского офиса компании Wargaming мебель для московского офиса компании Wargaming',
-                    text: 'Всемирно известная компания наконец-то обзавелась нормальными стульями, столами, шкафчиками и всем таким прочим известная компания наконец-то обзавелась нормальными стульями, столами, шкафчиками и всем таким прочим'
-                })
-            .col-sm-4
-                +news-item({
-                    title: 'Мы обновили  список прекрасных предложений для наших партнеров',
-                    text: 'Возможность оплаты по факту доставки, оплату принимаем любым способом, а так же возможность работать нНапрямую спроизводителем!'
-                })
-            .col-sm-4
-                +news-item({
-                    title: 'Гибкая система скидок для наших клиентов!',
-                    text: 'Теперь каждый, кто прибретает товар на сумму свыше 6000 р. получает возможность потратить еще столько же денег в нашем новом шоуруме. '
-                })
+.news-section-wrap
+	.container
+		+presection({
+			title: 'Новости',
+			linkTitle: 'Все новости'
+		})
+		.news-card-list
+			+news-card({
+				mod: 'news-card--main-page',
+				img: 'images/news-card-1.jpg',
+				title: 'Олицетворение комфорта и современного дизайна — новая серия Arlecino',
+			})
+			+news-card({
+				mod: 'news-card--main-page',
+				img: 'images/news-card-2.jpg',
+				title: 'Расширенная гарантия на 3 года',
+			})
+			+news-card({
+				mod: 'news-card--main-page',
+				img: 'images/news-card-3.jpg',
+				title: 'Виртуальная примерка мебели в интерьере вашего офиса',
+			})
+			+news-card({
+				mod: 'news-card--main-page',
+				img: 'images/news-card-4.jpg',
+				title: 'Завоевать внимание поклонников минимализма: как это сделали в Eichholtz',
+			})

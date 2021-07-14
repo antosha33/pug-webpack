@@ -1,0 +1,135 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.counter {
+	position: relative;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 33px;
+	display: flex;
+	.disabled-text {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		display: none;
+		width: 120%;
+		text-align: left;
+		color: $c-error;
+		font-size: 12px;
+		line-height: 1;
+	}
+	.btn.btn--light{
+
+
+		.icon{
+			margin-left: 0px;
+		}
+	}
+	@media (max-width: $sm - 1){
+		.btn.btn--light{
+			&:not(:last-child){
+				margin-bottom: 0px;
+			}
+		}
+	}
+}
+.basket-small .disabled-text {
+	top: 120%;
+	width: 200px;
+	font-size: 11px;
+}
+.basket-page .disabled-text,
+.basket-small .disabled-text {
+	top: 100%;
+}
+.counter-input {
+	position: relative;
+	display: flex;
+	box-sizing: border-box;
+	width: auto;
+	max-width: 50px;
+	height: 44px;
+	padding: 0px;
+	text-align: center;
+	color: $c-link;
+	outline: none;
+	font-size: 16px;
+	border-top: 1px solid $c-link;
+	border-bottom: 1px solid $c-link;
+	line-height: 1;
+	@media (max-width: $md - 1) {
+		font-size: 18px;
+	}
+}
+.counter-btn {
+	position: relative;
+	// flex-shrink: 0;
+	width: 44px;
+	height: 44px;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	font-size: 0;
+	flex: 0 0 auto;
+	@media (max-width: 480px) {
+		width: 0px;
+	}
+	// &:before,
+	// &:after {
+	// 	position: absolute;
+	// 	top: calc(50% - 2px);
+	// 	left: calc(50% - 4px);
+	// 	display: block;
+	// 	width: 18px;
+	// 	height: 3px;
+	// 	content: "";
+	// 	background: $white;
+	// 	width: 12px;
+	// 	@media (max-width: 480px) {
+	// 		width: 10px;
+	// 		height: 2px;
+	// 	}
+	// }
+	&:before {
+		transform: rotate(-90deg);
+	}
+	&[disabled],
+	&.disabled {
+		cursor: default;
+		&:before,
+		&:after {
+			background: $c-link;
+		}
+	}
+}
+
+.btn.btn--light.counter-btn {
+	width: 44px;
+	height: 44px;
+	padding: 0px;
+	min-width: auto;
+}
+
+.counter-minus {
+	order: -1;
+	&:before {
+		display: none;
+	}
+}
+.counter-plus {
+	&[disabled],
+	&.disabled {
+		& ~ .disabled-text {
+			display: block;
+		}
+	}
+}
+@media (min-width: $xl) {
+	.counter-btn {
+		&:hover {
+			&:before,
+			&:after {
+			}
+		}
+	}
+}
+
+// @import "--price";

@@ -1,0 +1,48 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.btn.btn--light {
+	min-width: 130px;
+	padding: 9px 30px;
+	color: $c-link;
+	font-family: $f-main;
+	font-weight: 400;
+	border: 1px solid $c-link;
+	background: #fff;
+	font-size: 20px;
+	position: relative;
+	box-sizing: border-box;
+	@include lineheight(20, 26);
+	@media (min-width: $lg) {
+		&:hover {
+			&:after {
+				left: 2px;
+				position: absolute;
+				content: "";
+				width: calc(100% - 4px);
+				height: calc(100% - 4px);
+				background-color: transparent;
+				border: 1px solid $c-link;
+			}
+		}
+		&:active {
+			background: #333333;
+			color: #fff;
+		}
+	}
+	@media (max-width: $sm - 1){
+		width: 100%;
+		&:not(:last-child){
+			margin-bottom: 8px;
+		}
+	}
+	.icon{
+		stroke: $c-link;
+		margin-left: 8px;
+	}
+}
+.btn.btn--trash{
+	font-size: 16px;
+}
+.btn.btn--fw{
+	width: 100%;
+}

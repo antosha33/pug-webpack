@@ -1,0 +1,16 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.presection {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	&__title {
+		margin-bottom: 0px;
+	}
+	@media (max-width: $sm - 1){
+		display: block;
+		.presection__title{
+			margin-bottom: 20px;
+		}
+	}
+}

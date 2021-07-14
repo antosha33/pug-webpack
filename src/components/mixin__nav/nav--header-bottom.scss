@@ -1,0 +1,197 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.nav--header-bottom {
+  display: flex;
+  flex-grow: 1;
+  margin: 15px 0;
+  .eco {
+    display: inline;
+    color: $c-primary-hover;
+  }
+  .nav-list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .nav-item {
+    padding: 0 10px 0 0;
+    &:hover {
+      .nav-lvl2 {
+        top: 100%;
+        visibility: visible;
+        opacity: 1;
+      }
+      .nav-link {
+        color: $c-primary-hover;
+      }
+    }
+    &.active {
+      .nav-link {
+        border-bottom: 2px solid $c-primary-hover;
+      }
+    }
+  }
+  .nav-lvl2-item.active {
+    .nav-lvl2-link {
+      color: $c-primary-hover;
+    }
+  }
+  .nav-link {
+    display: flex;
+    padding: 7px 0;
+    transition: color .3s, border .3s !important;
+    white-space: nowrap;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    color: $c-text;
+    border-bottom: 2px solid transparent;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .nav-lvl2 {
+    position: absolute;
+    z-index: $zindex-dropdown;
+    top: calc(100% + 10px);
+    left: 0;
+    display: block;
+    visibility: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: auto;
+    width: calc(100% + 80px);
+    max-height: 79vh;
+    padding: 29px 29px 19px 29px;
+    transition: opacity .3s, top .3s, visibility .3s;
+    transition-delay: .3s;
+    opacity: 0;
+    border-radius: 16px;
+    background-color: #fff;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, .15);
+
+    -moz-overflow-scrolling: auto;
+    -ms-overflow-scrolling: auto;
+    -o-overflow-scrolling: auto;
+    &::-webkit-scrollbar {
+      width: 4px;
+      cursor: pointer;
+
+      -webkit-appearance: none;
+    }
+    &::-webkit-scrollbar-button {
+      width: 4px;
+      height: 5px;
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #e0e0e0;
+    }
+    &::-webkit-scrollbar-track-piece {
+      background-color: #e0e0e0;
+    }
+    &::-webkit-scrollbar-thumb {
+      width: 0;
+      height: 0;
+      border-radius: 5px;
+      background-color: #BDBDBD;
+      &:hover {
+        background-color: #4f681e;
+      }
+    }
+    &::-webkit-scrollbar-corner {
+      width: 0;
+      height: 0;
+      background-color: #e0e0e0;
+    }
+    &::-webkit-resizer {
+      background-color: #e0e0e0;
+    }
+  }
+  .nav-lvl2-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 50px);
+    margin: 0 -25px;
+  }
+  .nav-lvl2-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: calc(25% - 50px);
+    margin: 0 25px 40px;
+  }
+  .nav-lvl2-link {
+    padding: 8px 0;
+    transition: color .3s ease;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    color: $c-text;
+    font-size: 15px;
+    &:hover {
+      color: $c-primary-hover;
+    }
+  }
+  .nav-lvl2-toggle {
+    display: none;
+  }
+  .nav-lvl3-list {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    &.opened .nav-lvl3-item:nth-child(n+3) {
+      display: flex !important;
+    }
+  }
+  .nav-lvl3-item {
+    &:nth-child(n+3) {
+      display: none;
+    }
+  }
+  .nav-lvl3-link {
+    display: flex;
+    padding: 4px 0;
+    transition: color .3s;
+    color: $c-text;
+    font-size: 15px;
+    font-weight: 300;
+    &:hover {
+      color: $c-primary-hover;
+    }
+  }
+  .nav-lvl3-trigger {
+    position: relative;
+    display: flex;
+    margin-top: 8px;
+    padding-right: 17px;
+    cursor: pointer;
+    letter-spacing: .02em;
+    color: $c-primary-hover;
+    &::before {
+      position: absolute;
+      top: calc(50% - 3px);
+      right: 0;
+      width: 10px;
+      height: 6px;
+      content: '';
+      background: no-repeat;
+      background-image: url('data:image/svg+xml,%3Csvg width=\'11\' height=\'7\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath fill-rule=\'evenodd\' clip-rule=\'evenodd\' d=\'M5.389 5.481L10.035.835l.707.707L5.39 6.895.035 1.542.742.835 5.39 5.48z\' fill=\'%238DC63F\'/%3E%3C/svg%3E');
+      background-size: cover;
+    }
+    .link-hide {
+      display: none;
+    }
+    &.active {
+      &::before {
+        top: calc(50% - 2px);
+        transform: rotate(180deg);
+      }
+      .link-hide {
+        display: block;
+      }
+      .link-show {
+        display: none;
+      }
+    }
+  }
+}

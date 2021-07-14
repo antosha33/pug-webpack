@@ -1,13 +1,6 @@
-window.addEventListener( 'load', function( event ) {
-    $('.js-f-title').on('click touch', function () {
-        let _this = $(this);
-        if(_this.hasClass('active')) {
-            _this.removeClass('active');
-            _this.next().removeClass('active').slideUp();
-        } else {
-            _this.addClass('active');
-            _this.next().addClass('active').slideDown();
-        }
-
-    })
-});
+window.addEventListener('load', function (event) {
+	$('.nav--footer .nav-link').click(function(){
+		$(this).toggleClass('active');
+		$(this).next().find('.nav-lvl2-list').toggleClass('active');
+	})
+})

@@ -1,0 +1,116 @@
++include-style('casing-picker')
++include-script('casing-picker')
+.casing-picker-wrap
+	.casing-picker__title.collections-description__title Выбрать обивку 
+	.casing-picker.js-casing-picker-footer
+		.casing-picker__header
+			.casing-picker__top
+				.casing-picker__code Артикул: Brd2HR
+				.casing-picker__img
+					+lazy-img({
+						img:'images/casing-picker.jpg',
+						placeholder: pixel
+					})
+			.casing-picker__casing
+				+custom-select({
+					label: 'Категория обивки',
+					mod: 'form-control--select form-control--light form-control--product',
+					items: [
+						{
+							value: '1 категория'
+						},
+						{
+							value: '2 категория'
+						},
+						{
+							value: '3 категория'
+						},
+						{
+							value: '4 категория'
+						},
+						{
+							value: '5 категория'
+						},
+						{
+							value: '6 категория'
+						},
+						{
+							value: '7 категория'
+						},
+						{
+							value: '8 категория'
+						},
+						{
+							value: '9 категория'
+						},
+					]
+				})
+			.casing-picker__casing
+				+custom-select({
+					label: 'Категория обивки',
+					mod: 'form-control--select form-control--light form-control--product',
+					items: [
+						{
+							value: 'Oregon'
+						},
+						{
+							value: 'Oregon 2'
+						},
+						{
+							value: 'Oregon 3'
+						},
+					]
+				})
+			.casing-picker__casing.casing-picker__casing--colors-mod.js-casing-picker(data-target="casing-tab")
+				+color-picker-trigger({
+					title: 'Цвет обивки',
+					code: '03'
+				})
+			.casing-picker__casing.casing-picker__casing--colors-mod.js-casing-picker(data-target="prop-tab")
+				+color-picker-trigger({
+					title: 'Цвет опор',
+					code: 'Черный'
+				})
+			.casing-picker__casing.casing-picker__casing--colors-mod.js-casing-picker(data-target="tabletop-tab")
+				+color-picker-trigger({
+					title: 'Цвет столешницы',
+					code: 'Натур.дерево'
+				})
+				//- +custom-select({
+				//- 	label: 'Цвет обивки',
+				//- 	mod: 'form-control--select form-control--light form-control--color-select',
+				//- 	items: [
+				//- 		{
+				//- 			value: 'Oregon',
+				//- 			color: 'url(images/about-bg.jpg)',
+				//- 		},
+				//- 		{
+				//- 			value: 'Oregon 2',
+				//- 			color: 'url(images/about-bg-2.jpg)',
+				//- 		},
+				//- 		{
+				//- 			value: 'Oregon 3',
+				//- 			color: 'url(images/room-card-10.jpg)',
+				//- 		},
+				//- 	]
+				//- })
+		.casing-picker__body.js-casing-picker-body(data-target="casing-tab")
+			include ../color-picker/color-picker
+		.casing-picker__body.js-casing-picker-body(data-target="prop-tab")
+			include ../color-picker/color-picker
+		.casing-picker__body.js-casing-picker-body(data-target="tabletop-tab")
+			include ../color-picker/color-picker
+		.casing-picker__footer
+			.casing-picker__price 220 228 ₽
+			.casing-picker__discount
+				.casing-picker__discount-sum 73 280 ₽
+				.casing-picker__discount-int
+					+label({
+						mod: 'label--discount',
+						title: 'Скидка',
+						interest: '-25%'
+					})
+			.casing-picker__order
+				+counter-order({
+					title: "Добавить в корзину"
+				})

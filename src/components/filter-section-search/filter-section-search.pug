@@ -1,0 +1,135 @@
++include-style('filter-section')
++include-script-vendor('ion.rangeSlider.min.js')
++include-script('filter-section')
+.filter-section
+	#ajaxfilter-filter.sidebar-filter.no-critical
+		.sidebar-filter__block.js-filter-block
+			.filter-section__header
+				.filter-section__trigger.js-filter-section-close
+					+icon('i-close')(style="width:24px; height: 24px; stroke:#fff")
+				.filter-section__title Фильтр
+			.filter-section__content
+				form#filter.form.sidebar-filter__form(name='_form' action='/catalog/stiralnye-mashiny/' method='get' data-sef='yes')
+					.sidebar-filter__item.form-group.lvl1
+						.sidebar-filter__content
+							.ajaxfilter-num.ajaxfilter-filter-property-body(data-name='price')
+								.ajaxfilter-range
+									input(name='price-range' data-from='429' data-to='7960' data-min='429' data-max='7960' data-grid='false' data-prefix='' data-postfix='<span class="ajaxfilter-range__postfix">р.</span>' data-force-edges='true' data-step='1')
+								.ajaxfilter-inputs(style='display: none;')
+									input#arFilter_P1_MIN.ajaxfilter-input.ajaxfilter-num-from.form-group__input(type='text' name='price_from' value='429' size='5' placeholder='429')
+									input#arFilter_P1_MAX.ajaxfilter-input.ajaxfilter-num-to.form-group__input(type='text' name='price_to' value='7960' size='5' placeholder='7960')
+									span.ajaxfilter-inputs__pref от
+									span.ajaxfilter-inputs__pref до
+					.sidebar-filter__item.form-group.lvl1
+						+custom-select({
+							mod: 'form-control--light form-control--filter',
+							placeholder: 'Тип',
+							items: [
+								{
+									value: '',
+									default: true,
+								},
+								{
+									value: '1 категория'
+								},
+								{
+									value: '2 категория'
+								},
+								{
+									value: '3 категория'
+								},
+								{
+									value: '4 категория'
+								},
+								{
+									value: '5 категория'
+								},
+								{
+									value: '6 категория'
+								},
+								{
+									value: '7 категория'
+								},
+								{
+									value: '8 категория'
+								},
+								{
+									value: '9 категория'
+								},
+							]
+						})
+					.sidebar-filter__item.form-group.lvl1.sidebar-filter__item--availability
+						+checkbox({
+							label: 'Наличие на складе'
+						})
+					.sidebar-filter__item.form-group.lvl1.sidebar-filter__item--availability
+						+checkbox({
+							checked: true,
+							label: 'По цене',
+							sort:true,
+							label_mod: 'checkbox-label--sort',
+							input_mod: 'checkbox--sort'
+						})
+				.catalog-tag-list
+					+tag({
+						title: 'Цена:',
+						value1: 'от 1502560 ₽',
+						value2: 'до 9999999 ₽',
+					})
+					+tag({
+						title: 'Тип:',
+						value1: 'Кресло',
+						value2: '2-х местный диван',
+					})
+					+tag({
+						title: 'Цвет:',
+						value1: '02',
+						value2: '05',
+					})
+					.filter-reset Очистить фильтр
+						+icon('i-close')(style="width: 12px; height: 12px")
+			.filter-section__footer
+				.filter-section__footer-item.btn.btn--primary.js-filter-section Показать 200 товаров
+				.filter-section__footer-item Cбросить
+	.filter-section__footer
+		.filter-section__footer-item.btn.btn--primary.js-filter-section Фильтр
+			+icon('i-filter')(style="width: 24px; height: 24px")
+		.filter-section__footer-item Очистить фильтр
+script.
+	window.addEventListener( 'load', function( event ) {
+		$('.js-filter-section').click(function(){
+			$('.filter-section .js-filter-block').toggleClass('active');
+			$('body').toggleClass('overflow');
+		})
+
+		$('.js-filter-section-close').click(function(){
+			$('.filter-section .js-filter-block').toggleClass('active');
+			$('body').toggleClass('overflow');
+		})
+
+		function filter_init() {
+			slamFilterJsInit();
+			$('#ajaxfilter-filter').slamAjaxSmartFilter({
+				ajaxURL: '/catalog/stiralnye-mashiny/',
+				urlDelete: '/catalog/stiralnye-mashiny/',
+				align: 'LEFT',
+				modeftimeout: 0
+			});
+		}
+
+		var filter_init_timeout;
+
+
+		// Отлаживаем инит на 3с на вью со скрытым фильтром
+		if ($(window).width() < 1200) {
+			filter_init_timeout = setTimeout(function () {
+				filter_init()
+			}, 3000)
+		} else {
+			clearTimeout(filter_init_timeout)
+			filter_init()
+		}
+
+
+
+	});

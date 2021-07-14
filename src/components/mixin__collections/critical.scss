@@ -1,0 +1,147 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.collections-description {
+	margin-top: 60px;
+	@media (max-width: $sm - 1) {
+		margin-top: 30px;
+	}
+	&__title {
+		margin-bottom: 20px;
+		font-weight: 300;
+		font-size: 32px;
+		@include lineheight(32, 38);
+		@media (max-width: $md - 1){
+			font-size: 26px;
+		}
+	}
+	&__content {
+		font-weight: 300;
+		font-size: 16px;
+		&:not(:last-child) {
+			margin-bottom: 30px;
+			@media (max-width: $sm - 1){
+				margin-bottom: 30px;
+			}
+		}
+		@include lineheight(16, 24);
+		p {
+			&:not(:first-child) {
+				margin-top: 30px;
+			}
+		}
+	}
+	.slider-with-fancy {
+		@media (max-width: $sm - 1) {
+			margin-bottom: 30px;
+		}
+	}
+}
+.collections-details {
+	&__item {
+		display: table-row;
+		font-size: 16px;
+		@include lineheight(16, 24);
+		padding-bottom: 12px;
+		@media (max-width: $sm - 1) {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	&__prop {
+		padding-bottom: 12px;
+		font-weight: 550;
+		span{
+			font-weight: 300;
+		}
+	}
+	&__value {
+		font-weight: 300;
+	}
+	&__value--color{
+		display: flex;
+	}
+
+	&__color{
+		width: 24px;
+		height: 24px;
+		background-color: #9D8C87;
+		margin-left: 20px;
+	}
+	&__value-choose-casing{
+		text-align: right;
+		position: relative;
+		@media (min-width: $lg){
+			width: 285px;
+		}
+		// top: 18px;
+		.btn.btn--light{
+			padding: 9px 15px;
+			@media (max-width: $xl - 1){
+				font-size: 14px;
+				padding: 9px 9px;
+				.icon{
+					flex: 0 0 auto;
+				}
+			}
+		}
+	}
+}
+
+.collections-details.specifications{
+	@media (max-width: $lg - 1){
+		display: block;
+		.collections-details__item{
+			display: block;
+		}
+		.collections-details__prop,.collections-details__value{
+			display: block;
+		}
+		.collections-details__value--color{
+			display: flex;
+			margin-bottom: 0px;
+		}
+	}
+}
+
+.specifications-section {
+	border-bottom: 1px solid #e7e7e7;
+	border-top: 1px solid #e7e7e7;
+	&:nth-of-type(1) {
+		border-top: transparent;
+		border-bottom: transparent;
+	}
+	&:last-of-type {
+		border-top: transparent;
+		border-bottom: transparent;
+	}
+	.collections-details__item {
+		@media (max-width: $lg - 1){
+			padding: 0px;
+			margin-bottom: 12px;
+		}
+		&:nth-child(1){
+			.collections-details__value, .collections-details__prop{
+				padding-top: 20px;
+				@media (max-width: $lg - 1){
+					padding: 0px;
+				}
+			}
+			.collections-details__prop{
+				padding-top: 20px;
+			}
+		}
+		&:last-child{
+			.collections-details__value, .collections-details__prop{
+				padding-bottom: 20px;
+				@media (max-width: $lg - 1){
+					padding: 0px;
+				}
+			}
+		}
+		@media (max-width: $lg - 1){
+			.collections-details__prop{
+				margin-bottom: 4px;
+				padding: 0px;
+			}
+		}
+	}
+}

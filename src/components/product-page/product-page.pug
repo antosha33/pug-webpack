@@ -1,0 +1,139 @@
++include-script('product-page')
+.product-page-wrap
+	.container
+		.product-page__header
+			.product-page__header-slider
+				include ../slider-with-fancy/slider-with-fancy
+			.product-page__header-sku
+				h2.collections-description__title Цвет
+				include ../slider-sku/slider-sku
+			.product-page__header-description
+				h2.collections-description__title Описание
+				.collections-description__content
+					+collections-content({
+						p: 'Новая большая серия офисных диванов БРИДЖ включает в себя модели с высокими и низкими боковыми панелями и спинками. Противоречивый дизайн сочетает в себе строгие линии снаружи и более мягкие внутри, элегантные тонкие опоры и объемные мягкие элементы. Высокие диваны прекрасно подойдут для зонирования open-spaces, создания комфортных приватных зон для общения и работы.',
+						phidden: 'Новая большая серия офисных диванов БРИДЖ включает в себя модели с высокими и низкими боковыми панелями и спинками. Противоречивый дизайн сочетает в себе строгие линии снаружи и более мягкие внутри, элегантные тонкие опоры и объемные мягкие элементы. Высокие диваны прекрасно подойдут для зонирования open-spaces, создания комфортных приватных зон для общения и работы. Новая большая серия офисных диванов БРИДЖ включает в себя модели с высокими и низкими боковыми панелями и спинками. Противоречивый дизайн сочетает в себе строгие линии снаружи и более мягкие внутри, элегантные тонкие опоры и объемные мягкие элементы. Высокие диваны прекрасно подойдут для зонирования open-spaces, создания комфортных приватных зон для общения и работы. Новая большая серия офисных диванов БРИДЖ включает в себя модели с высокими и низкими боковыми панелями и спинками. Противоречивый дизайн сочетает в себе строгие линии снаружи и более мягкие внутри, элегантные тонкие опоры и объемные мягкие элементы. Высокие диваны прекрасно подойдут для зонирования open-spaces, создания комфортных приватных зон для общения и работы. Новая большая серия офисных диванов БРИДЖ включает в себя модели с высокими и низкими боковыми панелями и спинками. Противоречивый дизайн сочетает в себе строгие линии снаружи и более мягкие внутри, элегантные тонкие опоры и объемные мягкие элементы. Высокие диваны прекрасно подойдут для зонирования open-spaces, создания комфортных приватных зон для общения и работы.',
+					})
+			.product-page__header-price
+				.casing-picker__footer
+					.casing-picker__price 220 228 ₽
+					.casing-picker__discount
+						.casing-picker__discount-sum 73 280 ₽
+						.casing-picker__discount-int
+							+label({
+								mod: 'label--discount',
+								title: 'Скидка',
+								interest: '-25%'
+							})
+					.casing-picker__order
+						+counter-order({
+							title: "Добавить в корзину"
+						})
+			.product-page__header-features
+				h2.collections-description__title Характеристики
+				.product-page-details.collections-details.specifications
+					.product-page-details__item.collections-details__item
+						.collections-details__prop Цвет
+						.product-page-details__line-wrap
+							.product-page-details__line
+						.product-page-details__value.collections-details__value Бежевый
+					.product-page-details__item.collections-details__item
+						.collections-details__prop Обивка
+						.product-page-details__line-wrap
+							.product-page-details__line
+						.product-page-details__value.collections-details__value Ткань
+					.product-page-details__item.collections-details__item
+						.collections-details__prop Название обивки
+						.product-page-details__line-wrap
+							.product-page-details__line
+						.product-page-details__value.collections-details__value Oregon
+					.product-page-details__item.collections-details__item
+						.collections-details__prop Материал опор
+						.product-page-details__line-wrap
+							.product-page-details__line
+						.product-page-details__value.collections-details__value(colspan="2") Массив бука
+					.product-page-details__item.collections-details__item
+						.collections-details__prop Цвет опор
+						.product-page-details__line-wrap
+							.product-page-details__line
+						.product-page-details__value.collections-details__value(colspan="2") Натуральное дерево
+					.product-page-details__item.collections-details__item
+						.collections-details__prop Ш×Г×В <span>(мм)<span>
+						.product-page-details__line-wrap
+							.product-page-details__line
+						.product-page-details__value.collections-details__value(colspan="2")  1250 × 710 × 810
+					.product-page-details__item.collections-details__item
+						.collections-details__prop Вес <span>(кг)<span>
+						.product-page-details__line-wrap
+							.product-page-details__line
+						.product-page-details__value.collections-details__value(colspan="2")  35
+					.product-page-details__item.collections-details__item
+						.collections-details__prop Объём <span>(м3)<span>
+						.product-page-details__line-wrap
+							.product-page-details__line
+						.product-page-details__value.collections-details__value(colspan="2")  0,6
+					.product-page-details__item.collections-details__item
+						.collections-details__prop На складе
+						.product-page-details__line-wrap
+							.product-page-details__line
+						.product-page-details__value.collections-details__value(colspan="2")  нет
+					.product-page-details__item.collections-details__item
+						.collections-details__prop Срок производства
+						.product-page-details__line-wrap
+							.product-page-details__line
+						.product-page-details__value.collections-details__value(colspan="2")  от 15 рабочих дней
+					.product-page-details__item.collections-details__item
+						.collections-details__prop Цвета
+						.product-page-details__line-wrap
+							.product-page-details__line
+						.product-page-details__value.collections-details__value.collections-details__value--color
+							.collections-details__color-title Бежевый (Oregon 03)
+							.collections-details__color
+					.product-page-details__value-choose-casing.collections-details__value-choose-casing.js-casing-picker-toggle
+						.btn.btn--light Выбрать другую обивку
+							+icon('i-link')(style="width:20px; height: 20px; transform: rotate(90deg)")
+				//- table.collections-details.specifications
+				//- 	tbody.specifications-section
+				//- 		tr.collections-details__item
+				//- 			td.collections-details__prop Цвет
+				//- 			td.collections-details__value Бежевый
+				//- 		tr.collections-details__item
+				//- 			td.collections-details__prop Обивка
+				//- 			td.collections-details__value Ткань
+				//- 		tr.collections-details__item
+				//- 			td.collections-details__prop Название обивки
+				//- 			td.collections-details__value Oregon
+				//- 		tr.collections-details__item
+				//- 			td.collections-details__prop Цвета
+				//- 			td.collections-details__value.collections-details__value--color
+				//- 				.collections-details__color-title Бежевый (Oregon 03)
+				//- 				.collections-details__color
+				//- 			td.collections-details__value-choose-casing
+				//- 				a(href='#').btn.btn--light Выбрать другую обивку
+				//- 					+icon('i-link')(style="width:20px; height: 20px; transform: rotate(90deg)")
+				//- 	tbody.specifications-section
+				//- 		tr.collections-details__item
+				//- 			td.collections-details__prop Материал опор
+				//- 			td.collections-details__value(colspan="2") Массив бука
+				//- 		tr.collections-details__item
+				//- 			td.collections-details__prop Цвет опор
+				//- 			td.collections-details__value(colspan="2") Натуральное дерево
+				//- 	tbody.specifications-section
+				//- 		tr.collections-details__item
+				//- 			td.collections-details__prop Ш×Г×В <span>(мм)<span>
+				//- 			td.collections-details__value(colspan="2")  1250 × 710 × 810
+				//- 		tr.collections-details__item
+				//- 			td.collections-details__prop Вес <span>(кг)<span>
+				//- 			td.collections-details__value(colspan="2")  35
+				//- 		tr.collections-details__item
+				//- 			td.collections-details__prop Объём <span>(м3)<span>
+				//- 			td.collections-details__value(colspan="2")  0,6
+				//- 	tbody.specifications-section
+				//- 		tr.collections-details__item
+				//- 			td.collections-details__prop На складе
+				//- 			td.collections-details__value(colspan="2")  нет
+				//- 		tr.collections-details__item
+				//- 			td.collections-details__prop Срок производства
+				//- 			td.collections-details__value(colspan="2")  от 15 рабочих дней
+			.product-page__header-casing.product-page__header-section--full-with
+				include ../../components/casing-picker/casing-picker

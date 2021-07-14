@@ -1,0 +1,62 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.dealer-welcome {
+	&__title {
+		font-family: $f-sec;
+		font-weight: 300;
+		font-size: 32px;
+		margin-top: 60px;
+		margin-bottom: 30px;
+		@include lineheight(32, 38);
+		@media (max-width: $sm - 1){
+			margin-top: 30px;
+			font-size: 20px;
+			margin-bottom: 20px;
+		}
+	}
+	&__descr {
+		font-weight: 300;
+		font-size: 16px;
+		@include lineheight(16, 24);
+		p {
+			&:not(:last-child) {
+				margin-bottom: 30px;
+			}
+		}
+		margin-bottom: 60px;
+	}
+}
+
+.dealer-form {
+	border: 1px solid #000;
+	position: relative;
+	padding: 30px;
+	padding-top: 40px;
+	@media (max-width: $sm - 1){
+		border-left: none;
+		border-right: none;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	&__title {
+		font-family: $f-sec;
+		font-weight: 300;
+		font-size: 32px;
+		@include lineheight(32, 38);
+		position: absolute;
+		top: 0;
+		left: 15px;
+		padding: 0px 15px;
+		transform: translateY(-50%);
+		z-index: 1;
+		background-color: #fff;
+		@media (max-width: $sm - 1){
+			font-size: 20px;
+		}
+
+	}
+	&__file{
+		margin-bottom: 30px;
+	}
+
+}

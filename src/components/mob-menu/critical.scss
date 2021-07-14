@@ -1,0 +1,98 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.mob-menu {
+	font-family: $f-main;
+	position: fixed;
+	z-index: 205;
+	z-index: $zindex-fixed;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	transition: transform 0.3s;
+	background-color: #fff;
+	transform: translateX(0%);
+	&:not(.active) {
+		transform: translateX(-100%);
+	}
+}
+
+.mob-menu-top {
+	background-color: #000;
+	color: #fff;
+	padding: 10px 15px;
+	.mob-menu-close {
+		display: flex;
+		align-items: center;
+		font-size: 16px;
+		.icon {
+			stroke: #fff;
+			margin-right: 11px;
+		}
+	}
+}
+
+.mob-menu-container {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	height: 100%;
+	&__close {
+		position: absolute;
+		right: 16px;
+		top: 16px;
+		width: 24px;
+		height: 24px;
+		background-repeat: no-repeat;
+		background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='19.8419' y1='5.80709' x2='6.04986' y2='19.5991' stroke='%23281F26' stroke-width='2'/%3E%3Cline x1='19.8417' y1='19.599' x2='6.04971' y2='5.80701' stroke='%23281F26' stroke-width='2'/%3E%3C/svg%3E%0A");
+	}
+}
+
+.mob-menu-title {
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 15px;
+}
+.mob-menu-body-wrap {
+	display: flex;
+	overflow-x: hidden;
+	overflow-y: auto;
+	flex-direction: column;
+	height: 100%;
+	padding: 0;
+	padding: 12px 15px;
+}
+.mob-menu-body{
+	flex: 1 0 auto;
+}
+.mob-menu-contact{
+	flex: 0 0 auto;
+	.contacts{
+		display: block;
+		.contacts-mail, .contacts-phone{
+			margin: 0px;
+			margin-bottom: 16px;
+			.icon{
+				stroke: $c-link;
+			}
+		}
+		.contacts-phone{
+			.phone-popup{
+				display: none;
+			}
+			.trigger{
+				display: none;
+			}
+		}
+	}
+	.btn.btn--light{
+		font-size: 16px;
+	}
+	.footer-contacts__time{
+		margin-bottom: 16px;
+		.icon{
+			stroke: $c-link;
+		}
+	}
+}

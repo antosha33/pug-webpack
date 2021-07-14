@@ -1,0 +1,6 @@
+mixin content-type(args={})
+	+include-style('mixin__content-type')
+	if (args.title)
+		span.content-type(class=args.mod)=args.title
+	else 
+		span.content-type(class=args.mod)

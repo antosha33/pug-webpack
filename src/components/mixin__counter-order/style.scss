@@ -1,0 +1,26 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.counter-order {
+	display: flex;
+	justify-content: space-between;
+	.counter {
+		width: 100%;
+	}
+
+	.counter-input {
+		@media (max-width: $sm - 1) {
+				max-width: none;
+				width: 100%;
+		}
+	}
+
+	&__button {
+		margin-left: 8px;
+		flex: 0 0 auto;
+	}
+	&__title {
+		@media (max-width: $sm - 1) {
+			display: none;
+		}
+	}
+}

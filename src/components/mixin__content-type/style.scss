@@ -1,0 +1,33 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.content-type {
+	display: inline;
+	position: relative;
+	top: -2px;
+	margin-right: 4px;
+	font-size: 9px;
+	text-transform: uppercase;
+	font-weight: 500;
+	color: #fff;
+	z-index: 1;
+
+}
+.search-results-card__title{
+	.content-type{
+		&:last-of-type{
+			margin-right: 8px;
+		}
+	}
+}
+.content-type--text {
+	padding: 2px 6px;
+	background-color: $c-primary-2;
+	border-radius: 2px;
+}
+.content-type--lock {
+	padding: 2px 8px;
+	background-image: url("data:image/svg+xml,%3Csvg width='12' height='13' viewBox='0 0 12 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.44995 5.40031H2.44995V10.4003H9.44995V5.40031Z' fill='white' stroke='white' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.44989 4.89998V1.89998H8.44989V4.89998' stroke='white' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M6 7.5L6 9' stroke='%23AF226F' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: $c-primary-2;
+	border-radius: 2px;
+}

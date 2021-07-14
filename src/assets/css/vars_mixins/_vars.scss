@@ -1,57 +1,52 @@
 //- Grid
 //точки смены устройств
-//1366 - точка планшетов
-$xxl: 1461px;
-$xl: 1461px;
+$xxl: 1470px;
+$xl: 1470px;
 $lg: 1200px;
 $md: 1024px;
 $sm: 768px;
 $xs: 576px;
 
 //ширины контейнеров
-$xxl-container: 1461px;
-$xl-container: 1461px;
+$xl-container: 1470px;
 $lg-container: 1200px;
 $md-container: 1024px;
 $sm-container: 768px;
 $xs-container: 100%;
 
-$container-max-widths: (
-	xs: 100%,
+$grid-breakpoints: (
+	xs: 0,
 	sm: $sm,
 	md: $md,
 	lg: $lg,
 	xl: $xl,
 );
 
-$grid-breakpoints: (
-    xs: 0,
-    sm: $sm,
-    md: $md,
-    lg: $lg,
-    xl: $xl,
-    xxl: $xxl
+$container-max-widths: (
+	xs: 576px,
+	sm: 768px,
+	md: 1024px,
+	lg: 1200px,
+	xl: 1470px,
 );
 
 // 1/2 отступа между колонками
-$grid-gutter-width: 21px;
+$grid-gutter-width: 30px;
 
 //количество колонок сетки Добавить!
-$grid-columns: 24;
-
+$grid-columns: 12;
 
 // Fonts
 //$f-size: 16px;//base -> 1rem
 $f-size: 1rem;
-$f-main: 'Mont', Arial, Verdana, sans-serif;
-$f-sec: 'Mont', Arial, Verdana, sans-serif;
+$f-main: "HelveticaNeueCyr", Arial, Verdana, sans-serif;
+$f-sec: "Favorit Pro", Arial, Verdana, sans-serif;
 
 // Rem font-sizes
 // font-size: rem(20);
 @function rem($num) {
-  @return strip-unit($num) / 16 * 1rem;
+	@return strip-unit($num) / 16 * 1rem;
 }
-
 
 // Z-index master list
 $zindex-dropdown: 100 !default;
@@ -64,34 +59,43 @@ $zindex-tooltip: 170 !default;
 $zindex-preloader: 180 !default;
 
 // Colors
-$bg-main: #fff;
+$bg-main: #fafafa;
 $bg-hover: #f8f8f8;
 $c-hr: #ccc;
 $bg-inc-mark: #ff9;
 $c-sec: #d15645;
+$c-bg: #f4f4f4;
 
 //цвета текста
-$c-text: #131313;
-$c-text2: #828282;
+$c-text: #000;
+$c-text2: #281f26;
+$c-text-hover: #51424d;
 
-$c-link: #fff;
+$c-link: #4A4A4A;
 
-$c-gray: #BDBDBD;//цвет с вески
-
-//основные цвета макета
-$c-primary-black: #2A2C2C;
-$c-primary-white: #F6F6F6;
-$c-primary: #E35205;
-$c-primary-hover: lighten(#E35205, 50%);
-
+//primary
+$c-primary: #281f26;
+$c-primary-2: #af226f;
+$c-primary-2-hover: #cc468f;
+$c-primary-3-hover: #c93988;
+$c-grey: #919191;
+$c-grey-ligth: E0E0E0;
+$c-blue: #5dbbc5;
+$c-blue-hover: #6bc2cb;
 
 $c-error: #c74a2c;
-$c-trp: transparent;
+$c-primary-hover: #c74a2c;
+
+//background
+$c-bg-1: #FBFBFB;
+$c-bg-2: #F5F5F5;
+$c-bg-3: #E7E7E7;
+$c-bg-4: #BEBEBE;
+
+//common
 $blue: #234399;
-$red: #f45057;
+$red: #FF4F44;;
 $green: #379f2f;
 $yellow: #e8a12b;
 $white: #fff;
 $black: #000;
-
-

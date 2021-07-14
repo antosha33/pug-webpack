@@ -1,0 +1,5 @@
+mixin label(args={})
+	+include-style('mixin__label')
+	.label(class= args.mod)
+		span.label-title= args.title
+		span.label-interest= args.interest

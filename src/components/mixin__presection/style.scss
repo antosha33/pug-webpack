@@ -1,0 +1,9 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.presection-row{
+	&__title{
+		margin-bottom: 30px;
+		font-family: $f-sec;
+		font-size: 32px;
+		@include lineheight(32, 38)
+	}
+}

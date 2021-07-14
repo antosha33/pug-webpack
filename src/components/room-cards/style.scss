@@ -1,0 +1,74 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.room-cards-wrap {
+	margin-top: 30px;
+	@media (max-width: $sm - 1){
+		margin-top: 0px;
+	}
+}
+.room-cards {
+	display: flex;
+	flex-wrap: wrap;
+	@media (max-width: $sm - 1){
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+}
+.room-card {
+	padding: 30px 30px;
+	// margin-bottom: 0px;
+	width: 50%;
+	border: 1px solid transparent;
+	@media (max-width: $md - 1) {
+		width: 100%;
+		padding: 0px 10px;
+		margin-bottom: 30px;
+	}
+	&.half-width-card {
+		width: 25%;
+		flex-direction: column;
+		@media (max-width: $md - 1) {
+			width: 50%;
+		}
+	}
+	&__img {
+		margin-bottom: 20px;
+		display: block;
+	}
+	&__title {
+		text-transform: uppercase;
+		display: inline;
+		font-weight: 400;
+		font-size: 20px;
+		@include lineheight(20, 28);
+		@media (max-width: $xl - 1) {
+			font-size: 16px;
+		}
+	}
+	&__code {
+		display: inline;
+		font-weight: 300;
+		font-size: 16px;
+		@include lineheight(16, 24);
+		padding-left: 5px;
+	}
+	&__link {
+		color: #000;
+		@media (min-width: 1024px) {
+			&:hover {
+				color: #000;
+				cursor: pointer;
+				.room-card__title {
+					border-bottom: 1px solid #000;
+				}
+				.room-card__arrow {
+					stroke: #000;
+				}
+			}
+		}
+	}
+	@media (min-width: 1024px){
+		&:hover{
+			border: 1px solid #000;
+		}
+	}
+}

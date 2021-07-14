@@ -1,0 +1,463 @@
+include ../../utility/_globalVars
+include ../../utility/_mixins
+include ../../utility/_functions
+
+.slam-menu.js-slam-menu.catalog-menu
+	+nav({
+		title: '',
+		compress: false,
+		lvl1Title: 'Категории',
+		banner: true,
+		list: [
+			{
+				name: 'Диваны и кресла',
+				active: true,
+				lvl2Title: 'Коллекции',
+				list:[
+					{name: 'Алекто',
+					icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					},
+					dataimg: '/local/templates/html/images/catalog-menu-banner-1.jpg'
+					},
+					{name: 'Астро',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					},
+					dataimg: '/local/templates/html/images/catalog-menu-banner-2.jpg'},
+					{name: 'Бридж',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					},
+					dataimg: '/local/templates/html/images/catalog-menu-banner-3.jpg'
+					},
+					{name: 'Беверли',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					},
+					dataimg: '/local/templates/html/images/catalog-menu-banner-4.jpg'
+					},
+					{name: 'Бентли',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					},
+					dataimg: '/local/templates/html/images/catalog-menu-banner-1.jpg'
+					},
+					{name: 'Бизнес',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-2.jpg'},
+					{name: 'Боссо',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-2.jpg'},
+					{name: 'Бэлла',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-3.jpg'},
+					{name: 'Ва-банк',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-4.jpg'},
+					{name: 'Вейт',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-2.jpg'},
+					{name: 'Дакар',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-3.jpg'},
+					{name: 'Домино',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-4.jpg'},
+					{name: 'Зара',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-2.jpg'},
+					{name: 'Кит',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-3.jpg'},
+					{name: 'Космо',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-4.jpg'},
+					{name: 'Мальта',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-2.jpg'},
+					{name: 'Матрикс',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-3.jpg'},
+					{name: 'Молекула',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-4.jpg'},
+					{name: 'Микс',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-2.jpg'},
+					{name: 'Наполеон',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-3.jpg'},
+					{name: 'Нео',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-4.jpg'},
+					{name: 'Оксфорд',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-2.jpg'},
+					{name: 'Олли',					icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-3.jpg'},
+					{name: 'Оригами',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-4.jpg'},
+					{name: 'Офис',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-2.jpg'},
+					{name: 'Премьер',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-3.jpg'},
+					{name: 'Райт',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-4.jpg'},
+					{name: 'Ричмонд',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-2.jpg'},
+					{name: 'Руум',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-3.jpg'},
+					{name: 'Сити',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-4.jpg'},
+					{name: 'Флагман',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-2.jpg'},
+					{name: 'Холл',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-3.jpg'},
+					{name: 'Чаирмикс',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-4.jpg'},
+					{name: 'Честер',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-1.jpg'},
+					{name: 'Честер-люкс',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-2.jpg'},
+					{name: 'Эволюшн',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-3.jpg'},
+					{name: 'Элла',
+						icon:{
+						name: 'i-link',
+						width: '12px',
+						height: '12px',
+					}
+					,
+					dataimg: '/local/templates/html/images/catalog-menu-banner-4.jpg'}
+					]
+						},
+						{
+		name: 'Банкетки и пуфы',
+			lvl2Title: 'Коллекции',
+		list:[
+			{name: 'Алекто'},
+
+				{name: 'Бентли'},
+				{name: 'Бизнес'},
+				{name: 'Боссо'},
+				{name: 'Бэлла'},
+				{name: 'Ва-банк'},
+				{name: 'Вейт'},
+				{name: 'Дакар'},
+				{name: 'Домино'},
+				{name: 'Зара'},
+				{name: 'Кит'},
+				{name: 'Космо'},
+				{name: 'Мальта'},
+				{name: 'Матрикс'},
+				{name: 'Молекула'},
+				{name: 'Микс'},
+				{name: 'Наполеон'},
+				{name: 'Нео'},
+				{name: 'Оксфорд'},
+				{name: 'Олли'},
+				{name: 'Оригами'},
+				{name: 'Офис'},
+				{name: 'Премьер'},
+				{name: 'Райт'},
+				{name: 'Ричмонд'},
+				{name: 'Руум'},
+				{name: 'Сити'},
+				{name: 'Флагман'},
+				{name: 'Холл'},
+				{name: 'Чаирмикс'},
+				{name: 'Честер'},
+				{name: 'Честер-люкс'},
+				{name: 'Эволюшн'},
+				{name: 'Элла'}
+]
+	},
+		{
+		name: 'Мобильные перегородки',
+			lvl2Title: 'Коллекции',
+		list:[
+
+		{name: 'Ва-банк'},
+		{name: 'Вейт'},
+		{name: 'Дакар'},
+		{name: 'Домино'},
+		{name: 'Зара'},
+		{name: 'Кит'},
+		{name: 'Космо'},
+		{name: 'Мальта'},
+		{name: 'Матрикс'},
+		{name: 'Молекула'},
+		{name: 'Микс'},
+		{name: 'Наполеон'},
+		{name: 'Нео'},
+		{name: 'Оксфорд'},
+		{name: 'Олли'},
+		{name: 'Оригами'},
+		{name: 'Офис'},
+		{name: 'Премьер'},
+		{name: 'Райт'},
+		{name: 'Ричмонд'},
+		{name: 'Руум'},
+		{name: 'Сити'},
+		{name: 'Флагман'},
+		{name: 'Холл'},
+		{name: 'Чаирмикс'},
+		{name: 'Честер'},
+		{name: 'Честер-люкс'},
+		{name: 'Эволюшн'},
+		{name: 'Элла'}
+]
+	},
+{
+	name: 'Новинки',
+		lvl2Title: 'Коллекции',
+	list:[
+
+	{name: 'Ва-банк'},
+	{name: 'Вейт'},
+	{name: 'Дакар'},
+	{name: 'Домино'},
+	{name: 'Зара'},
+	{name: 'Кит'},
+	{name: 'Космо'},
+	{name: 'Мальта'},
+	{name: 'Матрикс'},
+	{name: 'Молекула'},
+	{name: 'Микс'},
+	{name: 'Наполеон'},
+	{name: 'Нео'},
+	{name: 'Оксфорд'},
+	{name: 'Олли'},
+	{name: 'Оригами'},
+	{name: 'Офис'},
+	{name: 'Премьер'},
+	{name: 'Райт'},
+	{name: 'Ричмонд'},
+	{name: 'Руум'},
+	{name: 'Сити'},
+	{name: 'Флагман'},
+	{name: 'Холл'},
+	{name: 'Чаирмикс'},
+	{name: 'Честер'},
+	{name: 'Честер-люкс'},
+	{name: 'Эволюшн'},
+	{name: 'Элла'}
+]
+	},
+	{
+		name: 'Хиты продаж',
+			lvl2Title: 'Коллекции',
+		list:[
+
+		{name: 'Ва-банк'},
+		{name: 'Вейт'},
+		{name: 'Дакар'},
+		{name: 'Домино'},
+		{name: 'Зара'},
+		{name: 'Кит'},
+		{name: 'Космо'},
+		{name: 'Мальта'},
+		{name: 'Матрикс'},
+		{name: 'Молекула'},
+		{name: 'Микс'},
+		{name: 'Наполеон'},
+		{name: 'Нео'},
+		{name: 'Оксфорд'},
+		{name: 'Олли'},
+		{name: 'Оригами'},
+		{name: 'Офис'},
+		{name: 'Премьер'},
+		{name: 'Райт'},
+		{name: 'Ричмонд'},
+		{name: 'Руум'},
+		{name: 'Сити'},
+		{name: 'Флагман'},
+		{name: 'Холл'},
+		{name: 'Чаирмикс'},
+		{name: 'Честер'},
+		{name: 'Честер-люкс'},
+		{name: 'Эволюшн'},
+		{name: 'Элла'}
+]
+	},
+		]
+}).header-menu

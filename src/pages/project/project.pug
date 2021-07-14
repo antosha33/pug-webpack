@@ -1,0 +1,51 @@
+extends ../../layout/layout
+
+block vars
+	- var pageTitle = 'Коллекции'
+	- var pageBodyClass = ''
+	- var dir = './'
+
+
+block premain
+	+page-header-section({
+		title: 'Компания по продаже газового оборудования',
+		colClasses: 'col-12',
+	})
+		+breadcrumb({
+			content1: 'Проекты',
+			href_content1: '',
+			content2: 'Компания по продаже газового оборудования',
+			href_content2: '',
+			content3: '',
+		})
+	+collections({
+		p: [
+			'Новая большая серия офисных диванов БРИДЖ включает в себя модели с высокими и низкими боковыми панелями и спинками. Противоречивый дизайн сочетает в себе строгие линии снаружи и более мягкие внутри, элегантные тонкие опоры и объемные мягкие элементы. Высокие диваны прекрасно подойдут для зонирования open-spaces, создания комфортных приватных зон для общения и работы.'
+		],
+		details: true,
+	})
+	include ../../components/goods-slider/goods-slider
+
+
+block main
+	.no-critical.no-critical--preloader
+		//- include ../../components/collections/collections
+		//- include ../../components/about-section/about-section
+		//- include ../../components/news-section/news-section
+		//- include ../../components/achievments/achievments
+
+
+
+
+
+block componentsCriticalStyles
+	+componentsCriticalStyles-includer()
+block vendorScripts
+	+vendorScripts-includer()
+block componentsStyles
+	+style-includer()
+
+block componentsScripts
+	+componentsScripts-includer()
+
+block scripts

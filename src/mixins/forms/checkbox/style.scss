@@ -1,0 +1,122 @@
+// ICON STATE
+$default: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='3.5' y='3.5' width='17' height='17' stroke='%23828282'/%3E%3C/svg%3E%0A");
+$default-hover: url("data:image/svg+xml,%3Csvg width='23' height='20' viewBox='0 0 23 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 6.06543L10.1541 16.9113C8.98255 18.0829 7.08306 18.0829 5.91149 16.9113L1.37509 12.3749' stroke='white' stroke-width='3'/%3E%3Cpath d='M21 1.06543L10.1541 11.9113C8.98255 13.0829 7.08306 13.0829 5.91149 11.9113L1.37509 7.37491' stroke='white' stroke-width='3'/%3E%3Cpath d='M21 3.06543L10.1541 13.9113C8.98255 15.0829 7.08306 15.0829 5.91149 13.9113L1.37509 9.37491' stroke='%234A4A4A' stroke-width='3'/%3E%3C/svg%3E%0A");
+$default-checked: url("data:image/svg+xml,%3Csvg width='23' height='20' viewBox='0 0 23 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 6.06543L10.1541 16.9113C8.98255 18.0829 7.08306 18.0829 5.91149 16.9113L1.37509 12.3749' stroke='white' stroke-width='3'/%3E%3Cpath d='M21 1.06543L10.1541 11.9113C8.98255 13.0829 7.08306 13.0829 5.91149 11.9113L1.37509 7.37491' stroke='white' stroke-width='3'/%3E%3Cpath d='M21 3.06543L10.1541 13.9113C8.98255 15.0829 7.08306 15.0829 5.91149 13.9113L1.37509 9.37491' stroke='%234A4A4A' stroke-width='3'/%3E%3C/svg%3E%0A");
+$disabled: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.5 1H16.5C20.0899 1 23 3.91015 23 7.5V16.5C23 20.0899 20.0899 23 16.5 23H7.5C3.91015 23 1 20.0899 1 16.5V7.5C1 3.91015 3.91015 1 7.5 1Z' fill='%23F4F7F2' stroke='%23E4E9E1' stroke-width='2'/%3E%3C/svg%3E%0A");
+$disabled-checked: url("data:image/svg+xml,%3Csvg width='23' height='20' viewBox='0 0 23 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 6.06543L10.1541 16.9113C8.98255 18.0829 7.08306 18.0829 5.91149 16.9113L1.37509 12.3749' stroke='white' stroke-width='3'/%3E%3Cpath d='M21 1.06543L10.1541 11.9113C8.98255 13.0829 7.08306 13.0829 5.91149 11.9113L1.37509 7.37491' stroke='white' stroke-width='3'/%3E%3Cpath d='M21 3.06543L10.1541 13.9113C8.98255 15.0829 7.08306 15.0829 5.91149 13.9113L1.37509 9.37491' stroke='%23BDBDBD' stroke-width='3'/%3E%3C/svg%3E%0A");
+.checkbox {
+	position: relative;
+	input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		visibility: hidden;
+		width: 1px;
+		height: 1px;
+		opacity: 0;
+	}
+	label {
+		display: block;
+		// padding: 0 0 0 32px;
+		cursor: pointer;
+		color: $c-text;
+		font-size: 15px;
+		font-weight: normal;
+		display: flex;
+	}
+	label:before {
+		// position: absolute;
+		// top: 0;
+		// left: 0;
+		// width: 18px;
+		// height: 18px;
+		// border: 1px solid #828282;
+		// content: "";
+	}
+	input:not(:disabled) ~ label:hover .checkbox__label {
+		border: 1px solid $c-link;
+	}
+	input:disabled ~ label {
+		cursor: no-drop;
+	}
+	input:checked ~ label .checkbox__label:after {
+		background-image: $default-checked;
+		width: 23px;
+		height: 20px;
+		position: absolute;
+		left: 0;
+		top: calc(50% - 12px);
+		content: "";
+	}
+
+	input:checked ~ label .icon {
+		transform: rotate(180deg);
+	}
+	input:disabled ~ label .checkbox__label {
+		border: 1px solid #BDBDBD;
+		background-color: grey;
+	}
+	input:checked:disabled ~ label .checkbox__label:after {
+		background-image: $disabled-checked;
+		width: 23px;
+		height: 20px;
+		position: absolute;
+		left: 0;
+		top: calc(50% - 12px);
+		content: "";
+	}
+	&__label{
+		flex: 0 0 auto;
+		width: 24px;
+		height: 24px;
+		position: relative;
+		width: 18px;
+		height: 18px;
+		border: 1px solid #828282;
+		margin-right: 11px;
+		position: relative;
+		top: 3px;
+		&:before{
+		position: absolute;
+		content: '';
+			
+		}
+	}
+	&__descr{
+		font-weight: 400;
+		font-size: 16px;
+		@include lineheight(16,24);
+	}
+}
+
+.checkbox--sort {
+	// display: none;
+}
+
+.checkbox--sort:checked{
+	display: block;
+}
+
+.checkbox-label--sort {
+	.checkbox__title {
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		@include lineheight(16,24);
+		margin-right: 30px;
+	}
+	.checkbox__descr{
+		color: $c-link;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		white-space: nowrap;
+	}
+	.icon{
+		flex: 0 0 auto;
+		position: relative;
+		left: 8px;
+		stroke: $c-link;
+	}
+}

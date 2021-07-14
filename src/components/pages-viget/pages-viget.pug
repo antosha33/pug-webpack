@@ -1,82 +1,58 @@
 -
 	var pages = [
+		{name: 'Эталонная страница', link: 'etalon'},
+		{name: 'Новости', link: 'news'},
+		{name: 'Новость', link: 'article'},
 		{name: 'Главная', link: 'index'},
-		{name: 'Главная(тест gps)', link: 'index_gps'},
-		{name: 'Категории', link: 'category'},
-		{name: 'Каталог - коллекции', link: 'catalog-collections'},
-		{name: 'Каталог - товары', link: 'catalog-products'},
-		{name: 'Каталог - избранное', link: 'catalog-favourite'},
-		{name: 'Текстовая', link: 'etalon'},
-		{name: 'О компании', link: 'about'},
+		{name: 'Каталог', link: 'catalog'},
+		{name: 'Коллекции', link: 'collections'},
+		{name: 'Шоу-рум', link: 'room'},
+		{name: '3D модели', link: '3dmodel'},
+		{name: 'Корзина', link: 'cart'},
+		{name: 'Обивки', link: 'casing'},
 		{name: 'Контакты', link: 'contacts'},
-		{name: 'Новости', link: 'news-list'},
-		{name: 'Новость', link: 'news-page'},
-		{name: 'Проекты', link: 'projects-list'},
-		{name: 'Проект', link: 'project-page'},
-		{name: 'Шоу-рум', link: 'showroom'},
+		{name: 'Дилерам', link: 'dealer'},
+		{name: 'Заказ оформлен', link: 'order-success'},
+		{name: 'Рекламации', link: 'reclamation'},
+		{name: 'Сертификаты', link: 'sertificates'},
+		{name: 'Карточка товара', link: 'product-page'},		
+		{name: 'Остатки товара', link: 'category'},		
+		{name: 'Проекты', link: 'projects'},
+		{name: 'Проект', link: 'project'},
+		{name: 'Коллекции-разводная', link: 'catalog-collections'},
+		{name: 'Поиск', link: 'search-result'},
 		{name: '404', link: '404'},
-		{name: '404 2', link: '404_2'},
-		{name: '404 3', link: '404_3'},
-		{name: '404 4', link: '404_4'},
-		{name: 'Отзывы', link: 'comments'},
-		{name: 'Дизайн-проект', link: 'design-project'},
-		{name: 'Доставка', link: 'delivery'},
-		{name: 'Поиск', link: 'search-page'},
-		{name: 'Кабинет - история', link: 'personal-history'},
-		{name: 'Кабинет - личные данные', link: 'personal-data'},
-		{name: 'Корзина', link: 'basket'},
-		{name: 'Корзина - пустая', link: 'basket-empty'},
-		{name: 'Спасибо страница', link: 'thank_you'},
-		{name: 'Бренды - все', link: 'brands-list'},
-		{name: 'Бренды - страна', link: 'brands-list-single'},
-		{name: 'Бренд - с товарами', link: 'brand-page'},
-		{name: 'Бренд - с формой заказа', link: 'brand-page-v2'},
-
-		{name: 'Карта товара - не диван', link: 'product-page-v1'},
-		{name: 'Карта товара - диван', link: 'product-page-v2'},
-
-		{name: 'Карта коллекции - премиум', link: 'collection-page-premium'},
-		{name: 'Карта коллекции - диван', link: 'collection-page-v2'},
-		{name: 'Карта коллекции - не диван', link: 'collection-page-v1'},
-
-
-		// {name: 'UI KIT', link: 'ui-kit'},
-
-		// {name: '404', link: '404'},
-		// {name: '500', link: '500'},
-		// {name: 'Карта сайта', link: 'sitemap'}
 	]
+	pages.sort(function(a, b){
 
-	// pages.sort(function(a, b){
-	//
-	// 	var nameA=a.name.toLowerCase();
-	// 	var nameB=b.name.toLowerCase();
-	//
-	// 	//- if (nameA < nameB) {
-	// 	//- 	return -1
-	// 	//- } else if (nameA > nameB) {
-	// 	//- 	return 1
-	// 	//- } else {
-	// 	//- 	return 0 // Никакой сортировки
-	// 	//- }
-	// });
+		var nameA=a.name.toLowerCase();
+		var nameB=b.name.toLowerCase();
+
+		//- if (nameA < nameB) {
+		//- 	return -1
+		//- } else if (nameA > nameB) {
+		//- 	return 1
+		//- } else {
+		//- 	return 0 // Никакой сортировки
+		//- }
+	});
 
 +include-style('pages-viget')
 +include-script('pages-viget')
 
 
-+b.pages-viget
-	+e.__menu
-		+e('ul').__menu-list
+.pages-viget
+	.pages-viget__menu
+		ul.pages-viget__menu-list
 
 			each item in pages
-				+e('li').__menu-item
-					+e('a').__menu-link(href= './' + item.link + '.html')= item.name
-			//+e('li').__menu-item
-			//	+e('a').__menu-link(href= '') Задача
-			//+e('li').__menu-item
-			//	+e('a').__menu-link(href= '') Декомпозиция
-			//+e('li').__menu-item
-			//	+e('a').__menu-link(href= '') Дизайн
-	+e.__btn
+				li.pages-viget__menu-item
+					a.pages-viget__menu-link(href= '/local/templates/html/' + item.link + '.html')= item.name
+			//- +e('li').__menu-item
+			//- 	+e('a').__menu-link(href= '#') Задача
+			//- +e('li').__menu-item
+			//- 	+e('a').__menu-link(href= 'https://docs.google.com/spreadsheets/d/1L29rFHnabz2YLBGoqjCHneSVKFeVW56piUQwhe1PU4I/edit?usp=sharing') Декомпозиция
+			//- +e('li').__menu-item
+			//- 	+e('a').__menu-link(href= 'https://www.figma.com/file/aNyaOlMSbOfbhCgL9jYbyf/Veska?нnode-id=91%3A0&viewport=-4685%2C575%2C0.4862944185733795') Дизай
+	.pages-viget__btn
 		.media-pointer

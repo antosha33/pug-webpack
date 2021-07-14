@@ -1,0 +1,21 @@
+@import 'src/assets/css/vars_mixins/vars_mixins';
+
+.page-header-section {
+  padding: 0 0 20px;
+  border-bottom: 1px solid #000;
+  &__body {
+	  display: flex;
+	  align-items: flex-end;
+  }
+  &__id{
+	  font-family: $f-sec;
+	  font-weight: 300;
+	  font-size: 16px;
+	  margin-left: 10px;
+	  position: relative;
+  }
+  @media (max-width: $sm - 1){
+	margin-bottom: 8px;
+  }
+}
+

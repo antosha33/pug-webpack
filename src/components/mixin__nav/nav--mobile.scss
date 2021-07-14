@@ -1,0 +1,125 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.nav--mobile {
+	font-family: $f-main;
+	.nav-link {
+		display: block;
+		text-transform: uppercase;
+		color: #000;
+		font-weight: normal;
+		font-size: 16px;
+		@include lineheight(16, 24);
+		padding: 10px 0px;
+		position: relative;
+		.icon {
+			position: absolute;
+			right: 0;
+			stroke: $c-link;
+			top: calc(50% - 7px);
+		}
+		&.opened {
+			.icon {
+				transform: rotate(90deg);
+			}
+		}
+	}
+	.nav-lvl2 {
+		max-height: 0;
+		overflow: hidden;
+		&.opened {
+			max-height: 3000px;
+		}
+	}
+	.nav-lvl3 {
+		max-height: 0;
+		overflow: hidden;
+		position: relative;
+		&.opened {
+			max-height: 3000px;
+			&:after {
+				position: absolute;
+				content: "";
+				top: 0;
+				width: 100%;
+				left: 15px;
+				height: 1px;
+				background-color: #000;
+			}
+			&:before {
+				position: absolute;
+				content: "";
+				bottom: 0;
+				width: 100%;
+				left: 15px;
+				height: 1px;
+				background-color: #000;
+			}
+		}
+	}
+	.nav-lvl2-link {
+		padding-left: 15px;
+		font-weight: 300;
+		font-size: 14px;
+		display: block;
+		color: #000;
+		@include lineheight(14, 21);
+		text-transform: uppercase;
+		padding: 12px;
+		position: relative;
+		.icon {
+			position: absolute;
+			right: 0;
+			stroke: $c-link;
+			top: calc(50% - 7px);
+		}
+		&.opened {
+			.icon {
+				transform: rotate(90deg);
+			}
+		}
+	}
+	.nav-lvl3-link {
+		padding-left: 15px;
+		font-weight: 300;
+		font-size: 14px;
+		display: flex;
+		height: 52px;
+		align-items: center;
+		align-items: center;
+		color: #000;
+		@include lineheight(14, 21);
+		.nav-lvl3-img {
+			margin: 0px;
+			margin-right: 16px;
+		}
+	}
+	.nav-item-img-wrap {
+		width: 44px;
+		height: 44px;
+	}
+	.nav-lvl3-item {
+		display: none;
+		&:nth-child(-n + 8) {
+			display: block;
+		}
+	}
+
+	.nav-lvl3-list {
+		&.show-all {
+			.nav-lvl3-item {
+				display: block;
+			}
+		}
+	}
+	.show-more {
+		display: none;
+		padding: 10px 0px;
+		align-items: center;
+		justify-content: center;
+		.icon {
+			margin-left: 8px;
+			stroke: $c-link;
+			transform: rotate(90deg);
+		}
+	}
+}

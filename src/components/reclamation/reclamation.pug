@@ -1,0 +1,254 @@
++include-style('reclamation')
++include-script('reclamation')
+.reclamation-wrap.js-reclamation-tabs
+	.container
+		.row
+			.col-md-8.offset-md-2
+				+tabs({
+					mod: 'tab-list--full-width',
+					tabList: [
+						{
+							title: 'Оформить рекламацию',
+							dataTarget: 'tab-1'
+						},
+												{
+							title: 'Правила оформления',
+							dataTarget: 'tab-2'
+						},
+					]
+				})
+				form.bv-form.reclamation-form(data-tab="tab-1").reclamation-tab
+					.reclamation-form__block
+						.reclamation-form__item
+							+input({
+								label: 'Дата',
+								type: 'text',
+								name: false,
+								small: true,
+								placeholder: '20/10/2020',
+								fg_mod: 'form-group--light',
+								mod: 'form-control--light',
+								required: true,
+							})(disabled="true")
+						.reclamation-form__item
+							+input({
+								label: 'Контактное лицо',
+								type: 'text',
+								name: false,
+								small: true,
+								placeholder: 'ФИО',
+								fg_mod: 'form-group--light',
+								mod: 'form-control--light',
+								required: true,
+								pattern: false,
+								validation: {
+									message: 'Обязательное поле',
+									regexp: 'Неверный формат',
+									emailaddress: ' ',
+									identical: false
+								}
+							})
+						.reclamation-form__item
+							+input({
+								label: 'Название организации',
+								type: 'text',
+								name: false,
+								small: true,
+								placeholder: '',
+								fg_mod: 'form-group--light',
+								mod: 'form-control--light',
+								required: false,
+								pattern: false,
+								validation: {
+									message: 'Обязательное поле',
+									regexp: 'Неверный формат',
+									emailaddress: ' ',
+									identical: false
+								}
+							})
+						.reclamation-form__item
+							+input({
+								label: 'Контактный телефон',
+								type: 'tel',
+								name: false,
+								small: true,
+								placeholder: '+ 7 (XXX) XXX-XX-XX',
+								fg_mod: 'form-group--light',
+								mod: 'form-control--light',
+								required: true,
+								pattern: 'phone',
+								validation: {
+									message: 'Обязательное поле',
+									regexp: 'Неверный формат',
+									emailaddress: '',
+									identical: false
+								}
+							})
+						.reclamation-form__item
+							+input({
+								label: 'Email',
+								type: 'email',
+								name: false,
+								small: true,
+								placeholder: 'example@example.com',
+								fg_mod: 'form-group--light',
+								mod: 'form-control--light',
+								required: true,
+								pattern: true,
+								validation: {
+									message: 'Обязательное поле',
+									regexp: 'Неверный формат',
+									emailaddress: '',
+									identical: false
+								}
+							})
+						.reclamation-form__item
+							+input({
+								label: 'Город',
+								type: 'text',
+								name: false,
+								small: true,
+								placeholder: '',
+								fg_mod: 'form-group--light',
+								mod: 'form-control--light',
+								required: false,
+								pattern: false,
+								validation: {
+									message: 'Обязательное поле',
+									regexp: 'Неверный формат',
+									emailaddress: ' ',
+									identical: false
+								}
+							})
+					.reclamation-form__block
+						.reclamation-form__item
+							+input({
+								label: 'Дата накладной',
+								type: 'text',
+								name: false,
+								small: true,
+								placeholder: 'XX/XX/XX',
+								fg_mod: 'form-group--light',
+								mod: 'form-control--light',
+								required: false,
+								pattern: false,
+								validation: {
+									message: 'Обязательное поле',
+									regexp: 'Неверный формат',
+									emailaddress: ' ',
+									identical: false
+								}
+							})
+						.reclamation-form__item.half-width
+							+input({
+								label: 'Номер счёта с заказом',
+								type: 'text',
+								name: false,
+								small: true,
+								placeholder: '',
+								fg_mod: 'form-group--light',
+								mod: 'form-control--light',
+								required: false,
+								pattern: false,
+								validation: {
+									message: 'Обязательное поле',
+									regexp: 'Неверный формат',
+									emailaddress: ' ',
+									identical: false
+								}
+							})
+						.reclamation-form__item.half-width
+							+input({
+								label: 'Количество товара с браком',
+								type: 'text',
+								name: false,
+								small: true,
+								placeholder: '',
+								fg_mod: 'form-group--light',
+								mod: 'form-control--light',
+								required: false,
+								pattern: false,
+								validation: {
+									message: 'Обязательное поле',
+									regexp: 'Неверный формат',
+									emailaddress: ' ',
+									identical: false
+								}
+							})
+						.reclamation-form__item
+							+input({
+								label: 'Наименование изделия (как в счёте)',
+								type: 'text',
+								name: false,
+								small: true,
+								placeholder: '',
+								fg_mod: 'form-group--light',
+								mod: 'form-control--light',
+								required: false,
+								pattern: false,
+								validation: {
+									message: 'Обязательное поле',
+									regexp: 'Неверный формат',
+									emailaddress: ' ',
+									identical: false
+								}
+							})
+						.reclamation-form__item
+							+input({
+								label: 'Цвет обивки',
+								type: 'text',
+								name: false,
+								small: true,
+								placeholder: '',
+								fg_mod: 'form-group--light',
+								mod: 'form-control--light',
+								required: false,
+								pattern: false,
+								validation: {
+									message: 'Обязательное поле',
+									regexp: 'Неверный формат',
+									emailaddress: ' ',
+									identical: false
+								}
+							})
+						.reclamation-form__item.full-with
+							+input({
+								label: 'Описание дефекта',
+								type: 'text',
+								name: false,
+								small: true,
+								placeholder: '',
+								fg_mod: 'form-group--light',
+								mod: 'form-control--light',
+								required: false,
+								pattern: false,
+								validation: {
+									message: 'Обязательное поле',
+									regexp: 'Неверный формат',
+									emailaddress: ' ',
+									identical: false
+								}
+							})
+					.reclamation-form__attachment
+						span.reclamation-form__attachment-title Фото/видео дефекта
+						span.reclamation-form__attachment-descr Можно загрузить до 7 файлов, общим размером до 256 Мбайт.
+						.reclamation-form__file
+							+input-file({
+								title: 'Прикрепить файл'
+							}) 
+					.reclamation-form__submit
+						button.btn.btn--primary(data-submit="true") Оформить рекламацию
+				.reclamation-description(data-tab="tab-2").reclamation-tab
+					.reclamation-description__title Обнаружили брак? Что делать
+					.reclamation-description__content
+						p В первых числах января 2014 года в Кельне пройдет долгожданная выставка IMM Cologne 2014. Ежегодно это событие объединяет под одной крышей в здании площадью 280 тыс. кв. м более 1000 экспонентов и свыше 100 тыс. посетителей. 
+						p IMM Cologne представляет собой крупнейший в мире Мебельный Салон и огромнейший выставочный проект, посвященный мебельной тематике. По географии и числу посетителей ему практически нет равных. Лишь Миланский и Парижский Мебельные салоны могут приблизиться к результатам IMM Cologne. 
+						p Даты проведения выставки в 2014 году припадают на 13-19 января. В это же время здесь проходит выставка дизайна интерьеров LivingInteriors 2014.
+						p Данное мероприятие с огромным нетерпением ожидает вся мировая мебельная промышленность. Специалисты собираются, обсуждают и анализируют новейшие тенденции и модные направления дизайна интерьеров в целом и изготовления мебели в частности. Здесь можно почерпнуть немало интересного. Например, какая компания нашла наиболее эффективный путь развития? Или какие тренды уже устарели, а каким только предстоит стать модными в грядущем сезоне? Международная выставка IMM Cologne 2014 – это именно то место, где можно получить ответы на все эти вопросы. 
+						p Тематикой выставки по традиции является дизайн и оформление помещений, строительство, деревообработка и мебельная промышленность.
+					.reclamation-print
+						.reclamation-print__button
+							.btn.btn--light Скачать
+								+icon('i-download-2')(style="width: 24px; height: 24px;")
+							.btn.btn--light Распечатать
+								+icon('i-print')(style="width: 24px; height: 24px")

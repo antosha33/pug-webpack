@@ -1,0 +1,55 @@
+extends ../../layout/layout
+
+block vars
+	- var pageTitle = 'Коллекции'
+	- var bodyClass = 'no-transition'
+	- var dir = './'
+
+
+block premain
+	+page-header-section({
+		title: 'Коллекция Бридж',
+		colClasses: 'col-12',
+	})
+		+breadcrumb({
+			content1: 'Каталог',
+			href_content1: '',
+			content2: 'Коллекции',
+			href_content2: '',
+			content3: 'Коллекция Бридж',
+		})
+	//- include ../../components/room-index-slider/room-index-slider
+	+collections({
+		p: [
+			'Новая большая серия офисных диванов БРИДЖ включает в себя модели с высокими и низкими боковыми панелями и спинками. Противоречивый дизайн сочетает в себе строгие линии снаружи и более мягкие внутри, элегантные тонкие опоры и объемные мягкие элементы. Высокие диваны прекрасно подойдут для зонирования open-spaces, создания комфортных приватных зон для общения и работы.',
+			'Диваны коллекции БРИДЖ можно соединять друг с другом. Например, можно установить общую боковую панель для двух диванов или кресел, дополнить их столиком и получится обеденная зона для корпоративного кафе или более комфортная переговорная зона.',
+			'Низкие модели впишутся в интерьер лаунж-зон, а также могут дополнить интерьер современной квартиры. При соединении двух диванов устанавливается одна пара опор для соседних элементов. При использовании такого подхода в креплении сохраняется визуальная легкость конструкции без риска снижения ее прочности и надежности.'
+		],
+		utp: true
+	})
+	include ../../components/model-row/model-row
+	include ../../components/materials/materials
+
+
+block main
+	.no-critical.no-critical--preloader
+		//- include ../../components/collections/collections
+		//- include ../../components/about-section/about-section
+		//- include ../../components/news-section/news-section
+		//- include ../../components/achievments/achievments
+
+
+
+
+
+block componentsCriticalStyles
+	+componentsCriticalStyles-includer()
+block vendorScripts
+	+vendorScripts-includer()
+block componentsStyles
+	+style-includer()
+
+block componentsScripts
+	+componentsScripts-includer()
+
+block scripts

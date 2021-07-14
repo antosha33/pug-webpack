@@ -1,0 +1,56 @@
+extends ../../layout/layout
+
+block vars
+	- var pageTitle = 'Эталонная страница'
+	- var pageBodyClass = ''
+	- var dir = './'
+
+
+block premain
+
+	+page-header-section({
+		title: 'Заголовок H1',
+		colClasses: 'col-12',
+	})
+		+breadcrumb({
+			content1: 'Эталонная страница',
+			href_content1: '',
+			content2: '',
+			href_content2: '',
+			content3: '',
+		})
+
+block main
+	.no-critical.no-critical--preloader
+		+content-styles()
+		.container
+			.row
+				.col-12.col-lg-10.offset-lg-1
+					.etalon-header-img
+						.img-wrap
+							img(src="images/news-img-1.jpg")
+						.etalon-header-img__content
+							.etalon-header-img__date 21.12.2020 Новость
+							.etalon-header-img__title Международная выставка IMM Cologne 2014
+							.etalon-header-img__descr В первых числах января 2014 года в Кельне пройдет долгожданная выставка IMM Cologne 2014
+
+				.col-12.offset-lg-3.col-lg-6
+					.content
+						include ../../components/content/section-images
+						include ../../components/content/section-typography
+						include ../../components/content/section-list
+					include ../../components/slider-with-fancy/slider-with-fancy
+
+
+
+block componentsCriticalStyles
+	+componentsCriticalStyles-includer()
+block vendorScripts
+	+vendorScripts-includer()
+block componentsStyles
+	+style-includer()
+
+block componentsScripts
+	+componentsScripts-includer()
+
+block scripts

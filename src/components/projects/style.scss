@@ -1,0 +1,12 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.projects{
+	display: flex;
+	flex-wrap: wrap;
+	& > div{
+		width: 50%;
+		@media (max-width: $sm - 1){
+			width: 100%;
+		}
+	}
+}

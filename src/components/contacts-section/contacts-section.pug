@@ -1,0 +1,128 @@
++include-style('contacts-section')
+.contacts-wrap
+	.container
+		.row
+			.col-12.col-sm-6
+				.header-top__logo.header-top__logo--contacts
+					a.logo(href='/local/templates/html/index.html' aria-label='На главную')
+						+picture({
+							modClass: 'logo__img',
+							imgBig: 'logo.svg',
+							imgSmall: 'logo.svg'
+						})
+				.contacts-section
+					.contacts-section__item
+						.contacts-section__block
+							.contacts-section__title Адрес:
+							.contacts-section__content (Склад, офис, производство, шоу-рум) Московская обл., Домодедово,Промзона Текстильщик, с12
+							.contacts-section__mobile-map
+								img(src="/local/templates/html/images/contacts-map.jpg")
+						.contacts-section__block
+							.contacts-section__title Схема проезда:
+							.contacts-section__content
+								a(href="#").btn.btn--light.btn-scheeme-download Скачать схему проезда
+									+icon('i-download')(style="width: 16px; height: 16px")
+					.contacts-section__item
+						.contacts-section__block
+							.contacts-section__title График работы офиса и шоу-рума:
+							.contacts-section__content 
+								span.time
+									span.time__icon
+										+icon('i-timer')(style='width: 24px; height: 24px;')
+									span.time__period Пн–Пт  9:00–18:00
+						.contacts-section__block
+							.contacts-section__title График работы склада:
+							.contacts-section__content
+								span.time
+									span.time__icon
+										+icon('i-timer')(style='width: 24px; height: 24px;')
+									span.time__period Пн–Пт  9:00–17:30
+					.contacts-section__item
+						.contacts-section__block
+							.contacts-section__title Электронная почта:
+							.contacts-section__content 
+								a(href="mailto:info@fabrikamvk.ru").contacts-mail
+									span.contacts__icon
+										+icon('i-mail-2')(style='width: 24px; height: 24px;')
+									span.contacts__content info@fabrikamvk.ru
+						.contacts-section__block
+							.contacts-section__title Телефон:
+							.contacts-section__content
+								a(tel="+7 (495) 646-06-05").contacts-phone
+									span.contacts__icon
+										+icon('i-phone')(style='width: 24px; height: 24px;')
+									span.contacts__content +7 (495) 646-06-05
+					.contacts-section__item
+						.contacts-section__block
+							.contacts-section__title Мы в соцсетях:
+							.contacts-section__content
+								include ../social/social
+						.contacts-section__block
+							.contacts-section__title GPS:
+							.contacts-section__content 55.438950, 37.724121
+			.col-12.col-sm-6
+				form.bv-form.get-in-touch-form
+					.get-in-touch-form__title Связаться с нами
+					+input({
+						label: 'Получатель',
+						type: 'text',
+						name: false,
+						small: true,
+						placeholder: 'ФИО',
+						fg_mod: 'form-group--light',
+						mod: 'form-control--light',
+						required: true,
+						pattern: false,
+						validation: {
+							message: 'Обязательное поле',
+							regexp: 'Неверный формат',
+							emailaddress: ' ',
+							identical: false
+						}
+					})
+					+input({
+						label: 'Email',
+						type: 'email',
+						name: false,
+						small: true,
+						placeholder: 'example@example.com',
+												fg_mod: 'form-group--light',
+						mod: 'form-control--light',
+						required: true,
+						pattern: true,
+						validation: {
+							message: 'Обязательное поле',
+							regexp: 'Неверный формат',
+							emailaddress: '',
+							identical: false
+						}
+					})
+					+input({
+						label: 'Контактный телефон',
+						type: 'tel',
+						name: false,
+						small: true,
+						placeholder: '+ 7 (XXX) XXX-XX-XX',
+						fg_mod: 'form-group--light',
+						mod: 'form-control--light',
+						required: true,
+						pattern: 'phone',
+						validation: {
+							message: 'Обязательное поле',
+							regexp: 'Неверный формат',
+							emailaddress: '',
+							identical: false
+						}
+					})
+					+textarea({
+						label: 'Сообщение (600/600)',
+						type: 'text',
+						fg_mod: 'form-group--light',
+						mod: 'form-control--light',
+						name: false,
+						small: false,
+						rows: 5
+					})
+					.btn.btn--primary(data-submit="true") Отправить сообщение
+	.contacts-map
+		img(src="/local/templates/html/images/contacts-map.jpg")

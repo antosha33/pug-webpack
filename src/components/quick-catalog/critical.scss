@@ -1,0 +1,47 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.quick-catalog-wrap{
+	margin-top: 60px;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000 ;
+	@media (max-width: $sm - 1){
+		margin-top: 30px;
+	}
+}
+.quick-catalog {
+	display: flex;
+	flex-wrap: wrap;
+	border-left: 1px solid #000;
+	position: relative;
+	justify-content: space-between;
+	&:after{
+		position: absolute;
+		content: '';
+		height: calc(100% + 250px);
+		width: 1px;
+		background-color: #000;
+		right: 0;
+		top: -300px;
+		z-index: 10;
+		@media (max-width: $sm - 1){
+			display: none;
+		}
+	}
+	&:before{
+		position: absolute;
+		content: '';
+		left: 50%;
+		height: calc(100% - 60px);
+		top: 50%;
+		transform: translateY(-50%);
+		width: 1px;
+		background-color: #000;
+		@media (max-width: $lg - 1){
+			display: none;
+		}
+	}
+
+	@media (max-width: $sm - 1){
+		border-left: none;
+	}
+}

@@ -1,0 +1,213 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.room-index-slider-wrap {
+	border-bottom: 1px solid #000;
+	@media (max-width: $sm - 1) {
+		border-top: 0px;
+		padding-bottom: 30px;
+	}
+	.index-slider {
+		margin-top: 0px;
+		@media (max-width: $sm - 1) {
+			margin-bottom: 0px;
+			border-top: 0px;
+			margin-left: -15px;
+			margin-right: -15px;
+		}
+		&__slide-text-wrap {
+			position: absolute;
+			width: 70%;
+			height: 50%;
+			bottom: 0;
+			left: 0;
+			background-color: rgba(0, 0, 0, 0.35);
+			padding: 60px;
+			color: #fff;
+			font-family: $f-sec;
+			z-index: 10;
+			font-style: normal;
+			font-weight: 300;
+			opacity: 0;
+			box-sizing: border-box;
+			@media (max-width: $sm - 1) {
+				width: 100%;
+				height: 120px;
+				padding: 0px 0px;
+				text-align: center;
+			}
+		}
+		&__slide-text-header {
+			text-transform: uppercase;
+			font-weight: 300;
+			font-family: $f-sec;
+			font-size: 40px;
+			padding-top: 16px;
+			@include lineheight(40, 48);
+			margin-bottom: 8px;
+			@media (max-width: $lg - 1) {
+				font-size: 20px;
+			}
+
+			@media (max-width: $sm - 1) {
+				height: 60px;
+				margin-bottom: 0px;
+			}
+		}
+
+		&__slide-text-footer {
+			font-size: 20px;
+			@include lineheight(20, 24);
+			max-width: 75%;
+			@media (max-width: $lg - 1) {
+				font-size: 16px;
+				margin-left: 0;
+			}
+			@media (max-width: $sm - 1) {
+				max-width: 100%;
+				left: 0;
+				right: 0;
+				background-color: $c-link;
+				height: 70px;
+				padding-top: 10px;
+				position: relative;
+				font-size: 14px;
+			}
+		}
+		&__slide-img-wrap {
+			position: relative;
+		}
+		.swiper-slide-prev,
+		.swiper-slide-next {
+			filter: saturate(0%);
+		}
+	}
+	.swiper-slide.index-slider__slide {
+		width: 828px;
+		display: flex;
+		perspective: 1000px;
+		@media (max-width: $sm - 1) {
+			padding-bottom: 60px;
+		}
+		.index-slider__slide-img-wrap {
+			transition: transform 0.3s linear;
+		}
+		@media (max-width: $md - 1) {
+			width: 80%;
+		}
+		@media (max-width: $sm - 1) {
+			width: 100%;
+		}
+	}
+
+	.swiper-slide-prev {
+		.index-slider__slide-img-wrap {
+			margin-left: auto;
+			@media (min-width: 768px) {
+				transition: transform 0.3s linear;
+				transform: scaleY(0.75);
+			}
+		}
+	}
+
+	.swiper-slide-next {
+		.index-slider__slide-img-wrap {
+			margin-right: auto;
+			@media (min-width: 768px) {
+				transition: transform 0.3s linear;
+				transform: scaleY(0.75);
+			}
+		}
+	}
+	.swiper-slide.index-slider__slide.swiper-slide-active {
+		.index-slider__img-wrap {
+			.index-slider__img {
+				max-height: 100%;
+			}
+		}
+		height: 100%;
+		position: relative;
+		.index-slider__slide-img-wrap {
+		}
+		.index-slider__slide-text-wrap {
+			opacity: 1;
+		}
+	}
+	.swiper-wrapper {
+		align-items: center;
+	}
+	.custom-swiper-btn__next-index-slider {
+		right: 0;
+	}
+	.custom-swiper-btn__prev-index-slider {
+		left: 0;
+	}
+	.mob-slider-footer {
+		justify-content: space-between;
+		@media (max-width: $sm - 1) {
+			display: flex;
+		}
+		
+	}
+	.mob-slider-footer--room{
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.mob-slide-prev,
+	.mob-slide-next {
+		width: 35%;
+		padding-bottom: 23%;
+		position: relative;
+		filter: saturate(0%);
+		display: none;
+		@media (max-width: $sm - 1) {
+			display: block;
+		}
+	}
+	.swiper-pagination {
+		position: relative;
+		display: block;
+		transform: translate(0);
+		bottom: 10px;
+		right: calc(100% - 828px);
+		@media (max-width: $sm - 1) {
+			bottom: auto;
+		}
+		.donut {
+			position: absolute;
+			right: 35px;
+			bottom: 0px;
+			display: block;
+			@media (max-width: $lg - 1) {
+				right: 0px;
+			}
+			@media (max-width: $sm - 1) {
+				position: relative;
+				display: block;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				right: 0px;
+			}
+		}
+	}
+	.mob-slide-img {
+		position: absolute;
+		max-width: 100%;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+	.pagination-wrap {
+		@media (max-width: $sm - 1) {
+			display: flex;
+			align-items: center;
+		}
+	}
+	.swiper-pagination-custom{
+		height: 0px;
+		margin-top: 0px;
+		@media (max-width: $sm - 1){
+			height: 50%;
+		}
+	}
+}

@@ -1,0 +1,12 @@
+mixin counter-order(args={})
+	+include-style('mixin__counter-order')
+	.counter-order
+		+counter({
+			max_value: 10,
+			min_value: 1,
+			baseStep: 1,
+			step: 1
+			})
+		.counter-order__button.btn.btn--order 
+			span.counter-order__title= args.title
+			+icon('i-add-to-cart')(style="width: 24px; height: 24px; stroke-width: 0px")

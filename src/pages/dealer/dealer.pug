@@ -1,0 +1,41 @@
+extends ../../layout/layout
+
+block componentsStyles
+	+style-includer()
+
+block vars
+	- var bodyClass = 'no-transition '
+	- var pageTitle = 'Дилерам'
+	- var dir = './'
+
+
+block premain
+	+page-header-section({
+		title: 'Дилерам',
+		colClasses: 'col-12',
+	})
+		+breadcrumb({
+			content1: 'Дилерам',
+			href_content1: '',
+			content2: '',
+			href_content2: '',
+			content3: '',
+		})
+
+
+block main
+	.no-critical.no-critical--preloader
+		include ../../components/dealer/dealer
+
+block componentsCriticalStyles
+	+componentsCriticalStyles-includer()
+block vendorScripts
+	+vendorScripts-includer()
+
+
+block componentsScripts
+	+componentsScripts-includer()
+
+block scripts
+	script(src="./js/vendor/masonry.min.js" defer)
+

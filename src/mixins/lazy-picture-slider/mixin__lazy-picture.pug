@@ -1,0 +1,43 @@
+mixin lazy-picture-slider(args= {})
+	//- ПРИМЕР
+		+lazy-picture-slider({
+			source: [
+				{
+					img: 'images/images/fs-slide-'+ args.count +'-xl.jpg',
+					placeholder: pixel,
+					media: 1024
+				}, {
+					img: 'images/images/fs-slide-'+ args.count +'-sm.jpg 1x',
+					placeholder: pixel,
+					media: 250
+				}
+			],
+			link: true,
+			link_class: '',
+			img: 'images/images/fs-slide-'+ args.count +'-xl.jpg',
+			placeholder: 'pixel,
+			img_mod: 'CLASS-img',
+			wrap_mod: 'CLASS-img-wrap'
+		})
+	-
+		args.img = !args.http && args.img === pixel ? pixel : SITE_TEMPLATE_PATH + args.img
+		args.placeholder = !args.http && args.placeholder === pixel ? pixel : SITE_TEMPLATE_PATH + args.placeholder
+	if (args.link)
+		a(class= args.link_class href=args.href || '#' aria-label='#')
+			picture.lazy-img-wrap(class= args.wrap_mod)
+				each source in args.source
+					-
+						source.img = !args.http && source.img === pixel ? pixel : SITE_TEMPLATE_PATH + source.img
+						source.placeholder = !args.http && source.placeholder === pixel ? pixel :  source.placeholder
+					source.swiper-lazy(data-srcset= source.img,  media='(min-width: ' + source.media + 'px)')
+				img.swiper-lazy(class= args.img_mod, data-src= args.img, alt='img')
+
+	else
+		picture.lazy-img-wrap(class= args.wrap_mod)
+			each source in args.source
+				-
+					source.img = !args.http && source.img === pixel ? pixel : SITE_TEMPLATE_PATH + source.img
+					source.placeholder = !args.http && source.placeholder === pixel ? pixel : source.placeholder
+				source(data-src= source.img, media='(min-width: ' + source.media + 'px)')
+			img.swiper-lazy(class= args.img_mod, data-srcset=args.pixel, data-src= args.img, alt='img')
+		//-span.preloader

@@ -1,0 +1,8 @@
+
+mixin color-picker-trigger(args={})
+	+include-style('mixin__color-picker-trigger')
+	+include-script('mixin__color-picker-trigger')
+	.color-picker-trigger
+		.color-picker-trigger__title= args.title
+		.color-picker-trigger__color(style="background-image: url(images/about-bg.jpg)")
+		.color-picker-trigger__value= args .code

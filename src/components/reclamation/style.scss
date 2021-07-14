@@ -1,0 +1,134 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.reclamation-wrap {
+	margin-top: 60px;
+	@media (max-width: $sm - 1){
+		margin-top: 30px;
+		.tab-list{
+			margin-top: 0px;
+		}
+	}
+}
+
+.reclamation-form {
+	border: 1px solid #000;
+	margin-top: 30px;
+	padding: 30px 0px;
+	@media (max-width: $sm - 1){
+		border: none;
+		margin-top: 0px;
+	}
+	&__block {
+		display: flex;
+		flex-wrap: wrap;
+		@media (max-width: $sm - 1){
+
+			&:first-child{
+				margin-bottom: 28px;
+			}
+		}
+	}
+	&__item {
+		width: 50%;
+		padding: 0px 30px;
+		@media (max-width: $sm - 1){
+			width: 100%;
+			padding: 0px;
+		}
+			margin-bottom: 28px;
+
+	}
+	&__attachment {
+		padding: 30px;
+		border-top: 1px solid #000;
+		border-bottom: 1px solid #000;
+		@media (max-width: $sm - 1){
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		span{
+			@media (max-width: $sm - 1){
+				display: block;
+				padding-left: 0px;
+				&:not(:last-of-type){
+					margin-bottom: 8px;
+				}
+			}
+		}
+	}
+	&__attachment-title {
+		font-weight: normal;
+		font-size: 20px;
+		@include lineheight(20, 28);
+		text-transform: uppercase;
+	}
+	&__attachment-descr {
+		font-weight: 300;
+		font-size: 14px;
+		@include lineheight(14, 17);
+		padding-left: 8px;
+	}
+	&__submit {
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-top: 30px;
+		@media (max-width: $sm - 1){
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	}
+	&__file {
+		margin-top: 30px;
+
+	}
+	.half-width {
+		width: calc(25% - 15px);
+		padding: 0px;
+		padding-left: 30px;
+		@media (max-width: $sm - 1){
+			padding: 0px;
+			width: 100%;
+		}
+	}
+	.full-with {
+		width: 100%;
+	}
+}
+.reclamation-description {
+	display: none;
+	margin-top: 30px;
+	&__title {
+		font-weight: 300;
+		font-size: 32px;
+		@include lineheight(32, 38);
+		@media (max-width: $sm - 1){
+			font-size: 20px;
+		}
+	}
+	&__content {
+		margin-top: 30px;
+		@media (max-width: $sm - 1){
+			margin-top: 20px;
+		}
+		p {
+			&:not(:last-child) {
+				margin-bottom: 30px;
+				@media (max-width: $sm - 1){
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+}
+
+.reclamation-print {
+	margin-top: 60px;
+	@media (max-width: $sm - 1){
+		margin-top: 30px;
+	}
+	&__button{
+		width: 100%;
+
+	}
+}
+

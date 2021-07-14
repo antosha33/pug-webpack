@@ -1,0 +1,75 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.btn.btn--tab {
+	padding: 7px 30px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	color: $white;
+	font-family: $f-main;
+	font-weight: 400;
+	border: 1px solid #e7e7e7;
+	background: #fff;
+	color: $c-link;
+	font-size: 20px;
+	position: relative;
+	box-sizing: border-box;
+	@include lineheight(20, 26);
+	@media (max-width: $sm - 1){
+		font-size: 16px;
+	}
+
+	&.active {
+		position: relative;
+		&:after{
+		position: absolute;
+		content: "";
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		height: calc(100% + 4px);
+		width: 100%;
+		border-top: 1px solid $c-link;
+		border-bottom: 1px solid $c-link;
+		background-color: transparent;
+	}
+		background-color: $c-link;
+		color: #fff;
+		// &:after {
+		// 	left: 0px;
+		// 	position: absolute;
+		// 	content: "";
+		// 	width: 100%;
+		// 	height: calc(100% - 4px);
+		// 	background-color: transparent;
+		// 	border-top: 1px solid #fff;
+		// 	border-bottom: 1px solid #fff;
+		// }
+		@media (min-width: 1024px) {
+			&:hover {
+				color: $c-link;
+			}
+		}
+
+
+		&:active {
+			background: #333333;
+		}
+	}
+	.icon {
+		stroke: #fff;
+		margin-left: 8px;
+	}
+	@media (min-width: 1024px) {
+		&:hover {
+			background-color: $c-bg-3;
+		}
+	}
+}
+
+.btn.btn--icon {
+	padding-right: 20px;
+}
+
+.btn.btn--tab.btn--fw {
+	width: 100%;
+}

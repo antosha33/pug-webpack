@@ -1,0 +1,28 @@
+mixin counter(args = {})
+	+include-style('mixin__counter')
+	+include-script('mixin__counter')
+	//-
+		+counter({
+			max_value: 2.6,
+			min_value: 0.2,
+			baseStep: 0.2,
+			step: 0.2
+		})
+	- var id = Math.floor(Math.random() * 9999999999)
+	.counter&attributes(attributes)
+		input.counter-input.js-counter-input(
+			readonly="readonly",
+			maxlength='5',
+			type='text',
+			value= args.value || '1',
+			data-min-value= args.min_value ||  '1',
+			data-suffix= args.unit,
+			data-max-value= args.max_value,
+			data-step= args.step,
+			data-base-step= args.baseStep,
+			name= 'NAME' + id, aria-label='Счетчик')
+		button.btn.btn--light.counter-btn.counter-minus.js-counter-minus(type='button')
+			+icon('i-minus')(style='width: 24px; height: 24px')
+		button.btn.btn--light.counter-btn.counter-plus.js-counter-plus(type='button')
+			+icon('i-plus')(style='width: 24px; height: 24px')
+		.disabled-text Выбрано максимальное количество

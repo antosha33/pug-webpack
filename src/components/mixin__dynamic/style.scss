@@ -1,0 +1,35 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.dynamic {
+	height: 10px;
+	margin-left: 3px;
+}
+.dynamic--up {
+	position: relative;
+	&:after {
+		position: absolute;
+		content: "";
+		background-image: url("data:image/svg+xml,%3Csvg width='7' height='10' viewBox='0 0 7 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.62155 3.50023L3.50023 1.37891L1.37891 3.50023M3.50023 2.50021L3.50023 9.50021' stroke='%237ABA52' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+		background-repeat: no-repeat;
+		width: 7px;
+		height: 10px;
+		top: 0;
+	}
+}
+.dynamic--down {
+	position: relative;
+	&:after {
+		position: absolute;
+		content: "";
+		background-image: url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.86373 6.99977L2.74241 9.12109L0.621094 6.99977M2.74241 7.99979L2.74241 0.999786' stroke='%23E33014' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+		background-repeat: no-repeat;
+		width: 7px;
+		height: 10px;
+		top: 0;
+	}
+}
+
+.dynamic--currencies{
+	margin-left: 8px;
+	width: 5px;
+	top: 4px;
+}

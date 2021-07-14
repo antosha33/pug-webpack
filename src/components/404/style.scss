@@ -1,24 +1,84 @@
 @import "src/assets/css/vars_mixins/vars_mixins";
-
+.not-found-wrap{
+	background-position-x: 100%;
+	background-position-y: 100%;
+	background-repeat: no-repeat;
+	background-color: $c-bg-2;
+	position: relative;
+	@media (max-width: $xl - 1){
+		background-size: 80%;
+	}
+	@media (max-width: $sm - 1){
+		background-size: 0px;
+	}
+	@media (max-width: $sm - 1){
+		&:after{
+			position: absolute;
+			content: 'FABRIKA MVK 404';
+			letter-spacing: 3.2px;
+			font-size: 28px;
+			height: 52px;
+			background-color: #fff;
+			top: 30px;
+			left: 0px;
+			display: flex;
+			align-items: center;
+			width: 100vw;
+			padding: 0px 15px;
+		}
+	}
+}
 .not-found {
-  &__inner {
-    text-align: center;
-    padding-bottom: 80px;
-  }
-  &__title {
-    font-size: 96px;
-    font-weight: 300;
-  }
-  &__img-wrap {}
-  &__img {
-    max-width: 100%;
-  }
-  p {
-    a {
-      color: $c-primary;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
+	margin-top: 140px;
+	padding-bottom: 248px;
+
+
+	@media (max-width: $sm - 1){
+		margin-top: 110px;
+		padding-bottom: 20px;
+	}
+	&__code {
+		font-style: normal;
+		font-weight: 300;
+		font-size: 120px;
+		@include lineheight(120, 144);
+		color: #000;
+	}
+	&__color {
+		color: #e0e0e0;
+	}
+	&__descr {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 32px;
+		line-height: 1.2;
+		@media (max-width: $sm - 1){
+			font-size: 20px;
+		}
+	}
+	&__descr-min {
+		margin-top: 12px;
+		margin-bottom: 30px;
+		font-weight: 300;
+		font-size: 20px;
+		@include lineheight(20, 28);
+		@media (max-width: $sm - 1){
+			font-size: 16px;
+		}
+	}
+	&__nav{
+		display: flex;
+		flex-direction: column;
+	}
+	.btn{
+
+		margin-top: 8px;
+		max-width: 222px;
+	}
+}
+.not-found-page{
+	.footer{
+		border-top: 1px solid #000;
+		margin-top: 0px;
+	}
 }

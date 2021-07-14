@@ -1,0 +1,20 @@
+mixin textarea(args = {})
+	- var id = Math.floor(Math.random() * 9999999999)
+	- var rows = args.rows ? args.rows : 1
+	.form-group(class= args.fg_mod)
+		if(args.label)
+			label.form-control-label(for= 'ID' + id)= args.label || 'label'
+				if (args.required)
+					span.label-required *
+		textarea.form-control(
+		id= 'ID' + id,
+		rows= rows,
+		class= args.mod,
+		name= 'NAME' + id,
+		aria-describedby= args.small && 'IDHELP' + id,
+		placeholder= args.placeholder || ' ',
+		required= args.required && false,
+		)&attributes(attributes)
+		if (args.small)
+			small.form-text.text-muted(id= 'IDHELP' + id)= args.small
+

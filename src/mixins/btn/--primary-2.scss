@@ -1,0 +1,19 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.btn.btn--primary-2 {
+	min-width: 100px;
+	padding: 8px 16px;
+	color: $white;
+	border-radius: 4px;
+	background: $c-blue;
+	font-size: 16px;
+	line-height: 20px;
+	@media (min-width: $lg) {
+		&:hover {
+			background: $c-blue-hover;
+		}
+		&:active {
+			background: $c-blue-hover;
+		}
+	}
+}

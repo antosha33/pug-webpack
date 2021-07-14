@@ -1,0 +1,16 @@
++modal({
+	id: 'modal-contacts',
+	mod: 'modal-feedback',
+	title: 'Контакты',
+	header: true
+})
+	.footer-contacts
+		.footer-contacts__time
+			span.time__icon
+				+icon('i-timer')(style='width: 24px; height: 24px;')
+			span.time__period Пн–Пт  9:00–18:00
+		include ../../contacts/contacts
+
+
+
+

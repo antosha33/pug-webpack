@@ -1,0 +1,72 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.materials__title {
+	margin-bottom: 60px;
+}
+.materials__descr {
+	margin-bottom: 60px;
+	margin-top: 60px;
+	font-weight: 300;
+	font-size: 16px;
+	@include lineheight(16, 24);
+	max-width: 750px;
+}
+.material-item {
+	display: flex;
+	align-items: center;
+
+	border-bottom: 1px solid #e7e7e7;
+	margin-bottom: 50px;
+	&__img {
+		@media (max-width: $sm - 1) {
+			width: 64px;
+			height: 64px;
+		}
+	}
+	&__title {
+		margin-left: 20px;
+		font-size: 20px;
+		@include lineheight(20, 30);
+		text-transform: uppercase;
+		max-width: 150px;
+		@media (max-width: $sm - 1) {
+			font-size: 16px;
+		}
+	}
+	&__icon {
+		margin-left: auto;
+	}
+	&:hover {
+		@media (min-width: 1024px) {
+			cursor: pointer;
+			.material-item__icon {
+				stroke: #000;
+			}
+			border-bottom: 1px solid #000;
+		}
+	}
+}
+
+.material-item-list {
+	display: flex;
+	flex-wrap: wrap;
+	.material-item-wrap {
+		width: 33.33%;
+		padding: 0px 30px;
+		padding-bottom: 10px;
+		@media (max-width: $lg - 1) {
+			width: 50%;
+		}
+		@media (max-width: $sm - 1) {
+			width: 100%;
+			padding: 0px 10px;
+			padding-bottom: 8px;
+		}
+	}
+}
+
+.material-item-list--3ds {
+	padding-top: 60px;
+	position: relative;
+	border-top: 1px solid #000;
+}

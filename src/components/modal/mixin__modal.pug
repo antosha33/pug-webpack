@@ -23,15 +23,7 @@ mixin modal(args = {})
 				if (args.header)
 					.modal-header
 						.modal-title= args.title
-						button.modal-close.anim-rotate(type="button" data-dismiss="modal" aria-label="Close")
-							+icon('i-close')
-				if (args.header_tabs)
-					.modal-header
-						.modal-tabs-titles.js-modal-titles
-							.modal-title.active Войти
-							.modal-title Регистрация
-							.modal-title.modal-title--forget Восстановление пароля
-						button.modal-close.anim-rotate(type="button" data-dismiss="modal" aria-label="Close")
-							+icon('i-close')
-				.modal-body.modal-tabs-body
+						button.modal-close(type="button" data-dismiss="modal" aria-label="Close")
+							+icon('i-close')(style='width: 26px; height: 26px;')
+				.modal-body
 					block

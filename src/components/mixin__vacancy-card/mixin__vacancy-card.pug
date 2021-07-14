@@ -1,0 +1,33 @@
+mixin vacancy-card(args={})
+	+include-style('mixin__vacancy-card')
+	+include-style('content')
+	+include-script('mixin__vacancy-card')
+	.vacancy-card
+		.vacancy-card-tab
+			.vacancy-card__title=args.title
+			.vacancy-card__employer=args.employer
+			.vacancy-card__trigger
+		.vacancy-card-content-wrap
+			.vacancy-card-content.content
+				.vacancy-card-content-top
+					.vacancy-card-content__employer ИП Пирогова
+					.vacancy-card-content__date создано 25 февраля
+				.vacancy-card-content__city Минск
+				p Аналогичная глава 12 в «старом» КоАП содержит 41 статью (за время действия кодекса 8 статей из нее были исключены), соответствующая глава 13 нового КоАП – 35.
+				span.list-title Обязанности
+				ul
+					li Управление действующими проектами
+					li Привлечение новых источников трафика
+					li Аналитика
+					li Отчетность
+				span.list-title Требования
+				ul
+					li Опыт арбитража трафика от 2-х лет (тизерные сети, пуши, таргетированная реклама)
+					li Обширные знания в области привлечения трафика: источники трафика, технологии, всякие хитрости и премудрости
+				span.list-title Условия
+				ul
+					li Удаленная работа, полная занятость
+					li График работы: 5/2, сб. вс. выходные дни, с <b>10:00 до 18:00</b>
+				p Аналогичная глава 12 в «старом» КоАП содержит 41 статью (за время действия кодекса 8 статей из нее были исключены), соответствующая глава 13 нового КоАП – 35.
+				a(href="mailto:rabota@neg.by").btn.btn--primary Чтобы узнать больше или же отправить резюме напише нам:
+					span  rabota@neg.by

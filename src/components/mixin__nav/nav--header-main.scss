@@ -1,0 +1,47 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.nav--header-main {
+	width: 100%;
+	@media (max-width: $xl - 1){
+		width: 85%;
+	}
+	.nav-list {
+		display: flex;
+		justify-content: space-between;
+		.nav-item {
+			.nav-link {
+				position: relative;
+				color: $black;
+				&:after {
+					position: absolute;
+					content: "";
+					width: 1px;
+					height: 0px;
+					left: calc(50% - 0.5px);
+					background-color: #000;
+					top: -19px;
+					transition: height 0.3s ease;
+				}
+				&:hover {
+					&:after {
+						height: 7px;
+					}
+				}
+				&.active{
+					&:after {
+						height: 16px;
+					}
+				}
+			}
+
+			font-size: 16px;
+			line-height: 20px;
+			@media (max-width: $xl - 1) {
+				margin-right: 20px;
+			}
+			@media (max-width: $lg - 1) {
+				margin-right: 13px;
+				font-size: 14px;
+			}
+		}
+	}
+}

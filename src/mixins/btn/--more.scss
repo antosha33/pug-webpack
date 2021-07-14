@@ -1,0 +1,29 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.btn.btn--more {
+	width: 100%;
+	padding: 20px 0px;
+	text-align: center;
+	color: $c-primary-2;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 130%;
+	background-color: #fff;
+	border-radius: 2px;
+	font-weight: 500;
+	&[disabled],
+	&.disabled {
+		color: rgba(30, 30, 30, 0.2) !important;
+		border: solid 1px transparent !important;
+		background: transparent !important;
+	}
+	&:active,
+	&:hover,
+	&.active {
+		background-color: #fff;
+		color: $c-primary-2-hover !important;
+		border: none;
+		// background-color: transparent !important;
+		box-shadow: none !important;
+	}
+}

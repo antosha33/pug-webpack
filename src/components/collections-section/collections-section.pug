@@ -1,0 +1,26 @@
++include-style('collections-section')
+.collections-wrap 
+	.container
+		+presection-main({
+			title: 'Коллекции',
+			linkTitle: 'Все коллекции'
+		})
+		+tabs({tabList: [
+			{
+				title: 'Диваны и кресла',
+			},
+			{
+				title: 'Банкетки и пуфы',
+			},
+			{
+				title: 'Мобильные перегородки',
+			},
+			{
+				title: 'Новинки',
+			},
+			{
+				title: 'Хиты продаж',			
+			}
+		]})
+		include ../collections-slider/collections-slider 
+	.collections-slider-slider-pagination
