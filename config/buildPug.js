@@ -1,17 +1,16 @@
-const { worker } = require('cluster');
+const { pages: devPage } = require('../options');
+const pug = require('pug');
+const path = require('path');
+const fs = require('fs');
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+const smp = new SpeedMeasurePlugin();
+const HtmlsWebpackPlugin = require('htmls-webpack-plugin');
+const workerFarm = require('worker-farm');
+const { TRUE } = require('node-sass');
+const workers = workerFarm(require.resolve('./pugRender.js'))
 
 module.exports = {
 	pugBuilder: () => {
-		const { pages: devPage } = require('../options');
-		const pug = require('pug');
-		const path = require('path');
-		const fs = require('fs');
-		const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
-		const smp = new SpeedMeasurePlugin();
-		const HtmlsWebpackPlugin = require('htmls-webpack-plugin');
-		const workerFarm = require('worker-farm');
-		const workers = workerFarm(require.resolve('./pugRender.js'))
-
 		// записываем названия папок с страницами в массив pages
 		const pages = fs.readdirSync(path.resolve(__dirname, '../src/pages/')).filter((page) => {
 			if (devPage === 'all') return true;
@@ -94,7 +93,7 @@ module.exports = {
 								} else {
 									// worker-farm not needed for one page
 									return {
-										src: `../src/pages/${page}/${page}.pug`,
+										src: `./src/pages/${page}/${page}.pug`,
 										filename: `${page}.html`,
 										render: (file) => pug.renderFile(file, { pretty: true })
 									}

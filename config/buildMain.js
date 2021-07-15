@@ -10,8 +10,8 @@ module.exports = {
 		const babel = require('@rollup/plugin-buble');
 		// const {resolve} = require('@rollup/plugin-node-resolve');
 
-		const commonjs =  require('@rollup/plugin-commonjs');
-		console.log(babel);
+		const commonjs = require('@rollup/plugin-commonjs');
+
 		const inputOptions = {
 			input: 'src/assets/js/main.js',
 			plugins: [
