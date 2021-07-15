@@ -1,0 +1,21 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.product-label{
+	padding: 2px 12px;
+	display: inline;
+	font-size: 14px;
+	color: #fff;
+	text-align: center;
+	&.product-label--discount{
+		background-color: #FF4F44;
+	}
+	&.product-label--new{
+		background-color: #7DCA00;
+	}
+	&.product-label--recommend{
+		background-color: #FFB21D;
+	}
+	&.product-label--custom{
+		background-color: #710068;
+	}
+
+}

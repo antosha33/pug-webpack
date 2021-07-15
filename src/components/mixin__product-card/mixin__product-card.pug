@@ -3,17 +3,25 @@ mixin product-card(args={})
 		let num = Math.round(Math.random()* (3 - 1) + 1)
 	+include-style('mixin__product-card')
 	.product-card(class=args.mod class=args.slider)
-		a(href="#").product-card__img
-			if (args.slider)
-				+lazy-img-slider({
-					img: `images/product-card-${num}.jpg`,
-					placeholder: pixel
-				})
-			else
-				+lazy-img({
-					img: `images/product-card-${num}.jpg`,
-					placeholder: pixel
-				})
+		if (args.labels)
+			.product-card__labels
+				each label in args.labels
+					+product-label({
+						mod: label.mod,
+						title: label.title
+					})
+		.product-card__img-wrap
+			a(href="#").product-card__img
+				if (args.slider)
+					+lazy-img-slider({
+						img: `images/product-card-${num}.jpg`,
+						placeholder: pixel
+					})
+				else
+					+lazy-img({
+						img: `images/product-card-${num}.jpg`,
+						placeholder: pixel
+					})
 		.product-card__content
 			.product-card__code Артикул: Brd3HL
 			a(href="#").product-card__title= args.title
@@ -32,12 +40,20 @@ mixin product-card(args={})
 						td.product-card__sku-property Цвет
 						td.product-card__sku-value бежевый
 							.product-card__sku-value-color
-					tr.product-card__sku-item
-						td.product-card__sku-property Под заказ
-						td.product-card__sku-value от 15 рабочих дней
+					if (args.available)
+						tr.product-card__sku-item.available
+							td.product-card__sku-property В наличии
+							td.product-card__sku-value 15 штук
+					if (args.order)
+						tr.product-card__sku-item.order
+							td.product-card__sku-property Под заказ
+							td.product-card__sku-value от 5 до 15 дней	
+					if (args.disabled)
+						tr.product-card__sku-item.disabled
+							td.product-card__sku-property Снят с производства
 		.product-card__footer
 			.product-card__price= args.price
-			if (args.mod === 'product-card--buy')
+			if (args.available)
 				.product-card__order
 					.product-card__counter
 						+counter-order({
@@ -52,6 +68,9 @@ mixin product-card(args={})
 				//- 	.btn.btn--primary.product-card__buy 
 				//- 		span.product-card__buy-title Купить
 				//- 		+icon('i-add-to-cart')(style="width: 24px; height: 24px")
+			else if(args.disabled)
+				.product-card__order
+					.btn.btn--primary.product-card__choose Показать аналоги
 			else
 				.product-card__order
 					.btn.btn--primary.product-card__choose Выбрать обивку

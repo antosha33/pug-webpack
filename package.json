@@ -4,19 +4,40 @@
 	"description": "webpack-box desc",
 	"main": "index.js",
 	"scripts": {
-		"dev": "node ./config/watcher.js"
+		"serve": "webpack serve --open --config ./config/webpack.serve.conf.js",
+		"watcher": "node ./config/watcher.js",
+		"dev": " concurrently \"npm run serve\" \"npm run watcher\""
 	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@babel/preset-env": "^7.14.7",
+		"babel-loader": "^8.2.2",
+		"babel-polyfill": "^6.26.0",
 		"bemto.pug": "^2.1.0",
+		"bootstrap": "^4.6.0",
+		"chokidar": "^3.5.2",
+		"copy-webpack-plugin": "^9.0.1",
+		"css-loader": "^6.0.0",
 		"htmls-webpack-plugin": "1.0.9",
+		"mini-css-extract-plugin": "^2.1.0",
+		"node-sass": "^6.0.1",
+		"node-sass-glob-importer": "^5.3.2",
 		"pug": "^3.0.2",
-		"webpack": "^4.41.2",
+		"rollup": "^2.53.2",
+		"rollup-plugin-buble": "^0.19.8",
+		"sass-loader": "^12.1.0",
+		"webpack": "^5.44.0",
 		"webpack-cli": "^4.7.2",
+		"webpack-dev-server": "^3.11.2",
+		"webpack-watched-glob-entries-plugin": "^2.1.10",
 		"worker-farm": "1.7.0"
 	},
 	"devDependencies": {
+		"@rollup/plugin-babel": "^5.3.0",
+		"@rollup/plugin-buble": "^0.21.3",
+		"@rollup/plugin-commonjs": "^11.0.2",
+		"@rollup/plugin-node-resolve": "^13.0.1",
 		"speed-measure-webpack-plugin": "^1.5.0"
 	}
 }

@@ -109,7 +109,7 @@ module.exports = {
 				]
 			}), (err, stats) => { // [Stats Object](#stats-object)
 				if (err || stats.hasErrors()) {
-					console.error(err);
+					console.error(stats);
 				}
 				console.log('html builded');
 			})

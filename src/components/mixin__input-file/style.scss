@@ -54,7 +54,6 @@ input[name=input__file] {
 	padding-left: 20px;
 	display     : inline-flex;
 	align-items : center;
-	z-index: 1000;
 	&:hover{
 		@media (min-width: 1024px){
 			cursor: pointer;
@@ -112,6 +111,7 @@ input[name=input__file] {
 .webform-field-upload-list.webform-field-upload-list--mod a.upload-file-name {
 	margin     : 0px;
 	margin-left: 6px;
+	max-width: 100px;
 }
 
 .webform-field-upload-list.webform-field-upload-list--mod li div.webform-field-item-wrap {
@@ -165,8 +165,13 @@ input[name=input__file] {
 }
 
 
+
 @media(max-width: 768px) {
 	.file-input--mod {
 		flex-direction: column;
+	}
+	.webform-field-upload-list.webform-field-upload-list--mod a.upload-file-name {
+		max-width: none;
+		overflow: hidden;
 	}
 }

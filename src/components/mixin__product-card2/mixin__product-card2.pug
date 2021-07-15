@@ -3,17 +3,18 @@ mixin product-card2(args={})
 		let num = Math.round(Math.random()* (3 - 1) + 1)
 	+include-style('mixin__product-card2')
 	.product-card(class=args.mod class=args.slider)
-		a(href="#").product-card__img
-			if (args.slider)
-				+lazy-img-slider({
-					img: `images/product-card-${num}.jpg`,
-					placeholder: pixel
-				})
-			else
-				+lazy-img({
-					img: `images/product-card-${num}.jpg`,
-					placeholder: pixel
-				})
+		.product-card__img-wrap
+			a(href="#").product-card__img
+				if (args.slider)
+					+lazy-img-slider({
+						img: `images/product-card-${num}.jpg`,
+						placeholder: pixel
+					})
+				else
+					+lazy-img({
+						img: `images/product-card-${num}.jpg`,
+						placeholder: pixel
+					})
 		.product-card__code Артикул: Brd3HL
 		a(href="#").product-card__title= args.title
 		table.product-card__sku

@@ -702,6 +702,9 @@
 	bottom: 32px;
 	left: 0px;
 	transform: translateX(0);
+	@media (max-width: $md - 1){
+		bottom: 8px;
+	}
 }
 .pagination-progressbar {
 	width: 100%;
@@ -748,7 +751,14 @@
 }
 .custom-swiper-btn__prev-index-slider {
 	left: 10vw;
+	@media (max-width: $md - 1){
+		left: 2px;
+	}
 }
 .custom-swiper-btn__next-index-slider {
 	right: 10vw;
+	@media (max-width: $md - 1){
+		right: 2px;
+	}
+
 }

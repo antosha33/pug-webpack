@@ -3,14 +3,14 @@ const glob = require('glob');
 const path = require('path');
 const fs = require('fs');
 const { pugBuilder } = require('./buildPug');
-
+const { criticalPreBuild } = require('./criticalPreBuild');
+const {buildJs} = require('./buildMain');
 
 class SLAMBOX {
 	constructor() {
+		this.buildMainJs();
 		this.importMixins();
 		this.buildCritical();
-		this.buildHtml();
-		this.pugWatch();
 	}
 
 	pugWatch() {
@@ -66,8 +66,14 @@ class SLAMBOX {
 		})();
 	}
 
-	buildCritical() {
+	async buildCritical() {
+		await criticalPreBuild();
+		this.buildHtml();
+		this.pugWatch()
+	}
 
+	buildMainJs(){
+		buildJs();
 	}
 }
 

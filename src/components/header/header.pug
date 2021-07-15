@@ -18,6 +18,9 @@ header.header
 				.header-main__search
 					.search-toggle.js-btn-toggle(data-target='.header-main__search-form' aria-label='Поиск')
 						+icon('i-search')(style='width: 24px; height: 24px;')
+					+search({
+						mod_class: 'header-main__search-form'
+					})
 				.header-main__contacts
 					include ../contacts/contacts
 				.header-main__phone(data-toggle="modal" data-target="#modal-contacts")
@@ -36,7 +39,7 @@ header.header
 						a(href="/local/templates/html/basket.html" aria-label='Корзина').basket-full
 							.qty-basket 22
 							+icon('i-basket-full')(style='width: 24px; height: 24px;')
-							.price 20 888,55 р.
+							.price 20 888,52 р.
 						.basket-small
 							.basket-small__items
 								+cart-item({

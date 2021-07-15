@@ -1,7 +1,7 @@
 mixin color(args={})
 	+include-style('mixin__color')
 	if (args.fancy)
-		a(href="/local/templates/html/images/color-picker-big-2.jpg" data-fancybox="gallery" class=args.mod).casing-color&attributes(attributes)
+		a(href="/local/templates/html/images/color-picker-big-2.jpg" class=args.mod data-fancybox="gallery").casing-color&attributes(attributes)
 			span.casing-color__img
 				+lazy-img({
 					img: args.img

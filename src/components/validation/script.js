@@ -1,5 +1,4 @@
 window.addEventListener('load', function (event) {
-
 	var validation = function () {
 
 		let loadedFlag = {
@@ -8,7 +7,7 @@ window.addEventListener('load', function (event) {
 		};
 
 		function BVInit() {
-			$('.bv-form-front:not(.bv-form-initialized)')
+			$('.bv-form:not(.bv-form-initialized)')
 				.on('init.form.bv', function (e) {
 					let $this = $(this);
 					$this.addClass('bv-form-initialized');
@@ -57,7 +56,7 @@ window.addEventListener('load', function (event) {
 		}
 
 
-		$(document).on('mouseover touchstart touchend', '.bv-form-front', function () {
+		$(document).on('mouseover touchstart touchend', '.bv-form', function () {
 			if (loadedFlag.BV && loadedFlag.inputmask) {
 				loaderBV();
 				loaderInputmask();

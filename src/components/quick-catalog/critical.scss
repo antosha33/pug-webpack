@@ -23,6 +23,10 @@
 		right: 0;
 		top: -300px;
 		z-index: 10;
+		@media (max-width: $md - 1){
+			height: calc(100% + 199px);
+			top: -198px;
+		}
 		@media (max-width: $sm - 1){
 			display: none;
 		}

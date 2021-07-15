@@ -1,0 +1,35 @@
+extends ../../layout/layout
+
+block vars
+	- var pageTitle = 'Главная страница '
+	- var bodyClass = 'main-page'
+	- var dir = './'
+
+
+block premain
+	include ../../components/index-slider/index-slider
+	include ../../components/quick-catalog/quick-catalog
+
+
+block main
+	.no-critical.no-critical--preloader
+		include ../../components/collections-section/collections-section
+		include ../../components/about-section/about-section
+		include ../../components/news-section/news-section
+		include ../../components/achievments/achievments
+
+
+
+
+
+block componentsCriticalStyles
+	+componentsCriticalStyles-includer()
+block vendorScripts
+	+vendorScripts-includer()
+block componentsStyles
+	+style-includer()
+
+block componentsScripts
+	+componentsScripts-includer()
+
+block scripts

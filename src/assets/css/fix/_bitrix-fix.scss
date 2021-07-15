@@ -11,3 +11,18 @@ body.bx-edit-mode {}
   flex-wrap: wrap;
   width: 100%;
 }
+.adm-detail-content-cell-r{
+	display: flex !important;
+}
+
+.bx-core{
+	.header{
+		z-index: 0;
+		overflow: hidden;
+		&.sticky{
+			.header-bottom {
+				max-height: none;
+			}
+		}
+	}
+}

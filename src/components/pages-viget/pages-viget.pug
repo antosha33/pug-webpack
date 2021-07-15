@@ -41,18 +41,18 @@
 +include-script('pages-viget')
 
 
-.pages-viget
-	.pages-viget__menu
-		ul.pages-viget__menu-list
++b.pages-viget
+	+e.__menu
+		+e('ul').__menu-list
 
 			each item in pages
-				li.pages-viget__menu-item
-					a.pages-viget__menu-link(href= '/local/templates/html/' + item.link + '.html')= item.name
+				+e('li').__menu-item
+					+e('a').__menu-link(href= '/local/templates/html/' + item.link + '.html')= item.name
 			//- +e('li').__menu-item
 			//- 	+e('a').__menu-link(href= '#') Задача
 			//- +e('li').__menu-item
 			//- 	+e('a').__menu-link(href= 'https://docs.google.com/spreadsheets/d/1L29rFHnabz2YLBGoqjCHneSVKFeVW56piUQwhe1PU4I/edit?usp=sharing') Декомпозиция
 			//- +e('li').__menu-item
 			//- 	+e('a').__menu-link(href= 'https://www.figma.com/file/aNyaOlMSbOfbhCgL9jYbyf/Veska?нnode-id=91%3A0&viewport=-4685%2C575%2C0.4862944185733795') Дизай
-	.pages-viget__btn
+	+e.__btn
 		.media-pointer

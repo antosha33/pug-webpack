@@ -1,3 +1,4 @@
+include ../utility/bemto-setting
 include ../utility/_globalVars
 include ../utility/_mixins
 include ../utility/_functions
@@ -35,7 +36,7 @@ html(lang='ru-RU')
 		//link(rel='stylesheet', href= dir + '../assets/css/critical/critical.css' inline)
 		if (PROJECT_MODE !== 'dev')
 			style(data-critical)
-				//- include ../../local/templates/html/critical.css
+				include ../../local/templates/html/critical.css
 				//- include ../../local/templates/html/critical_main.css
 				//- include ../../local/templates/html/critical_mixins_components.css
 			script.

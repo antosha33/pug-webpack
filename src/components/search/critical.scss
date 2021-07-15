@@ -3,6 +3,12 @@
 .header-main__search {
 	display: flex;
 	margin: 0 40px 0 40px;
+	@media (max-width: $md - 1){
+		flex-grow: 1;
+	}
+	@media (max-width: $sm - 1){
+		flex-grow: 0;
+	}
 	@media (max-width: $xl - 1) {
 		max-width: 350px;
 		margin: 0 20px 0 20px;
@@ -95,6 +101,9 @@
 		display: flex;
 		align-items: center;
 		width: 470px;
+		@media (max-width: $md - 1){
+			width: 100%;
+		}
 		@media (max-width: $sm - 1){
 			display: none;
 		}

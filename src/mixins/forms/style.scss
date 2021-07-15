@@ -2,6 +2,13 @@
 @import "checkbox/style.scss";
 @import "radio/style.scss";
 
+
+form{
+	.warning-buy{
+		margin-bottom: 15px;
+	}
+}
+
 .form-group-select {
 	select.form-control--filter {
 		padding: 9px 16px;

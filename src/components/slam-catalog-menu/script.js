@@ -76,7 +76,7 @@ window.addEventListener('load', function () {
 	})
 
 	if ($(window).width() <= 1366) {
-		document.addEventListener('touchend', function (ev) {
+		document.addEventListener('touchstart', function (ev) {
 			if ($(ev.target).closest('.js-slam-menu .nav-item.has-nav').length != 0) {
 				if ($(ev.target).closest('.js-slam-menu .nav-item').hasClass('touch-ev')) {
 					return;
