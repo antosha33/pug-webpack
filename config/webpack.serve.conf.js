@@ -41,11 +41,11 @@ const CopyWebpackPluginConf = () => {
 }
 
 const asyncConfig = async () => {
-	const port = await portChecker(3000, '127.0.0.1');
+	// const port = await portChecker(3000, '127.0.0.1');
 
-	const lv = new wsLiveReload(port);
+	// const lv = new wsLiveReload(port);
 
-	lv.createWatcher('styles', 'local/templates/html/**/style.css', 'styles');
+	// lv.createWatcher('styles', 'local/templates/html/**/style.css', 'styles');
 
 	return {
 		mode: 'development',
@@ -56,7 +56,7 @@ const asyncConfig = async () => {
 			openPage: devPage === 'all' ? '/local/templates/html/index.html' : `/local/templates/html/${devPage}.html`,
 			compress: true,
 			hot: false,
-			port: port,
+			port: 3000,
 			writeToDisk: (filePath) => {
 				if (filePath.includes('hot') ||
 					filePath.includes('vendors') ||
@@ -120,9 +120,9 @@ const asyncConfig = async () => {
 				}
 			}),
 
-			new CopyWebpackPlugin({
-				patterns: CopyWebpackPluginConf()
-			}),
+			// new CopyWebpackPlugin({
+			// 	patterns: CopyWebpackPluginConf()
+			// }),
 		]
 	}
 }

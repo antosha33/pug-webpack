@@ -1,35 +1,35 @@
 mixin breadcrumb(args={})
-	+b.breadcrumb
-		+e('ul').__list(itemscope itemtype="http://schema.org/BreadcrumbList")
-			+e('li').__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
-				+e('a')(href="/local/templates/html/index.html" title="Главная" itemprop="item").__link
+	.breadcrumb
+		ul.breadcrumb__list(itemscope itemtype="http://schema.org/BreadcrumbList")
+			li.breadcrumb__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+				a(href="/local/templates/html/index.html" title="Главная" itemprop="item").breadcrumb__link
 					span(itemprop="name") Главная
 					meta(itemprop="position" content="0")
 
-			+e('li').__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+			li.breadcrumb__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
 				if args.href_content1
-					+e('a')(href=args.href_content1 || '#' title=args.content1 itemprop="item").__link
+					a(href=args.href_content1 || '#' title=args.content1 itemprop="item").breadcrumb__link
 						span(itemprop="name")= args.content1
 						meta(itemprop="position" content="1")
 				else
-					+e('span')(title=args.content1 itemprop="name").__link
+					span(title=args.content1 itemprop="name").breadcrumb__link
 						span(itemprop="name")= args.content1
 						meta(itemprop="position" content="1")
 
 			if args.content2
-				+e('li').__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+				li.breadcrumb__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
 					if args.href_content2
-						+e('a')(href=args.href_content2 || '#' title=args.content2 itemprop="item").__link
+						a(href=args.href_content2 || '#' title=args.content2 itemprop="item").breadcrumb__link
 							span(itemprop="name")= args.content2
 							meta(itemprop="position" content="2")
 					else
-						+e('span')(href=args.href_content2 || '#' title=args.content2 itemprop="name").__link
+						span(href=args.href_content2 || '#' title=args.content2 itemprop="name").breadcrumb__link
 							span(itemprop="name")= args.content2
 							meta(itemprop="position" content="2")
 
 			if args.content3
-				+e('li').__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
-					+e('span')(title=args.content3 itemprop="name").__link
+				li.breadcrumb__item(itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem")
+					span(title=args.content3 itemprop="name").breadcrumb__link
 						span(itemprop="name")= args.content3
 						meta(itemprop="position" content="3")
 

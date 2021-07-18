@@ -3,19 +3,26 @@ const pug = require('pug');
 const path = require('path');
 const fs = require('fs');
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
-const smp = new SpeedMeasurePlugin();
-const HtmlsWebpackPlugin = require('htmls-webpack-plugin');
 const workerFarm = require('worker-farm');
-const { TRUE } = require('node-sass');
-const workers = workerFarm(require.resolve('./pugRender.js'))
+const HtmlsWebpackPlugin = require('htmls-webpack-plugin');
 
 module.exports = {
-	pugBuilder: () => {
+	pugBuilder: (pages = [], callback) => {
 		// записываем названия папок с страницами в массив pages
-		const pages = fs.readdirSync(path.resolve(__dirname, '../src/pages/')).filter((page) => {
-			if (devPage === 'all') return true;
-			return page == devPage;
-		});
+		if (pages.length == 0) {
+			pages = fs.readdirSync(path.resolve(__dirname, '../src/pages/')).filter((page) => {
+				if (devPage === 'all') return true;
+				return page == devPage;
+			}).map((page) => path.parse(page).name);
+		} else {
+			pages = pages.map((page) => path.parse(page).name);
+		}
+
+
+		const smp = new SpeedMeasurePlugin();
+
+		const workers = workerFarm(require.resolve('./pugRender.js'))
+
 
 		const isDevMode = false;
 
@@ -29,7 +36,7 @@ module.exports = {
 					publicPath: '/',
 					path: path.resolve(__dirname, '../local/templates/html/'),
 				},
-				cache: false,
+				cache: true,
 				devtool: false,
 				module: {
 					rules: [
@@ -63,6 +70,7 @@ module.exports = {
 
 					new HtmlsWebpackPlugin({
 						htmls: [...pages.map((page, index) => {
+
 							try {
 								if (pages.length > 1) {
 									// use worker-farm for parallel pug render
@@ -95,7 +103,13 @@ module.exports = {
 									return {
 										src: `./src/pages/${page}/${page}.pug`,
 										filename: `${page}.html`,
-										render: (file) => pug.renderFile(file, { pretty: true })
+										render: (file) => {
+											try {
+												return pug.renderFile(file, { pretty: true })
+											} catch (err) {
+												console.error('ERROR =>>>>>>>', err);
+											}
+										}
 									}
 								}
 							} catch {
@@ -110,7 +124,12 @@ module.exports = {
 				if (err || stats.hasErrors()) {
 					console.error(stats);
 				}
-				console.log('html builded');
+				console.log('\x1b[36m%s\x1b[0m', 'html builded');
+
+				if (callback) {
+					callback();
+				}
+
 			})
 	}
 }

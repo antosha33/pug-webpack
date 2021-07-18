@@ -18,9 +18,9 @@ header.header
 				.header-main__search
 					.search-toggle.js-btn-toggle(data-target='.header-main__search-form' aria-label='Поиск')
 						+icon('i-search')(style='width: 24px; height: 24px;')
-					+search({
-						mod_class: 'header-main__search-form'
-					})
+					//- +search({
+					//- 	mod_class: 'header-main__search-form'
+					//- })
 				.header-main__contacts
 					include ../contacts/contacts
 				.header-main__phone(data-toggle="modal" data-target="#modal-contacts")

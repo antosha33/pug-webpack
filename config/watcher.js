@@ -3,37 +3,79 @@ const glob = require('glob');
 const path = require('path');
 const fs = require('fs');
 const { pugBuilder } = require('./buildPug');
-const { criticalPreBuild } = require('./criticalPreBuild');
-const {buildJs} = require('./buildMain');
-
+const { criticalBuild } = require('./criticalPreBuild');
+const { buildJs } = require('./buildMain');
+const wsLiveReload = require('./wsHMR.js');
+const dependenciesTree = require('./pugDependencies');
 class SLAMBOX {
 	constructor() {
-		this.buildMainJs();
+
+		this.criticalWatch();
 		this.importMixins();
+		this.wsHMR();
+
+		// this.buildMainJs();
 		this.buildCritical();
 	}
 
+	async getTreePugDependencies() {
+		return await dependenciesTree();
+	}
+
+
+
 	pugWatch() {
+
+		const getPagesForRebuild = (path) => {
+			const arr = [];
+			const pagePath = path.split('\\').join('/');
+			SLAMBOX.dependencies.forEach((item) => {
+				if (item.deps.includes(path.normalize())) {
+					arr.push(item.path);
+				}
+				if (item.path.includes(pagePath)) {
+					arr.push(item.path);
+				}
+			})
+			return arr;
+		}
+
 		(function () {
 			const watcher = chokidar.watch(['src/components/**/*.pug', 'src/layout/**/*.pug', 'src/mixins/**/*.pug', 'src/pages/**/*.pug'], { persistent: true });
 			let isReady = false
-			const regExp = /.(scss|sass|js)$/;
 			watcher.on('change', path => {
 				if (!isReady) return;
-				pugBuilder();
-
+				const pages = getPagesForRebuild(path);
+				pugBuilder(pages, async () => {
+					console.log('\x1b[36m%s\x1b[0m', 'rebuild dependencies tree  =>>>>>>');
+					SLAMBOX.dependencies = await dependenciesTree();
+					console.log('\x1b[36m%s\x1b[0m', 'dependencies tree rebuilded');
+				});
 			})
 			watcher.on('ready', () => isReady = true);
 		})();
 	}
 
-	buildHtml() {
-		try {
-			pugBuilder();
-		} catch {
-			console.error('PUG BUILD ERROR')
-		}
+	criticalWatch() {
+		(function () {
+			const watcher = chokidar.watch(['src/components/**/critical.scss', 'src/assets/**/*.scss', 'src/mixins/**/*.scss'], { persistent: true });
+			let isReady = false
+			watcher.on('change', () => {
+				if (!isReady) return;
+				criticalBuild(() => pugBuilder());
+			})
+			watcher.on('ready', () => isReady = true);
+		})();
 	}
+
+	buildCritical() {
+		criticalBuild(async () => {
+			SLAMBOX.dependencies = await this.getTreePugDependencies();
+			this.pugWatch()
+			pugBuilder();
+		});
+	}
+
 
 	importMixins() {
 
@@ -66,14 +108,16 @@ class SLAMBOX {
 		})();
 	}
 
-	async buildCritical() {
-		await criticalPreBuild();
-		this.buildHtml();
-		this.pugWatch()
+
+	buildMainJs() {
+		buildJs();
 	}
 
-	buildMainJs(){
-		buildJs();
+
+	wsHMR() {
+		const lv = new wsLiveReload(3000);
+		lv.createWatcher('styles', 'local/templates/html/**/style.css', 'styles');
+		lv.createWatcher('html', 'local/templates/html/*.html', 'reload');
 	}
 }
 
