@@ -5,7 +5,7 @@ const fs = require('fs');
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 const workerFarm = require('worker-farm');
 const HtmlsWebpackPlugin = require('htmls-webpack-plugin');
-
+const webpack = require('webpack');
 module.exports = {
 	pugBuilder: (pages = [], callback) => {
 		// записываем названия папок с страницами в массив pages
@@ -26,7 +26,7 @@ module.exports = {
 
 		const isDevMode = false;
 
-		const webpack = require('webpack');
+		
 
 		webpack(smp.wrap(
 			{

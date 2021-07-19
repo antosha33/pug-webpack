@@ -5,17 +5,18 @@ const fs = require('fs');
 const { pugBuilder } = require('./buildPug');
 const { criticalBuild } = require('./criticalPreBuild');
 const { buildJs } = require('./buildMain');
+const { ajaxPugBuilder } = require('./buildAjaxPug');
+const { spriteBuilder } = require('./spriteBuilder');
 const wsLiveReload = require('./wsHMR.js');
 const dependenciesTree = require('./pugDependencies');
 class SLAMBOX {
 	constructor() {
-
-		this.criticalWatch();
-		this.importMixins();
-		this.wsHMR();
-
-		// this.buildMainJs();
-		this.buildCritical();
+		// this.ajaxWatch();
+		this.spriteWatch();
+		// this.criticalWatch();
+		// this.importMixins();
+		// this.wsHMR();
+		// this.buildCritical();
 	}
 
 	async getTreePugDependencies() {
@@ -76,7 +77,6 @@ class SLAMBOX {
 		});
 	}
 
-
 	importMixins() {
 
 		const importMixins = this.importMixins.bind(this);
@@ -107,7 +107,24 @@ class SLAMBOX {
 			watcher.on('ready', () => isReady = true);
 		})();
 	}
+	
 
+	ajaxWatch(){
+		ajaxPugBuilder();
+		(function () {
+			const watcher = chokidar.watch('src/components/**/ajax__*.pug', { persistent: true });
+			let isReady = false
+			watcher.on('change', () => {
+				if (!isReady) return;
+				ajaxPugBuilder();
+			})
+			watcher.on('ready', () => isReady = true);
+		})();
+	}
+
+	spriteWatch(){
+		spriteBuilder();
+	}
 
 	buildMainJs() {
 		buildJs();
