@@ -9,6 +9,7 @@ const webpack = require('webpack');
 module.exports = {
 	pugBuilder: (pages = [], callback) => {
 		// записываем названия папок с страницами в массив pages
+		console.log('\x1b[31m', 'html building....');
 		if (pages.length == 0) {
 			pages = fs.readdirSync(path.resolve(__dirname, '../src/pages/')).filter((page) => {
 				if (devPage === 'all') return true;

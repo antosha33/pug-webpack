@@ -7,7 +7,7 @@ const pug = require('pug');
 module.exports = {
 	ajaxPugBuilder: (callback) => {
 		// записываем названия папок с страницами в массив pages
-
+		console.log('\x1b[31m', 'ajax html building....');
 		const runWebpack = (components) => {
 			const smp = new SpeedMeasurePlugin();
 			webpack(smp.wrap(
@@ -71,7 +71,7 @@ module.exports = {
 					if (err || stats.hasErrors()) {
 						console.error(stats);
 					}
-					console.log('\x1b[36m%s\x1b[0m', 'ajax pug builded');
+					console.log('\x1b[36m%s\x1b[0m', 'ajax html builded');
 
 					if (callback) {
 						callback();

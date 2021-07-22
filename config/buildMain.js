@@ -1,27 +1,27 @@
-
-
+const rollup = require('rollup');
+const babel = require('@rollup/plugin-buble');
+const commonjs = require('@rollup/plugin-commonjs');
+const minify =  require('rollup-plugin-babel-minify');
+const cleanup = require('rollup-plugin-cleanup');
 
 module.exports = {
 
-	buildJs: () => {
+	buildJs: (params) => {
 
-		const path = require('path');
-		const rollup = require('rollup');
-		const babel = require('@rollup/plugin-buble');
-		// const {resolve} = require('@rollup/plugin-node-resolve');
-
-		const commonjs = require('@rollup/plugin-commonjs');
+		const {input, output}  = params;
 
 		const inputOptions = {
-			input: 'src/assets/js/main.js',
+			input: input,
 			plugins: [
 				// resolve(),
+				cleanup(),
 				commonjs(),
 				babel(),
+				minify(),
 			]
 		};
 		const outputOptions = {
-			file: 'local/templates/html/js/app.min.js',
+			file: output,
 			format: 'iife'
 		};
 
@@ -85,63 +85,4 @@ module.exports = {
 
 		build();
 	},
-
-	buildMainJs: () => {
-		const path = require('path');
-		const TerserPlugin = require('terser-webpack-plugin');
-		const webpack = require('webpack');
-		const ASSET_PATH = process.env.ASSET_PATH || '/';
-		const filename = (ext, directory) => `${directory}/[name].min.${ext}`;
-
-		webpack({
-			mode: 'production',
-			entry: {
-				app: ['babel-polyfill', path.resolve(__dirname, '../src/assets/js/main.js')],
-			},
-			output: {
-				publicPath: ASSET_PATH,
-				path: path.resolve(__dirname, '../local/templates/html/'),
-				filename: filename('js', 'js'),
-			},
-			optimization: {
-				minimize: true,
-				minimizer: [
-					new TerserPlugin({
-						terserOptions: {
-							compress: false,
-							mangle: false,
-						},
-					}),
-				],
-			},
-			devtool: false,
-			module: {
-				rules: [
-					{
-						test: /\.txt$/i,//для добавления в main.js содержимого txt файлов импортом
-						use: 'raw-loader',
-					},
-					{
-						test: /\.js$/,
-						exclude: /node_modules/,
-						use: [
-							// {
-							//     loader: "apply-loader"
-							// },
-							{
-								loader: "babel-loader",
-								options: {
-									presets: ['@babel/preset-env']
-								}
-							},
-						]
-					},
-				]
-			},
-		}, (err, stats) => { // [Stats Object](#stats-object)
-			if (err || stats.hasErrors()) {
-				console.error(stats);
-			}
-		})
-	}
 };

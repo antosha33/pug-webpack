@@ -1,0 +1,10 @@
+include ../../utility/bemto-setting
+include ../../utility/_globalVars
+include ../../utility/_mixins
+include ../../utility/_functions
+
+
+.mob-menu-top
+	.mob-menu-close.js-btn-toggle.active(data-target='.mob-menu' aria-label='закрыть меню')
+		+icon('i-close')(width='24px' height='24px')
+		.mob-menu-title Меню

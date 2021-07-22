@@ -6,24 +6,32 @@ const { pugBuilder } = require('./buildPug');
 const { criticalBuild } = require('./criticalPreBuild');
 const { buildJs } = require('./buildMain');
 const { ajaxPugBuilder } = require('./buildAjaxPug');
-const { spriteBuilder } = require('./spriteBuilder');
+const { copyPlugin } = require('./copyPlugin');
 const wsLiveReload = require('./wsHMR.js');
 const dependenciesTree = require('./pugDependencies');
+const { exec } = require('child_process');
 class SLAMBOX {
 	constructor() {
-		// this.ajaxWatch();
-		this.spriteWatch();
-		// this.criticalWatch();
-		// this.importMixins();
-		// this.wsHMR();
-		// this.buildCritical();
+		this.init()
+	}
+
+	async init() {
+		await copyPlugin();
+		this.importMixins();
+		this.ajaxWatch();
+		// this.spriteWatch();
+		this.criticalWatch();
+		this.spriteWatcher();
+		this.wsHMR();
+		this.buildCritical();
+		this.jsWatch();
+		this.buildMainJs();
+		exec('npm run ndSprite');
 	}
 
 	async getTreePugDependencies() {
 		return await dependenciesTree();
 	}
-
-
 
 	pugWatch() {
 
@@ -46,6 +54,7 @@ class SLAMBOX {
 			let isReady = false
 			watcher.on('change', path => {
 				if (!isReady) return;
+				if(path.includes('ajax')) return;
 				const pages = getPagesForRebuild(path);
 				pugBuilder(pages, async () => {
 					console.log('\x1b[36m%s\x1b[0m', 'rebuild dependencies tree  =>>>>>>');
@@ -63,6 +72,7 @@ class SLAMBOX {
 			let isReady = false
 			watcher.on('change', () => {
 				if (!isReady) return;
+				console.log('here');
 				criticalBuild(() => pugBuilder());
 			})
 			watcher.on('ready', () => isReady = true);
@@ -107,9 +117,9 @@ class SLAMBOX {
 			watcher.on('ready', () => isReady = true);
 		})();
 	}
-	
 
-	ajaxWatch(){
+
+	ajaxWatch() {
 		ajaxPugBuilder();
 		(function () {
 			const watcher = chokidar.watch('src/components/**/ajax__*.pug', { persistent: true });
@@ -122,46 +132,50 @@ class SLAMBOX {
 		})();
 	}
 
-	spriteWatch(){
-		spriteBuilder();
-	}
+	// spriteWatch(){
+	// 	spriteBuilder();
+	// }
 
 	buildMainJs() {
-		buildJs();
+		buildJs({
+			input: path.resolve(__dirname, '../src/assets/js/main.js'),
+			output: path.resolve(__dirname, '../local/templates/html/js/app.min.js')
+		});
 	}
 
+	jsWatch() {
+		(function () {
+			const watcher = chokidar.watch('src/components/**/script.js', { persistent: true });
+			let isReady = false
+			watcher.on('change', link => {
+				if (!isReady) return;
+				link = link.split('\\').join('/')
+				const input = path.resolve(__dirname, `../${link}`);
+				const output = path.resolve(__dirname, `../local/templates/html/components-template/${link.replace('src/components/', '')}`);
+				buildJs({
+					input,
+					output
+				})
+			})
+			watcher.on('ready', () => isReady = true);
+		})();
+	}
 
 	wsHMR() {
 		const lv = new wsLiveReload(3000);
 		lv.createWatcher('styles', 'local/templates/html/**/style.css', 'styles');
 		lv.createWatcher('html', 'local/templates/html/*.html', 'reload');
 	}
+
+	spriteWatcher() {
+		const watcher = chokidar.watch('src/assets/sprites/svg/*.svg', { persistent: true });
+		let isReady = false
+		watcher.on('add', () => {
+			if (!isReady) return;
+				fs.appendFileSync(`src/webpack_lists/sprites.js`, ' ');
+		})
+		watcher.on('ready', () => isReady = true);
+	}
 }
 
 const watcher = new SLAMBOX();
-
-// (function () {
-// 	const watcher = chokidar.watch('src/**/*.pug', { persistent: true });
-// 	let isReady = false
-// 	const regExp = /.(scss|sass|js)$/;
-// 	watcher.on('change', path => {
-// 		console.log('here');
-// 		pugBuilder();
-// 		// if (!isReady) return;
-// 		// const newPath = path.replace(/\\/g, '/');
-// 		// const noSrcPath = newPath.replace('src', '');
-// 		// fs.appendFileSync(`src/webpack_lists/mixins.pug`, 'include ..' + noSrcPath + '\n');
-// 	})
-// 	// watcher.on('unlink', path => {
-// 	// 	console.log('unlink')
-// 	// 	if (!isReady) return;
-// 	// 	const newPath = path.replace(/\\/g, '/');
-// 	// 	const noSrcPath = newPath.replace('src', '')
-// 	// 	const remove = new RegExp(`include ..${noSrcPath}`);
-// 	// 	console.log(noSrcPath);
-// 	// 	const pugfile = fs.readFileSync(`src/webpack_lists/mixins.pug`, { encoding: 'utf-8' });
-// 	// 	const updatedPugFile = pugfile.replace(remove, '');
-// 	// 	fs.writeFileSync(`src/webpack_lists/mixins.pug`, updatedPugFile, 'utf-8');
-// 	// })
-// 	// watcher.on('ready', () => isReady = true);
-// })();

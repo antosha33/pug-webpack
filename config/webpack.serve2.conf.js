@@ -9,6 +9,37 @@ const wsLiveReload = require('./wsHMR.js');
 const globImporter = require('node-sass-glob-importer');
 
 
+const CopyWebpackPluginConf = () => {
+	const baseConf = [
+		{
+			from: 'src/components/**/script.js',
+			to: ({ absoluteFilename }) => {
+				const output = `components-template/${absoluteFilename.split('\\').join('/').match(/(?<=components\/).*(?=script\.js)/g)[0]}script.min.js`;
+				return output;
+			},
+		},
+	]
+	return [
+		...baseConf,
+		{
+			from: 'vendor/*.js',
+			context: './src/assets/js/',
+			to: path.resolve(__dirname, '../local/templates/html/js/')
+		},
+		{
+			from: 'jquery/*.js',
+			context: './src/assets/js/',
+			to: path.resolve(__dirname, '../local/templates/html/js/')
+		},
+		{
+			from: '**/*',
+			context: './src/assets/images/',
+			to: 'images',
+			noErrorOnMissing: true
+		}
+	]
+}
+
 const asyncConfig = async () => {
 	// const port = await portChecker(3000, '127.0.0.1');
 
@@ -40,7 +71,7 @@ const asyncConfig = async () => {
 			[
 				path.resolve(__dirname, '../src/components/**/style.scss'),
 				// path.resolve(__dirname, '../src/webpack_lists/critical_css.js'),
-				// path.resolve(__dirname, '../src/webpack_lists/critical_css.scss'),
+				path.resolve(__dirname, '../src/webpack_lists/critical_css.scss'),
 			],
 		),
 		output: {
@@ -78,7 +109,6 @@ const asyncConfig = async () => {
 		optimization: {
 		},
 		plugins: [
-			new WebpackWatchedGlobEntries(),
 			new MiniCssExtractPlugin({
 				filename: ({ chunk }) => {
 					// console.log('CHUNK =>>>>>>', chunk.name);
@@ -88,6 +118,10 @@ const asyncConfig = async () => {
 						return 'components-template/[name].css';
 					}
 				}
+			}),
+
+			new CopyWebpackPlugin({
+				patterns: CopyWebpackPluginConf()
 			}),
 		]
 	}

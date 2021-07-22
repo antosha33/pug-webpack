@@ -6,6 +6,9 @@
 	"scripts": {
 		"serve": "webpack serve --open --config ./config/webpack.serve.conf.js",
 		"watcher": "node ./config/watcher.js",
+		"build-sprites": "webpack --mode production --config ./config/webpack.sprites.build.conf.js",
+		"ndSprite": "nodemon --exec npm run build-sprites --watch src/webpack_lists/sprites.js",
+		"build-script": "webpack --mode production --config ./config/spriteBuilder.js",
 		"dev": " concurrently \"npm run serve\" \"npm run watcher\""
 	},
 	"author": "",
@@ -23,13 +26,16 @@
 		"mini-css-extract-plugin": "^2.1.0",
 		"node-sass": "^6.0.1",
 		"node-sass-glob-importer": "^5.3.2",
+		"nodemon": "^2.0.12",
 		"pug": "^3.0.2",
 		"pug-dependencies": "^2.0.0",
 		"pug-dependency": "^1.0.1",
 		"rollup": "^2.53.2",
+		"rollup-plugin-babel-minify": "^10.0.0",
 		"rollup-plugin-buble": "^0.19.8",
 		"sass-loader": "^12.1.0",
 		"svg-sprite-loader": "^6.0.9",
+		"svgo-loader": "^3.0.0",
 		"webpack": "^5.44.0",
 		"webpack-cli": "^4.7.2",
 		"webpack-dev-server": "^3.11.2",
@@ -43,6 +49,7 @@
 		"@rollup/plugin-node-resolve": "^13.0.1",
 		"duplicate-package-checker-webpack-plugin": "^3.0.0",
 		"happypack": "^5.0.1",
+		"rollup-plugin-cleanup": "^3.2.1",
 		"speed-measure-webpack-plugin": "^1.5.0"
 	}
 }
