@@ -1,10 +1,10 @@
 mixin page-header-section(args={})
-	section.page-header-section
+	+b('section').page-header-section
 		.container
 			.row
 				div(class=args.colClasses)
 					//- блок для хлебных крошек
 					block
-					.page-header-section__body
-						h1.page-header-section__title.h1!= args.title
-							span.page-header-section__id= args.id
+					+e.__body
+						+e('h1').__title.h1!= args.title
+							+e(span).__id= args.id

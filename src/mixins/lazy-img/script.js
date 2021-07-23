@@ -1,7 +1,5 @@
 // import LazyLoad  from '../../assets/js/vendor/lazyload.min.js'
-
 export default () => {
-	window.addEventListener('load', () => {
 		(function () {
 			var callback_loaded = function (el) {
 				const $img = $(el)
@@ -16,7 +14,6 @@ export default () => {
 				callback_loaded: callback_loaded,
 			});
 		})();
-	})
 }
 
 

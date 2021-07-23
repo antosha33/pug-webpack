@@ -19,6 +19,7 @@ class SLAMBOX {
 		await copyPlugin();
 		this.importMixins();
 		this.ajaxWatch();
+		this.imageWatcher();
 		// this.spriteWatch();
 		this.criticalWatch();
 		this.spriteWatcher();
@@ -118,7 +119,6 @@ class SLAMBOX {
 		})();
 	}
 
-
 	ajaxWatch() {
 		ajaxPugBuilder();
 		(function () {
@@ -151,7 +151,7 @@ class SLAMBOX {
 				if (!isReady) return;
 				link = link.split('\\').join('/')
 				const input = path.resolve(__dirname, `../${link}`);
-				const output = path.resolve(__dirname, `../local/templates/html/components-template/${link.replace('src/components/', '')}`);
+				const output = path.resolve(__dirname, `../local/templates/html/components-template/${link.replace('src/components/', '').replace('script.js', 'script.min.js')}`);
 				buildJs({
 					input,
 					output
@@ -161,10 +161,22 @@ class SLAMBOX {
 		})();
 	}
 
-	wsHMR() {
-		const lv = new wsLiveReload(3000);
-		lv.createWatcher('styles', 'local/templates/html/**/style.css', 'styles');
-		lv.createWatcher('html', 'local/templates/html/*.html', 'reload');
+	imageWatcher(){
+		(function () {
+			const watcher = chokidar.watch('src/assets/images/**/*.(jpg|png|svg)', { persistent: true });
+			let isReady = false
+			watcher.on('add', link => {
+				if (!isReady) return;
+				link = path.resolve(__dirname, `../${link.split('\\').join('/')}`);
+				const to =  link.replace('src\\assets\\', 'local\\templates\\html\\');
+				console.log(link, to);
+				fs.copyFile(link, to, (err) => {
+					if (err) throw err;
+					console.log('images was copied to local/templates/html/images');
+				 });
+			})
+			watcher.on('ready', () => isReady = true);
+		})();
 	}
 
 	spriteWatcher() {
@@ -175,6 +187,13 @@ class SLAMBOX {
 				fs.appendFileSync(`src/webpack_lists/sprites.js`, ' ');
 		})
 		watcher.on('ready', () => isReady = true);
+	}
+
+	wsHMR() {
+		const lv = new wsLiveReload(3000);
+		lv.createWatcher('styles', 'local/templates/html/**/style.css', 'styles');
+		lv.createWatcher('html', 'local/templates/html/*.html', 'reload');
+		lv.createWatcher('script', 'local/templates/html/**/script.min.js', 'reload');
 	}
 }
 

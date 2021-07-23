@@ -1,4 +1,4 @@
-
+include ../utility/bemto-setting
 include ../utility/_globalVars
 include ../utility/_mixins
 include ../utility/_functions
@@ -42,38 +42,7 @@ html(lang='ru-RU')
 			script.
 				const userAgent = navigator.userAgent;
 				if (window.location.host.includes('localhost')) {
-										//- eval(atob('CQljb25zdCBjb25uZWN0aW9uID0gbmV3IFdlYlNvY2tldChgd3M6Ly9sb2NhbGhvc3Q6JHsrbG9jYXRpb24ucG9ydCArIDF9YCk7CgkJY29ubmVjdGlvbi5vbm9wZW4gPSAoKSA9PiB7CgkJCWNvbnNvbGUubG9nKCdbd3NITVJdIGhvdCBtb2R1bGUgcmVwbGFjZW1lbnQgZW5hYmxlZC4uLiBsaXN0ZW5pbmcgZm9yIHRoZSBjc3MgY2hhbmdlcycpOwoJCQljb25zb2xlLmxvZygnW3dzTFJdIGxpdmUgcmVsb2FkaW5nIGVuYWJsZWQuLi4gbGlzdGVuaW5nIGZvciB0aGUgY2hhbmdlcycpOwoJCQljb25uZWN0aW9uLnNlbmQoJ3JlYWR5Jyk7CgkJfQoJCWNvbm5lY3Rpb24ub25tZXNzYWdlID0gKGUpID0+IHsKCQkJY29uc3QgeyBwYXRoLCBtZXNzYWdlIH0gPSBKU09OLnBhcnNlKGUuZGF0YSk7CgkJCXN3aXRjaCAobWVzc2FnZSkgewoJCQkJY2FzZSAnY3JpdGljYWwnOgoJCQkJCShhc3luYyBmdW5jdGlvbiAoKSB7CgkJCQkJCWNvbnN0IHJlc3BvbnNlID0gYXdhaXQgZmV0Y2goJy4vY3JpdGljYWwuY3NzJyk7CgkJCQkJCWNvbnN0IHJlc3VsdCA9IGF3YWl0IHJlc3BvbnNlLnRleHQoKTsKCQkJCQkJJCgnc3R5bGVbZGF0YS1jcml0aWNhbF0nKS5odG1sKCcnKS5odG1sKHJlc3VsdCk7CgkJCQkJCWNvbnNvbGUubG9nKGBjcml0aWNhbCBpcyB1cGRhdGVkIWApOwoJCQkJCX0pKCkKCQkJCQlicmVhazsKCQkJCWNhc2UgJ3JlbG9hZCc6CgkJCQkJZG9jdW1lbnQubG9jYXRpb24ucmVsb2FkKCk7CgkJCQkJYnJlYWs7CgkJCQljYXNlICdzdHlsZXMnOgoJCQkJCWNvbnN0IHBhdHRlcm4gPSAvKD88PXRlbXBsYXRlc1xcaHRtbClcXC4qL2c7CgkJCQkJY29uc3QgcHVibGlja1BhdGggPSBwYXRoLm1hdGNoKHBhdHRlcm4pWzBdLnNwbGl0KCdcXCcpLmpvaW4oJy8nKTsKCQkJCQljb25zdCBsaW5rQ2xvbmUgPSAkKCcuanMtc3R5bGUtY29tcG9uZW50cycpLmZpbmQoYGxpbmtbaHJlZj0iLiR7cHVibGlja1BhdGh9Il1gKS5jbG9uZSgpOwoJCQkJCWlmICgkKCcuanMtc3R5bGUtY29tcG9uZW50cycpLmZpbmQoYGxpbmtbaHJlZj0iLiR7cHVibGlja1BhdGh9Il1gKVswXSkgewoJCQkJCQljb25zb2xlLmxvZyhgJHtwdWJsaWNrUGF0aH0gaXMgdXBkYXRlZCFgKTsKCQkJCQkJJCgnLmpzLXN0eWxlLWNvbXBvbmVudHMnKS5maW5kKGBsaW5rW2hyZWY9Ii4ke3B1YmxpY2tQYXRofSJdYCkucmVtb3ZlKCk7CgkJCQkJCSQoJy5qcy1zdHlsZS1jb21wb25lbnRzJykuYXBwZW5kKGxpbmtDbG9uZSk7CgkJCQkJfQoJCQkJCWJyZWFrOwoJCQl9CgkJfQ=='))
-					const connection = new WebSocket(`ws://localhost:${+location.port + 1}`);
-					connection.onopen = () => {
-						console.log('[wsHMR] hot module replacement enabled... listening for the css changes');
-						console.log('[wsLR] live reloading enabled... listening for the changes');
-						connection.send('ready');
-					}
-					connection.onmessage = (e) => {
-						const { path, message} = JSON.parse(e.data);
-						switch (message) {
-							case 'critical':
-								document.location.reload();
-								break;
-							case 'reload':
-								const url = path.split('\\').join('/');
-								if(document.location.href.includes(url)){
-									document.location.reload();
-								}
-								break;
-							case 'styles':
-								const pattern = /(?<=templates\\html)\\.*/g;
-								const publickPath = path.match(pattern)[0].split('\\').join('/');
-								const linkClone = $('.js-style-components').find(`link[href=".${publickPath}"]`).clone();
-								if ($('.js-style-components').find(`link[href=".${publickPath}"]`)[0]) {
-									console.log(`${publickPath} is updated!`);
-									$('.js-style-components').find(`link[href=".${publickPath}"]`).remove();
-									$('.js-style-components').append(linkClone);
-								}
-								break;
-						}
-					}
-				
+										eval(atob('CQkJCQljb25zdCBjb25uZWN0aW9uID0gbmV3IFdlYlNvY2tldChgd3M6Ly9sb2NhbGhvc3Q6JHsrbG9jYXRpb24ucG9ydCArIDF9YCk7CgkJCQkJY29ubmVjdGlvbi5vbm9wZW4gPSAoKSA9PiB7CgkJCQkJCWNvbnNvbGUubG9nKCdbd3NITVJdIGhvdCBtb2R1bGUgcmVwbGFjZW1lbnQgZW5hYmxlZC4uLiBsaXN0ZW5pbmcgZm9yIHRoZSBjc3MgY2hhbmdlcycpOwoJCQkJCQljb25zb2xlLmxvZygnW3dzTFJdIGxpdmUgcmVsb2FkaW5nIGVuYWJsZWQuLi4gbGlzdGVuaW5nIGZvciB0aGUgY2hhbmdlcycpOwoJCQkJCQljb25uZWN0aW9uLnNlbmQoJ3JlYWR5Jyk7CgkJCQkJfQoJCQkJCWNvbm5lY3Rpb24ub25tZXNzYWdlID0gKGUpID0+IHsKCQkJCQkJY29uc3QgeyBwYXRoLCBtZXNzYWdlfSA9IEpTT04ucGFyc2UoZS5kYXRhKTsKCQkJCQkJc3dpdGNoIChtZXNzYWdlKSB7CgkJCQkJCQljYXNlICdjcml0aWNhbCc6CgkJCQkJCQkJZG9jdW1lbnQubG9jYXRpb24ucmVsb2FkKCk7CgkJCQkJCQkJYnJlYWs7CgkJCQkJCQljYXNlICdyZWxvYWQnOgoJCQkJCQkJCWNvbnN0IHVybCA9IHBhdGguc3BsaXQoJ1xcJykuam9pbignLycpOwoJCQkJCQkJCWlmKGRvY3VtZW50LmxvY2F0aW9uLmhyZWYuaW5jbHVkZXModXJsKSl7CgkJCQkJCQkJCWRvY3VtZW50LmxvY2F0aW9uLnJlbG9hZCgpOwoJCQkJCQkJCX0KCQkJCQkJCQlicmVhazsKCQkJCQkJCWNhc2UgJ3N0eWxlcyc6CgkJCQkJCQkJY29uc3QgcGF0dGVybiA9IC8oPzw9dGVtcGxhdGVzXFxodG1sKVxcLiovZzsKCQkJCQkJCQljb25zdCBwdWJsaWNrUGF0aCA9IHBhdGgubWF0Y2gocGF0dGVybilbMF0uc3BsaXQoJ1xcJykuam9pbignLycpOwoJCQkJCQkJCWNvbnN0IGxpbmtDbG9uZSA9ICQoJy5qcy1zdHlsZS1jb21wb25lbnRzJykuZmluZChgbGlua1tocmVmPSIuJHtwdWJsaWNrUGF0aH0iXWApLmNsb25lKCk7CgkJCQkJCQkJaWYgKCQoJy5qcy1zdHlsZS1jb21wb25lbnRzJykuZmluZChgbGlua1tocmVmPSIuJHtwdWJsaWNrUGF0aH0iXWApWzBdKSB7CgkJCQkJCQkJCWNvbnNvbGUubG9nKGAke3B1YmxpY2tQYXRofSBpcyB1cGRhdGVkIWApOwoJCQkJCQkJCQkkKCcuanMtc3R5bGUtY29tcG9uZW50cycpLmZpbmQoYGxpbmtbaHJlZj0iLiR7cHVibGlja1BhdGh9Il1gKS5yZW1vdmUoKTsKCQkJCQkJCQkJJCgnLmpzLXN0eWxlLWNvbXBvbmVudHMnKS5hcHBlbmQobGlua0Nsb25lKTsKCQkJCQkJCQl9CgkJCQkJCQkJYnJlYWs7CgkJCQkJCX0KCQkJCQl9CgkJCQk='))
 				}
 			style(data="component")
 

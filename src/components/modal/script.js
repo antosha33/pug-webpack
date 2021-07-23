@@ -11,6 +11,13 @@ window.addEventListener( 'load', function( event ) {
 		}
 	});
 
+	$(document).on('shown.bs.modal', function() {
+		$('body').addClass('overflow');
+	});
+	$(document).on('hide.bs.modal', function() {
+		$('body').removeClass('overflow');
+	});
+
 	// $('.modal-login .modal-tabs__item').click(function(){
 	// 	if($(this).hasClass('active')) return;
 	// 	$('.modal-login .modal-tabs__item').removeClass('active');

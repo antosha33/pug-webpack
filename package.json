@@ -7,6 +7,7 @@
 		"serve": "webpack serve --open --config ./config/webpack.serve.conf.js",
 		"watcher": "node ./config/watcher.js",
 		"build-sprites": "webpack --mode production --config ./config/webpack.sprites.build.conf.js",
+		"build-webp": "node ./config/webpack.webp.conf.js",
 		"ndSprite": "nodemon --exec npm run build-sprites --watch src/webpack_lists/sprites.js",
 		"build-script": "webpack --mode production --config ./config/spriteBuilder.js",
 		"dev": " concurrently \"npm run serve\" \"npm run watcher\""
@@ -23,6 +24,8 @@
 		"copy-webpack-plugin": "^9.0.1",
 		"css-loader": "^6.0.0",
 		"htmls-webpack-plugin": "^2.0.2",
+		"imagemin": "^7.0.1",
+		"imagemin-webp": "^6.0.0",
 		"mini-css-extract-plugin": "^2.1.0",
 		"node-sass": "^6.0.1",
 		"node-sass-glob-importer": "^5.3.2",

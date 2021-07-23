@@ -1,12 +1,14 @@
 @import "src/assets/css/vars_mixins/vars_mixins";
 
+
+
+
 .no-transition * {
-	padding: 1px;
 	transition: none !important;
 }
 
-.product-page .main {
-	@media (min-width: $lg) {
+.product-page .main{
+	@media (min-width: $lg){
 		overflow: hidden;
 	}
 }
@@ -14,6 +16,7 @@
 html {
 	box-sizing: border-box;
 	-ms-overflow-style: scrollbar;
+
 }
 *,
 *::before,
@@ -27,7 +30,8 @@ body {
 	font-size: $f-size;
 	font-weight: normal;
 	font-style: normal;
-	&.overflow {
+	overflow-y: scroll;
+	&.overflow{
 		overflow: hidden;
 	}
 	@include lineheight(16, 24);

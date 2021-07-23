@@ -13,49 +13,49 @@ export default () => {
 				window.reinit.select();
 			}
 		});
-
-
+	
+	
 		window.reinit.select = function () {
 			let select_input = $('select.custom-select');
-			select_input.each(function () {
+			select_input.each(function(){
 				const currSelect = $(this);
 				currSelect.length &&
-					currSelect.styler &&
-					currSelect.styler('destroy') &&
-					currSelect.styler({
-						// selectSearch: true,
-						onFormStyled: function () {
-							currSelect.find('option').each(function (indx) {
-								const currColor = $(this).attr('data-color');
-								const defaultOption = $(this).attr('selected');
-								if (defaultOption) {
-									currSelect.closest('.jq-selectbox').find('.jq-selectbox__select')[0].style.setProperty('--selectColor', currColor);
-								} else if (indx === 0) {
-									currSelect.closest('.jq-selectbox').find('.jq-selectbox__select')[0].style.setProperty('--selectColor', currColor);
-								}
-								const innerHtml = $(this).text();
-								currSelect.closest('.jq-selectbox').find('.jq-selectbox__dropdown li').eq(indx).html(`<span class="custom-select-color" style="background-image: ${currColor}"></span><span class="text">${innerHtml}</span>`);
-								// currSelect.closest('.jq-selectbox').find('.jq-selectbox__dropdown li').removeClass('sel');
-							});
-							currSelect.closest('.jq-selectbox').find('.jq-selectbox__dropdown li').click(function () {
-								// $(this).removeClass('sel');
-								currSelect.closest('.jq-selectbox').find('.jq-selectbox__select')[0].style.setProperty('--selectColor', $(this).attr('data-color'));
-							})
-							currSelect.closest('.jq-selectbox').find('.jq-selectbox__dropdown li').mousemove(function () {
-								return;
-							})
-						},
-					});
+				currSelect.styler &&
+				currSelect.styler('destroy') &&
+				currSelect.styler({
+					// selectSearch: true,
+					onFormStyled: function(){
+						currSelect.find('option').each(function(indx){
+							const currColor = $(this).attr('data-color');
+							const defaultOption = $(this).attr('selected');
+							if(defaultOption){
+								currSelect.closest('.jq-selectbox').find('.jq-selectbox__select')[0].style.setProperty('--selectColor', currColor);
+							}else if(indx === 0){
+								currSelect.closest('.jq-selectbox').find('.jq-selectbox__select')[0].style.setProperty('--selectColor', currColor);
+							}
+							const innerHtml = $(this).text();
+							currSelect.closest('.jq-selectbox').find('.jq-selectbox__dropdown li').eq(indx).html(`<span class="custom-select-color" style="background-image: ${currColor}"></span><span class="text">${innerHtml}</span>`);
+							// currSelect.closest('.jq-selectbox').find('.jq-selectbox__dropdown li').removeClass('sel');
+						});
+						currSelect.closest('.jq-selectbox').find('.jq-selectbox__dropdown li').click(function(){
+							// $(this).removeClass('sel');
+							currSelect.closest('.jq-selectbox').find('.jq-selectbox__select')[0].style.setProperty('--selectColor', $(this).attr('data-color'));
+						})
+						currSelect.closest('.jq-selectbox').find('.jq-selectbox__dropdown li').mousemove(function(){
+							return;
+						})
+					},
+				});
 			})
-
+	
 		};
-
-
+	
+	
 		// window.reinit.reinitDatepicker();
-
-
+	
+	
 		// console.log('form')
-
+	
 		// window.reinit.reinitDatepicker = function() {
 		// 	$('.js-form-control--datepicker').datepicker({
 		// 		minDate: new Date(),
@@ -77,7 +77,7 @@ export default () => {
 		// 	});
 		// }
 		// window.reinit.reinitDatepicker()
-
+	
 		$(document).on('input', '.sidebar-filter__input', function () {
 			let $this = $(this);
 			let $wrap = $this.closest('.sidebar-filter__content');
@@ -85,4 +85,5 @@ export default () => {
 			let value = $this.val();
 		});
 	});
+	
 }

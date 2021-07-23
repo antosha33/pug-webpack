@@ -16,7 +16,7 @@
 	align-items: center;
 	@media (max-width: $md - 1) {
 		flex-direction: column;
-	}
+}
 	&__title {
 		margin-right: 8px;
 		max-width: 95px;
@@ -50,7 +50,7 @@
 	}
 	.form-group {
 		margin-bottom: 0px;
-		@media (max-width: $sm - 1) {
+		@media (max-width: $sm - 1){
 			width: 100%;
 		}
 		&.has-error {
@@ -81,7 +81,7 @@
 			}
 		}
 	}
-	.input-group {
+	.input-group{
 		display: flex;
 		max-height: 40px;
 		.form-control {
@@ -102,9 +102,9 @@
 	@media (max-width: $md - 1) {
 		margin-right: 0px;
 	}
-	@media (max-width: $sm - 1) {
+	@media (max-width: $sm - 1){
 		width: 172px;
-		.logo {
+		.logo{
 			width: 172px;
 		}
 	}

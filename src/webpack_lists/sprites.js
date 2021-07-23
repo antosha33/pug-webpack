@@ -3,4 +3,4 @@ function importAll(contextLoader) {
 }
 
 const contextLoader = require.context('../assets/sprites/svg', true, /\.svg/);
-importAll(contextLoader);                         
+importAll(contextLoader);                           

@@ -16,7 +16,7 @@
               opacity: 1;
             }
             .nav-link{
-            //   color: $c-primary-hover;
+              color: $c-primary-hover;
             }
           }
           .nav-lvl2 {
@@ -33,9 +33,9 @@
             &-item{
               padding: 15px 20px;
               &:hover{
-               //  background-color: $bg-hover;
+                background-color: $bg-hover;
                 .nav-lvl2-link{
-                  // color: $c-primary-hover;
+                  color: $c-primary-hover;
                 }
               }
             }

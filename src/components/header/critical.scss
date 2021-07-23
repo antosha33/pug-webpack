@@ -1,13 +1,13 @@
 @import "src/assets/css/vars_mixins/vars_mixins";
 
-.main-page {
-	.header-menu-wrap {
+.main-page{
+	.header-menu-wrap{
 		border-bottom: none;
 	}
 }
 
-body:not(.main-page) {
-	.header-bottom {
+body:not(.main-page){
+	.header-bottom{
 		border-bottom: 1px solid #000;
 	}
 }
@@ -21,20 +21,21 @@ body:not(.main-page) {
 	background-color: #fff;
 	&__container {
 		position: relative;
-		width: 100%;
+		// width: 100%;
 	}
-	.header-bottom {
+	.header-bottom{
 		max-height: 60px;
-		.header-menu {
+		.header-menu{
 			opacity: 1;
-			transition: opacity 0.5s ease;
+			transition: opacity .5s ease;
 		}
-		transition: max-height 0.3s ease, opacity 0.3s ease;
+		transition: max-height .3s ease, opacity .3s ease;
 		background-color: #fff;
 	}
-	&.sticky {
-		.header-bottom {
-			.header-menu {
+	&.sticky{
+		
+		.header-bottom{
+			.header-menu{
 				opacity: 0;
 			}
 			max-height: 1px;
@@ -306,20 +307,20 @@ body:not(.main-page) {
 			display: none;
 		}
 	}
-	&__phone {
+	&__phone{
 		display: none;
-		@media (max-width: $md - 1) {
+		@media (max-width: $md - 1){
 			display: flex;
-			flex: 0 0 auto;
+			flex:  0 0 auto;
 			margin-right: 15px;
 		}
-		@media (max-width: $sm - 1) {
+		@media (max-width: $sm - 1){
 			margin-right: 0px;
 		}
-		.icon {
+		.icon{
 			fill: transparent;
 			stroke-width: 2px;
-			stroke: #4a4a4a;
+			stroke: #4A4A4A;
 		}
 	}
 	@media (max-width: $sm - 1) {
@@ -598,7 +599,7 @@ body:not(.main-page) {
 	right: 0px;
 	width: 730px;
 	box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.15);
-	&.basket-small--empty {
+	&.basket-small--empty{
 		width: 500px;
 		padding: 30px;
 	}
